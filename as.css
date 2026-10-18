@@ -178,8 +178,9 @@
 .as-a.me i{transform:scale(0);transition:transform .7s cubic-bezier(.3,1.5,.5,1)}
 .as-a.me.on i{transform:none}
 .as-tabbox{position:relative;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(28px,4vw,56px);padding:clamp(24px,4vw,64px)}
-.as-bigicon{width:clamp(120px,15vw,220px);aspect-ratio:1;border-radius:23%;overflow:hidden;box-shadow:0 20px 44px -18px rgba(0,0,0,.3)}
-.as-bigicon img{width:100%;height:100%;object-fit:cover}
+.as-bigicon{width:clamp(120px,15vw,220px);aspect-ratio:1;border-radius:23%;overflow:hidden;box-shadow:0 28px 56px -18px rgba(27,67,178,.38)}
+.as-bigicon img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+.as-browser .tab img,.as-a i img{transform:scale(1.04)}
 .as-browser{width:min(100%,460px);background:#fff;border-radius:14px;box-shadow:0 20px 44px -18px rgba(0,0,0,.3);overflow:hidden}
 .as-browser .tab{display:flex;align-items:center;gap:10px;margin:10px 10px 0;padding:10px 14px;background:#ECEDEF;border-radius:10px 10px 0 0;width:max-content;max-width:calc(100% - 20px);font-size:16px}
 .as-browser .tab img{width:22px;height:22px;border-radius:5px;flex:none}
