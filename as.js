@@ -263,7 +263,7 @@
   h.push(sec('c2-font', 'шрифт для заголовков', ['Хромиус: острые формы держат динамику даже в коротких слоганах.'], typeBlock('chromius')));
   // иконка во весь экран: стеклянная звезда, прокрутка сажает ее на место в телефоне
   h.push('<section class="as-glass" id="c2-app" data-slide><div class="stick"><canvas></canvas>' +
-    '<div class="say"><div class="as-wrap"><h2 class="as-h2">' + T('стеклянная звезда') + '</h2></div></div>' +
+    '<div class="say"><div class="as-wrap"><h2 class="as-h2">' + T('иконка и фавикон') + '</h2></div></div>' +
     '<div class="ph">' + phone('c2', true) + '</div></div></section>');
   h.push(sec('c2-app-tx', 'иконка приложения', ['Белая звезда в толстом стекле, за ним переливаются синий, белый и красный. Во вкладке браузера — та же звезда.'], tabBox('c2')));
   h.push(sec('c2-site', 'первый экран сайта', ['Рассвет на весь экран, ролик — внутри звезды.'], site('c2')));
