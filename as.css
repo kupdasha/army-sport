@@ -29,10 +29,10 @@
 .as-btn:hover{background:#000}.as-btn:active{transform:scale(.97)}
 .as-btn svg{width:18px;height:18px}
 .as-toggle{margin-top:24px}
-.as-up-btn{position:fixed;right:var(--pad);bottom:20px;z-index:70;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;transition:background .3s,color .3s;display:grid;place-items:center;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s,transform .4s var(--ease)}
+.as-up-btn{position:fixed;right:var(--pad);bottom:24px;z-index:70;width:64px;height:64px;box-shadow:0 8px 24px rgba(0,0,0,.18);border-radius:50%;background:var(--ink);color:#fff;transition:background .3s,color .3s;display:grid;place-items:center;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .4s,transform .4s var(--ease)}
 .as-up-btn.on{opacity:1;transform:none;pointer-events:auto}
 .as-up-btn.light{background:#fff;color:var(--ink)}
-.as-up-btn svg{width:20px;height:20px}
+.as-up-btn svg{width:30px;height:30px}
 
 /* ---------- шкала: чем крупнее, тем плотнее. Заголовки серые, чтобы не спорили со знаками; мелкий текст — Spectral ---------- */
 .as .as-disp,.as .as-h1,.as .as-h2{color:var(--mute)}
@@ -73,7 +73,7 @@
 /* ---------- главы ---------- */
 .as-sec{padding-top:clamp(96px,12vw,200px)}
 .as-tx{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:28px;align-items:start}
-.as-tx .as-h2{max-width:12ch}
+.as-tx .as-h2{max-width:13ch}
 .as-tx>div>.as-p:first-child{margin-top:.35em}
 .as-vis{margin-top:clamp(40px,5vw,80px)}
 .as-brief{margin-top:clamp(40px,5vw,80px)}
@@ -105,7 +105,9 @@
 .as-cover.c1 .mark{margin-bottom:clamp(24px,4vw,64px)}
 .as-cover.c1{background:#fff;color:var(--ink)}
 .as-cover.c2{background:linear-gradient(180deg,#080000 0%,#07003F 48%,#0044FF 100%);color:#fff}
-.as-cover.c3{background:#fff;color:var(--ink)}
+.as-cover.c3{background:#080000;color:#fff}
+.as-cover.c3 .mark img{filter:invert(1)}
+.as-cover.c3 .as-h1{color:rgba(255,255,255,.6)}
 .as-cover .mark{flex:1;position:relative;min-height:36vh;margin:clamp(24px,4vw,64px) 0 clamp(56px,10vh,120px)}
 .as-cover .mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .as-cover .foot{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:24px;align-items:end}
@@ -128,7 +130,7 @@
 .as-herit line.m{transition-delay:.5s}
 .as-cover.c2 ~ .as-sec .as-herit .m,.c2-m .m{stroke:var(--blue2)}
 .as-herit .arrow{height:2px;background:var(--ink);position:relative}
-.as-herit .arrow::after{content:"";position:absolute;right:-1px;top:-7px;width:14px;height:14px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg)}
+.as-herit .arrow::after{content:"";position:absolute;right:-1px;top:-6px;width:14px;height:14px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg)}
 
 /* ---------- система знака: все варианты разом ---------- */
 .as-sys{display:grid;gap:clamp(8px,1vw,16px)}
@@ -136,7 +138,8 @@
 .as-sys .band{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1fr) minmax(0,.62fr);align-items:center;gap:clamp(28px,4.4vw,80px);padding:clamp(40px,6vw,104px) clamp(24px,4.4vw,80px)}
 .as-sys .band img{width:100%;height:auto}
 .as-sys .band.desc{grid-template-columns:minmax(0,1.6fr) minmax(0,2fr) minmax(0,1fr) minmax(0,.58fr)}
-.as-word{display:grid;gap:clamp(56px,8vw,140px);padding:clamp(24px,4vw,64px) 0}
+.as-word{display:grid;gap:clamp(40px,6vw,100px);padding:clamp(24px,4vw,64px) 0}
+.as-word .two{border-top:1px solid var(--line);padding-top:clamp(40px,6vw,100px)}
 .as-word img{width:100%;height:auto}
 .as-word .two{width:min(62%,900px)}
 
@@ -195,7 +198,7 @@
 .as-glass .ph{position:absolute;left:50%;bottom:0;width:min(74vw,440px);transform:translate(-50%,105%);will-change:transform}
 .as-glass .ph .as-phone{width:100%;box-shadow:0 0 0 2px #2A2B30,0 40px 80px rgba(0,0,0,.6)}
 .as-glass .ph .as-a.me i{transform:none;background:transparent}
-.as-glass .ph .as-a.me i img{opacity:0}
+.as-glass .ph .as-a.me i img{opacity:0;transform:none}
 .as-glass .say{z-index:4;position:absolute;left:0;right:0;top:clamp(88px,12vh,140px);color:#fff;transition:opacity .4s}
 .as-glass .say .as-h2{max-width:13ch}
 
@@ -203,7 +206,7 @@
 .as-3dpair{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(8px,1vw,16px)}
 .as-3dpair.big{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .as-3d:not(.ready) .hand{opacity:0}
-.as-3d .hand{position:absolute;left:0;right:0;bottom:clamp(16px,3vw,40px);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink);pointer-events:none;transition:opacity .4s;z-index:2}
+.as-3d .hand{position:absolute;left:0;right:0;top:clamp(16px,3vw,40px);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink);pointer-events:none;transition:opacity .4s;z-index:2}
 .as-3d .hand svg{width:clamp(64px,7vw,96px);height:auto;animation:as-hand 2.2s ease-in-out infinite}
 .as-3d .hand::after{content:"потяните, чтобы покрутить";font:500 16px/1 var(--font)}
 .as-3d .hand.off{opacity:0}
@@ -286,6 +289,7 @@
 .as-next li{border-top:2px solid var(--ink);padding-top:18px}
 .as-next b{display:block;font-weight:500;font-size:clamp(22px,1.8vw,28px);line-height:1.05;letter-spacing:-.01em}
 .as-next span{display:block;font-family:var(--read);font-size:19px;line-height:1.35;margin-top:10px}
+.as-cap{margin:clamp(4px,.6vw,10px) 0 0;color:var(--ink)}
 .as-foot{padding:clamp(96px,12vw,200px) 0 64px;font-size:16px;color:var(--mute)}
 .as-foot .as-wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .as-foot .in{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%;border-top:1px solid var(--line);padding-top:24px}
