@@ -105,9 +105,16 @@
 .as-cover.c1 .mark{margin-bottom:clamp(24px,4vw,64px)}
 .as-cover.c1{background:#fff;color:var(--ink)}
 .as-cover.c2{background:linear-gradient(180deg,#080000 0%,#07003F 48%,#0044FF 100%);color:#fff}
-.as-cover.c3{background:#080000;color:#fff}
-.as-cover.c3 .mark img{filter:invert(1)}
-.as-cover.c3 .as-h1{color:rgba(255,255,255,.6)}
+.as-cover.c3{background:#fff;color:var(--ink)}
+.as-divide{margin-top:clamp(96px,12vw,200px);background:#080000;color:#fff;min-height:70svh;display:flex;align-items:flex-end;padding:120px 0 clamp(32px,5vw,72px)}
+.as-divide>.as-wrap{width:100%}
+.as-divide + .as-sec,.as-divide + .as-cover{margin-top:0}
+.as-divide span{display:block;font-family:var(--read);font-size:clamp(19px,1.6vw,26px);color:rgba(255,255,255,.7);margin-bottom:clamp(16px,2vw,28px)}
+.as .as-divide .as-h1{color:#fff;font-size:clamp(56px,11vw,210px)}
+.as-fit{display:flex;gap:clamp(8px,1vw,16px);align-items:flex-start}
+.as-word .as-fit{gap:clamp(32px,5vw,96px);align-items:center}
+.as-fit>div{min-width:0}
+.as-fit img{display:block;width:100%;height:auto}
 .as-cover .mark{flex:1;position:relative;min-height:36vh;margin:clamp(24px,4vw,64px) 0 clamp(56px,10vh,120px)}
 .as-cover .mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .as-cover .foot{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:24px;align-items:end}
@@ -139,7 +146,6 @@
 .as-sys .band img{width:100%;height:auto}
 .as-sys .band.desc{grid-template-columns:minmax(0,1.6fr) minmax(0,2fr) minmax(0,1fr) minmax(0,.58fr)}
 .as-word{display:grid;gap:clamp(40px,6vw,100px);padding:clamp(24px,4vw,64px) 0}
-.as-word .two{border-top:1px solid var(--line);padding-top:clamp(40px,6vw,100px)}
 .as-word img{width:100%;height:auto}
 .as-word .two{width:min(62%,900px)}
 
@@ -158,6 +164,9 @@
 .as-type{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,96px);align-items:center;padding:clamp(24px,4vw,56px) 0}
 .as-type .name{font-weight:500;font-size:clamp(56px,6.4vw,120px);line-height:.9;letter-spacing:-.04em;margin-bottom:28px;overflow-wrap:anywhere}
 .as-type img{width:100%;height:auto}
+.as-type{container-type:inline-size}
+.as-type.engine{grid-template-columns:auto minmax(0,1fr)}
+.as-type.engine .name{font-size:7.4cqw;letter-spacing:-.03em;white-space:nowrap;overflow-wrap:normal}
 
 /* ---------- кобрендинг и пресс-волл ---------- */
 .as-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:clamp(20px,4vw,72px);padding:clamp(48px,7vw,112px) 0;background:#fff}
@@ -170,7 +179,7 @@
 /* ---------- иконка ---------- */
 .as-app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,16px);align-items:stretch}
 .as-app>*{min-height:0}
-.as-phonebox{position:relative;overflow:hidden;aspect-ratio:1.3;padding-top:6%;background:#fff}
+.as-phonebox{position:relative;overflow:hidden;aspect-ratio:1.06;padding-top:6%;background:#fff}
 .as-phone{width:92%;margin:0 auto;aspect-ratio:1364/2962;border-radius:13%/6%;padding:3.2%;background:#0A0A0C;box-shadow:0 0 0 2px #2A2B30}
 .as-screen{position:relative;width:100%;height:100%;border-radius:11%/5.2%;overflow:hidden;background:linear-gradient(180deg,#E7F1FF,#888BAD);container-type:inline-size}
 .as-screen .isl{position:absolute;top:2.2%;left:50%;width:31%;height:3.6%;transform:translateX(-50%);background:#000;border-radius:99px}
@@ -251,7 +260,8 @@
 .as-site{border-radius:12px;overflow:hidden;box-shadow:0 20px 44px -18px rgba(0,0,0,.3)}
 .as-site .chrome{height:38px;background:#F1F1F3;display:flex;align-items:center;gap:7px;padding:0 14px}
 .as-site .chrome i{width:11px;height:11px;border-radius:50%;background:#D6D7DB}
-.as-site .chrome span{margin-left:14px;font-size:16px;color:var(--mute);background:#fff;border-radius:6px;padding:2px 12px}
+.as-site .chrome span{margin-left:14px;font-size:16px;color:var(--mute);background:#fff;border-radius:6px;padding:2px 12px 2px 8px;display:flex;align-items:center;gap:8px}
+.as-site .chrome .fav{width:18px;height:18px;border-radius:5px;object-fit:cover}
 .as-scr{position:relative;aspect-ratio:1440/900;overflow:hidden;background:#fff}
 .as-scr .lay{position:absolute;inset:0;width:100%;height:100%}
 .as-scr .vid{position:absolute;overflow:hidden;background:#222}
@@ -352,3 +362,4 @@
   .as-word .two{width:100%}
   .as-sys .band{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:36px 24px;gap:36px 28px}
 }
+@media (max-width:1000px){.as-type.engine{grid-template-columns:minmax(0,1fr)}.as-type.engine .name{font-size:14.5cqw}}
