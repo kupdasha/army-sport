@@ -101,7 +101,8 @@
 
 /* ---------- обложка концепции ---------- */
 .as-cover{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0 clamp(24px,4vw,56px);overflow:hidden;margin-top:clamp(96px,12vw,200px)}
-.as-cover.c1 .mark img{object-position:center 40%}
+.as-cover.c1 .mark img{object-position:center 50%}
+.as-cover.c1 .mark{margin-bottom:clamp(24px,4vw,64px)}
 .as-cover.c1{background:#fff;color:var(--ink)}
 .as-cover.c2{background:linear-gradient(180deg,#080000 0%,#07003F 48%,#0044FF 100%);color:#fff}
 .as-cover.c3{background:#fff;color:var(--ink)}

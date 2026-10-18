@@ -63,6 +63,7 @@
   // ---------- блоки ----------
   function cover(id, lead) {
     var c = C[id];
+    if (!lead) return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div></section>';
     return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div>' +
       '<div class="as-wrap"><div class="foot as-up"><h2 class="as-h1">' + T(c.name) + '</h2><p class="as-lead">' + T(lead) + '</p></div></div></section>';
   }
@@ -218,8 +219,8 @@
     '</div></div></section>');
 
   // ---------- первая: красная ----------
-  h.push(sec('c1', 'знак сейчас и новый знак', ['Звезда остается, лишние детали уходят. Вместо буквы со звездой внутри и двух росчерков — одна цельная фигура: звезда, в которой читается «А». Два цвета.'], wasNow('c1')));
-  h.push(cover('c1', 'Красный ведет. Знак узнают сразу, но он собраннее и спортивнее.'));
+  h.push(sec('c1', 'знак сейчас и новый знак', ['Звезда остается, лишние детали уходят.'], wasNow('c1')));
+  h.push(cover('c1', ''));
   h.push(sec('c1-logo', 'красный сверху, синий снизу', ['Основная версия — на белом. На темно-синем — белый знак с контурной звездой, на черном — цветная звезда и белая надпись.'], sys([
     { files: ['c1-logo-h', 'c1-logo-mid', 'c1-logo-2', 'c1-logo-v'] },
     { files: ['c1-mono-h', 'c1-mono-mid', 'c1-mono-2', 'c1-mono-v'], bg: '#001857' },
