@@ -77,10 +77,10 @@
       return '<svg class="marks" viewBox="0 0 100 100" preserveAspectRatio="none"><ellipse class="m" cx="' + star[0] + '" cy="' + star[1] + '" rx="' + star[2] + '" ry="' + star[3] + '"/>' +
         (text ? '<line class="m" x1="' + text[0] + '" y1="' + text[1] + '" x2="' + text[2] + '" y2="' + text[3] + '"/>' : '') + '</svg>';
     };
-    var left = fromOld ? '<img class="old" src="' + IMG + 'old-logo.webp" alt="Знак сейчас" loading="lazy">' + marks([50, 44, 22, 20], null) : '<img src="' + svg('p-cska-fight') + '" alt="Эмблема ЦСКА Единоборства" loading="lazy">' + marks([50, 11, 19, 14], caps ? [20, 50, 80, 50] : null);
+    var left = fromOld ? '<img class="old" src="' + IMG + 'old-logo.webp" alt="Знак сейчас" loading="lazy">' : '<img src="' + svg('p-cska-fight') + '" alt="Эмблема ЦСКА Единоборства" loading="lazy">' + marks([50, 11, 19, 14], caps ? [20, 50, 80, 50] : null);
     return '<div class="as-herit"><div class="side">' + left + '</div>' +
       '<div class="arrow" aria-hidden="true"></div>' +
-      '<div class="side"><img src="' + svg(C[id].main) + '" alt="" loading="lazy">' + marks(id === 'c1' ? [50, 26, 44, 32] : [50, 26, 36, 31], caps ? [4, 102, 96, 102] : null) + '</div></div>';
+      '<div class="side"><img src="' + svg(C[id].main) + '" alt="" loading="lazy">' + (fromOld ? '' : marks(id === 'c1' ? [50, 26, 44, 32] : [50, 26, 36, 31], caps ? [4, 102, 96, 102] : null)) + '</div></div>';
   }
   // все версии знака разом
   function sys(bands) {
@@ -214,7 +214,7 @@
     '<div class="as-col">' + cell('s12', 'c1-wall-a') + cell('s4', 'c1-art-a') + cell('s4', 'c1-art-b') + cell('s4', 'c1-art-c') + cell('s12', 'c1-wall-b') + '</div>'));
   h.push(sec('c1-award', 'тяжелое основание, легкая звезда', ['Ступени из слоев пластика с зеркальным напылением: на видео они играют светом, на фото выглядят мощно, в руке остаются легкими.'],
     pair3d('cubok', 'c1-award-stack', '', ph('c1-award-man') + ph('c1-award-row', { cls: 'soft' }))));
-  h.push(sec('c1-wear', 'форма и экипировка', ['Основной фон стиля белый, но белая форма непрактична, поэтому для нее используем черный. Шлепанцы с логотипом — в них ходят по залу и раздевалке.'],
+  h.push(sec('c1-wear', 'форма и экипировка', ['Основной фон стиля белый, но белая форма непрактична, поэтому для нее используем черный. Шлепанцы с логотипом: в них все борцы ходят по залу и раздевалке, поэтому их хорошо брендировать.'],
     '<div class="as-col">' + cell('s6', 'c1-fighter') + cell('s6', 'c1-wear-c') + cell('s4', 'c1-wear-a') + cell('s4', 'c1-wear-b') + cell('s4', 'c1-slides') + '</div>'));
   h.push(sec('c1-polo', 'поло для тренеров', ['Поло с силиконовым логотипом и надписями. Красный заливкой используем редко, чтобы не было ассоциаций с Красной армией, — но тренеров в зале должно быть видно сразу. Поэтому поло красное, а логотип и название на нем тихие.'],
     '<div class="as-col">' + cell('s4', 'c1-polo-a') + cell('s4', 'c1-polo-b') + cell('s4', 'c1-polo-c', { ratio: .8 }) + '</div>'));
@@ -250,7 +250,7 @@
     '<div class="s6">' + mirror(ph('c2-mirror-a')) + '</div><div class="s6">' + mirror(ph('c2-mirror-b')) + '</div></div>'));
   h.push(sec('c2-award', 'победитель в отражении', ['Три места — как обычно, а зеркальная деталь отражает победителя. За выемку слева награду удобно держать и наклонять для фото. Наклон вправо вверх — про рост.'],
     pair3d('stela', 'c2-award-stack', '', ph('c2-award-man') + ph('c2-award-row', { cls: 'soft' }))));
-  h.push(sec('c2-wear', 'форма и экипировка', ['Черная форма книзу переходит в синий, знак на ней белый. На поло и экипировке логотип небольшой.'],
+  h.push(sec('c2-wear', 'форма и экипировка', ['Черная форма книзу переходит в синий, знак на ней белый. На поло и экипировке логотип небольшой. Шлепанцы с логотипом: в них все борцы ходят по залу и раздевалке, поэтому их хорошо брендировать.'],
     '<div class="as-col">' + cell('s6', 'c2-wear-a') + cell('s6', 'c2-wear-c') + cell('s4', 'c2-wear-b') + cell('s4', 'c2-wear-d') + cell('s4', 'c2-slides') + cell('s6', 'c2-slides-2') + '</div>'));
   h.push(sec('c2-tee', 'турнирный мерч', ['Футболка конкретного турнира с датой и городом — ее покупают «потому что был там». Черная футболка книзу переходит в синий, принт — белый. Фирменный шрифт нужно сначала купить, поэтому концепт пока на стандартном.'],
     '<div class="as-grid as-g2">' + ph('c2-tee-b', { ratio: 1 }) + '</div>'));
