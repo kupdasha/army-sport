@@ -1,0 +1,18 @@
+<!-- АРМИЯ СПОРТА, ПЕРВЫЙ ЭТАП. Страница целиком приходит с GitHub (kupdasha/army-sport). Блок не трогать. -->
+<style>#allrecords.t-records{opacity:1!important;transition:none!important}body{background:#fff}</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<div id="as-skel" class="as-skel" aria-hidden="true" style="position:fixed;inset:0;z-index:100;background:#fff;padding:0 clamp(16px,4vw,56px)">
+<style>#as-skel i{display:block;border-radius:8px;background:linear-gradient(100deg,#F4F4F5 30%,#FAFAFA 50%,#F4F4F5 70%);background-size:220% 100%;animation:as-sk 1.3s linear infinite}@keyframes as-sk{from{background-position:120% 0}to{background-position:-120% 0}}#as-skel .g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1320px;margin:0 auto;min-height:calc(100vh - 64px)}@media(max-width:1000px){#as-skel .g{grid-template-columns:1fr;align-content:center}}</style>
+<div style="max-width:1320px;margin:0 auto;height:64px;display:flex;align-items:center;gap:12px"><i style="width:160px;height:20px"></i><i style="width:240px;height:36px;margin-left:auto;border-radius:99px"></i></div>
+<div class="g"><div><i style="width:40%;height:18px;margin-bottom:22px"></i><i style="width:90%;height:clamp(44px,7vw,100px);margin-bottom:12px"></i><i style="width:70%;height:clamp(44px,7vw,100px);margin-bottom:28px"></i><i style="width:80%;height:22px;margin-bottom:10px"></i><i style="width:60%;height:22px;margin-bottom:32px"></i><i style="width:150px;height:48px;border-radius:99px"></i></div><i style="aspect-ratio:1;width:100%"></i></div>
+</div>
+<div id="as"></div>
+<script>(function(){if(window.AS_LOADING)return;window.AS_LOADING=1;
+var R='https://cdn.jsdelivr.net/gh/kupdasha/army-sport@',K='as-sha',got=0,last='';
+try{last=localStorage.getItem(K)||''}catch(e){}
+function load(s){if(got)return;got=1;var b=R+(s||'main')+'/';window.AS_BASE=b;if(s)try{localStorage.setItem(K,s)}catch(e){}
+var f=document.createElement('link');f.rel='preload';f.as='font';f.type='font/woff2';f.crossOrigin='';f.href=b+'fonts/GolosText-500-cyrillic.woff2';document.head.appendChild(f);
+var l=document.createElement('link');l.rel='stylesheet';l.href=b+'as.css';
+l.onload=l.onerror=function(){var j=document.createElement('script');j.src=b+'as.js';document.head.appendChild(j)};document.head.appendChild(l)}
+var x=new XMLHttpRequest();x.open('GET','https://api.github.com/repos/kupdasha/army-sport/commits/main');x.setRequestHeader('Accept','application/vnd.github.sha');x.timeout=2500;
+x.onload=function(){var s=(x.status==200&&x.responseText||'').trim();load(/^[0-9a-f]{40}$/.test(s)?s:last)};x.onerror=x.ontimeout=function(){load(last)};x.send()})()</script>
