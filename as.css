@@ -34,7 +34,11 @@
 .as-up-btn.light{background:#fff;color:var(--ink)}
 .as-up-btn svg{width:20px;height:20px}
 
-/* ---------- шкала: чем крупнее, тем плотнее ---------- */
+/* ---------- шкала: чем крупнее, тем плотнее. Заголовки серые, чтобы не спорили со знаками; мелкий текст — Spectral ---------- */
+.as .as-disp,.as .as-h1,.as .as-h2{color:var(--mute)}
+.as-cover.c2 .as-h1{color:rgba(255,255,255,.6)}
+.as-top a,.as-wasnow b,.as-trio b,.as-cmp b,.as-pal span,.as-foot,.as-3d .hand::after,.as-browser .tab,.as-browser .url,.as-site .chrome span{font-family:var(--read)!important;font-weight:400!important}
+.as-top a.on,.as-top .home{font-weight:400}
 .as-disp{font-weight:500;font-size:clamp(56px,10.4vw,190px);line-height:.86;letter-spacing:-.045em}
 .as-h1{font-weight:500;font-size:clamp(46px,7vw,128px);line-height:.88;letter-spacing:-.04em}
 .as-h2{font-weight:500;font-size:clamp(34px,4.2vw,72px);line-height:.95;letter-spacing:-.03em;text-wrap:balance}
