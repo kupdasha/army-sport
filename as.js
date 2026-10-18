@@ -52,7 +52,7 @@
 
   // ---------- данные ----------
   var C = {
-    c1: { name: 'преемственность', bg: 'var(--red)', mark: 'c1-mono-v', main: 'c1-logo-v', icon: IMG + 'c1-icon.webp', label: 'Армия спорта' },
+    c1: { name: 'преемственность', bg: '#fff', mark: 'c1-logo-v', main: 'c1-logo-v', icon: IMG + 'c1-icon.webp', label: 'Армия спорта' },
     c2: { name: 'рассвет', bg: 'linear-gradient(180deg,#080000,#07003F 50%,#0044FF)', mark: 'c2-mono-v', main: 'c2-logo-v', icon: svg('c2-icon'), label: 'Армия спорта' },
     c3: { name: 'только слово', bg: 'var(--soft)', mark: 'c3-logo-2', icon: svg('c3-icon'), label: 'армия спорта' }
   };
@@ -63,7 +63,7 @@
   // ---------- блоки ----------
   function cover(id, lead) {
     var c = C[id];
-    return '<section class="as-cover ' + id + '" id="' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div>' +
+    return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div>' +
       '<div class="as-wrap"><div class="foot as-up"><h2 class="as-h1">' + T(c.name) + '</h2><p class="as-lead">' + T(lead) + '</p></div></div></section>';
   }
   // сейчас → предлагаем
@@ -191,8 +191,8 @@
     '</div></div></section>');
 
   // ---------- первая: красная ----------
+  h.push(sec('c1', 'знак сейчас и знак, который предлагаем', ['Звезда и буква «А» остаются, а рисунок становится цельным: одна фигура, два цвета, прописные буквы.'], wasNow('c1')));
   h.push(cover('c1', 'Красный ведет. Знак узнают сразу, но он собраннее и спортивнее.'));
-  h.push(sec('c1-was', 'знак сейчас и знак, который предлагаем', ['Звезда и буква «А» остаются, а рисунок становится цельным: одна фигура, два цвета, прописные буквы.'], wasNow('c1')));
   h.push(sec('c1-herit', 'звезда и прописные — от ЦСКА', ['Главный партнер — ЦСКА Единоборства. В его эмблеме звезда и название прописными. Новый знак берет оба приема, поэтому рядом с партнером выглядит как свой.'], heritage('c1', true)));
   h.push(sec('c1-logo', 'красный сверху, синий снизу', ['Основная версия — на белом. Для темно-синего и черного фонов — белый знак, для партнерских материалов — версия с подписью «при партнерстве ФАУ ЦСКА».'], sys([
     { files: ['c1-logo-h', 'c1-logo-mid', 'c1-logo-2', 'c1-logo-v'] },
@@ -221,8 +221,8 @@
     keyTags() + '<div class="as-grid as-g2" style="margin-top:clamp(8px,1vw,16px)">' + ph('c1-keys-a') + ph('c1-keys-b') + '</div>'));
 
   // ---------- вторая: рассвет ----------
+  h.push(sec('c2', 'знак сейчас и знак, который предлагаем', ['Форма знака остается, красный уходит: красная звезда отсылает к Красной армии. Одноцветный знак работает сам по себе, в том числе на одежде.'], wasNow('c2')));
   h.push(cover('c2', 'Черный и синий, красный — только в мелочах. Острый шрифт и зеркало, в котором каждый видит себя.'));
-  h.push(sec('c2-was', 'знак сейчас и знак, который предлагаем', ['Форма знака остается, красный уходит: красная звезда отсылает к Красной армии. Одноцветный знак работает сам по себе, в том числе на одежде.'], wasNow('c2')));
   h.push(sec('c2-herit', 'звезда — от ЦСКА', ['В эмблеме главного партнера — звезда. Новый знак ее сохраняет, поэтому рядом с ЦСКА выглядит как свой.'], heritage('c2', false)));
   h.push(sec('c2-logo', 'одноцветный знак', ['Основная версия — на белом, на синем градиенте знак белый.'], sys([
     { files: ['c2-logo-h', 'c2-logo-top', 'c2-logo-2', 'c2-logo-v'] },
@@ -253,7 +253,7 @@
     '<div class="as-col">' + cell('s6', 'c2-keys-a') + cell('s6', 'c2-keys-b') + cell('s12', 'c2-keys-flat', { cls: 'soft' }) + '</div>'));
 
   // ---------- альтернатива: черно-белая ----------
-  h.push(cover('c3', 'Черное и белое, без привязки к ЦСКА: только название, строчными, как у цифровых продуктов.'));
+  h.push('<section class="as-cover c3" id="c3" data-slide><div class="as-wrap mark"><img src="' + svg('c3-logo-2') + '" alt="" loading="lazy"></div><div class="as-wrap"><div class="foot as-up"><h2 class="as-h1">только слово</h2><p class="as-lead">' + T('Черное и белое, без привязки к ЦСКА: только название, строчными, как у цифровых продуктов.') + '</p></div></div></section>');
   h.push(sec('c3-logo', 'название строчными', ['Знака нет — только название современным шрифтом, строчными. Так же набраны заголовки и короткие слова. Звезда остается мелкой деталью: на значках, футболках, брелоках и носках.'],
     '<div class="as-word"><img src="' + svg('c3-logo-h') + '" alt="армия спорта" loading="lazy"><img class="two" src="' + svg('c3-logo-2') + '" alt="" loading="lazy"></div>'));
   h.push(sec('c3-co', 'выделяется тем, что без звезды', ['У трех логотипов из пяти есть звезды, поэтому слово без знака сразу заметно.'], cobrand('c3-co')));
@@ -269,7 +269,7 @@
   h.push('<section class="as-sec" id="sum" data-slide>' + tx('три пути рядом', ['Преемственность — красная и узнаваемая. Рассвет — черный с синим, про зеркало, в котором каждый видит себя. Только слово — черно-белая альтернатива без знака.']) +
     '<div class="as-wrap as-vis as-up"><div class="as-cmp">' + ['c1', 'c2', 'c3'].map(function (id) {
       var c = C[id];
-      return '<a href="#' + id + '" style="background:' + c.bg + ';color:' + (id === 'c3' ? 'var(--ink)' : '#fff') + '"><span><img src="' + svg(c.mark) + '" alt="" loading="lazy"></span><b>' + c.name + '</b></a>';
+      return '<a href="#' + id + '" style="background:' + (id === 'c1' ? 'var(--soft)' : c.bg) + ';color:' + (id === 'c2' ? '#fff' : 'var(--ink)') + '"><span><img src="' + svg(c.mark) + '" alt="" loading="lazy"></span><b>' + c.name + '</b></a>';
     }).join('') + '</div></div>' +
     '<div class="as-wrap as-vis"><div class="as-tx as-up"><h2 class="as-h2">что дальше</h2><div><p class="as-p">' + T('Ждем обратную связь одним документом: все замечания и правки списком. Дальше выбираем концепцию и раскрываем ее на носителях следующего этапа.') + '</p>' +
     '<p class="as-p">' + T('Спасибо за просмотр.') + '</p></div></div></div></section>');
@@ -321,7 +321,7 @@
   });
 
   // шапка: текущий раздел, цвет под фон; кнопка наверх
-  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-cover.c1,.as-cover.c2,.as-glass'), links = $$('.as-top nav a'), marks = ['brief', 'c1', 'c2', 'c3', 'sum'].map(function (id) { return document.getElementById(id); });
+  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-cover.c2,.as-glass'), links = $$('.as-top nav a'), marks = ['brief', 'c1', 'c2', 'c3', 'sum'].map(function (id) { return document.getElementById(id); });
   function onScroll() {
     var cur = -1;
     marks.forEach(function (m, i) { if (m && m.getBoundingClientRect().top < innerHeight * .45) cur = i; });

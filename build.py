@@ -39,16 +39,23 @@ block = ('<!-- АРМИЯ СПОРТА, ПЕРВЫЙ ЭТАП. Страница 
     + skel + '\n'
     '<div id="as"></div>\n'
     "<script>(function(){if(window.AS_LOADING)return;window.AS_LOADING=1;\n"
-    "var R='https://cdn.jsdelivr.net/gh/kupdasha/army-sport@',K='as-sha',got=0,last='';\n"
-    "try{last=localStorage.getItem(K)||''}catch(e){}\n"
+    "var R='https://cdn.jsdelivr.net/gh/kupdasha/army-sport@',got=0,left=3;\n"
     # стили, шрифт и код — по номеру версии; код подключается после стилей, чтобы страница не мигнула без оформления
-    "function load(s){if(got)return;got=1;var b=R+(s||'main')+'/';window.AS_BASE=b;if(s)try{localStorage.setItem(K,s)}catch(e){}\n"
+    "function load(s){if(got)return;got=1;var b=R+(s||'main')+'/';window.AS_BASE=b;\n"
     "var f=document.createElement('link');f.rel='preload';f.as='font';f.type='font/woff2';f.crossOrigin='';f.href=b+'fonts/GolosText-500-cyrillic.woff2';document.head.appendChild(f);\n"
     "var l=document.createElement('link');l.rel='stylesheet';l.href=b+'as.css';\n"
     "l.onload=l.onerror=function(){var j=document.createElement('script');j.src=b+'as.js';document.head.appendChild(j)};document.head.appendChild(l)}\n"
-    # номер свежей версии — у GitHub; не ответил за 2,5 с — номер, который помнит браузер, иначе main
-    "var x=new XMLHttpRequest();x.open('GET','https://api.github.com/repos/kupdasha/army-sport/commits/main');x.setRequestHeader('Accept','application/vnd.github.sha');x.timeout=2500;\n"
-    "x.onload=function(){var s=(x.status==200&&x.responseText||'').trim();load(/^[0-9a-f]{40}$/.test(s)?s:last)};x.onerror=x.ontimeout=function(){load(last)};x.send()})()</script>")
+    # номер свежей версии спрашиваем сразу у трех источников, берем первый ответ: воркер kup-version (читает git напрямую,
+    # без лимита), служебная ветка version на GitHub (пишет publish.sh) и GitHub API (60 запросов в час с адреса).
+    # Никто не ответил за 3 с — берем main с jsDelivr (его кеш publish.sh сбрасывает). Запомненный номер не используем:
+    # так страница не застревает на старой версии
+    "function sha(t){t=(t||'').trim();return /^[0-9a-f]{40}$/.test(t)?t:''}\n"
+    "function done(s){left--;if(got)return;if(s)load(s);else if(!left)load('')}\n"
+    "function ask(u,h){var x=new XMLHttpRequest();x.open('GET',u);if(h)x.setRequestHeader('Accept',h);x.timeout=3000;\n"
+    "x.onload=function(){done(x.status==200?sha(x.responseText):'')};x.onerror=x.ontimeout=function(){done('')};x.send()}\n"
+    "ask('https://kup-version.kupdaria26.workers.dev/?repo=army-sport');\n"
+    "ask('https://raw.githubusercontent.com/kupdasha/army-sport/version/version.txt?t='+Date.now());\n"
+    "ask('https://api.github.com/repos/kupdasha/army-sport/commits/main','application/vnd.github.sha')})()</script>")
 
 with open(os.path.join(HERE, 'tilda-block.txt'), 'w', encoding='utf-8') as f:
     f.write(block + '\n')

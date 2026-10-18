@@ -95,10 +95,11 @@
 
 /* ---------- обложка концепции ---------- */
 .as-cover{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:96px 0 clamp(24px,4vw,56px);overflow:hidden;margin-top:clamp(96px,12vw,200px)}
-.as-cover.c1{background:var(--red);color:#fff}
+.as-cover.c1 .mark img{object-position:center 40%}
+.as-cover.c1{background:#fff;color:var(--ink)}
 .as-cover.c2{background:linear-gradient(180deg,#080000 0%,#07003F 48%,#0044FF 100%);color:#fff}
 .as-cover.c3{background:var(--soft);color:var(--ink)}
-.as-cover .mark{flex:1;position:relative;min-height:38vh;margin:clamp(24px,4vw,64px) 0}
+.as-cover .mark{flex:1;position:relative;min-height:36vh;margin:clamp(24px,4vw,64px) 0 clamp(56px,10vh,120px)}
 .as-cover .mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .as-cover .foot{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:24px;align-items:end}
 .as-cover .foot .as-h1{font-size:min(clamp(40px,5.4vw,104px),11vw);hyphens:none}
