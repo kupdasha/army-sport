@@ -86,7 +86,7 @@
   function sys(bands) {
     return '<div class="as-sys">' + bands.map(function (b) {
       var cols = b.files.map(function (f) { return Math.pow(R[f] || 1, .62).toFixed(3) + 'fr'; }).join(' ');
-      return '<div class="band" style="background:' + (b.bg || '#fff') + ';grid-template-columns:' + cols + '">' +
+      return '<div class="band' + (b.bg ? ' dark' : '') + '" style="background:' + (b.bg || '#fff') + ';grid-template-columns:' + cols + '">' +
         b.files.map(function (f) { return '<img src="' + svg(f) + '" alt="" loading="lazy">'; }).join('') + '</div>';
     }).join('') + '</div>';
   }

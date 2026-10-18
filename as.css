@@ -131,7 +131,8 @@
 
 /* ---------- система знака: все варианты разом ---------- */
 .as-sys{display:grid;gap:clamp(8px,1vw,16px)}
-.as-sys .band{padding-left:0!important;padding-right:0!important;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1fr) minmax(0,.62fr);align-items:center;gap:clamp(28px,4.4vw,80px);padding:clamp(40px,6vw,104px) clamp(24px,4.4vw,80px)}
+.as-sys .band:not(.dark){padding-left:0;padding-right:0}
+.as-sys .band{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1fr) minmax(0,.62fr);align-items:center;gap:clamp(28px,4.4vw,80px);padding:clamp(40px,6vw,104px) clamp(24px,4.4vw,80px)}
 .as-sys .band img{width:100%;height:auto}
 .as-sys .band.desc{grid-template-columns:minmax(0,1.6fr) minmax(0,2fr) minmax(0,1fr) minmax(0,.58fr)}
 .as-word{display:grid;gap:clamp(56px,8vw,140px);padding:clamp(24px,4vw,64px) 0}
