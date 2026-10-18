@@ -72,12 +72,13 @@
       '<div><img src="' + svg(C[id].main) + '" alt="Знак, который предлагаем" loading="lazy"><b>предлагаем</b></div></div>';
   }
   // откуда звезда и прописные: эмблема ЦСКА с отметками → наш знак с теми же отметками
-  function heritage(id, caps) {
+  function heritage(id, caps, fromOld) {
     var marks = function (star, text) {
       return '<svg class="marks" viewBox="0 0 100 100" preserveAspectRatio="none"><ellipse class="m" cx="' + star[0] + '" cy="' + star[1] + '" rx="' + star[2] + '" ry="' + star[3] + '"/>' +
         (text ? '<line class="m" x1="' + text[0] + '" y1="' + text[1] + '" x2="' + text[2] + '" y2="' + text[3] + '"/>' : '') + '</svg>';
     };
-    return '<div class="as-herit"><div class="side"><img src="' + svg('p-cska-fight') + '" alt="Эмблема ЦСКА Единоборства" loading="lazy">' + marks([50, 11, 19, 14], caps ? [20, 50, 80, 50] : null) + '</div>' +
+    var left = fromOld ? '<img class="old" src="' + IMG + 'old-logo.webp" alt="Знак сейчас" loading="lazy">' + marks([50, 44, 22, 20], null) : '<img src="' + svg('p-cska-fight') + '" alt="Эмблема ЦСКА Единоборства" loading="lazy">' + marks([50, 11, 19, 14], caps ? [20, 50, 80, 50] : null);
+    return '<div class="as-herit"><div class="side">' + left + '</div>' +
       '<div class="arrow" aria-hidden="true"></div>' +
       '<div class="side"><img src="' + svg(C[id].main) + '" alt="" loading="lazy">' + marks(id === 'c1' ? [50, 26, 44, 32] : [50, 26, 36, 31], caps ? [4, 102, 96, 102] : null) + '</div></div>';
   }
@@ -225,7 +226,7 @@
   // ---------- вторая: рассвет ----------
   h.push(sec('c2', 'знак сейчас и знак, который предлагаем', ['Форма знака остается, красный уходит: красная звезда отсылает к Красной армии. Одноцветный знак работает сам по себе, в том числе на одежде.'], wasNow('c2')));
   h.push(cover('c2', 'Черный и синий, красный — только в мелочах. Острый шрифт и зеркало, в котором каждый видит себя.'));
-  h.push(sec('c2-herit', 'звезда — от ЦСКА', ['В эмблеме главного партнера — звезда. Новый знак ее сохраняет, поэтому рядом с ЦСКА выглядит как свой.'], heritage('c2', false)));
+  h.push(sec('c2-herit', 'звезда — от прошлого знака', ['Звезда остается от нынешнего знака, ее узнают. Шрифт — такой же рубленый, как в сегодняшней эмблеме ЦСКА Единоборства, поэтому рядом с партнером знак выглядит как свой.'], heritage('c2', false, true)));
   h.push(sec('c2-logo', 'одноцветный знак', ['Основная версия — на белом, на синем градиенте знак белый.'], sys([
     { files: ['c2-logo-h', 'c2-logo-top', 'c2-logo-2', 'c2-logo-v'] },
     { files: ['c2-mono-h', 'c2-mono-top', 'c2-mono-2', 'c2-mono-v'], bg: 'linear-gradient(180deg,#080000,#07003F 50%,#0044FF)' }

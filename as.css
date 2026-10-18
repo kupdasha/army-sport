@@ -99,7 +99,7 @@
 .as-cover.c1 .mark img{object-position:center 40%}
 .as-cover.c1{background:#fff;color:var(--ink)}
 .as-cover.c2{background:linear-gradient(180deg,#080000 0%,#07003F 48%,#0044FF 100%);color:#fff}
-.as-cover.c3{background:var(--soft);color:var(--ink)}
+.as-cover.c3{background:#fff;color:var(--ink)}
 .as-cover .mark{flex:1;position:relative;min-height:36vh;margin:clamp(24px,4vw,64px) 0 clamp(56px,10vh,120px)}
 .as-cover .mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .as-cover .foot{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:24px;align-items:end}
@@ -113,7 +113,8 @@
 .as-wasnow img{position:absolute;inset:16% 18% 22%;margin:auto;width:auto;height:auto;max-width:64%;max-height:62%}
 .as-wasnow b{position:absolute;left:clamp(16px,2vw,28px);bottom:clamp(14px,1.8vw,24px);font-weight:500;font-size:clamp(18px,1.4vw,22px);letter-spacing:-.01em}
 .as-herit{display:grid;grid-template-columns:minmax(0,1fr) clamp(56px,8vw,120px) minmax(0,1fr);align-items:center;gap:clamp(8px,1vw,16px)}
-.as-herit .side{position:relative;aspect-ratio:1;background:var(--soft)}
+.as-herit .side{position:relative;aspect-ratio:1;background:#fff}
+.as-herit .side img.old{max-width:52%;max-height:52%}
 .as-herit .side img{position:absolute;inset:14%;margin:auto;width:auto;height:auto;max-width:72%;max-height:72%}
 .as-herit .marks{position:absolute;inset:14%;width:72%;height:72%;overflow:visible}
 .as-herit .m{fill:none;stroke:var(--red);stroke-width:2;vector-effect:non-scaling-stroke;stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.6s var(--ease)}
@@ -149,9 +150,9 @@
 .as-type img{width:100%;height:auto}
 
 /* ---------- кобрендинг и пресс-волл ---------- */
-.as-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:clamp(20px,4vw,72px);padding:clamp(48px,7vw,112px) clamp(24px,4vw,72px);background:var(--soft)}
+.as-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:clamp(20px,4vw,72px);padding:clamp(48px,7vw,112px) 0;background:#fff}
 .as-row img{width:100%;height:clamp(60px,8vw,140px);object-fit:contain}
-.as-wall{position:relative;height:clamp(420px,58vw,820px);overflow:hidden;background:var(--soft);margin-top:clamp(8px,1vw,16px)}
+.as-wall{position:relative;height:clamp(420px,58vw,820px);overflow:hidden;background:#fff;margin-top:clamp(8px,1vw,16px);border-top:1px solid var(--line)}
 .as-wall .tile{position:absolute;top:0;left:0;display:grid;grid-template-columns:repeat(var(--n),var(--cw));grid-auto-rows:var(--ch);animation:as-pan 48s linear infinite}
 .as-wall .tile img{width:60%;height:60%;object-fit:contain;place-self:center}
 @keyframes as-pan{to{transform:translateX(calc(var(--cw) * -6))}}
@@ -159,7 +160,7 @@
 /* ---------- иконка ---------- */
 .as-app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,16px);align-items:stretch}
 .as-app>*{min-height:0}
-.as-phonebox{position:relative;overflow:hidden;aspect-ratio:1.78;padding-top:6%;background:var(--soft)}
+.as-phonebox{position:relative;overflow:hidden;aspect-ratio:1.78;padding-top:6%;background:#fff}
 .as-phone{width:66%;margin:0 auto;aspect-ratio:1364/2962;border-radius:13%/6%;padding:3.2%;background:#0A0A0C;box-shadow:0 0 0 2px #2A2B30}
 .as-screen{position:relative;width:100%;height:100%;border-radius:11%/5.2%;overflow:hidden;background:linear-gradient(180deg,#E7F1FF,#888BAD);container-type:inline-size}
 .as-screen .isl{position:absolute;top:2.2%;left:50%;width:31%;height:3.6%;transform:translateX(-50%);background:#000;border-radius:99px}
@@ -171,7 +172,7 @@
 .as-a span{font-size:3cqw;line-height:1;color:#111;white-space:nowrap}
 .as-a.me i{transform:scale(0);transition:transform .7s cubic-bezier(.3,1.5,.5,1)}
 .as-a.me.on i{transform:none}
-.as-tabbox{position:relative;background:var(--soft);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(28px,4vw,56px);padding:clamp(24px,4vw,64px)}
+.as-tabbox{position:relative;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(28px,4vw,56px);padding:clamp(24px,4vw,64px)}
 .as-bigicon{width:clamp(120px,15vw,220px);aspect-ratio:1;border-radius:23%;overflow:hidden;box-shadow:0 20px 44px -18px rgba(0,0,0,.3)}
 .as-bigicon img{width:100%;height:100%;object-fit:cover}
 .as-browser{width:min(100%,460px);background:#fff;border-radius:14px;box-shadow:0 20px 44px -18px rgba(0,0,0,.3);overflow:hidden}
