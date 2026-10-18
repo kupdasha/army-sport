@@ -242,9 +242,11 @@
   h.push(sec('c2-site', 'первый экран сайта', ['Рассвет на весь экран, ролик — внутри звезды.'], site('c2')));
   h.push(sec('c2-coin', 'в спорте есть место каждому', ['На лицевой стороне — руки спортсменов, которые держат друг друга. На обороте — зеркальный знак: в нем каждый видит себя. Зеркало играет на серебре, золотая версия — опционально. Название — на гурте.'],
     pair3d('coin_mirror', 'c2-coin-a', '20deg 80deg auto', focus(['c2-coin-a', 'c2-coin-b', 'c2-coin-c']) + ph('c2-coin', { cls: 'contain soft', zoom: false }), true)));
-  h.push(sec('c2-wall', 'каждый может больше', ['В зале — зеркала со знаком: человек видит себя и понимает, что речь о нем. Зеркало показывает каждого без отбора и само становится фотозоной.'],
-    '<div class="as-col">' + '<div class="s12">' + mirror(ph('c2-wall')) + '</div>' + '<div class="s6 m12">' + mirror('<div class="as-posters">' + ['c2-poster-e', 'c2-poster-c', 'c2-poster-d', 'c2-poster-a', 'c2-poster-b'].map(function (p, k) { return ph(p, { cls: k ? '' : 'cur', zoom: false }); }).join('') + '</div>') + '</div>' +
-    '<div class="s6">' + mirror(ph('c2-mirror-a')) + '</div></div>'));
+  h.push(sec('c2-wall', 'каждый может больше', ['В зале — зеркала со знаком: человек видит себя и понимает, что речь о нем. Зеркало показывает каждого без отбора и само становится фотозоной. Стены можно собирать из динамичных паттернов и совмещать их с серебром и зеркалом — это черновые эскизы.'],
+    '<div class="as-col">' + '<div class="s12">' + mirror(ph('c2-wall')) + '</div>' +
+    ['c2-poster-e', 'c2-poster-c', 'c2-poster-d'].map(function (p) { return '<div class="s4">' + mirror(ph(p)) + '</div>'; }).join('') +
+    ['c2-poster-a', 'c2-poster-b'].map(function (p) { return '<div class="s6">' + mirror(ph(p)) + '</div>'; }).join('') +
+    '<div class="s6">' + mirror(ph('c2-mirror-a')) + '</div><div class="s6">' + mirror(ph('c2-mirror-b')) + '</div></div>'));
   h.push(sec('c2-award', 'победитель в отражении', ['Три места — как обычно, а зеркальная деталь отражает победителя. За выемку слева награду удобно держать и наклонять для фото. Наклон вправо вверх — про рост.'],
     pair3d('stela', 'c2-award-stack', '', ph('c2-award-man') + ph('c2-award-row', { cls: 'soft' }))));
   h.push(sec('c2-wear', 'форма и экипировка', ['Черная форма книзу переходит в синий, знак на ней белый. На поло и экипировке логотип небольшой.'],
