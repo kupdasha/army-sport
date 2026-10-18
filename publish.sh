@@ -9,7 +9,7 @@ git commit -q -m "${1:-Обновление}" || echo "нечего коммит
 git push -q origin main || exit 1
 sha=$(git rev-parse HEAD)
 # по новому номеру jsDelivr первый раз собирает файлы несколько секунд — запрашиваем их заранее
-{ echo as.css; echo as.js; ls fonts/*.woff2; ls img/*.svg; } | xargs -P 8 -I{} curl -s -o /dev/null --max-time 60 "https://cdn.jsdelivr.net/gh/kupdasha/army-sport@$sha/{}"
+{ echo as.css; echo as.js; ls fonts/*.woff2; ls img/*.svg img/*-under*.webp img/*-over*.webp img/promo*; } | xargs -P 8 -I{} curl -s -o /dev/null --max-time 60 "https://cdn.jsdelivr.net/gh/kupdasha/army-sport@$sha/{}"
 # запасной путь (main) — один сброс кеша на публикацию
 for f in as.css as.js; do curl -s -o /dev/null "https://purge.jsdelivr.net/gh/kupdasha/army-sport@main/$f"; done
 echo "опубликовано: ${sha:0:7}"

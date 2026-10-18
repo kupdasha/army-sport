@@ -13,7 +13,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок (ширина к высоте) — место под картинку занято сразу, страница не прыгает при загрузке
-  var R = {'c1-art-a':1.7752,'c1-art-b':1.777,'c1-art-c':1.7801,'c1-award-man':1.7778,'c1-award-row':2.5862,'c1-award-stack':0.9992,'c1-coin-a':1.4684,'c1-coin-b':1.4684,'c1-coin-side':1.0034,'c1-coin':1,'c1-fighter':1,'c1-keys-b':1.7786,'c1-keys-flat':1.5598,'c1-labels':3.334,'c1-polo-a':0.7998,'c1-polo-b':0.8005,'c1-polo-c':1.0678,'c1-site':1.6,'c1-slides-2':1,'c1-slides':1,'c1-tee-back':0.7998,'c1-tee-front':0.7998,'c1-wall-a':1.7778,'c1-wall-b':1.7778,'c1-wear-a':1,'c1-wear-b':1,'c1-wear-c':1.0008,'c2-award-man':1.7778,'c2-award-row':2.5862,'c2-award-stack':1.075,'c2-coin-a':0.9174,'c2-coin-b':0.9174,'c2-coin-c':0.9174,'c2-coin':0.9819,'c2-keys-a':1,'c2-keys-b':0.9992,'c2-keys-flat':1.5598,'c2-mirror-a':0.9609,'c2-mirror-b':0.9593,'c2-poster-a':1,'c2-poster-b':1,'c2-poster-c':1,'c2-poster-d':1,'c2-poster-e':1,'c2-site':1.6,'c2-slides-2':1,'c2-slides':1,'c2-tee-b':0.7504,'c2-wall':1.772,'c2-wear-a':1,'c2-wear-b':1,'c2-wear-c':1,'c2-wear-d':1,'c3-site':1.6,'c3-tee-back':0.7998,'c3-tee-front':0.7998,'old-site':1.7181,'old-story':0.5619,'old-tg':1.526,'old-vk':1.4671,'old-yt':1.6994};
+  var R = {'c1-art-a':1.7752,'c1-art-b':1.777,'c1-art-c':1.7801,'c1-award-man':1.7778,'c1-award-row':2.5862,'c1-award-stack':0.9992,'c1-coin-a':1.4684,'c1-coin-b':1.4684,'c1-coin-side':1.0034,'c1-coin':1,'c1-fighter':1,'c1-keys-b':1.7786,'c1-keys-flat':1.5598,'c1-labels':3.334,'c1-polo-a':0.7998,'c1-polo-b':0.8005,'c1-polo-c':1.0678,'c1-slides-2':1,'c1-slides':1,'c1-tee-back':0.7998,'c1-tee-front':0.7998,'c1-wall-a':1.7778,'c1-wall-b':1.7778,'c1-wear-a':1,'c1-wear-b':1,'c1-wear-c':1.0008,'c2-award-man':1.7778,'c2-award-row':2.5862,'c2-award-stack':1.075,'c2-coin-a':0.9174,'c2-coin-b':0.9174,'c2-coin-c':0.9174,'c2-coin':0.9819,'c2-keys-a':1,'c2-keys-b':0.9992,'c2-keys-flat':1.5598,'c2-mirror-a':0.9609,'c2-mirror-b':0.9593,'c2-poster-a':1,'c2-poster-b':1,'c2-poster-c':1,'c2-poster-d':1,'c2-poster-e':1,'c2-slides-2':1,'c2-slides':1,'c2-tee-b':0.7504,'c2-wall':1.772,'c2-wear-a':1,'c2-wear-b':1,'c2-wear-c':1,'c2-wear-d':1,'c3-tee-back':0.7998,'c3-tee-front':0.7998,'old-site':1.7181,'old-story':0.5619,'old-tg':1.526,'old-vk':1.4671,'old-yt':1.6994};
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
   function nb(t) {
@@ -69,15 +69,15 @@
     { id: 'c1', tab: 'первая', dot: 'var(--red)', name: 'преемственность',
       lead: 'Звезда и «А», которые уже знают, в собранном виде: красный сверху, синий снизу',
       band: { bg: '#F4F4F5', logo: 'c1-logo-v' }, co: 'c1-co', icon: IMG + 'c1-icon.webp',
-      font: 'Арк', siteImg: 'c1-site' },
+      font: 'Арк' },
     { id: 'c2', tab: 'вторая', dot: 'var(--blue2)', name: 'движение',
       lead: 'Звезда и «А» без красного. Острый шрифт, синий рассвет и зеркало, в котором каждый видит себя',
       band: { bg: 'linear-gradient(180deg,#080000,#0044FF)', logo: 'c2-mono-v' }, co: 'c2-co', icon: svg('c2-icon'),
-      font: 'Хромиус', siteImg: 'c2-site' },
+      font: 'Хромиус' },
     { id: 'c3', tab: 'альтернатива', dot: 'var(--ink)', name: 'только слово',
       lead: 'Без знака и без привязки к ЦСКА: название строчными, как у цифровых продуктов',
       band: { bg: '#F4F4F5', logo: 'c3-logo-2' }, co: 'c3-co', icon: svg('c3-icon'),
-      font: 'Энджин', siteImg: 'c3-site' }
+      font: 'Энджин' }
   ];
 
   // ====================================================================================
@@ -181,9 +181,34 @@
       '<div class="as-browser"><div class="tab"><img src="' + c.icon + '" alt="" loading="lazy"><span>' + (c.id === 'c3' ? 'армия спорта' : 'Армия спорта') + '</span></div><div class="url">armiya-sporta.ru</div></div></div></div>');
   }
 
+  // экраны сайта: подложка и верхние слои — из макета, в месте фото играет промо-ролик с той же обрезкой, что в Фигме
+  // (у первой и альтернативы — полоса и фон, черно-белые, как фото в макете; у второй — внутри звезды, в цвете)
+  var SITES = {
+    c1: { v: [0, 72, 1440, 568], gray: 1, t: [['Секции', 80.3, 25.6, 59, 16, 0, 'rgba(10,10,10,1)', 'L'], ['Турниры', 171.4, 25.6, 69, 16, 0, 'rgba(10,10,10,1)', 'L'], ['Трансляции', 273.3, 25.6, 95, 16, 0, 'rgba(10,10,10,1)', 'L'], ['Новости', 400.3, 25.6, 67, 16, 0, 'rgba(10,10,10,1)', 'L'], ['Войти', 1313.3, 25.6, 47, 16, 0, 'rgba(10,10,10,1)', 'R'], ['Секции и турниры по единоборствам рядом с домом', 482.3, 773.6, 476, 18, 0, 'rgba(92,92,92,1)', 'C'], ['Найти секцию', 556.1, 833.6, 115, 16, 1, '#fff', 'C'], ['Смотреть ролик', 752.8, 833.6, 133, 16, 1, 'rgba(10,10,10,1)', 'L']] },
+    c2: { v: [92, 20, 1350, 993], m: [640, 36, 923.6, 903], t: [['Секции', 514.4, 22, 59, 16, 0, '#fff', 'L'], ['Турниры', 613.6, 22, 69, 16, 0, '#fff', 'L'], ['Трансляции', 723.4, 22, 95, 16, 0, '#fff', 'L'], ['Новости', 858.5, 22, 67, 16, 0, '#fff', 'L'], ['Войти', 1313, 22, 47, 16, 0, '#fff', 'R'], ['Секции и турниры по единоборствам рядом с домом', 80, 754, 476, 18, 0, 'rgba(255,255,255,.85)', 'L'], ['Найти секцию', 103.7, 822, 115, 16, 1, 'rgba(7,1,1,1)', 'C'], ['Смотреть ролик', 302.5, 822, 133, 16, 1, '#fff', 'L']] },
+    c3: { v: [0, 64, 1440, 836], gray: 1, t: [['секции', 514.4, 22, 57, 16, 0, 'rgba(10,10,10,1)', 'L'], ['турниры', 613.6, 22, 68, 16, 0, 'rgba(10,10,10,1)', 'L'], ['трансляции', 723.4, 22, 94, 16, 0, 'rgba(10,10,10,1)', 'L'], ['новости', 858.5, 22, 65, 16, 0, 'rgba(10,10,10,1)', 'L'], ['войти', 1314, 22, 46, 16, 0, 'rgba(10,10,10,1)', 'R'], ['секции и турниры по единоборствам рядом с домом', 80, 750, 473, 18, 0, 'rgba(255,255,255,.85)', 'L'], ['найти секцию', 133.2, 813, 113, 16, 1, '#fff', 'C'], ['смотреть ролик', 333, 813, 131, 16, 1, '#fff', 'L']] }
+  };
+  function pct(v, W) { return (v / W * 100).toFixed(3) + '%'; }
   function site(c, text) {
+    var d = SITES[c.id], v = d.v, box, vid;
+    var video = '<video muted loop playsinline preload="none" poster="' + IMG + 'promo.webp"' + (d.gray ? ' class="gray"' : '') + '></video>';
+    if (d.m) {
+      var m = d.m;
+      vid = '<div class="vid star" style="left:' + pct(m[0], 1440) + ';top:' + pct(m[1], 900) + ';width:' + pct(m[2], 1440) + ';height:' + pct(m[3], 900) + ';-webkit-mask-image:url(' + svg('c2-star') + ');mask-image:url(' + svg('c2-star') + ')">' +
+        '<div style="position:absolute;left:' + pct(v[0] - m[0], m[2]) + ';top:' + pct(v[1] - m[1], m[3]) + ';width:' + pct(v[2], m[2]) + ';height:' + pct(v[3], m[3]) + '">' + video + '</div></div>';
+    } else vid = '<div class="vid" style="left:' + pct(v[0], 1440) + ';top:' + pct(v[1], 900) + ';width:' + pct(v[2], 1440) + ';height:' + pct(v[3], 900) + '">' + video + '</div>';
+    var txt = d.t.map(function (t) {
+      var st = 'top:' + pct(t[2], 900) + ';font-size:' + (t[4] / 14.4).toFixed(3) + 'cqw;color:' + t[6] + (t[5] ? ';font-weight:500' : '');
+      if (t[7] === 'R') st += ';right:' + pct(1440 - t[1] - t[3], 1440) + ';text-align:right';
+      else if (t[7] === 'C') st += ';left:' + pct(t[1], 1440) + ';width:' + pct(t[3], 1440) + ';text-align:center';
+      else st += ';left:' + pct(t[1], 1440);
+      return '<span style="' + st + '">' + esc(t[0]) + '</span>';
+    }).join('');
+    box = '<div class="as-scr">' + '<img class="lay" src="' + IMG + c.id + '-under-s.webp" srcset="' + IMG + c.id + '-under-s.webp 1080w, ' + IMG + c.id + '-under.webp 2160w" sizes="(max-width:640px) 100vw, 66vw" alt="" loading="lazy">' +
+      vid + '<img class="lay" src="' + IMG + c.id + '-over-s.webp" srcset="' + IMG + c.id + '-over-s.webp 1080w, ' + IMG + c.id + '-over.webp 2160w" sizes="(max-width:640px) 100vw, 66vw" alt="Первый экран сайта" loading="lazy">' +
+      '<div class="txt">' + txt + '</div></div>';
     return chapter(c.id + '-site', side('сайт', 'первый экран', text),
-      '<div class="as-site"><div class="chrome"><i></i><i></i><i></i><span>armiya-sporta.ru</span></div>' + ph(c.siteImg, { style: 'background:#fff', sizes: '(max-width:640px) 100vw, 66vw' }) + '</div>');
+      '<div class="as-site"><div class="chrome"><i></i><i></i><i></i><span>armiya-sporta.ru</span></div>' + box + '</div>');
   }
 
   function award3d(poster, model, alt) {
@@ -226,7 +251,7 @@
       fig('c1-labels', '', { cls: 'c6' }) + '</div>') +
     chapter('c1-keys', side('брелоки', 'под любой турнир', ['Белый, прозрачный и черный пластик. Надписи меняются под слоган, линию или турнир']),
       '<div class="as-col">' + fig('c1-keys-flat', '', { cls: 'c6', style: 'background:#fff' }) + fig('c1-keys-b', '', { cls: 'c6' }) + '</div>') +
-    site(c1, ['Слоган крупно, знак в центре шапки']) +
+    site(c1, ['Знак в центре шапки, под роликом — слоган в цветах знака']) +
     '</div></section>');
 
   // ---------- вторая ----------
@@ -261,7 +286,7 @@
       fig('c2-slides', '', { cls: 'c3' }) + fig('c2-slides-2', '', { cls: 'c3' }) + '</div>') +
     chapter('c2-keys', side('брелоки', 'зеркальное серебро', ['Брелоки из зеркального серебра, надписи — под слоган, линию или турнир']),
       '<div class="as-col">' + fig('c2-keys-a', '', { cls: 'c3' }) + fig('c2-keys-b', '', { cls: 'c3' }) + fig('c2-keys-flat', '', { cls: 'c6', style: 'background:#fff' }) + '</div>') +
-    site(c2, ['Рассвет на весь экран, слоган крупно']) +
+    site(c2, ['Рассвет на весь экран, ролик — внутри звезды']) +
     '</div></section>');
 
   // ---------- альтернатива ----------
@@ -276,7 +301,7 @@
     chapter('c3-wear', side('футболки', 'тихо и современно', ['Название мелко на груди, звезда — у воротника']),
       '<div class="as-grid as-g2">' + ph('c3-tee-front') + ph('c3-tee-back') + '</div>') +
     appChapter(c3, 'звезда остается в иконке', ['В маленьком размере слово не читается, поэтому в иконке и фавиконе — звезда']) +
-    site(c3, ['Слово в шапке, слоган строчными']) +
+    site(c3, ['Ролик на весь экран, слоган строчными']) +
     '</div></section>');
 
   // ---------- три пути рядом ----------
@@ -630,6 +655,18 @@
     })(t0);
     return function () { run = false; var e = gl.getExtension('WEBGL_lose_context'); if (e) e.loseContext(); };
   }
+
+  // ---------- промо-ролик в экранах сайта ----------
+  var vio = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        if (!v.src) v.src = IMG + (innerWidth < 700 ? 'promo-s.mp4' : 'promo.mp4');
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      } else if (v.src) v.pause();
+    });
+  }, { rootMargin: '200px 0px' });
+  $$('.as-scr video').forEach(function (v) { if (!reduce) vio.observe(v); });
 
   // ---------- крупно по нажатию ----------
   var lb = $('.as-lb'), lbImg = $('img', lb);
