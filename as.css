@@ -115,7 +115,7 @@
 /* ---------- сейчас → предлагаем ---------- */
 .as-wasnow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
 .as-wasnow>div{position:relative;aspect-ratio:1.25;background:#fff}
-.as-wasnow>div:first-child img{max-width:46%;max-height:46%}
+.as-wasnow>div:first-child img{max-width:60%;max-height:60%}
 .as-wasnow img{position:absolute;inset:16% 18% 22%;margin:auto;width:auto;height:auto;max-width:64%;max-height:62%}
 .as-wasnow b{position:absolute;left:clamp(16px,2vw,28px);bottom:clamp(14px,1.8vw,24px);font-weight:500;font-size:clamp(18px,1.4vw,22px);letter-spacing:-.01em}
 .as-herit{display:grid;grid-template-columns:minmax(0,1fr) clamp(56px,8vw,120px) minmax(0,1fr);align-items:center;gap:clamp(8px,1vw,16px)}
@@ -167,8 +167,8 @@
 /* ---------- иконка ---------- */
 .as-app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,16px);align-items:stretch}
 .as-app>*{min-height:0}
-.as-phonebox{position:relative;overflow:hidden;aspect-ratio:1.78;padding-top:6%;background:#fff}
-.as-phone{width:66%;margin:0 auto;aspect-ratio:1364/2962;border-radius:13%/6%;padding:3.2%;background:#0A0A0C;box-shadow:0 0 0 2px #2A2B30}
+.as-phonebox{position:relative;overflow:hidden;aspect-ratio:1.3;padding-top:6%;background:#fff}
+.as-phone{width:92%;margin:0 auto;aspect-ratio:1364/2962;border-radius:13%/6%;padding:3.2%;background:#0A0A0C;box-shadow:0 0 0 2px #2A2B30}
 .as-screen{position:relative;width:100%;height:100%;border-radius:11%/5.2%;overflow:hidden;background:linear-gradient(180deg,#E7F1FF,#888BAD);container-type:inline-size}
 .as-screen .isl{position:absolute;top:2.2%;left:50%;width:31%;height:3.6%;transform:translateX(-50%);background:#000;border-radius:99px}
 .as-screen .time{position:absolute;top:2.5%;left:10%;font-weight:500;font-size:5.6cqw;color:#111}
@@ -202,6 +202,7 @@
 /* ---------- монета, награды: 3D сразу, рендеры рядом ---------- */
 .as-3dpair{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(8px,1vw,16px)}
 .as-3dpair.big{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.as-3d:not(.ready) .hand{opacity:0}
 .as-3d .hand{position:absolute;left:0;right:0;bottom:clamp(16px,3vw,40px);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink);pointer-events:none;transition:opacity .4s;z-index:2}
 .as-3d .hand svg{width:clamp(64px,7vw,96px);height:auto;animation:as-hand 2.2s ease-in-out infinite}
 .as-3d .hand::after{content:"потяните, чтобы покрутить";font:500 16px/1 var(--font)}
