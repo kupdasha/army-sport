@@ -75,6 +75,7 @@
 .as-brief{margin-top:clamp(40px,5vw,80px)}
 .as-brief>.as-vis{margin-top:clamp(72px,9vw,140px)}
 .as-brief .as-list{margin-top:clamp(32px,4vw,56px)}
+.as-brief .as-who{margin-top:clamp(32px,4vw,56px)}
 
 /* ---------- картинки и скелет ---------- */
 .as-ph{position:relative;overflow:hidden;background:var(--soft)}
@@ -152,7 +153,7 @@
 /* ---------- кобрендинг и пресс-волл ---------- */
 .as-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:clamp(20px,4vw,72px);padding:clamp(48px,7vw,112px) 0;background:#fff}
 .as-row img{width:100%;height:clamp(60px,8vw,140px);object-fit:contain}
-.as-wall{position:relative;height:clamp(420px,58vw,820px);overflow:hidden;background:#fff;margin-top:clamp(8px,1vw,16px);border-top:1px solid var(--line)}
+.as-wall{position:relative;height:clamp(420px,58vw,820px);overflow:hidden;background:#fff;margin-top:clamp(8px,1vw,16px)}
 .as-wall .tile{position:absolute;top:0;left:0;display:grid;grid-template-columns:repeat(var(--n),var(--cw));grid-auto-rows:var(--ch);animation:as-pan 48s linear infinite}
 .as-wall .tile img{width:60%;height:60%;object-fit:contain;place-self:center}
 @keyframes as-pan{to{transform:translateX(calc(var(--cw) * -6))}}
