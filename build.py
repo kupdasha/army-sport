@@ -3,8 +3,32 @@
 # В блоке — скелет загрузки (виден сразу, кусок берется из index.html между <!-- скелет --> и <!-- /скелет -->)
 # и загрузчик: узнает номер последней версии у GitHub и подключает as.css и as.js с jsDelivr по этому номеру.
 # Блок вставляется в Тильду один раз: тексты, картинки и код потом обновляются через ./publish.sh, без перевставки.
-import os
+import os, re, json
 HERE = os.path.dirname(os.path.abspath(__file__))
+
+# пропорции картинок и знаков (ширина к высоте) — в as.js между /*RATIOS*/ и /*/RATIOS*/
+def ratios():
+    from PIL import Image
+    out = {}
+    d = os.path.join(HERE, 'img')
+    for f in sorted(os.listdir(d)):
+        n, ext = os.path.splitext(f)
+        if n.endswith('-s') or n.startswith('app-'):
+            continue
+        if ext == '.webp':
+            w, h = Image.open(os.path.join(d, f)).size
+        elif ext == '.svg':
+            m = re.search(r'width="([\d.]+)" height="([\d.]+)"', open(os.path.join(d, f), encoding='utf-8').read(2000))
+            if not m: continue
+            w, h = float(m.group(1)), float(m.group(2))
+        else:
+            continue
+        out[n] = round(w / h, 4)
+    return out
+js_path = os.path.join(HERE, 'as.js')
+js = open(js_path, encoding='utf-8').read()
+js = re.sub(r'/\*RATIOS\*/.*?/\*/RATIOS\*/', lambda m: '/*RATIOS*/' + json.dumps(ratios(), separators=(',', ':')) + '/*/RATIOS*/', js, flags=re.S)
+open(js_path, 'w', encoding='utf-8').write(js)
 src = open(os.path.join(HERE, 'index.html'), encoding='utf-8').read()
 skel = src.split('<!-- скелет -->')[1].split('<!-- /скелет -->')[0].strip()
 
