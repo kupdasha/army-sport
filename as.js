@@ -14,7 +14,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок — место занято сразу, страница не прыгает (заполняет build.py)
-  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":1.0745,"c1-tee-front":1.1119,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":0.9992,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-hl":1.4331,"old-ig":1.4305,"old-logo":1.0292,"old-site":1.7181,"old-story":0.5619,"old-tg":1.526,"old-vk":1.4671,"old-yt":1.6994,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
+  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-print-1":0.8339,"c1-print-2":0.8304,"c1-print-3":0.8304,"c1-print-4":0.8339,"c1-print-5":0.8339,"c1-print-6":0.8304,"c1-print-7":0.8304,"c1-print-8":0.8339,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":0.8,"c1-tee-front":0.8,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":1.0,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-grid":1.4988,"old-ig-profile":1.6738,"old-logo":1.0292,"old-site2":1.7442,"old-story2":0.5622,"old-vk-hl":1.3268,"old-vk2":1.4305,"old-yt2":1.4646,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
   function nb(t) {
@@ -167,7 +167,7 @@
   }
   // разделитель между идеями: черная полоса во всю ширину
   function divide(id, n) {
-    return '<section class="as-divide" id="' + id + '" data-slide><div class="as-wrap"><span>' + n + '</span><h2 class="as-h1">' + T(C[id].name) + '</h2></div></section>';
+    return '<section class="as-divide" id="' + id + '" data-slide style="--sb:' + ({ c1: .065, c2: .065, c3: .015 })[id] + '"><div class="as-wrap"><span>' + n + '</span><h2 class="as-h1">' + T(C[id].name) + '</h2></div></section>';
   }
   // картинки в ряд одной высоты: ширина по пропорциям
   function fit(items) {
@@ -197,7 +197,7 @@
     '<p class="as-p">' + T('«Армия спорта» — цифровая платформа, которая объединяет спорт России. Сейчас фокус — единоборства, дальше другие виды спорта, включая «эстетические», и детские направления. «Армия» здесь про объединение людей, а не про военную тему.') + '</p>' +
     '<p class="as-p">' + T('Задача первого этапа — две концепции логотипа с подходом по шрифтам, показанные на носителях и в связке с партнерскими логотипами.') + '</p>' +
     '<button type="button" class="as-btn as-toggle" aria-expanded="false" data-open="свернуть бриф">раскрыть бриф</button></div></div>' +
-    '<div class="as-wrap as-vis as-up"><div class="as-was">' + ph('old-site') + fit([['old-vk', ph('old-vk')], ['old-ig', ph('old-ig')]]) + fit([['old-yt', ph('old-yt')], ['old-tg', ph('old-tg')]]) + fit([['old-ig-hl', ph('old-ig-hl')], ['old-icon', ph('old-icon')], ['old-story', ph('old-story')]]) + '</div></div>' +
+    '<div class="as-wrap as-vis as-up"><div class="as-was">' + fit([['old-site2', ph('old-site2')], ['old-story2', ph('old-story2')]]) + fit([['old-yt2', ph('old-yt2')], ['old-vk2', ph('old-vk2')], ['old-vk-hl', ph('old-vk-hl')]]) + fit([['old-ig-profile', ph('old-ig-profile')], ['old-ig-grid', ph('old-ig-grid')], ['old-icon', ph('old-icon')]]) + '</div></div>' +
     '<div class="as-brief" hidden>' +
     '<p class="as-army as-vis as-up">' + T('«армия» — это не') + ' <s>' + T('военная тема') + '</s>, ' + T('а объединение людей') + '</p>' +
     bl('логотип: основа', [
@@ -253,22 +253,22 @@
   ])));
   h.push(sec('c1-color', 'белый и красный', ['Основа — белый фон, красный по возможности стоит сверху. Синий и черный — акценты.'],
     palette([['#FFFFFF', 2.2, 'белый', '#121314'], ['#E71E26', 2.2, 'красный E71E26'], ['#1B43B2', .7, 'синий 1B43B2'], ['#080000', .7, 'черный']])));
-  h.push(sec('c1-co', 'рядом с партнерами не теряется', ['Знак проверен рядом с ЦСКА Единоборства, ФСБР и Динамо. **У всех трех названия набраны прописными — этот прием перешел в новый знак, поэтому в одном ряду с ними он выглядит как свой.**'], cobrand('c1-co')));
+  h.push(sec('c1-co', 'рядом с партнерами не теряется', ['Знак проверен рядом с ЦСКА Единоборства, ФСБР и Динамо. У большинства названия набраны прописными — этот прием перешел в новый знак.'], cobrand('c1-co')));
   h.push(sec('c1-font', 'шрифт', [], typeBlock('arc')));
-  h.push(sec('c1-app', 'звезда без надписи', ['В маленьком размере работает одна звезда: ее видно среди чужих иконок на телефоне и во вкладке браузера.'], app('c1')));
+  h.push(sec('c1-app', 'иконка и фавикон', [], app('c1')));
   h.push(sec('c1-site', 'пример экрана сайта', [], site('c1')));
   h.push(sec('c1-coin', 'все виды спорта на одной монете', ['На обороте — дисциплины, которые объединит платформа: от борьбы и бокса до гимнастики и парусного спорта. Название идет по гурту.'],
     pair3d('coin_gold', 'c1-coin', '20deg 80deg auto', ph('c1-coin-side', { cls: 'contain soft' }) + '<div class="as-grid as-g2">' + ph('c1-coin-a', { cls: 'contain soft', zoom: false }) + ph('c1-coin-b', { cls: 'contain soft', zoom: false }) + '</div>')));
   h.push(sec('c1-wall', 'у каждого зала свой сюжет', ['На стенах — иллюстрации под вид спорта, которым занимаются в этом зале.'],
     '<div class="as-col">' + cell('s12', 'c1-wall-a') + cell('s4', 'c1-art-a') + cell('s4', 'c1-art-b') + cell('s4', 'c1-art-c') + cell('s12', 'c1-wall-b') + '</div>'));
-  h.push(sec('c1-award', 'тяжелое основание, легкая звезда', ['Ступени из слоев пластика с зеркальным напылением: на видео они играют светом, на фото выглядят мощно, в руке остаются легкими.'],
+  h.push(sec('c1-award', 'награда', ['Ступени из слоев пластика с зеркальным напылением: на видео они играют светом, на фото выглядят мощно, в руке остаются легкими.'],
     pair3d('cubok', 'c1-award-stack', '', ph('c1-award-man') + ph('c1-award-row', { cls: 'soft' }))));
   h.push(sec('c1-wear', 'форма и экипировка', ['Основной фон стиля белый, но белая форма непрактична — она черная. Шлепанцы с логотипом носят все борцы в зале и раздевалке, их стоит брендировать.'],
     '<div class="as-col">' + cell('s6', 'c1-fighter') + cell('s6', 'c1-wear-c') + cell('s4', 'c1-wear-a') + cell('s4', 'c1-wear-b') + cell('s4', 'c1-slides') + '</div>'));
   h.push(sec('c1-polo', 'поло для тренеров', ['Силиконовый логотип и надписи. Красный заливкой встречается редко, чтобы не было ассоциаций с Красной армией, — но тренеров в зале должно быть видно сразу. Поэтому цвет яркий, а логотип и название — тихие.'],
     '<div class="as-col">' + cell('s4', 'c1-polo-a') + cell('s4', 'c1-polo-b') + cell('s4', 'c1-polo-c') + '</div>'));
   h.push(sec('c1-tee', 'турнирный мерч', ['Футболка конкретного турнира с датой и городом. Ее берут «потому что был там» — это самый продаваемый формат у единоборств. Фирменный шрифт еще предстоит приобрести, поэтому концепты пока на стандартных шрифтах.'],
-    '<div class="as-tees"><div class="a">' + ph('c1-tee-back', { cls: 'contain' }) + '</div><div class="b">' + ph('c1-tee-front', { cls: 'contain' }) + '</div><div class="c">' + ph('c1-labels') + '</div></div>'));
+    '<div class="as-col">' + cell('s6', 'c1-tee-back') + cell('s6', 'c1-tee-front') + '</div><div class="as-prints">' + [1, 2, 3, 4, 5, 6, 7, 8].map(function (i) { return ph('c1-print-' + i); }).join('') + '</div>'));
   h.push(sec('c1-keys', 'брелоки под любой турнир', ['Белый, прозрачный и черный пластик — под разные слоганы, линейки и события.'],
     keyTags() + '<div class="as-grid as-g2" style="margin-top:clamp(8px,1vw,16px)">' + ph('c1-keys-a') + ph('c1-keys-b') + '</div>'));
 
@@ -537,17 +537,17 @@
     fetch(IMG + 'c2-wall-text.svg').then(function (r) { return r.text(); }).then(function (txt) {
       var paths = (txt.match(/<path [^>]*\/>/g) || []).join('').replace(/fill-rule/g, 'clip-rule');
       box.insertAdjacentHTML('beforeend', '<svg class="mt" viewBox="0 0 2720 1536" preserveAspectRatio="none" aria-hidden="true"><defs>' +
+        '<linearGradient id="mtChrome" gradientUnits="userSpaceOnUse" x1="760" y1="420" x2="1260" y2="900" spreadMethod="reflect">' +
+        [[0, '#596068'], [.16, '#e9edf2'], [.3, '#8e959e'], [.44, '#ffffff'], [.56, '#b7bdc5'], [.7, '#4f555d'], [.84, '#d9dee4'], [1, '#727982']].map(function (s) { return '<stop offset="' + s[0] + '" stop-color="' + s[1] + '"/>'; }).join('') + '</linearGradient>' +
         '<pattern id="mtSilver" patternUnits="userSpaceOnUse" x="700" y="380" width="1400" height="933"><image href="' + IMG + 'c2-silver.webp" width="1400" height="933" preserveAspectRatio="none"/></pattern>' +
-        '<linearGradient id="mtGlow" gradientUnits="userSpaceOnUse" x1="700" y1="400" x2="1100" y2="800"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
         '<clipPath id="mtClip">' + paths + '</clipPath></defs>' +
-        '<g clip-path="url(#mtClip)"><rect class="tex" x="0" y="0" width="2720" height="1536" fill="url(#mtSilver)"/><rect class="glow" x="0" y="0" width="2720" height="1536" fill="url(#mtGlow)"/></g></svg>');
-      var pat = $('#mtSilver', box), grad = $('#mtGlow', box), cur = 0, goal = 0, raf = 0;
+        '<g clip-path="url(#mtClip)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/><rect class="tex" x="0" y="0" width="2720" height="1536" fill="url(#mtSilver)" opacity=".38"/></g></svg>');
+      var grad = $('#mtChrome', box), pat = $('#mtSilver', box), cur = 0, goal = 0, raf = 0;
       function set(p) { goal = Math.max(-1, Math.min(1, p)); if (!raf) raf = requestAnimationFrame(step); }
       function step() {
-        cur += (goal - cur) * .12;
-        pat.setAttribute('x', 700 + cur * 260);
-        var gx = 1250 + cur * 900;
-        grad.setAttribute('x1', gx - 260); grad.setAttribute('x2', gx + 260); grad.setAttribute('y1', 380); grad.setAttribute('y2', 820);
+        cur += (goal - cur) * .1;
+        grad.setAttribute('gradientTransform', 'translate(' + (cur * 420) + ' ' + (cur * -60) + ')');
+        pat.setAttribute('x', 700 - cur * 120);
         raf = Math.abs(goal - cur) > .002 ? requestAnimationFrame(step) : 0;
       }
       function onScroll() { var r = box.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; set(((r.top + r.height / 2) / innerHeight - .5) * -2.4); }

@@ -209,7 +209,7 @@
 .as-glass .ph{position:absolute;left:50%;bottom:0;width:min(74vw,440px);transform:translate(-50%,105%);will-change:transform}
 .as-glass .ph .as-phone{width:100%;box-shadow:0 0 0 2px #2A2B30,0 40px 80px rgba(0,0,0,.6)}
 .as-glass .ph .as-a.me i{transform:none;background:transparent}
-.as-glass .ph .as-a.me i img{opacity:0;transform:none}
+.as-glass .ph .as-a.me i img{opacity:0}
 .as-glass .say{z-index:4;position:absolute;left:0;right:0;top:clamp(88px,12vh,140px);color:#fff;transition:opacity .4s}
 .as-glass .say .as-h2{max-width:13ch}
 
@@ -371,7 +371,9 @@
 .as-thanks{margin-top:clamp(72px,8vw,136px);background:#080000;color:#fff;min-height:80svh;display:flex;align-items:center;padding:120px 0}
 .as-thanks>.as-wrap{width:100%}
 .as-thanks h2{margin:0;font-weight:500;font-size:clamp(64px,13vw,240px);line-height:.88;letter-spacing:-.045em;max-width:9ch}
-.as-thanks + .as-foot{padding-top:clamp(40px,5vw,72px)}
+.as-thanks + .as-foot{padding-top:clamp(40px,5vw,72px);background:#080000;color:rgba(255,255,255,.6)}
+.as-thanks + .as-foot a{color:#fff}
+.as-thanks + .as-foot .in{border-color:rgba(255,255,255,.18)}
 @media (max-width:640px){.as-word .as-fit{width:100%;flex-direction:column;align-items:center}.as-word .as-fit>div:first-child{width:100%}.as-word .as-fit>div:last-child{width:52%}}
 /* знак на разных фонах одним блоком */
 .as-sw-tabs{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,40px);margin-bottom:clamp(16px,2vw,28px)}
@@ -396,4 +398,11 @@
 /* зеркальный текст на стене */
 .as-mtext{position:relative}
 .as-mtext .mt{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.as-mtext .mt{mix-blend-mode:multiply}.as-mtext .glow{opacity:.55}
+.as-mtext .tex{mix-blend-mode:overlay}
+/* принты турнирных футболок коллажом */
+.as-prints{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1vw,16px);margin-top:clamp(8px,1vw,16px)}
+@media (max-width:640px){.as-prints{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* обложка без названия: подпись слева, не висит справа одна */
+.as-cover .foot>span:empty{display:none}
+.as-cover .foot>span:empty + .as-lead{grid-column:1}
+.as-divide span{margin-left:calc(clamp(56px,11vw,210px) * var(--sb,0) - clamp(19px,1.6vw,26px) * .045)}
