@@ -472,8 +472,8 @@
 .as-cover.c2 .foot .as-lead{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease) .9s,transform 1s var(--ease) .9s}
 .as-cover.c2.in .foot .as-lead{opacity:1;transform:none}
 .as-cover.c2.in .foot .as-lead:nth-of-type(2){transition-delay:1.05s}
-.as-cover.c3 .mark img{transform:scale(var(--s,30));will-change:transform}
-.as-cover.c3.in .mark img{transform:none;transition:transform 2.4s cubic-bezier(.75,0,.15,1) .2s}
+.as-cover.c3 .mark img{transform:scale(var(--s,8))}
+.as-cover.c3.in .mark img{transform:none;transition:transform 1.7s cubic-bezier(.7,0,.2,1)}
 .as-cover.c3{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.as-cover .mark img,.as-cover .foot .as-lead{clip-path:none!important;transform:none!important;filter:none!important;opacity:1!important}}
 /* брелоки: покачивание и блик серебра */
@@ -514,3 +514,4 @@
 /* принты на телефоне и планшете: по три в ряд шахматкой, шесть штук */
 @media (max-width:1000px){.as-prints{grid-template-columns:repeat(3,minmax(0,1fr))!important}.as-prints>:nth-child(6),.as-prints>:nth-child(8){display:none}}
 @media (min-width:641px){#c2-award .as-h2{white-space:nowrap}}
+.off,.off *{animation-play-state:paused!important}

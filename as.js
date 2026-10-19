@@ -372,17 +372,17 @@
   var ioCover = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
       var c = e.target;
-      if (e.intersectionRatio >= .4 && !c.classList.contains('in')) { if (c.prep) c.prep(); void c.offsetWidth; c.classList.add('in'); }
+      if (e.intersectionRatio >= .2 && !c.classList.contains('in')) { if (c.prep) c.prep(); void c.offsetWidth; c.classList.add('in'); }
       else if (!e.isIntersecting) c.classList.remove('in');
     });
-  }, { threshold: [0, .4, .6] });
+  }, { threshold: [0, .2, .4] });
   $$('.as-cover.c2,.as-cover.c3').forEach(function (el) { ioCover.observe(el); });
   $$('.as-cover.c3 .mark img').forEach(function (img) {
     // просвет буквы «о» в «спорта»: центр 41,35 % × 71,2 %, ширина 9,9 % знака
     function prep() {
       var ew = img.clientWidth, eh = img.clientHeight, k = (img.naturalWidth / img.naturalHeight) || 1.947, cw = Math.min(ew, eh * k), ch = cw / k;
       img.style.transformOrigin = ((ew - cw) / 2 + cw * .4135).toFixed(1) + 'px ' + ((eh - ch) / 2 + ch * .712).toFixed(1) + 'px';
-      img.style.setProperty('--s', Math.min(60, Math.max(innerWidth, innerHeight) * 1.4 / (cw * .099)).toFixed(1));
+      img.style.setProperty('--s', Math.min(innerWidth < 700 ? 6 : 9, Math.max(innerWidth, innerHeight) * 1.2 / (cw * .099)).toFixed(1));
     }
     img.closest('.as-cover').prep = prep;
     if (img.complete) prep(); else img.addEventListener('load', prep);
@@ -588,9 +588,8 @@
         '<linearGradient id="mtChrome" gradientUnits="userSpaceOnUse" x1="760" y1="420" x2="1260" y2="900" spreadMethod="reflect">' +
         [[0, '#2e3238'], [.14, '#f4f6f9'], [.26, '#6f767f'], [.4, '#ffffff'], [.5, '#a9b0b9'], [.64, '#23272c'], [.8, '#e6eaef'], [1, '#4a5058']].map(function (s) { return '<stop offset="' + s[0] + '" stop-color="' + s[1] + '"/>'; }).join('') + '</linearGradient>' +
         '<pattern id="mtRoom" patternUnits="userSpaceOnUse" x="700" y="-60" width="1300" height="734"><image href="' + IMG + 'c2-reflect.webp" width="1300" height="734" preserveAspectRatio="none"/></pattern>' +
-        '<filter id="mtWave" x=".29" y=".29" width=".44" height=".25"><feTurbulence type="fractalNoise" baseFrequency=".0016 .011" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="70" xChannelSelector="R" yChannelSelector="G"/></filter>' +
         '<mask id="mtMask" maskUnits="userSpaceOnUse" x="0" y="0" width="2720" height="1536"><g fill="#fff">' + paths + '</g></mask></defs>' +
-        '<g mask="url(#mtMask)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)" filter="url(#mtWave)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
+        '<g mask="url(#mtMask)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
       var grad = $('#mtChrome', box), room = $('#mtRoom', box), cur = 0, goal = 0, raf = 0, seen = false;
       function set(p) { goal = Math.max(-1.2, Math.min(1.2, p)); }
       // отражение зала плывет само (легкая волна) и быстро догоняет курсор, прокрутку или наклон телефона
@@ -641,6 +640,10 @@
       tilt();
     }
   });
+
+  // бесконечные анимации играют только на экране
+  var ioLoop = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('off', !e.isIntersecting); }); }, { rootMargin: '100px 0px' });
+  $$('.as-wall,.as-mirror,.as-keys,.as-3d,.as-pal').forEach(function (el) { el.classList.add('off'); ioLoop.observe(el); });
 
   // постеры в зале
   $$('.as-posters').forEach(function (box) {
