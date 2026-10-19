@@ -508,3 +508,6 @@
   #c2-tee .as-fit{flex-direction:column}
   #c2-tee .as-fit>div{width:100%;flex:none!important}
 }
+@media (max-width:1000px){#c3-tee .as-grid{grid-template-columns:minmax(0,1fr)}}
+.as .as-up-btn{background:var(--ink);color:#fff;border:0}
+.as .as-up-btn.light{background:#fff;color:var(--ink)}
