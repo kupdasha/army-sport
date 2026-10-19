@@ -14,7 +14,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок — место занято сразу, страница не прыгает (заполняет build.py)
-  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-print-1":0.8286,"c1-print-2":0.825,"c1-print-3":0.825,"c1-print-4":0.8286,"c1-print-5":0.8286,"c1-print-6":0.825,"c1-print-7":0.825,"c1-print-8":0.8286,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":0.8,"c1-tee-front":0.8,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":1.0,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-reflect":1.7699,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-grid":1.4988,"old-ig-profile":1.6738,"old-logo":1.0292,"old-site2":1.7442,"old-story2":0.5622,"old-vk-hl":1.3268,"old-vk2":1.4305,"old-yt2":1.4646,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
+  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-print-1":0.8286,"c1-print-2":0.825,"c1-print-3":0.825,"c1-print-4":0.8286,"c1-print-5":0.8286,"c1-print-6":0.825,"c1-print-7":0.825,"c1-print-8":0.8286,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":0.8,"c1-tee-front":0.8,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":1.0,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-reflect":1.7699,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tag-1":0.9976,"c2-tag-2":0.9976,"c2-tag-3":1.0,"c2-tag-4":0.3224,"c2-tag-5":0.3934,"c2-tag-6":0.3934,"c2-tag-7":2.1548,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-grid":1.4988,"old-ig-profile":1.6738,"old-logo":1.0292,"old-site2":1.7442,"old-story2":0.5622,"old-vk-hl":1.3268,"old-vk2":1.4305,"old-yt2":1.4646,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
   function nb(t) {
@@ -144,10 +144,12 @@
   }
   function loupe(name) { return '<div class="as-flipper" data-loupe="1">' + ph(name, { cls: 'contain cur', zoom: false }) + '</div>'; }
   // брелоки: векторы из макета как пластиковые бирки — белый, прозрачный и черный пластик
-  function keyTags() {
+  function keyTags(silver) {
     var tags = [['key1', 'white', 1], ['key2', 'white', 1], ['key7', 'clear', 2.2], ['key4', 'black tall', .33], ['key5', 'black', .38], ['key6', 'black', .38], ['key3', 'white', 1]];
-    return '<div class="as-keys">' + tags.map(function (t) {
-      return '<div class="tag ' + t[1] + '" style="--r:' + t[2] + '"><img src="' + svg(t[0]) + '" alt="" loading="lazy"></div>';
+    return '<div class="as-keys' + (silver ? ' silver' : '') + '">' + tags.map(function (t) {
+      var src = silver ? IMG + 'c2-tag-' + t[0].slice(3) + '.webp' : svg(t[0]);
+      return '<div class="tag ' + (silver ? (t[1].indexOf('tall') >= 0 ? 'tall' : '') : t[1]) + '" style="--r:' + t[2] + '"><div class="tg"><img src="' + src + '" alt="" loading="lazy">' +
+        (silver ? '<i class="sh" style="-webkit-mask-image:url(' + src + ');mask-image:url(' + src + ')"></i>' : '') + '</div></div>';
     }).join('') + '</div>';
   }
 
@@ -274,7 +276,7 @@
 
   // ---------- вторая: рассвет ----------
   h.push(divide('c2', 'идея вторая'));
-  h.push(sec('c2-was', 'знак сейчас и новый знак', ['Красный цвет отсылает к Красной армии, поэтому здесь от него уходим. Знак в один цвет работает сам по себе, в том числе на одежде.'], wasNow('c2')));
+  h.push(sec('c2-was', 'знак сейчас и новый знак', ['Красный цвет отсылает к Красной армии, поэтому здесь от него уходим. Знак — звезда или солнце, которое на рассвете поднимается из-за горизонта.'], wasNow('c2')));
   h.push(cover('c2', ['Яркий синий — про цифровое и современное.', 'Светлое внизу, как небо на рассвете.']));
   h.push(sec('c2-logo', 'одноцветный знак', ['Основная версия — на белом, на синем градиенте знак белый.'], sysSwitch([
     { files: ['c2-logo-h', 'c2-logo-top', 'c2-logo-2', 'c2-logo-v'], label: 'на белом' },
@@ -304,7 +306,7 @@
   h.push(sec('c2-tee', 'турнирный мерч', [],
     fit([['c2-tee-a', ph('c2-tee-a')], ['c2-tee-b', ph('c2-tee-b')]])));
   h.push(sec('c2-keys', 'брелки', ['Тот же материал, что у монеты, — под любые слоганы и турниры.'],
-    '<div class="as-col">' + cell('s6', 'c2-keys-a') + cell('s6', 'c2-keys-b') + cell('s12', 'c2-keys-flat', { cls: 'soft' }) + '</div>'));
+    keyTags(true) + '<div class="as-grid as-g2" style="margin-top:clamp(8px,1vw,16px)">' + ph('c2-keys-a') + ph('c2-keys-b') + '</div>'));
 
   // ---------- альтернатива: черно-белая ----------
   h.push(divide('c3', 'идея третья, альтернатива'));
@@ -367,9 +369,19 @@
   $$('.as-up,.as-army,.as-herit,.as-divide').forEach(function (el) { io.observe(el); });
   // обложки с новым знаком: анимация, когда обложка видна почти целиком
   var ioCover = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ioCover.unobserve(e.target); } });
-  }, { threshold: .45 });
+    es.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); else if (e.intersectionRatio === 0) e.target.classList.remove('in'); });
+  }, { threshold: [0, .45] });
   $$('.as-cover.c2,.as-cover.c3').forEach(function (el) { ioCover.observe(el); });
+  $$('.as-cover.c3 .mark img').forEach(function (img) {
+    // просвет буквы «о» в «спорта»: центр 41,35 % × 71,2 %, ширина 9,9 % знака
+    function prep() {
+      var ew = img.clientWidth, eh = img.clientHeight, k = (img.naturalWidth / img.naturalHeight) || 1.947, cw = Math.min(ew, eh * k), ch = cw / k;
+      img.style.transformOrigin = ((ew - cw) / 2 + cw * .4135).toFixed(1) + 'px ' + ((eh - ch) / 2 + ch * .712).toFixed(1) + 'px';
+      img.style.setProperty('--s', Math.min(60, Math.max(innerWidth, innerHeight) * 1.4 / (cw * .099)).toFixed(1));
+    }
+    if (img.complete) prep(); else img.addEventListener('load', prep);
+    addEventListener('resize', prep);
+  });
 
   // задача: раскрыть и свернуть
   $$('.as-toggle').forEach(function (b) {
@@ -582,6 +594,19 @@
       addEventListener('deviceorientation', function (e) { if (e.gamma != null) set(e.gamma / 25); });
       onScroll();
     }).catch(function () {});
+  });
+
+  // брелоки: микроповороты за курсором или пальцем, блик на серебре
+  $$('.as-keys').forEach(function (box) {
+    var tags = $$('.tag', box);
+    function move(x, y) {
+      tags.forEach(function (t) {
+        var r = t.getBoundingClientRect(), dx = Math.max(-1, Math.min(1, (x - r.left - r.width / 2) / r.width)), dy = Math.max(-1, Math.min(1, (y - r.top - r.height / 2) / r.height));
+        t.style.setProperty('--ry', (dx * 18).toFixed(1) + 'deg'); t.style.setProperty('--rx', (-dy * 14).toFixed(1) + 'deg'); t.style.setProperty('--sx', (50 + dx * 60).toFixed(0) + '%');
+      });
+    }
+    box.addEventListener('pointermove', function (e) { box.classList.add('live'); move(e.clientX, e.clientY); });
+    box.addEventListener('pointerleave', function () { box.classList.remove('live'); tags.forEach(function (t) { t.style.removeProperty('--ry'); t.style.removeProperty('--rx'); t.style.removeProperty('--sx'); }); });
   });
 
   // постеры в зале
