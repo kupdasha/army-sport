@@ -317,7 +317,7 @@
   h.push(sec('c3-font', 'шрифт', [], typeBlock('engine')));
   h.push(sec('c3-app', 'звезда остается в иконке', ['Слово мелко не читается, поэтому в иконке и во вкладке браузера — звезда (отсылка к прежнему знаку ради преемственности; в остальном она только мелкий штрих).'], app('c3')));
   h.push(sec('c3-site', 'пример экрана сайта', [], site('c3')));
-  h.push(sec('c3-tokens', 'жетоны вместо монеты', ['В этой концепции вместо монеты сувениром становятся жетоны из переработанного пластика с переливами: пятна переходят и на гурт. На лицевой стороне логотип выпуклый, на обороте — вдавленный.'],
+  h.push(sec('c3-tokens', 'жетоны вместо монеты', ['В этой концепции вместо монеты сувениром становятся жетоны из переработанного пластика с переливами, пятна заходят на гурт. На лицевой стороне логотип выпуклый, на обороте — вдавленный.'],
     '<div class="as-tokens">' + [['token_white', 'ink'], ['token_black', 'paper']].map(function (t) {
       return '<div class="as-3d ' + t[1] + '" data-model="' + t[0] + '" data-orbit="15deg 80deg 4.6m"><div class="sk"></div><div class="hand" aria-hidden="true">' + ICON.hand + '</div></div>';
     }).join('') + '</div>'));
@@ -364,7 +364,7 @@
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
-  $$('.as-up,.as-army,.as-herit').forEach(function (el) { io.observe(el); });
+  $$('.as-up,.as-army,.as-herit,.as-divide').forEach(function (el) { io.observe(el); });
 
   // задача: раскрыть и свернуть
   $$('.as-toggle').forEach(function (b) {
@@ -505,7 +505,7 @@
       bands.forEach(function (b, i) { b.classList.toggle('on', i === j); });
       if (t) { void tabs[j].offsetWidth; tabs[j].classList.add('run'); }
     }
-    function start() { if (t || reduce) return; t = setInterval(function () { show((k + 1) % bands.length); }, 3600); show(k); }
+    function start() { if (t || reduce) return; t = setInterval(function () { show((k + 1) % bands.length); }, 2200); show(k); }
     function stop() { clearInterval(t); t = null; tabs.forEach(function (b) { b.classList.remove('run'); }); }
     tabs.forEach(function (b, i) { b.addEventListener('click', function () { stop(); show(i); start(); }); });
     new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: .3 }).observe(w);
@@ -550,14 +550,14 @@
   // зеркальный текст на стене: серебро переливается от курсора, прокрутки и наклона телефона
   $$('.as-mtext').forEach(function (box) {
     fetch(IMG + 'c2-wall-text.svg').then(function (r) { return r.text(); }).then(function (txt) {
-      var paths = (txt.match(/<path [^>]*\/>/g) || []).join('').replace(/fill-rule/g, 'clip-rule');
+      var paths = (txt.match(/<path [^>]*\/>/g) || []).join('');
       box.insertAdjacentHTML('beforeend', '<svg class="mt" viewBox="0 0 2720 1536" preserveAspectRatio="none" aria-hidden="true"><defs>' +
         '<linearGradient id="mtChrome" gradientUnits="userSpaceOnUse" x1="760" y1="420" x2="1260" y2="900" spreadMethod="reflect">' +
-        [[0, '#596068'], [.16, '#e9edf2'], [.3, '#8e959e'], [.44, '#ffffff'], [.56, '#b7bdc5'], [.7, '#4f555d'], [.84, '#d9dee4'], [1, '#727982']].map(function (s) { return '<stop offset="' + s[0] + '" stop-color="' + s[1] + '"/>'; }).join('') + '</linearGradient>' +
+        [[0, '#2e3238'], [.14, '#f4f6f9'], [.26, '#6f767f'], [.4, '#ffffff'], [.5, '#a9b0b9'], [.64, '#23272c'], [.8, '#e6eaef'], [1, '#4a5058']].map(function (s) { return '<stop offset="' + s[0] + '" stop-color="' + s[1] + '"/>'; }).join('') + '</linearGradient>' +
         '<pattern id="mtRoom" patternUnits="userSpaceOnUse" x="700" y="-60" width="1300" height="734"><image href="' + IMG + 'c2-reflect.webp" width="1300" height="734" preserveAspectRatio="none"/></pattern>' +
         '<filter id="mtWave" x=".29" y=".29" width=".44" height=".25"><feTurbulence type="fractalNoise" baseFrequency=".0016 .011" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="70" xChannelSelector="R" yChannelSelector="G"/></filter>' +
-        '<clipPath id="mtClip">' + paths + '</clipPath></defs>' +
-        '<g clip-path="url(#mtClip)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)" filter="url(#mtWave)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
+        '<mask id="mtMask" maskUnits="userSpaceOnUse" x="0" y="0" width="2720" height="1536"><g fill="#fff">' + paths + '</g></mask></defs>' +
+        '<g mask="url(#mtMask)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)" filter="url(#mtWave)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
       var grad = $('#mtChrome', box), room = $('#mtRoom', box), cur = 0, goal = 0, raf = 0, seen = false;
       function set(p) { goal = Math.max(-1.2, Math.min(1.2, p)); }
       // отражение зала плывет само (легкая волна) и быстро догоняет курсор, прокрутку или наклон телефона
