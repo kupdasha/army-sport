@@ -236,8 +236,8 @@
 .as-flipper{position:relative;aspect-ratio:1;background:#fff}
 .as-flipper .as-ph{position:absolute;inset:6%;background:transparent}
 .as-focus{position:relative;aspect-ratio:1;background:#fff;cursor:pointer;overflow:hidden}
-.as-focus .as-ph{position:absolute;inset:6%;background:transparent;opacity:0;filter:blur(14px);transform:scale(1.04);transition:opacity 1.3s var(--ease),filter 1.3s var(--ease),transform 1.3s var(--ease)}
-.as-focus .as-ph.cur{opacity:1;filter:blur(0);transform:none}
+.as-focus .as-ph{position:absolute;inset:6%;background:transparent;opacity:0;transition:opacity 1.4s ease-in-out}
+.as-focus .as-ph.cur{opacity:1}
 .as-ph.soft{background:#fff}
 .as-loupe{position:absolute;width:40%;aspect-ratio:1;border-radius:50%;pointer-events:none;box-shadow:0 0 0 3px #fff,0 18px 40px -10px rgba(0,0,0,.45);background-repeat:no-repeat;opacity:0;transition:opacity .3s;z-index:2}
 .as-loupe.on{opacity:1}
