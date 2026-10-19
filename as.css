@@ -515,3 +515,4 @@
 @media (max-width:1000px){.as-prints{grid-template-columns:repeat(3,minmax(0,1fr))!important}.as-prints>:nth-child(6),.as-prints>:nth-child(8){display:none}}
 @media (min-width:641px){#c2-award .as-h2{white-space:nowrap}}
 .off,.off *{animation-play-state:paused!important}
+@media (max-width:1000px){#c1-coin .as-renders{grid-template-columns:minmax(0,1fr)}}
