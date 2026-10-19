@@ -468,13 +468,13 @@
 /* стена: без наезда при наведении — серебряный текст лежит поверх картинки */
 #c2-wall .as-ph img,#c2-wall .as-vis.in .as-ph:hover img{transform:none!important}
 /* первое появление знака: рассвет поднимается снизу, слово набирается слева направо */
-.as-cover.c2 .mark img{clip-path:inset(0 0 70% 0);transform:translateY(70%);transition:clip-path 2.4s cubic-bezier(.22,.7,.2,1) .15s,transform 2.4s cubic-bezier(.22,.7,.2,1) .15s}
-.as-cover.c2.in .mark img{clip-path:inset(0 0 0 0);transform:none}
+.as-cover.c2 .mark img{clip-path:inset(0 0 70% 0);transform:translateY(70%)}
+.as-cover.c2.in .mark img{clip-path:inset(0 0 0 0);transform:none;transition:clip-path 2.4s cubic-bezier(.22,.7,.2,1) .15s,transform 2.4s cubic-bezier(.22,.7,.2,1) .15s}
 .as-cover.c2 .foot .as-lead{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease) .9s,transform 1s var(--ease) .9s}
 .as-cover.c2.in .foot .as-lead{opacity:1;transform:none}
 .as-cover.c2.in .foot .as-lead:nth-of-type(2){transition-delay:1.05s}
-.as-cover.c3 .mark img{transform:scale(var(--s,30));transition:transform 2.4s cubic-bezier(.75,0,.15,1) .2s;will-change:transform}
-.as-cover.c3.in .mark img{transform:none}
+.as-cover.c3 .mark img{transform:scale(var(--s,30));will-change:transform}
+.as-cover.c3.in .mark img{transform:none;transition:transform 2.4s cubic-bezier(.75,0,.15,1) .2s}
 .as-cover.c3{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.as-cover .mark img,.as-cover .foot .as-lead{clip-path:none!important;transform:none!important;filter:none!important;opacity:1!important}}
 /* брелоки: покачивание и блик серебра */
