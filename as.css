@@ -71,11 +71,11 @@
 .as-trio b{position:absolute;left:clamp(16px,2vw,28px);bottom:clamp(14px,1.8vw,24px);font-weight:500;font-size:clamp(18px,1.4vw,22px);letter-spacing:-.01em}
 
 /* ---------- главы ---------- */
-.as-sec{padding-top:clamp(72px,8vw,136px)}
+.as-sec{padding-top:clamp(112px,12vw,200px)}
 .as-tx{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:28px;align-items:start}
 .as-tx .as-h2{max-width:none}
 .as-tx>div>.as-p:first-child{margin-top:.35em}
-.as-vis{margin-top:clamp(40px,5vw,80px)}
+.as-vis{margin-top:clamp(28px,3.2vw,56px)}
 .as-brief{margin-top:clamp(24px,3vw,48px)}
 .as-brief>.as-vis{margin-top:clamp(72px,9vw,140px)}
 .as-brief .as-list{margin-top:clamp(32px,4vw,56px)}
@@ -161,7 +161,7 @@
 @keyframes as-dawn{from{transform:translateY(25%);opacity:.4}to{transform:translateY(0);opacity:1}}
 
 /* ---------- шрифт ---------- */
-.as-type{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,96px);align-items:center;padding:clamp(24px,4vw,56px) 0}
+.as-type{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(32px,5vw,96px);align-items:center;padding:0 0 clamp(8px,1vw,16px)}
 .as-type .name{font-weight:500;font-size:clamp(56px,6.4vw,120px);line-height:.9;letter-spacing:-.04em;margin-bottom:28px;overflow-wrap:anywhere}
 .as-type img{width:100%;height:auto}
 .as-type{container-type:inline-size}
@@ -413,3 +413,11 @@
 .as-task .as-was{gap:clamp(6px,.7vw,10px)}
 .as-task .as-was .as-fit{gap:clamp(6px,.7vw,10px)}
 @media (max-width:1000px){.as-task{grid-template-columns:minmax(0,1fr)}}
+/* жетоны: белый на графите, черный на светлом */
+.as-tokens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.as-tokens .as-3d.ink{background:#151515}
+.as-tokens .as-3d.paper{background:#E3E4E7}
+.as-tokens .as-3d.ink .hand{color:#fff}
+.as-tokens .as-3d .sk{background:rgba(255,255,255,.06)}
+.as-tokens .as-3d.paper .sk{background:rgba(0,0,0,.05)}
+@media (max-width:640px){.as-tokens{grid-template-columns:minmax(0,1fr)}}

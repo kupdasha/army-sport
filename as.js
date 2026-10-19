@@ -263,7 +263,7 @@
     '<div class="as-col">' + cell('s12', 'c1-wall-a') + cell('s4', 'c1-art-a') + cell('s4', 'c1-art-b') + cell('s4', 'c1-art-c') + cell('s12', 'c1-wall-b') + '</div>'));
   h.push(sec('c1-award', 'награда', ['Ступени из слоев пластика с зеркальным напылением: на видео они играют светом, на фото выглядят мощно, в руке остаются легкими.'],
     pair3d('cubok', 'c1-award-stack', '', ph('c1-award-man') + ph('c1-award-row', { cls: 'soft' }))));
-  h.push(sec('c1-wear', 'форма и экипировка', ['Основной фон стиля белый, но белая форма непрактична — она черная. Шлепанцы с логотипом носят все борцы в зале и раздевалке, их стоит брендировать.'],
+  h.push(sec('c1-wear', 'форма и экипировка', ['Основной фон стиля белый, но белая форма непрактична. Шлепанцы с логотипом носят все борцы в зале и раздевалке, их стоит брендировать.'],
     '<div class="as-col">' + cell('s6', 'c1-fighter') + cell('s6', 'c1-wear-c') + cell('s4', 'c1-wear-a') + cell('s4', 'c1-wear-b') + cell('s4', 'c1-slides') + '</div>'));
   h.push(sec('c1-polo', 'поло для тренеров', ['Силиконовый логотип и надписи. Красный заливкой встречается редко, чтобы не было ассоциаций с Красной армией, — но тренеров в зале должно быть видно сразу. Поэтому цвет яркий, а логотип и название — тихие.'],
     '<div class="as-col">' + cell('s4', 'c1-polo-a') + cell('s4', 'c1-polo-b') + cell('s4', 'c1-polo-c') + '</div>'));
@@ -301,15 +301,15 @@
     pair3d('stela', 'c2-award-stack', '', ph('c2-award-man') + ph('c2-award-row', { cls: 'soft' }))));
   h.push(sec('c2-wear', 'форма и экипировка', [],
     '<div class="as-col">' + cell('s6', 'c2-wear-a') + cell('s6', 'c2-wear-c') + cell('s3', 'c2-wear-b') + cell('s3', 'c2-wear-d') + cell('s3', 'c2-slides') + cell('s3', 'c2-slides-2') + '</div>'));
-  h.push(sec('c2-tee', 'турнирный мерч', ['Белый принт на черном, ткань книзу уходит в синий.'],
+  h.push(sec('c2-tee', 'турнирный мерч', [],
     fit([['c2-tee-a', ph('c2-tee-a')], ['c2-tee-b', ph('c2-tee-b')]])));
   h.push(sec('c2-keys', 'брелки', ['Тот же материал, что у монеты, — под любые слоганы и турниры.'],
     '<div class="as-col">' + cell('s6', 'c2-keys-a') + cell('s6', 'c2-keys-b') + cell('s12', 'c2-keys-flat', { cls: 'soft' }) + '</div>'));
 
   // ---------- альтернатива: черно-белая ----------
   h.push(divide('c3', 'идея третья, альтернатива'));
-  h.push('<section class="as-cover c3" data-slide><div class="as-wrap mark"><img src="' + svg('c3-logo-2') + '" alt="" loading="lazy"></div><div class="as-wrap"><div class="foot as-up"><span></span><p class="as-lead">' + T('Черное и белое, без привязки к ЦСКА, строчными — как у цифровых продуктов.') + '</p></div></div></section>');
-  h.push(sec('c3-logo', 'название строчными', ['Берем современный гротеск и пишем все строчными буквами: так выглядят цифровые продукты. Это же правило переносим на заголовки и короткие надписи во всех носителях. Графический знак убираем, как это сделал Nike. Звезда остается отсылкой к истории бренда и появляется в мелких деталях: на значках, футболках, брелоках, носках.'],
+  h.push('<section class="as-cover c3" data-slide><div class="as-wrap mark"><img src="' + svg('c3-logo-2') + '" alt="" loading="lazy"></div></section>');
+  h.push(sec('c3-logo', 'название строчными', ['Черное и белое, без привязки к ЦСКА. Берем современный гротеск и пишем все строчными буквами — так выглядят цифровые продукты. Это же правило переносим на заголовки и короткие надписи во всех носителях. Графический знак убираем, как это сделал Nike. Звезда остается отсылкой к истории бренда и появляется в мелких деталях: на значках, футболках, брелоках, носках.'],
     '<div class="as-word">' + fit([['c3-logo-h', '<img src="' + svg('c3-logo-h') + '" alt="армия спорта" loading="lazy">'], ['c3-logo-2', '<img src="' + svg('c3-logo-2') + '" alt="" loading="lazy">', R['c3-logo-2'] * 2.1]]) + '</div>'));
   h.push(sec('c3-co', 'выделяется тем, что без звезды', ['У трех логотипов из пяти есть звезды, поэтому слово без знака сразу заметно.'], cobrand('c3-co')));
   h.push(sec('c3-color', 'черное и белое', ['Красный и синий — только для акцентов.'],
@@ -317,6 +317,10 @@
   h.push(sec('c3-font', 'шрифт', [], typeBlock('engine')));
   h.push(sec('c3-app', 'звезда остается в иконке', ['Слово мелко не читается, поэтому в иконке и во вкладке браузера — звезда (отсылка к прежнему знаку ради преемственности; в остальном она только мелкий штрих).'], app('c3')));
   h.push(sec('c3-site', 'пример экрана сайта', [], site('c3')));
+  h.push(sec('c3-tokens', 'жетоны вместо монеты', ['В этой концепции вместо монеты сувениром становятся жетоны из переработанного пластика с переливами: пятна переходят и на гурт. На лицевой стороне логотип выпуклый, на обороте — вдавленный.'],
+    '<div class="as-tokens">' + [['token_white', 'ink'], ['token_black', 'paper']].map(function (t) {
+      return '<div class="as-3d ' + t[1] + '" data-model="' + t[0] + '" data-orbit="15deg 80deg 4.6m"><div class="sk"></div><div class="hand" aria-hidden="true">' + ICON.hand + '</div></div>';
+    }).join('') + '</div>'));
   h.push(sec('c3-tee', 'футболка турнира', [],
     '<div class="as-grid as-g2">' + ph('c3-tee-front') + ph('c3-tee-back') + '</div>'));
 
@@ -551,18 +555,22 @@
         '<linearGradient id="mtChrome" gradientUnits="userSpaceOnUse" x1="760" y1="420" x2="1260" y2="900" spreadMethod="reflect">' +
         [[0, '#596068'], [.16, '#e9edf2'], [.3, '#8e959e'], [.44, '#ffffff'], [.56, '#b7bdc5'], [.7, '#4f555d'], [.84, '#d9dee4'], [1, '#727982']].map(function (s) { return '<stop offset="' + s[0] + '" stop-color="' + s[1] + '"/>'; }).join('') + '</linearGradient>' +
         '<pattern id="mtRoom" patternUnits="userSpaceOnUse" x="700" y="-60" width="1300" height="734"><image href="' + IMG + 'c2-reflect.webp" width="1300" height="734" preserveAspectRatio="none"/></pattern>' +
-        '<clipPath id="mtClip">' + paths + '</clipPath><g id="mtTxt">' + paths.replace(/clip-rule/g, 'fill-rule') + '</g></defs>' +
-        '<use href="#mtTxt" fill="none" stroke="#4c525a" stroke-width="6" stroke-linejoin="round"/>' +
-        '<g clip-path="url(#mtClip)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
-      var grad = $('#mtChrome', box), room = $('#mtRoom', box), cur = 0, goal = 0, raf = 0;
-      function set(p) { goal = Math.max(-1, Math.min(1, p)); if (!raf) raf = requestAnimationFrame(step); }
-      // отражение зала сдвигается против движения, как в настоящем зеркале; поверх — легкий блик металла
-      function step() {
-        cur += (goal - cur) * .1;
-        room.setAttribute('x', 700 - cur * 180); room.setAttribute('y', -60 - cur * 70);
-        grad.setAttribute('gradientTransform', 'translate(' + (cur * 420) + ' ' + (cur * -60) + ')');
-        raf = Math.abs(goal - cur) > .002 ? requestAnimationFrame(step) : 0;
+        '<filter id="mtWave" x=".29" y=".29" width=".44" height=".25"><feTurbulence type="fractalNoise" baseFrequency=".0016 .011" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="70" xChannelSelector="R" yChannelSelector="G"/></filter>' +
+        '<clipPath id="mtClip">' + paths + '</clipPath></defs>' +
+        '<g clip-path="url(#mtClip)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)" filter="url(#mtWave)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
+      var grad = $('#mtChrome', box), room = $('#mtRoom', box), cur = 0, goal = 0, raf = 0, seen = false;
+      function set(p) { goal = Math.max(-1.2, Math.min(1.2, p)); }
+      // отражение зала плывет само (легкая волна) и быстро догоняет курсор, прокрутку или наклон телефона
+      function step(now) {
+        raf = 0; if (!seen) return;
+        var drift = reduce ? 0 : Math.sin(now / 1400) * .35 + Math.sin(now / 610) * .12;
+        cur += (goal - cur) * .22;
+        var v = cur + drift;
+        room.setAttribute('x', 700 - v * 260); room.setAttribute('y', -60 - v * 90);
+        grad.setAttribute('gradientTransform', 'translate(' + (v * 520) + ' ' + (v * -70) + ')');
+        raf = requestAnimationFrame(step);
       }
+      new IntersectionObserver(function (es) { seen = es[0].isIntersecting; if (seen && !raf) raf = requestAnimationFrame(step); }).observe(box);
       function onScroll() { var r = box.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; set(((r.top + r.height / 2) / innerHeight - .5) * -2.4); }
       box.addEventListener('pointermove', function (e) { var r = box.getBoundingClientRect(); set(((e.clientX - r.left) / r.width - .5) * 2.2); });
       addEventListener('scroll', onScroll, { passive: true });
