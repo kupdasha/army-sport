@@ -300,7 +300,7 @@
     ['c2-poster-e', 'c2-poster-c', 'c2-poster-d'].map(function (p) { return '<div class="s4">' + ph(p) + '</div>'; }).join('') +
     ['c2-poster-a', 'c2-poster-b'].map(function (p) { return '<div class="s6">' + mirror(ph(p)) + '</div>'; }).join('') +
     '<div class="s6">' + ph('c2-mirror-a') + '</div><div class="s6">' + ph('c2-mirror-b') + '</div><p class="s12 as-p as-cap">' + T('Фотозона в зеркале и стена — черновые концепты.') + '</p></div>'));
-  h.push(sec('c2-award', 'победитель в отражении', ['Три места — как обычно, а зеркальная деталь показывает того, кто держит награду.'],
+  h.push(sec('c2-award', 'победитель в отражении', [],
     pair3d('stela', 'c2-award-stack', '', ph('c2-award-man') + ph('c2-award-row', { cls: 'soft' }))));
   h.push(sec('c2-wear', 'форма и экипировка', [],
     '<div class="as-col">' + cell('s6', 'c2-wear-a') + cell('s6', 'c2-wear-c') + cell('s3', 'c2-wear-b') + cell('s3', 'c2-wear-d') + cell('s3', 'c2-slides') + cell('s3', 'c2-slides-2') + '</div>'));

@@ -513,3 +513,4 @@
 .as .as-up-btn.light{background:#fff;color:var(--ink)}
 /* принты на телефоне и планшете: по три в ряд шахматкой, шесть штук */
 @media (max-width:1000px){.as-prints{grid-template-columns:repeat(3,minmax(0,1fr))!important}.as-prints>:nth-child(6),.as-prints>:nth-child(8){display:none}}
+@media (min-width:641px){#c2-award .as-h2{white-space:nowrap}}
