@@ -67,8 +67,8 @@
   // ---------- блоки ----------
   function cover(id, lead) {
     var c = C[id];
-    if (!lead) return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div></section>';
-    return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div>' +
+    if (!lead) return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt=""></div></section>';
+    return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt=""></div>' +
       '<div class="as-wrap"><div class="foot as-up' + (Array.isArray(lead) ? ' two' : '') + '"><span></span>' + [].concat(lead).map(function (l) { return '<p class="as-lead">' + T(l) + '</p>'; }).join('') + '</div></div></section>';
   }
   // сейчас → предлагаем
@@ -308,7 +308,7 @@
 
   // ---------- альтернатива: черно-белая ----------
   h.push(divide('c3', 'идея третья, альтернатива'));
-  h.push('<section class="as-cover c3" data-slide><div class="as-wrap mark"><img src="' + svg('c3-logo-2') + '" alt="" loading="lazy"></div></section>');
+  h.push('<section class="as-cover c3" data-slide><div class="as-wrap mark"><img src="' + svg('c3-logo-2') + '" alt=""></div></section>');
   h.push(sec('c3-logo', 'название строчными', ['Черное и белое, без привязки к ЦСКА. Берем современный гротеск и пишем все строчными буквами — так выглядят цифровые продукты. Это же правило переносим на заголовки и короткие надписи во всех носителях. Графический знак убираем, как это сделал Nike. Звезда остается отсылкой к истории бренда и появляется в мелких деталях: на значках, футболках, брелоках, носках.'],
     '<div class="as-word">' + fit([['c3-logo-h', '<img src="' + svg('c3-logo-h') + '" alt="армия спорта" loading="lazy">'], ['c3-logo-2', '<img src="' + svg('c3-logo-2') + '" alt="" loading="lazy">', R['c3-logo-2'] * 2.1]]) + '</div>'));
   h.push(sec('c3-co', 'выделяется тем, что без звезды', ['У трех логотипов из пяти есть звезды, поэтому слово без знака сразу заметно.'], cobrand('c3-co')));
@@ -317,7 +317,7 @@
   h.push(sec('c3-font', 'шрифт', [], typeBlock('engine')));
   h.push(sec('c3-app', 'звезда остается в иконке', ['Слово мелко не читается, поэтому в иконке и во вкладке браузера — звезда (отсылка к прежнему знаку ради преемственности; в остальном она только мелкий штрих).'], app('c3')));
   h.push(sec('c3-site', 'пример экрана сайта', [], site('c3')));
-  h.push(sec('c3-tokens', 'жетоны вместо монеты', ['В этой концепции вместо монеты сувениром становятся жетоны из переработанного пластика с переливами, пятна заходят на гурт. На лицевой стороне логотип выпуклый, на обороте — вдавленный.'],
+  h.push(sec('c3-tokens', 'жетоны вместо монеты', ['В этой концепции вместо монеты сувениром становятся жетоны из переработанного пластика с переливами.'],
     '<div class="as-tokens">' + [['token_white', 'ink'], ['token_black', 'paper']].map(function (t) {
       return '<div class="as-3d ' + t[1] + '" data-model="' + t[0] + '" data-orbit="15deg 80deg 4.6m"><div class="sk"></div><div class="hand" aria-hidden="true">' + ICON.hand + '</div></div>';
     }).join('') + '</div>'));
@@ -365,6 +365,11 @@
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
   $$('.as-up,.as-army,.as-herit,.as-divide').forEach(function (el) { io.observe(el); });
+  // обложки с новым знаком: анимация, когда обложка видна почти целиком
+  var ioCover = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ioCover.unobserve(e.target); } });
+  }, { threshold: .45 });
+  $$('.as-cover.c2,.as-cover.c3').forEach(function (el) { ioCover.observe(el); });
 
   // задача: раскрыть и свернуть
   $$('.as-toggle').forEach(function (b) {
