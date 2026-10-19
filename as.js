@@ -14,7 +14,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок — место занято сразу, страница не прыгает (заполняет build.py)
-  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-print-1":0.8339,"c1-print-2":0.8304,"c1-print-3":0.8304,"c1-print-4":0.8339,"c1-print-5":0.8339,"c1-print-6":0.8304,"c1-print-7":0.8304,"c1-print-8":0.8339,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":0.8,"c1-tee-front":0.8,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":1.0,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-grid":1.4988,"old-ig-profile":1.6738,"old-logo":1.0292,"old-site2":1.7442,"old-story2":0.5622,"old-vk-hl":1.3268,"old-vk2":1.4305,"old-yt2":1.4646,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
+  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-print-1":0.8286,"c1-print-2":0.825,"c1-print-3":0.825,"c1-print-4":0.8286,"c1-print-5":0.8286,"c1-print-6":0.825,"c1-print-7":0.825,"c1-print-8":0.8286,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":0.8,"c1-tee-front":0.8,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":1.0,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-reflect":1.7699,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-grid":1.4988,"old-ig-profile":1.6738,"old-logo":1.0292,"old-site2":1.7442,"old-story2":0.5622,"old-vk-hl":1.3268,"old-vk2":1.4305,"old-yt2":1.4646,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
   function nb(t) {
@@ -69,7 +69,7 @@
     var c = C[id];
     if (!lead) return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div></section>';
     return '<section class="as-cover ' + id + '" data-slide><div class="as-wrap mark"><img src="' + svg(c.mark) + '" alt="" loading="lazy"></div>' +
-      '<div class="as-wrap"><div class="foot as-up"><span></span><p class="as-lead">' + T(lead) + '</p></div></div></section>';
+      '<div class="as-wrap"><div class="foot as-up' + (Array.isArray(lead) ? ' two' : '') + '"><span></span>' + [].concat(lead).map(function (l) { return '<p class="as-lead">' + T(l) + '</p>'; }).join('') + '</div></div></section>';
   }
   // сейчас → предлагаем
   function wasNow(id) {
@@ -193,11 +193,11 @@
     return '<div class="as-tx as-vis as-up"><h3 class="as-h2">' + esc(nbh(title)) + '</h3><div></div></div><ul class="as-list as-up">' +
       items.map(function (x) { return '<li><b>' + T(x[0]) + '</b><span>' + T(x[1]) + '</span></li>'; }).join('') + '</ul>';
   }
-  h.push('<section class="as-sec" id="brief" data-slide><div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">задача</h2><div>' +
+  h.push('<section class="as-sec" id="brief" data-slide><div class="as-wrap"><div class="as-task as-up"><div class="t"><h2 class="as-h2">задача</h2>' +
     '<p class="as-p">' + T('«Армия спорта» — цифровая платформа, которая объединяет спорт России. Сейчас фокус — единоборства, дальше другие виды спорта, включая «эстетические», и детские направления. «Армия» здесь про объединение людей, а не про военную тему.') + '</p>' +
     '<p class="as-p">' + T('Задача первого этапа — две концепции логотипа с подходом по шрифтам, показанные на носителях и в связке с партнерскими логотипами.') + '</p>' +
-    '<button type="button" class="as-btn as-toggle" aria-expanded="false" data-open="свернуть бриф">раскрыть бриф</button></div></div>' +
-    '<div class="as-wrap as-vis as-up"><div class="as-was">' + fit([['old-site2', ph('old-site2')], ['old-story2', ph('old-story2')]]) + fit([['old-yt2', ph('old-yt2')], ['old-vk2', ph('old-vk2')], ['old-vk-hl', ph('old-vk-hl')]]) + fit([['old-ig-profile', ph('old-ig-profile')], ['old-ig-grid', ph('old-ig-grid')], ['old-icon', ph('old-icon')]]) + '</div></div>' +
+    '<button type="button" class="as-btn as-toggle" aria-expanded="false" data-open="свернуть бриф">раскрыть бриф</button></div>' +
+    '<div class="as-was">' + fit([['old-site2', ph('old-site2')], ['old-story2', ph('old-story2')]]) + fit([['old-yt2', ph('old-yt2')], ['old-vk2', ph('old-vk2')], ['old-vk-hl', ph('old-vk-hl')]]) + fit([['old-ig-profile', ph('old-ig-profile')], ['old-ig-grid', ph('old-ig-grid')], ['old-icon', ph('old-icon')]]) + '</div></div>' +
     '<div class="as-brief" hidden>' +
     '<p class="as-army as-vis as-up">' + T('«армия» — это не') + ' <s>' + T('военная тема') + '</s>, ' + T('а объединение людей') + '</p>' +
     bl('логотип: основа', [
@@ -274,16 +274,15 @@
 
   // ---------- вторая: рассвет ----------
   h.push(divide('c2', 'идея вторая'));
-  h.push(sec('c2-was', 'знак сейчас и новый знак', ['Красный уходит: красная звезда отсылает к Красной армии. Знак в один цвет работает сам по себе, в том числе на одежде.'], wasNow('c2')));
-  h.push(cover('c2', 'Яркий синий — про цифровое и современное. Светлое внизу, как небо на рассвете.'));
-  h.push(sec('c2-herit', 'звезда — от прошлого знака', ['Звезду узнают по нынешнему знаку. Шрифт рубленый, как в эмблеме ЦСКА Единоборства, — рядом с партнером знак выглядит своим.'], heritage('c2', false, true)));
+  h.push(sec('c2-was', 'знак сейчас и новый знак', ['Красный цвет отсылает к Красной армии, поэтому здесь от него уходим. Знак в один цвет работает сам по себе, в том числе на одежде.'], wasNow('c2')));
+  h.push(cover('c2', ['Яркий синий — про цифровое и современное.', 'Светлое внизу, как небо на рассвете.']));
   h.push(sec('c2-logo', 'одноцветный знак', ['Основная версия — на белом, на синем градиенте знак белый.'], sysSwitch([
     { files: ['c2-logo-h', 'c2-logo-top', 'c2-logo-2', 'c2-logo-v'], label: 'на белом' },
     { files: ['c2-mono-h', 'c2-mono-top', 'c2-mono-2', 'c2-mono-v'], bg: 'linear-gradient(180deg,#080000,#07003F 50%,#0044FF)', label: 'на рассвете' }
   ])));
   h.push(sec('c2-color', 'синий рассвет', ['Чтобы отличиться от Спортмастера: нет красного и нет сплошной синей заливки — синий только градиентом.'],
     palette([['', 3, 'рассвет', '#fff', 'dawn'], ['#FFFFFF', 2, 'белый', '#121314'], ['#E71E26', .7, 'акценты']])));
-  h.push(sec('c2-co', 'рядом с партнерами', ['Знак не спорит с эмблемами ЦСКА, ФСБР и Динамо и не теряется ни в ряду, ни на пресс-волле.'], cobrand('c2-co')));
+  h.push(sec('c2-co', 'рядом с партнерами', ['Звезду узнают по нынешнему знаку. Шрифт рубленый, как в эмблеме ЦСКА Единоборства, — рядом с партнером знак выглядит своим.'], cobrand('c2-co')));
   h.push(sec('c2-font', 'шрифт', [], typeBlock('chromius')));
   // иконка во весь экран: стеклянная звезда, прокрутка сажает ее на место в телефоне
   h.push('<section class="as-glass" id="c2-app" data-slide><div class="stick"><canvas></canvas>' +
@@ -293,18 +292,18 @@
   h.push(sec('c2-site', 'пример экрана сайта', [], site('c2')));
   h.push(sec('c2-coin', 'в спорте есть место каждому', ['На лицевой стороне — руки спортсменов, которые поддерживают друг друга: спорт объединяет людей. На обороте знак-зеркало — в нем видишь себя вместе с теми, кто стоит рядом, независимо от ранга. «Армия спорта» ждет новые лица. Название — на ребре монеты.'],
     pair3d('coin_mirror', 'c2-coin-a', '20deg 80deg auto', focus(['c2-coin-a', 'c2-coin-b', 'c2-coin-c']), true)));
-  h.push(sec('c2-wall', 'каждый может больше', ['В зале — зеркала со знаком: человек понимает, что речь о нем. Зеркало само становится фотозоной.', 'Стены собираются из динамичных паттернов вместе с серебром.'],
+  h.push(sec('c2-wall', 'брендинг стен', ['В зале — зеркала со знаком: человек понимает, что речь о нем. Зеркало само становится фотозоной.', 'Стены собираются из динамичных паттернов вместе с серебром.'],
     '<div class="as-col">' + '<div class="s12"><div class="as-mtext">' + ph('c2-wall') + '</div></div>' +
     ['c2-poster-e', 'c2-poster-c', 'c2-poster-d'].map(function (p) { return '<div class="s4">' + ph(p) + '</div>'; }).join('') +
     ['c2-poster-a', 'c2-poster-b'].map(function (p) { return '<div class="s6">' + mirror(ph(p)) + '</div>'; }).join('') +
     '<div class="s6">' + ph('c2-mirror-a') + '</div><div class="s6">' + ph('c2-mirror-b') + '</div><p class="s12 as-p as-cap">' + T('Фотозона в зеркале и стена — черновые концепты.') + '</p></div>'));
   h.push(sec('c2-award', 'победитель в отражении', ['Три места — как обычно, а зеркальная деталь показывает того, кто держит награду.'],
     pair3d('stela', 'c2-award-stack', '', ph('c2-award-man') + ph('c2-award-row', { cls: 'soft' }))));
-  h.push(sec('c2-wear', 'форма и экипировка', ['Черная форма книзу переходит в синий, знак на ней белый и небольшой.'],
+  h.push(sec('c2-wear', 'форма и экипировка', [],
     '<div class="as-col">' + cell('s6', 'c2-wear-a') + cell('s6', 'c2-wear-c') + cell('s3', 'c2-wear-b') + cell('s3', 'c2-wear-d') + cell('s3', 'c2-slides') + cell('s3', 'c2-slides-2') + '</div>'));
   h.push(sec('c2-tee', 'турнирный мерч', ['Белый принт на черном, ткань книзу уходит в синий.'],
     fit([['c2-tee-a', ph('c2-tee-a')], ['c2-tee-b', ph('c2-tee-b')]])));
-  h.push(sec('c2-keys', 'зеркальное серебро', ['Тот же материал, что у монеты, — под любые слоганы и турниры.'],
+  h.push(sec('c2-keys', 'брелки', ['Тот же материал, что у монеты, — под любые слоганы и турниры.'],
     '<div class="as-col">' + cell('s6', 'c2-keys-a') + cell('s6', 'c2-keys-b') + cell('s12', 'c2-keys-flat', { cls: 'soft' }) + '</div>'));
 
   // ---------- альтернатива: черно-белая ----------
@@ -329,7 +328,7 @@
     }).join('') + '</div></div>' +
     '<div class="as-wrap as-vis"><div class="as-tx as-up"><h2 class="as-h2">что дальше</h2><div><p class="as-p">' + T('Обратная связь — одним документом: все замечания и правки списком. Дальше — выбор концепции и ее раскрытие на носителях следующего этапа.') + '</p></div></div></div></section>');
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
-  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, ребрендинг, первый этап</span><span>Даша Купцова, <a href="https://kupdasha.ru">kupdasha.ru</a></span></div></div></footer>');
+  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, ребрендинг, первый этап</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
   h.push('<div class="as-lb" role="dialog" aria-label="картинка крупно"><img alt=""></div>');
 
   root.innerHTML = h.join('');
@@ -508,28 +507,40 @@
     new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: .3 }).observe(w);
   });
 
-  // новая звезда вылетает из звезды внутри нынешней «А» и встает на место
+  // новая звезда вылетает из звезды внутри нынешней «А» и встает на место; повторяется при каждом возвращении к блоку
   $$('.as-wasnow.fly').forEach(function (w) {
-    var old = $('.old', w), star = $('.star', w), word = $('.word', w);
+    var old = $('.old', w), star = $('.star', w), word = $('.word', w), up = w.closest('.as-up'), busy = false, timer = 0;
     if (reduce || !star.animate) return;
     w.classList.add('wait');
-    new IntersectionObserver(function (es, o) {
-      if (!es[0].isIntersecting) return;
-      o.disconnect();
-      setTimeout(function () {
-        var a = old.getBoundingClientRect(), b = star.getBoundingClientRect();
-        // звезда в старом знаке: центр 63 % × 45 %, ширина 34 %; в новом знаке: центр 55,5 % × 26 %, ширина 78 %
-        var dx = a.left + a.width * .63 - (b.left + b.width * .555), dy = a.top + a.height * .45 - (b.top + b.height * .26), s0 = a.width * .34 / (b.width * .78);
-        star.style.transformOrigin = '55.5% 26%';
-        w.classList.remove('wait');
-        star.animate([
-          { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s0 + ') rotate(-12deg)', opacity: 0 },
-          { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s0 + ') rotate(-12deg)', opacity: 1, offset: .15 },
-          { transform: 'none', opacity: 1 }
-        ], { duration: 1700, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'backwards' });
-        word.animate([{ opacity: 0, transform: 'translateY(4%)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 1400, easing: 'ease-out', fill: 'backwards' });
-      }, 1000);
-    }, { threshold: .6 }).observe(w);
+    function play() {
+      var a = old.getBoundingClientRect(), b = star.getBoundingClientRect();
+      if (!a.width || !b.width) { timer = setTimeout(play, 200); return; }
+      busy = true;
+      // звезда в старом знаке: центр 63 % × 45 %, ширина 34 %; в новом знаке: центр 55,5 % × 26 %, ширина 78 %
+      var dx = a.left + a.width * .63 - (b.left + b.width * .555), dy = a.top + a.height * .45 - (b.top + b.height * .26), s0 = a.width * .34 / (b.width * .78);
+      star.style.transformOrigin = '55.5% 26%';
+      w.classList.remove('wait');
+      var from = 'translate(' + dx + 'px,' + dy + 'px) scale(' + s0 + ') rotate(-12deg)';
+      var an = star.animate([
+        { transform: from, opacity: 0 },
+        { transform: from, opacity: 1, offset: .18 },
+        { transform: from + ' scale(1.08)', opacity: 1, offset: .3 },
+        { transform: 'none', opacity: 1 }
+      ], { duration: 2200, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'backwards' });
+      word.animate([{ opacity: 0, transform: 'translateY(4%)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 1800, easing: 'ease-out', fill: 'backwards' });
+      an.onfinish = function () { busy = false; };
+    }
+    function arm() {
+      clearTimeout(timer);
+      var tries = 0;
+      (function wait() { if ((up && !up.classList.contains('in')) && tries++ < 40) { timer = setTimeout(wait, 100); return; } timer = setTimeout(play, 500); })();
+    }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { if (!busy) arm(); }
+        else if (!busy) { clearTimeout(timer); w.classList.add('wait'); }
+      });
+    }, { threshold: .35 }).observe(w);
   });
 
   // зеркальный текст на стене: серебро переливается от курсора, прокрутки и наклона телефона
@@ -539,15 +550,17 @@
       box.insertAdjacentHTML('beforeend', '<svg class="mt" viewBox="0 0 2720 1536" preserveAspectRatio="none" aria-hidden="true"><defs>' +
         '<linearGradient id="mtChrome" gradientUnits="userSpaceOnUse" x1="760" y1="420" x2="1260" y2="900" spreadMethod="reflect">' +
         [[0, '#596068'], [.16, '#e9edf2'], [.3, '#8e959e'], [.44, '#ffffff'], [.56, '#b7bdc5'], [.7, '#4f555d'], [.84, '#d9dee4'], [1, '#727982']].map(function (s) { return '<stop offset="' + s[0] + '" stop-color="' + s[1] + '"/>'; }).join('') + '</linearGradient>' +
-        '<pattern id="mtSilver" patternUnits="userSpaceOnUse" x="700" y="380" width="1400" height="933"><image href="' + IMG + 'c2-silver.webp" width="1400" height="933" preserveAspectRatio="none"/></pattern>' +
-        '<clipPath id="mtClip">' + paths + '</clipPath></defs>' +
-        '<g clip-path="url(#mtClip)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/><rect class="tex" x="0" y="0" width="2720" height="1536" fill="url(#mtSilver)" opacity=".38"/></g></svg>');
-      var grad = $('#mtChrome', box), pat = $('#mtSilver', box), cur = 0, goal = 0, raf = 0;
+        '<pattern id="mtRoom" patternUnits="userSpaceOnUse" x="700" y="-60" width="1300" height="734"><image href="' + IMG + 'c2-reflect.webp" width="1300" height="734" preserveAspectRatio="none"/></pattern>' +
+        '<clipPath id="mtClip">' + paths + '</clipPath><g id="mtTxt">' + paths.replace(/clip-rule/g, 'fill-rule') + '</g></defs>' +
+        '<use href="#mtTxt" fill="none" stroke="#4c525a" stroke-width="6" stroke-linejoin="round"/>' +
+        '<g clip-path="url(#mtClip)"><rect x="0" y="0" width="2720" height="1536" fill="url(#mtRoom)"/><rect class="sheen" x="0" y="0" width="2720" height="1536" fill="url(#mtChrome)"/></g></svg>');
+      var grad = $('#mtChrome', box), room = $('#mtRoom', box), cur = 0, goal = 0, raf = 0;
       function set(p) { goal = Math.max(-1, Math.min(1, p)); if (!raf) raf = requestAnimationFrame(step); }
+      // отражение зала сдвигается против движения, как в настоящем зеркале; поверх — легкий блик металла
       function step() {
         cur += (goal - cur) * .1;
+        room.setAttribute('x', 700 - cur * 180); room.setAttribute('y', -60 - cur * 70);
         grad.setAttribute('gradientTransform', 'translate(' + (cur * 420) + ' ' + (cur * -60) + ')');
-        pat.setAttribute('x', 700 - cur * 120);
         raf = Math.abs(goal - cur) > .002 ? requestAnimationFrame(step) : 0;
       }
       function onScroll() { var r = box.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; set(((r.top + r.height / 2) / innerHeight - .5) * -2.4); }
@@ -634,7 +647,7 @@
       'vec3 glass(vec2 q){float d=sdf(q);vec2 g=vec2(sign(q.x)*pow(abs(q.x),NP-1.),sign(q.y)*pow(abs(q.y),NP-1.));vec2 nd=normalize(g+1e-6);float B=.52;float s=clamp((d-(1.-B))/B,0.,.99);float slope=s/sqrt(1.-s*s);float m=min(.75*slope,2.8);vec2 base=q*mix(.8,1.,d);vec3 c;c.r=pal(field(base-nd*m)).r;c.g=pal(field(base-nd*m*1.08)).g;c.b=pal(field(base-nd*m*1.16)).b;c*=1.-.22*smoothstep(.35,.75,s)*(1.-smoothstep(.8,.97,s));return c;}' +
       'vec3 hx(float r,float g,float b){return vec3(r,g,b)/255.;}' +
       'vec3 bgGrad(float y){vec3 c0=hx(26.,66.,244.),c1=hx(19.,50.,184.),c2=hx(12.,33.,123.),c3=hx(8.,18.,62.),c4=hx(7.,7.,26.),c5=hx(6.,0.,1.);if(y<.25)return mix(c0,c1,y/.25);if(y<.5)return mix(c1,c2,(y-.25)/.25);if(y<.75)return mix(c2,c3,(y-.5)/.25);if(y<.9)return mix(c3,c4,(y-.75)/.15);return mix(c4,c5,(y-.9)/.1);}' +
-      'const float SK=.57/.6;const vec2 SOFF=vec2(.026,.018);float starA(vec2 q,float bias){vec2 st=(q-SOFF)/(2.*SK)+.5;if(st.x<0.||st.y<0.||st.x>1.||st.y>1.)return 0.;return texture2D(star,st,bias).a;}' +
+      'const float SK=1.288;const vec2 SOFF=vec2(.012,.002);float starA(vec2 q,float bias){vec2 st=(q-SOFF)/(2.*SK)+.5;if(st.x<0.||st.y<0.||st.x>1.||st.y>1.)return 0.;return texture2D(star,st,bias).a;}' +
       'void main(){vec2 uv=(gl_FragCoord.xy-.5*res)/min(res.x,res.y);float S=.30;vec2 q=uv/S;float d=sdf(q);vec3 inner=glass(q);float rim=smoothstep(.9,1.,d);inner=mix(inner,inner*1.5+.1,rim*.7);float line=exp(-pow((d-.982)/.012,2.));inner+=line*(inner*.8+.3);inner=1.-exp(-inner*1.7);float sa=starA(q,0.);float sg=starA(q,5.5);inner=mix(inner,vec3(1.),sa);inner+=sg*.18*(1.-sa);vec3 bg=bgGrad(gl_FragCoord.y/res.y);vec2 ep=q/max(d,1e-4);vec3 ec=pal(field(ep*.55));float g=max(d-1.,0.);float gw=max(length(q)-1.05,0.);vec3 glow=1.-exp(-ec*(exp(-g*14.)*.7+exp(-gw*3.2)*.3)*1.7);vec3 outer=1.-(1.-bg)*(1.-glow);float aa=1.6/(min(res.x,res.y)*S);float a=1.-smoothstep(1.-aa,1.+aa,d);vec3 col=mix(outer,inner,a);col+=(hash(gl_FragCoord.xy)-.5)*.012;gl_FragColor=vec4(col,1.);}';
     function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.warn('as-glass', gl.getShaderInfoLog(s)); return s; }
     var prog = gl.createProgram(); gl.attachShader(prog, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog); gl.useProgram(prog);

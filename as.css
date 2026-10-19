@@ -398,7 +398,7 @@
 /* зеркальный текст на стене */
 .as-mtext{position:relative}
 .as-mtext .mt{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.as-mtext .tex{mix-blend-mode:overlay}
+.as-mtext .sheen{mix-blend-mode:soft-light;opacity:.55}
 /* принты турнирных футболок коллажом */
 .as-prints{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1vw,16px);margin-top:clamp(8px,1vw,16px)}
 @media (max-width:640px){.as-prints{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -406,3 +406,10 @@
 .as-cover .foot>span:empty{display:none}
 .as-cover .foot>span:empty + .as-lead{grid-column:1}
 .as-divide span{margin-left:calc(clamp(56px,11vw,210px) * var(--sb,0) - clamp(19px,1.6vw,26px) * .045)}
+/* задача: текст и материалы одним блоком */
+.as-task{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}
+.as-task .t .as-p{margin-top:clamp(16px,1.6vw,24px)}
+.as-task .t .as-btn{margin-top:clamp(24px,2.4vw,36px)}
+.as-task .as-was{gap:clamp(6px,.7vw,10px)}
+.as-task .as-was .as-fit{gap:clamp(6px,.7vw,10px)}
+@media (max-width:1000px){.as-task{grid-template-columns:minmax(0,1fr)}}
