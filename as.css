@@ -73,7 +73,7 @@
 /* ---------- главы ---------- */
 .as-sec{padding-top:clamp(72px,8vw,136px)}
 .as-tx{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:28px;align-items:start}
-.as-tx .as-h2{max-width:13ch}
+.as-tx .as-h2{max-width:none}
 .as-tx>div>.as-p:first-child{margin-top:.35em}
 .as-vis{margin-top:clamp(40px,5vw,80px)}
 .as-brief{margin-top:clamp(24px,3vw,48px)}
@@ -249,12 +249,12 @@
 
 /* ---------- брелоки: бирки из пластика ---------- */
 .as-keys{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(200px,21vw,330px);grid-auto-flow:dense;gap:clamp(8px,1vw,16px)}
-.as-keys .tag{position:relative;grid-column:span 3;background:var(--soft);overflow:hidden}
+.as-keys .tag{position:relative;grid-column:span 3;background:#E3E4E7;overflow:hidden;perspective:900px}
 .as-keys .tag.tall{grid-row:span 2}
-.as-keys .tag img{position:absolute;inset:12%;margin:auto;width:auto;height:auto;max-width:76%;max-height:76%;filter:drop-shadow(0 18px 24px rgba(0,0,0,.18))}
-.as-keys .tag.black{background:#D9DADF}
-.as-keys .tag.clear{background:linear-gradient(135deg,#E6E7EB,#F7F7F8)}
-.as-keys .tag.clear img{opacity:.78;filter:drop-shadow(0 18px 24px rgba(0,0,0,.14)) contrast(1.05)}
+.as-keys .tag img{position:absolute;inset:12%;margin:auto;width:auto;height:auto;max-width:76%;max-height:76%;transform:rotateX(10deg) rotateY(-14deg) rotateZ(-2deg);filter:drop-shadow(1px 1px 0 rgba(255,255,255,.9)) drop-shadow(2px 3px 0 rgba(0,0,0,.22)) drop-shadow(4px 6px 1px rgba(0,0,0,.12)) drop-shadow(14px 28px 26px rgba(0,0,0,.22))}
+.as-keys .tag.black{background:#E3E4E7}
+.as-keys .tag.clear{background:#E3E4E7}
+.as-keys .tag.clear img{opacity:.82;filter:drop-shadow(1px 1px 0 rgba(255,255,255,.95)) drop-shadow(2px 3px 0 rgba(0,0,0,.14)) drop-shadow(14px 28px 26px rgba(0,0,0,.16)) contrast(1.05)}
 
 /* ---------- постеры в зале ---------- */
 .as-posters{position:relative;aspect-ratio:1;overflow:hidden;background:var(--soft);cursor:pointer}
@@ -276,7 +276,8 @@
 .as-scr video.gray{filter:grayscale(1)}
 
 /* ---------- задача ---------- */
-.as-was{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,16px)}
+.as-was{display:grid;gap:clamp(8px,1vw,16px)}
+.as-was .as-ph{background:#fff}
 .as-was .tall{grid-row:span 2}
 .as-army{font-weight:500;font-size:clamp(44px,7.6vw,140px);line-height:.9;letter-spacing:-.04em;max-width:14ch}
 .as-army s{text-decoration:none;position:relative;color:var(--mute)}
@@ -372,3 +373,27 @@
 .as-thanks h2{margin:0;font-weight:500;font-size:clamp(64px,13vw,240px);line-height:.88;letter-spacing:-.045em;max-width:9ch}
 .as-thanks + .as-foot{padding-top:clamp(40px,5vw,72px)}
 @media (max-width:640px){.as-word .as-fit{width:100%;flex-direction:column;align-items:center}.as-word .as-fit>div:first-child{width:100%}.as-word .as-fit>div:last-child{width:52%}}
+/* знак на разных фонах одним блоком */
+.as-sw-tabs{display:flex;flex-wrap:wrap;gap:clamp(16px,2.4vw,40px);margin-bottom:clamp(16px,2vw,28px)}
+.as-sw-tabs button{position:relative;background:none;border:0;padding:0 0 12px;font:400 clamp(18px,1.3vw,21px)/1.2 var(--read);color:var(--mute);cursor:pointer}
+.as-sw-tabs button.on{color:var(--ink)}
+.as-sw-tabs button i{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--line);overflow:hidden}
+.as-sw-tabs button i::after{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:0 50%}
+.as-sw-tabs button.on i::after{transform:scaleX(1)}
+.as-sw-tabs button.run i::after{animation:as-swbar 3.6s linear}
+@keyframes as-swbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.as-sw-stage{display:grid}
+.as-sw-stage .band{grid-area:1/1;opacity:0;transition:opacity .7s var(--ease)}
+.as-sw-stage .band.on{opacity:1}
+.as-sys.as-sw-stage .band:not(.dark){padding-left:clamp(24px,4.4vw,80px);padding-right:clamp(24px,4.4vw,80px)}
+/* звезда вылетает из старой «А» */
+.as-wasnow.wait .star,.as-wasnow.wait .word{opacity:0}
+/* футболки без фона коллажом */
+.as-tees{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"a b" "a c";gap:clamp(8px,1vw,16px);align-items:center}
+.as-tees .a{grid-area:a}.as-tees .b{grid-area:b}.as-tees .c{grid-area:c}
+.as-tees .as-ph.contain{background:transparent}
+@media (max-width:640px){.as-tees{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"a b" "c c"}}
+/* зеркальный текст на стене */
+.as-mtext{position:relative}
+.as-mtext .mt{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.as-mtext .mt{mix-blend-mode:multiply}.as-mtext .glow{opacity:.55}

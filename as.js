@@ -14,7 +14,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок — место занято сразу, страница не прыгает (заполняет build.py)
-  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.7998,"c1-polo-b":0.8005,"c1-polo-c":0.8,"c1-slides-2":1.0,"c1-slides":1.0,"c1-tee-back":0.7998,"c1-tee-front":0.7998,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":0.9992,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7717,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-logo":1.0292,"old-site":1.7181,"old-story":0.5619,"old-tg":1.526,"old-vk":1.4671,"old-yt":1.6994,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
+  var R = /*RATIOS*/{"c1-art-a":1.7752,"c1-art-b":1.777,"c1-art-c":1.7787,"c1-award-man":1.7778,"c1-award-row":2.5862,"c1-award-stack":0.9992,"c1-co":0.7456,"c1-coin-a":1.4684,"c1-coin-b":1.4684,"c1-coin-side":1.1118,"c1-coin":1.0,"c1-dark-2":2.9049,"c1-dark-h":7.932,"c1-dark-mid":7.8027,"c1-dark-v":0.7475,"c1-desc-2":5.2016,"c1-desc-2b":1.964,"c1-desc-h":10.8435,"c1-desc-v":0.6534,"c1-fighter":1.0,"c1-font":2.6762,"c1-icon":1.0,"c1-keys-a":1.7769,"c1-keys-b":1.7769,"c1-keys-flat":1.5598,"c1-labels":1.6667,"c1-logo-2":2.9049,"c1-logo-h":7.932,"c1-logo-mid":7.8027,"c1-logo-v":0.7475,"c1-mono-2":2.9049,"c1-mono-h":7.932,"c1-mono-mid":7.8027,"c1-mono-v":0.7551,"c1-over":1.6,"c1-polo-a":0.8,"c1-polo-b":0.8005,"c1-polo-c":1.0678,"c1-slides-2":1.0,"c1-slides":1.0,"c1-star":0.7475,"c1-tee-back":1.0745,"c1-tee-front":1.1119,"c1-under":1.6,"c1-wall-a":1.7778,"c1-wall-b":1.7778,"c1-wear-a":1.0,"c1-wear-b":1.0,"c1-wear-c":1.0008,"c1-word":0.7475,"c2-award-man":1.7778,"c2-award-row":2.5862,"c2-award-stack":1.075,"c2-co":0.9138,"c2-coin-a":0.9174,"c2-coin-b":0.9174,"c2-coin-c":0.9174,"c2-font":3.6588,"c2-icon":1.0,"c2-keys-a":1.0,"c2-keys-b":0.9992,"c2-keys-flat":1.5598,"c2-logo-2":3.1256,"c2-logo-h":5.8524,"c2-logo-top":2.5947,"c2-logo-v":0.9142,"c2-mirror-a":0.96,"c2-mirror-b":0.96,"c2-mono-2":3.1256,"c2-mono-h":5.8524,"c2-mono-top":2.5947,"c2-mono-v":0.9142,"c2-over":1.6,"c2-poster-a":1.0,"c2-poster-b":1.0,"c2-poster-c":1.0,"c2-poster-d":1.0,"c2-poster-e":1.0016,"c2-silver":1.5,"c2-slides-2":1.0,"c2-slides":1.0,"c2-star":1.0228,"c2-tee-a":1.2303,"c2-tee-b":0.7504,"c2-under":1.6,"c2-wall":1.7715,"c2-wear-a":1.0,"c2-wear-b":1.0,"c2-wear-c":1.0,"c2-wear-d":1.0,"c3-co":1.9478,"c3-icon":1.0,"c3-logo-2":1.9469,"c3-logo-h":8.5786,"c3-over":1.6,"c3-tee-back":0.7998,"c3-tee-front":0.7998,"c3-under":1.6,"key1":1.0,"key2":1.0,"key3":1.0,"key4":0.327,"key5":0.3793,"key6":0.3793,"key7":2.2143,"old-icon":1.0,"old-ig-hl":1.4331,"old-ig":1.4305,"old-logo":1.0292,"old-site":1.7181,"old-story":0.5619,"old-tg":1.526,"old-vk":1.4671,"old-yt":1.6994,"p-cska-fight":0.5972,"p-cska":0.6731,"p-dynamo":0.655,"p-fsbr":1.8599,"p-sa":1.2579,"promo":1.7778}/*/RATIOS*/;
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
   function nb(t) {
@@ -73,8 +73,8 @@
   }
   // сейчас → предлагаем
   function wasNow(id) {
-    return '<div class="as-wasnow"><div><img src="' + IMG + 'old-logo.webp" alt="Знак сейчас" loading="lazy"><b>сейчас</b></div>' +
-      '<div><img src="' + svg(C[id].main) + '" alt="Новый знак" loading="lazy"><b>новый</b></div></div>';
+    return '<div class="as-wasnow' + (id === 'c1' ? ' fly' : '') + '"><div><img class="old" src="' + IMG + 'old-logo.webp" alt="Знак сейчас"' + (id === 'c1' ? '' : ' loading="lazy"') + '><b>сейчас</b></div>' +
+      (id === 'c1' ? '<div><img class="word" src="' + svg('c1-word') + '" alt="Новый знак"><img class="star" src="' + svg('c1-star') + '" alt=""><b>новый</b></div>' : '<div><img src="' + svg(C[id].main) + '" alt="Новый знак" loading="lazy"><b>новый</b></div>') + '</div>';
   }
   // откуда звезда и прописные: эмблема ЦСКА с отметками → наш знак с теми же отметками
   function heritage(id, caps, fromOld) {
@@ -94,6 +94,15 @@
       return '<div class="band' + (b.bg ? ' dark' : '') + '" style="background:' + (b.bg || '#fff') + ';grid-template-columns:' + cols + '">' +
         b.files.map(function (f) { return '<img src="' + svg(f) + '" alt="" loading="lazy">'; }).join('') + '</div>';
     }).join('') + '</div>';
+  }
+  // тот же набор версий на разных фонах — в одном блоке, фон меняется сам
+  function sysSwitch(bands) {
+    return '<div class="as-sw"><div class="as-sw-tabs">' + bands.map(function (b, i) { return '<button type="button"' + (i ? '' : ' class="on"') + '>' + T(b.label) + '<i></i></button>'; }).join('') + '</div>' +
+      '<div class="as-sys as-sw-stage">' + bands.map(function (b, i) {
+        var cols = b.files.map(function (f) { return Math.pow(R[f] || 1, .62).toFixed(3) + 'fr'; }).join(' ');
+        return '<div class="band' + (b.bg ? ' dark' : '') + (i ? '' : ' on') + '" style="background:' + (b.bg || '#fff') + ';grid-template-columns:' + cols + '">' +
+          b.files.map(function (f) { return '<img src="' + svg(f) + '" alt="" loading="lazy">'; }).join('') + '</div>';
+      }).join('') + '</div></div>';
   }
   function palette(parts) {
     return '<div class="as-pal">' + parts.map(function (p) {
@@ -186,11 +195,10 @@
   }
   h.push('<section class="as-sec" id="brief" data-slide><div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">задача</h2><div>' +
     '<p class="as-p">' + T('«Армия спорта» — цифровая платформа, которая объединяет спорт России. Сейчас фокус — единоборства, дальше другие виды спорта, включая «эстетические», и детские направления. «Армия» здесь про объединение людей, а не про военную тему.') + '</p>' +
-    '<p class="as-p">' + T('Задача первого этапа — две концепции логотипа с подходом по шрифтам, показанные на носителях и в связке с партнерскими логотипами. Образ результата — мокапы.') + '</p>' +
+    '<p class="as-p">' + T('Задача первого этапа — две концепции логотипа с подходом по шрифтам, показанные на носителях и в связке с партнерскими логотипами.') + '</p>' +
     '<button type="button" class="as-btn as-toggle" aria-expanded="false" data-open="свернуть бриф">раскрыть бриф</button></div></div>' +
+    '<div class="as-wrap as-vis as-up"><div class="as-was">' + ph('old-site') + fit([['old-vk', ph('old-vk')], ['old-ig', ph('old-ig')]]) + fit([['old-yt', ph('old-yt')], ['old-tg', ph('old-tg')]]) + fit([['old-ig-hl', ph('old-ig-hl')], ['old-icon', ph('old-icon')], ['old-story', ph('old-story')]]) + '</div></div>' +
     '<div class="as-brief" hidden>' +
-    '<div class="as-tx as-vis as-up"><h3 class="as-h2">как сейчас выглядит бренд</h3><div><p class="as-p">' + T('Сайт в разработке, соцсети и материалы со старым знаком.') + '</p></div></div>' +
-    '<div class="as-vis"><div class="as-was">' + ph('old-site', { cls: 'tall', ratio: 1.12 }) + ph('old-vk') + ph('old-tg') + ph('old-yt') + ph('old-story', { ratio: 1.47 }) + '</div></div>' +
     '<p class="as-army as-vis as-up">' + T('«армия» — это не') + ' <s>' + T('военная тема') + '</s>, ' + T('а объединение людей') + '</p>' +
     bl('логотип: основа', [
       ['Старый логотип уходит', 'Заказчику он не нравится, его и просят поменять'],
@@ -235,10 +243,10 @@
   h.push(divide('c1', 'идея первая'));
   h.push(sec('c1-was', 'знак сейчас и новый знак', ['Звезда остается, лишние детали уходят.'], wasNow('c1')));
   h.push(cover('c1', ''));
-  h.push(sec('c1-logo', 'красный сверху, синий снизу', ['Основная версия — на белом. На темно-синем — белый знак с контурной звездой, на черном — цветная звезда и белая надпись.'], sys([
-    { files: ['c1-logo-h', 'c1-logo-mid', 'c1-logo-2', 'c1-logo-v'] },
-    { files: ['c1-mono-h', 'c1-mono-mid', 'c1-mono-2', 'c1-mono-v'], bg: '#001857' },
-    { files: ['c1-dark-h', 'c1-dark-mid', 'c1-dark-2', 'c1-dark-v'], bg: '#080000' }
+  h.push(sec('c1-logo', 'красный сверху, синий снизу', ['Основная версия — на белом. На темно-синем — белый знак с контурной звездой, на черном — цветная звезда и белая надпись.'], sysSwitch([
+    { files: ['c1-logo-h', 'c1-logo-mid', 'c1-logo-2', 'c1-logo-v'], label: 'на белом' },
+    { files: ['c1-mono-h', 'c1-mono-mid', 'c1-mono-2', 'c1-mono-v'], bg: '#001857', label: 'на темно-синем' },
+    { files: ['c1-dark-h', 'c1-dark-mid', 'c1-dark-2', 'c1-dark-v'], bg: '#080000', label: 'на черном' }
   ])));
   h.push(sec('c1-desc', 'версия с дескриптором', ['Для партнерских материалов — знак с подписью «при партнерстве ФАУ ЦСКА».'], sys([
     { files: ['c1-desc-h', 'c1-desc-2', 'c1-desc-2b', 'c1-desc-v'] }
@@ -260,7 +268,7 @@
   h.push(sec('c1-polo', 'поло для тренеров', ['Силиконовый логотип и надписи. Красный заливкой встречается редко, чтобы не было ассоциаций с Красной армией, — но тренеров в зале должно быть видно сразу. Поэтому цвет яркий, а логотип и название — тихие.'],
     '<div class="as-col">' + cell('s4', 'c1-polo-a') + cell('s4', 'c1-polo-b') + cell('s4', 'c1-polo-c') + '</div>'));
   h.push(sec('c1-tee', 'турнирный мерч', ['Футболка конкретного турнира с датой и городом. Ее берут «потому что был там» — это самый продаваемый формат у единоборств. Фирменный шрифт еще предстоит приобрести, поэтому концепты пока на стандартных шрифтах.'],
-    '<div class="as-col">' + cell('s6', 'c1-tee-back') + cell('s6', 'c1-tee-front') + cell('s12', 'c1-labels') + '</div>'));
+    '<div class="as-tees"><div class="a">' + ph('c1-tee-back', { cls: 'contain' }) + '</div><div class="b">' + ph('c1-tee-front', { cls: 'contain' }) + '</div><div class="c">' + ph('c1-labels') + '</div></div>'));
   h.push(sec('c1-keys', 'брелоки под любой турнир', ['Белый, прозрачный и черный пластик — под разные слоганы, линейки и события.'],
     keyTags() + '<div class="as-grid as-g2" style="margin-top:clamp(8px,1vw,16px)">' + ph('c1-keys-a') + ph('c1-keys-b') + '</div>'));
 
@@ -269,24 +277,24 @@
   h.push(sec('c2-was', 'знак сейчас и новый знак', ['Красный уходит: красная звезда отсылает к Красной армии. Знак в один цвет работает сам по себе, в том числе на одежде.'], wasNow('c2')));
   h.push(cover('c2', 'Яркий синий — про цифровое и современное. Светлое внизу, как небо на рассвете.'));
   h.push(sec('c2-herit', 'звезда — от прошлого знака', ['Звезду узнают по нынешнему знаку. Шрифт рубленый, как в эмблеме ЦСКА Единоборства, — рядом с партнером знак выглядит своим.'], heritage('c2', false, true)));
-  h.push(sec('c2-logo', 'одноцветный знак', ['Основная версия — на белом, на синем градиенте знак белый.'], sys([
-    { files: ['c2-logo-h', 'c2-logo-top', 'c2-logo-2', 'c2-logo-v'] },
-    { files: ['c2-mono-h', 'c2-mono-top', 'c2-mono-2', 'c2-mono-v'], bg: 'linear-gradient(180deg,#080000,#07003F 50%,#0044FF)' }
+  h.push(sec('c2-logo', 'одноцветный знак', ['Основная версия — на белом, на синем градиенте знак белый.'], sysSwitch([
+    { files: ['c2-logo-h', 'c2-logo-top', 'c2-logo-2', 'c2-logo-v'], label: 'на белом' },
+    { files: ['c2-mono-h', 'c2-mono-top', 'c2-mono-2', 'c2-mono-v'], bg: 'linear-gradient(180deg,#080000,#07003F 50%,#0044FF)', label: 'на рассвете' }
   ])));
-  h.push(sec('c2-color', 'синий рассвет', ['Отличие от Спортмастера: нет красного и нет сплошной синей заливки — синий только градиентом.'],
+  h.push(sec('c2-color', 'синий рассвет', ['Чтобы отличиться от Спортмастера: нет красного и нет сплошной синей заливки — синий только градиентом.'],
     palette([['', 3, 'рассвет', '#fff', 'dawn'], ['#FFFFFF', 2, 'белый', '#121314'], ['#E71E26', .7, 'акценты']])));
-  h.push(sec('c2-co', 'рядом с партнерами спокойно', ['Знак не спорит с эмблемами ЦСКА, ФСБР и Динамо и не теряется ни в ряду, ни на пресс-волле.'], cobrand('c2-co')));
+  h.push(sec('c2-co', 'рядом с партнерами', ['Знак не спорит с эмблемами ЦСКА, ФСБР и Динамо и не теряется ни в ряду, ни на пресс-волле.'], cobrand('c2-co')));
   h.push(sec('c2-font', 'шрифт', [], typeBlock('chromius')));
   // иконка во весь экран: стеклянная звезда, прокрутка сажает ее на место в телефоне
   h.push('<section class="as-glass" id="c2-app" data-slide><div class="stick"><canvas></canvas>' +
     '<div class="say"><div class="as-wrap"><h2 class="as-h2">' + T('иконка и фавикон') + '</h2></div></div>' +
     '<div class="ph">' + phone('c2', true) + '</div></div></section>');
-  h.push(sec('c2-app-tx', 'иконка приложения', ['Белая звезда в толстом стекле, за ним переливаются синий, белый и красный. Во вкладке браузера — тот же знак.'], tabBox('c2')));
-  h.push(sec('c2-site', 'пример экрана сайта', ['Рассвет на весь экран, ролик — внутри звезды.'], site('c2')));
+  h.push(sec('c2-app-tx', 'иконка приложения', [], tabBox('c2')));
+  h.push(sec('c2-site', 'пример экрана сайта', [], site('c2')));
   h.push(sec('c2-coin', 'в спорте есть место каждому', ['На лицевой стороне — руки спортсменов, которые поддерживают друг друга: спорт объединяет людей. На обороте знак-зеркало — в нем видишь себя вместе с теми, кто стоит рядом, независимо от ранга. «Армия спорта» ждет новые лица. Название — на ребре монеты.'],
     pair3d('coin_mirror', 'c2-coin-a', '20deg 80deg auto', focus(['c2-coin-a', 'c2-coin-b', 'c2-coin-c']), true)));
   h.push(sec('c2-wall', 'каждый может больше', ['В зале — зеркала со знаком: человек понимает, что речь о нем. Зеркало само становится фотозоной.', 'Стены собираются из динамичных паттернов вместе с серебром.'],
-    '<div class="as-col">' + '<div class="s12">' + mirror(ph('c2-wall')) + '</div>' +
+    '<div class="as-col">' + '<div class="s12"><div class="as-mtext">' + ph('c2-wall') + '</div></div>' +
     ['c2-poster-e', 'c2-poster-c', 'c2-poster-d'].map(function (p) { return '<div class="s4">' + ph(p) + '</div>'; }).join('') +
     ['c2-poster-a', 'c2-poster-b'].map(function (p) { return '<div class="s6">' + mirror(ph(p)) + '</div>'; }).join('') +
     '<div class="s6">' + ph('c2-mirror-a') + '</div><div class="s6">' + ph('c2-mirror-b') + '</div><p class="s12 as-p as-cap">' + T('Фотозона в зеркале и стена — черновые концепты.') + '</p></div>'));
@@ -302,15 +310,15 @@
   // ---------- альтернатива: черно-белая ----------
   h.push(divide('c3', 'идея третья, альтернатива'));
   h.push('<section class="as-cover c3" data-slide><div class="as-wrap mark"><img src="' + svg('c3-logo-2') + '" alt="" loading="lazy"></div><div class="as-wrap"><div class="foot as-up"><span></span><p class="as-lead">' + T('Черное и белое, без привязки к ЦСКА, строчными — как у цифровых продуктов.') + '</p></div></div></section>');
-  h.push(sec('c3-logo', 'название строчными', ['Знака нет, только название современным шрифтом. Так же набраны заголовки и короткие слова. Звезда появляется лишь на значках, футболках, брелоках и носках.'],
+  h.push(sec('c3-logo', 'название строчными', ['Берем современный гротеск и пишем все строчными буквами: так выглядят цифровые продукты. Это же правило переносим на заголовки и короткие надписи во всех носителях. Графический знак убираем, как это сделал Nike. Звезда остается отсылкой к истории бренда и появляется в мелких деталях: на значках, футболках, брелоках, носках.'],
     '<div class="as-word">' + fit([['c3-logo-h', '<img src="' + svg('c3-logo-h') + '" alt="армия спорта" loading="lazy">'], ['c3-logo-2', '<img src="' + svg('c3-logo-2') + '" alt="" loading="lazy">', R['c3-logo-2'] * 2.1]]) + '</div>'));
   h.push(sec('c3-co', 'выделяется тем, что без звезды', ['У трех логотипов из пяти есть звезды, поэтому слово без знака сразу заметно.'], cobrand('c3-co')));
   h.push(sec('c3-color', 'черное и белое', ['Красный и синий — только для акцентов.'],
     palette([['#FFFFFF', 2, 'белый', '#121314'], ['#000000', 2, 'черный'], ['#E71E26', .7, 'акценты'], ['#0044FF', .7, ' ']])));
   h.push(sec('c3-font', 'шрифт', [], typeBlock('engine')));
   h.push(sec('c3-app', 'звезда остается в иконке', ['Слово мелко не читается, поэтому в иконке и во вкладке браузера — звезда (отсылка к прежнему знаку ради преемственности; в остальном она только мелкий штрих).'], app('c3')));
-  h.push(sec('c3-site', 'пример экрана сайта', ['Ролик на весь экран, слоган строчными.'], site('c3')));
-  h.push(sec('c3-tee', 'футболка турнира', ['Название мелко на груди, звезда у воротника, на спине — принт события.'],
+  h.push(sec('c3-site', 'пример экрана сайта', [], site('c3')));
+  h.push(sec('c3-tee', 'футболка турнира', [],
     '<div class="as-grid as-g2">' + ph('c3-tee-front') + ph('c3-tee-back') + '</div>'));
 
   // ---------- итог ----------
@@ -444,6 +452,12 @@
         var mv = $('model-viewer', box), hand = $('.hand', box);
         mv.addEventListener('load', function () {
           box.classList.add('ready');
+          if (box.dataset.model === 'coin_mirror' && mv.model) mv.model.materials.forEach(function (m) {
+            if (m.name !== 'Grid_web') return;
+            var p = m.pbrMetallicRoughness;
+            if (p.metallicRoughnessTexture) p.metallicRoughnessTexture.setTexture(null);
+            p.setMetallicFactor(1); p.setRoughnessFactor(.5);
+          });
           if (box.dataset.model === 'stela' && mv.model) mv.model.materials.forEach(function (m) {
             var p = m.pbrMetallicRoughness, c = p.baseColorFactor;
             if (c[0] < .05) { p.setBaseColorFactor([.035, .036, .04, 1]); p.setRoughnessFactor(.32); p.setMetallicFactor(.15); }
@@ -477,6 +491,71 @@
       lp.classList.add('on');
     });
     f.addEventListener('pointerleave', function () { lp.classList.remove('on'); });
+  });
+
+  // знак на разных фонах: фон меняется сам, нажатие — к нужному
+  $$('.as-sw').forEach(function (w) {
+    var tabs = $$('.as-sw-tabs button', w), bands = $$('.band', w), k = 0, t = null;
+    function show(j) {
+      k = j;
+      tabs.forEach(function (b, i) { b.classList.toggle('on', i === j); b.classList.remove('run'); });
+      bands.forEach(function (b, i) { b.classList.toggle('on', i === j); });
+      if (t) { void tabs[j].offsetWidth; tabs[j].classList.add('run'); }
+    }
+    function start() { if (t || reduce) return; t = setInterval(function () { show((k + 1) % bands.length); }, 3600); show(k); }
+    function stop() { clearInterval(t); t = null; tabs.forEach(function (b) { b.classList.remove('run'); }); }
+    tabs.forEach(function (b, i) { b.addEventListener('click', function () { stop(); show(i); start(); }); });
+    new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) start(); else stop(); }); }, { threshold: .3 }).observe(w);
+  });
+
+  // новая звезда вылетает из звезды внутри нынешней «А» и встает на место
+  $$('.as-wasnow.fly').forEach(function (w) {
+    var old = $('.old', w), star = $('.star', w), word = $('.word', w);
+    if (reduce || !star.animate) return;
+    w.classList.add('wait');
+    new IntersectionObserver(function (es, o) {
+      if (!es[0].isIntersecting) return;
+      o.disconnect();
+      setTimeout(function () {
+        var a = old.getBoundingClientRect(), b = star.getBoundingClientRect();
+        // звезда в старом знаке: центр 63 % × 45 %, ширина 34 %; в новом знаке: центр 55,5 % × 26 %, ширина 78 %
+        var dx = a.left + a.width * .63 - (b.left + b.width * .555), dy = a.top + a.height * .45 - (b.top + b.height * .26), s0 = a.width * .34 / (b.width * .78);
+        star.style.transformOrigin = '55.5% 26%';
+        w.classList.remove('wait');
+        star.animate([
+          { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s0 + ') rotate(-12deg)', opacity: 0 },
+          { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s0 + ') rotate(-12deg)', opacity: 1, offset: .15 },
+          { transform: 'none', opacity: 1 }
+        ], { duration: 1700, easing: 'cubic-bezier(.65,0,.25,1)', fill: 'backwards' });
+        word.animate([{ opacity: 0, transform: 'translateY(4%)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 1400, easing: 'ease-out', fill: 'backwards' });
+      }, 1000);
+    }, { threshold: .6 }).observe(w);
+  });
+
+  // зеркальный текст на стене: серебро переливается от курсора, прокрутки и наклона телефона
+  $$('.as-mtext').forEach(function (box) {
+    fetch(IMG + 'c2-wall-text.svg').then(function (r) { return r.text(); }).then(function (txt) {
+      var paths = (txt.match(/<path [^>]*\/>/g) || []).join('').replace(/fill-rule/g, 'clip-rule');
+      box.insertAdjacentHTML('beforeend', '<svg class="mt" viewBox="0 0 2720 1536" preserveAspectRatio="none" aria-hidden="true"><defs>' +
+        '<pattern id="mtSilver" patternUnits="userSpaceOnUse" x="700" y="380" width="1400" height="933"><image href="' + IMG + 'c2-silver.webp" width="1400" height="933" preserveAspectRatio="none"/></pattern>' +
+        '<linearGradient id="mtGlow" gradientUnits="userSpaceOnUse" x1="700" y1="400" x2="1100" y2="800"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+        '<clipPath id="mtClip">' + paths + '</clipPath></defs>' +
+        '<g clip-path="url(#mtClip)"><rect class="tex" x="0" y="0" width="2720" height="1536" fill="url(#mtSilver)"/><rect class="glow" x="0" y="0" width="2720" height="1536" fill="url(#mtGlow)"/></g></svg>');
+      var pat = $('#mtSilver', box), grad = $('#mtGlow', box), cur = 0, goal = 0, raf = 0;
+      function set(p) { goal = Math.max(-1, Math.min(1, p)); if (!raf) raf = requestAnimationFrame(step); }
+      function step() {
+        cur += (goal - cur) * .12;
+        pat.setAttribute('x', 700 + cur * 260);
+        var gx = 1250 + cur * 900;
+        grad.setAttribute('x1', gx - 260); grad.setAttribute('x2', gx + 260); grad.setAttribute('y1', 380); grad.setAttribute('y2', 820);
+        raf = Math.abs(goal - cur) > .002 ? requestAnimationFrame(step) : 0;
+      }
+      function onScroll() { var r = box.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return; set(((r.top + r.height / 2) / innerHeight - .5) * -2.4); }
+      box.addEventListener('pointermove', function (e) { var r = box.getBoundingClientRect(); set(((e.clientX - r.left) / r.width - .5) * 2.2); });
+      addEventListener('scroll', onScroll, { passive: true });
+      addEventListener('deviceorientation', function (e) { if (e.gamma != null) set(e.gamma / 25); });
+      onScroll();
+    }).catch(function () {});
   });
 
   // постеры в зале
