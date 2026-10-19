@@ -110,7 +110,9 @@
 .as-divide>.as-wrap{width:100%}
 .as-divide + .as-sec,.as-divide + .as-cover{margin-top:0}
 .as-divide span{display:block;font-family:var(--read);font-size:clamp(19px,1.6vw,26px);color:rgba(255,255,255,.7);margin-bottom:clamp(16px,2vw,28px)}
-.as .as-divide .as-h1{color:#fff;font-size:clamp(56px,11vw,210px)}
+.as-divide{--dh:clamp(34px,9.4vw,200px)}
+.as .as-divide .as-h1{color:#fff;font-size:var(--dh)}
+@media (max-width:640px){.as-divide{min-height:44svh}}
 .as-fit{display:flex;gap:clamp(8px,1vw,16px);align-items:flex-start}
 .as-word .as-fit{gap:clamp(48px,8vw,140px);align-items:center;width:min(74%,1100px);margin:0 auto;padding:clamp(24px,5vw,80px) 0}
 .as-fit>div{min-width:0}
@@ -407,7 +409,7 @@
 /* обложка без названия: подпись слева, не висит справа одна */
 .as-cover .foot>span:empty{display:none}
 .as-cover .foot>span:empty + .as-lead{grid-column:1}
-.as-divide span{margin-left:calc(clamp(56px,11vw,210px) * var(--sb,0) - clamp(19px,1.6vw,26px) * .045)}
+.as-divide span{margin-left:calc(var(--dh) * var(--sb,0) - clamp(19px,1.6vw,26px) * .045)}
 /* задача: текст и материалы одним блоком */
 .as-task{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,96px);align-items:start}
 .as-task .t .as-p{margin-top:clamp(16px,1.6vw,24px)}
@@ -486,3 +488,9 @@
 .as-keys:not(.live) .sh{animation:as-sway 6s ease-in-out infinite,as-glint 4.5s ease-in-out infinite}
 @keyframes as-glint{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
 @media (prefers-reduced-motion:reduce){.as-keys .tag img,.as-keys .sh{animation:none!important}.as-cover.c3 .mark img{transform:none!important}}
+@media (max-width:640px){
+  .as-thanks h2{font-size:13vw}
+  .as-3d .hand{left:auto;right:12px;top:12px;bottom:auto}
+  .as-3d .hand::after{display:none}
+  .as-3d .hand svg{width:44px}
+}

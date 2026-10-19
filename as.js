@@ -21,7 +21,8 @@
     t = String(t);
     for (var i = 0; i < 2; i++) t = t.replace(/(^|[\s(«>])([А-Яа-яЁёA-Za-z]{1,2})\s/g, '$1$2 ');
     t = t.replace(/(^|[\s(«>])(без|для|про|под|над|при|обо|или|что|как|его|все|еще|уже|это|был|так)\s/gi, '$1$2 ');
-    return t.replace(/\s—/g, ' —');
+    // дефис не рвет короткие слова вроде «из-за»
+    return t.replace(/\s—/g, ' —').replace(/(\S)-(?=\S)/g, '$1-⁠');
   }
   function nbh(t) {
     t = String(t);
@@ -333,7 +334,7 @@
       return '<a href="#' + id + '" style="background:' + (id === 'c1' ? 'var(--soft)' : c.bg) + ';color:' + (id === 'c2' ? '#fff' : 'var(--ink)') + '"><span><img src="' + svg(c.mark) + '" alt="" loading="lazy"></span><b>' + c.name + '</b></a>';
     }).join('') + '</div></div>' +
     '<div class="as-wrap as-vis"><div class="as-tx as-up"><h2 class="as-h2">что дальше</h2><div><p class="as-p">' + T('Обратная связь — одним документом: все замечания и правки списком. Дальше — выбор концепции и ее раскрытие на носителях следующего этапа.') + '</p></div></div></div></section>');
-  h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
+  h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
   h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, ребрендинг, первый этап</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
   h.push('<div class="as-lb" role="dialog" aria-label="картинка крупно"><img alt=""></div>');
 
@@ -369,8 +370,12 @@
   $$('.as-up,.as-army,.as-herit,.as-divide').forEach(function (el) { io.observe(el); });
   // обложки с новым знаком: анимация, когда обложка видна почти целиком
   var ioCover = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); else if (e.intersectionRatio === 0) e.target.classList.remove('in'); });
-  }, { threshold: [0, .45] });
+    es.forEach(function (e) {
+      var c = e.target;
+      if (e.intersectionRatio >= .4 && !c.classList.contains('in')) { if (c.prep) c.prep(); void c.offsetWidth; c.classList.add('in'); }
+      else if (!e.isIntersecting) c.classList.remove('in');
+    });
+  }, { threshold: [0, .4, .6] });
   $$('.as-cover.c2,.as-cover.c3').forEach(function (el) { ioCover.observe(el); });
   $$('.as-cover.c3 .mark img').forEach(function (img) {
     // просвет буквы «о» в «спорта»: центр 41,35 % × 71,2 %, ширина 9,9 % знака
@@ -379,8 +384,9 @@
       img.style.transformOrigin = ((ew - cw) / 2 + cw * .4135).toFixed(1) + 'px ' + ((eh - ch) / 2 + ch * .712).toFixed(1) + 'px';
       img.style.setProperty('--s', Math.min(60, Math.max(innerWidth, innerHeight) * 1.4 / (cw * .099)).toFixed(1));
     }
+    img.closest('.as-cover').prep = prep;
     if (img.complete) prep(); else img.addEventListener('load', prep);
-    addEventListener('resize', prep);
+    addEventListener('resize', function () { if (!img.closest('.as-cover').classList.contains('in')) prep(); });
   });
 
   // задача: раскрыть и свернуть
