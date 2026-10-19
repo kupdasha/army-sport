@@ -404,10 +404,20 @@
 
   // шапка: текущий раздел, цвет под фон; кнопка наверх
   var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-cover.c2,.as-divide,.as-glass,.as-thanks'), links = $$('.as-top nav a'), marks = ['brief', 'c1', 'c2', 'c3', 'sum'].map(function (id) { return document.getElementById(id); });
+  var navCur = -2;
   function onScroll() {
     var cur = -1;
     marks.forEach(function (m, i) { if (m && m.getBoundingClientRect().top < innerHeight * .45) cur = i; });
     links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+    // на телефоне и планшете меню прокручивается: текущий раздел встает первым
+    if (cur !== navCur) {
+      navCur = cur;
+      var nav = links[0] && links[0].parentNode;
+      if (nav && nav.scrollWidth > nav.clientWidth + 2) {
+        var x = cur < 0 ? 0 : links[cur].getBoundingClientRect().left - nav.getBoundingClientRect().left + nav.scrollLeft;
+        nav.scrollTo({ left: x, behavior: 'smooth' });
+      }
+    }
     var light = false;
     darks.forEach(function (d) { var r = d.getBoundingClientRect(); if (r.top <= 32 && r.bottom > 32) light = true; });
     top.classList.toggle('light', light);
@@ -613,6 +623,23 @@
     }
     box.addEventListener('pointermove', function (e) { box.classList.add('live'); move(e.clientX, e.clientY); });
     box.addEventListener('pointerleave', function () { box.classList.remove('live'); tags.forEach(function (t) { t.style.removeProperty('--ry'); t.style.removeProperty('--rx'); t.style.removeProperty('--sx'); }); });
+    // на телефоне и планшете курсора нет — брелоки поворачиваются при прокрутке
+    if (matchMedia('(hover: none)').matches && !reduce) {
+      var raf = 0;
+      function tilt() {
+        raf = 0;
+        var r0 = box.getBoundingClientRect(); if (r0.bottom < 0 || r0.top > innerHeight) return;
+        tags.forEach(function (t, i) {
+          var r = t.getBoundingClientRect(), p = Math.max(-1, Math.min(1, (r.top + r.height / 2 - innerHeight / 2) / (innerHeight / 2)));
+          t.style.setProperty('--rx', (p * -16).toFixed(1) + 'deg');
+          t.style.setProperty('--ry', (Math.sin(i * 1.7 + p * 3) * 16).toFixed(1) + 'deg');
+          t.style.setProperty('--sx', (50 + p * 70).toFixed(0) + '%');
+        });
+      }
+      box.classList.add('live');
+      addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(tilt); }, { passive: true });
+      tilt();
+    }
   });
 
   // постеры в зале
