@@ -516,3 +516,5 @@
 @media (min-width:641px){#c2-award .as-h2{white-space:nowrap}}
 .off,.off *{animation-play-state:paused!important}
 @media (max-width:1000px){#c1-coin .as-renders{grid-template-columns:minmax(0,1fr)}}
+.m-only{display:none}
+@media (max-width:1000px){.m-only{display:block}.d-only{display:none}}

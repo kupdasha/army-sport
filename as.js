@@ -291,7 +291,7 @@
   h.push('<section class="as-glass" id="c2-app" data-slide><div class="stick"><canvas></canvas>' +
     '<div class="say"><div class="as-wrap"><h2 class="as-h2">' + T('иконка и фавикон') + '</h2></div></div>' +
     '<div class="ph">' + phone('c2', true) + '</div></div></section>');
-  h.push(sec('c2-app-tx', 'иконка приложения', [], tabBox('c2')));
+  h.push(sec('c2-app-tx', 'иконка приложения', [], '<div class="d-only">' + tabBox('c2') + '</div><div class="m-only">' + app('c2') + '</div>'));
   h.push(sec('c2-site', 'пример экрана сайта', [], site('c2')));
   h.push(sec('c2-coin', 'в спорте есть место каждому', ['На лицевой стороне — руки спортсменов, которые поддерживают друг друга: спорт объединяет людей. На обороте знак-зеркало — в нем видишь себя вместе с теми, кто стоит рядом, независимо от ранга. «Армия спорта» ждет новые лица. Название — на ребре монеты.'],
     pair3d('coin_mirror', 'c2-coin-a', '20deg 80deg auto', focus(['c2-coin-a', 'c2-coin-b', 'c2-coin-c']), true)));
@@ -697,7 +697,7 @@
       var t = ease(Math.min(1, Math.max(0, (p - .25) / .6)));
       say.style.opacity = Math.max(0, 1 - p / .2);
       // телефон поднимается снизу и встает так, что видны два ряда иконок
-      var Hp = ph.offsetHeight, ty0 = Hp * 1.05, ty1 = vh * .32 - (vh - Hp);
+      var Hp = ph.offsetHeight, ty0 = Hp * 1.05, ty1 = Hp * .615;
       ph.style.transform = 'translate(-50%,' + (ty0 + (ty1 - ty0) * t) + 'px)';
       // стекло уменьшается до иконки и на последних процентах становится нарисованной иконкой
       var s = slot.getBoundingClientRect(), icon = Math.min(vh, vw) * .6, cx = vw / 2, cy = vh / 2;
