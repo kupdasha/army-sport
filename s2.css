@@ -474,3 +474,6 @@
 @media (max-width:640px){.s2-coins figcaption b{font-size:24px}}
 @media (prefers-reduced-motion:reduce){.s2-pt .as-ph img{animation:none!important;transform:none!important}}
 .s2-heromark .star{transform:translateY(-2.5%)}
+/* блок «меньше 0,5 см» целиком на белом — и текст, и линейка */
+.s2-rules .s2-ruler{background:#fff;padding:clamp(20px,2.4vw,40px)}
+.s2-rules .s2-ruler .box{height:clamp(240px,24vw,380px)}
