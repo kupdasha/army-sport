@@ -25,9 +25,24 @@ def ratios():
             continue
         out[n] = round(w / h, 4)
     return out
+# у знаков второго этапа — еще и размер в пикселях макета: логотипы одного шрифта выводятся в одном масштабе
+def sizes():
+    out = {}
+    d = os.path.join(HERE, 'img')
+    for f in sorted(os.listdir(d)):
+        if f.startswith('s2-') and f.endswith('.svg'):
+            m = re.search(r'width="([\d.]+)" height="([\d.]+)"', open(os.path.join(d, f), encoding='utf-8').read(2000))
+            if m: out[f[3:-4]] = [round(float(m.group(1))), round(float(m.group(2)))]
+    return out
+s2_path = os.path.join(HERE, 's2.js')
+if os.path.exists(s2_path):
+    s2 = open(s2_path, encoding='utf-8').read()
+    s2 = re.sub(r'/\*RATIOS\*/.*?/\*/RATIOS\*/', lambda m: '/*RATIOS*/' + json.dumps({k[3:]: v for k, v in ratios().items() if k.startswith('s2-')}, separators=(',', ':')) + '/*/RATIOS*/', s2, flags=re.S)
+    s2 = re.sub(r'/\*SIZES\*/.*?/\*/SIZES\*/', lambda m: '/*SIZES*/' + json.dumps(sizes(), separators=(',', ':')) + '/*/SIZES*/', s2, flags=re.S)
+    open(s2_path, 'w', encoding='utf-8').write(s2)
 js_path = os.path.join(HERE, 'as.js')
 js = open(js_path, encoding='utf-8').read()
-js = re.sub(r'/\*RATIOS\*/.*?/\*/RATIOS\*/', lambda m: '/*RATIOS*/' + json.dumps(ratios(), separators=(',', ':')) + '/*/RATIOS*/', js, flags=re.S)
+js = re.sub(r'/\*RATIOS\*/.*?/\*/RATIOS\*/', lambda m: '/*RATIOS*/' + json.dumps({k: v for k, v in ratios().items() if not k.startswith('s2-')}, separators=(',', ':')) + '/*/RATIOS*/', js, flags=re.S)
 open(js_path, 'w', encoding='utf-8').write(js)
 src = open(os.path.join(HERE, 'index.html'), encoding='utf-8').read()
 skel = src.split('<!-- скелет -->')[1].split('<!-- /скелет -->')[0].strip()
@@ -60,3 +75,13 @@ block = ('<!-- АРМИЯ СПОРТА, ПЕРВЫЙ ЭТАП. Страница 
 with open(os.path.join(HERE, 'tilda-block.txt'), 'w', encoding='utf-8') as f:
     f.write(block + '\n')
 print(f'tilda-block.txt  {len(block.encode("utf-8")) / 1024:.0f} КБ')
+
+# второй этап: тот же загрузчик, свои файлы (as.css — общее оформление, s2.css и s2.js — второй этап)
+src2 = open(os.path.join(HERE, 'stage2.html'), encoding='utf-8').read()
+skel2 = src2.split('<!-- скелет -->')[1].split('<!-- /скелет -->')[0].strip()
+block2 = (block.replace('АРМИЯ СПОРТА, ПЕРВЫЙ ЭТАП', 'АРМИЯ СПОРТА, ВТОРОЙ ЭТАП').replace(skel, skel2)
+    .replace("l.href=b+'as.css';", "l.href=b+'as.css';var l2=document.createElement('link');l2.rel='stylesheet';l2.href=b+'s2.css';document.head.appendChild(l2);")
+    .replace("j.src=b+'as.js'", "j.src=b+'s2.js'").replace('AS_LOADING', 'AS2_LOADING'))
+with open(os.path.join(HERE, 'tilda-block-2.txt'), 'w', encoding='utf-8') as f:
+    f.write(block2 + '\n')
+print(f'tilda-block-2.txt  {len(block2.encode("utf-8")) / 1024:.0f} КБ')

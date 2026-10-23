@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Армия спорта — второй этап</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="fonts/GolosText-500-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="as.css">
+<link rel="stylesheet" href="s2.css">
+<style>html,body{margin:0;background:#fff}</style>
+</head>
+<body>
+<!-- скелет загрузки: виден сразу, пока грузятся стили и код; build.py берет этот кусок в блок Тильды -->
+<!-- скелет -->
+<div id="as-skel" class="as-skel" aria-hidden="true" style="position:fixed;inset:0;z-index:100;background:#fff;display:flex;flex-direction:column;justify-content:flex-end;transition:opacity .45s,visibility .45s">
+<style>#as-skel i{display:block;background:linear-gradient(100deg,#F2F2F3 30%,#FAFAFA 50%,#F2F2F3 70%);background-size:220% 100%;animation:as-sk 1.3s linear infinite}@keyframes as-sk{from{background-position:120% 0}to{background-position:-120% 0}}#as-skel.off{opacity:0;visibility:hidden}#as-skel .t{display:flex;gap:4%;align-items:flex-end;padding:0 clamp(16px,4vw,64px)}#as-skel .tr{display:grid;grid-template-columns:repeat(3,1fr);height:clamp(260px,38vh,460px);margin-top:clamp(40px,6vw,96px)}@media(max-width:640px){#as-skel .tr{grid-template-columns:1fr;height:600px}}</style>
+<div class="t"><div style="flex:7"><i style="width:80%;height:clamp(48px,9vw,160px);margin-bottom:2vw"></i><i style="width:60%;height:clamp(48px,9vw,160px)"></i></div><div style="flex:5"><i style="width:90%;height:24px;margin-bottom:12px"></i><i style="width:70%;height:24px"></i></div></div>
+<div class="tr"><i style="background:#F6D2D3"></i><i style="background:#D6DAF0"></i><i></i></div>
+</div>
+<!-- /скелет -->
+<div id="as"></div>
+<script>window.AS_BASE=''</script>
+<script src="s2.js" defer></script>
+</body>
+</html>
