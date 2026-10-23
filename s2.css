@@ -173,8 +173,6 @@
 .s2-pt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
 .s2-pt .as-ph{aspect-ratio:16/9;background:#fff}
 .s2-pt .as-ph img{object-fit:cover;opacity:1}
-.s2-pt .as-ph img{transition:opacity .6s var(--ease),transform 1.2s var(--ease)!important}
-.s2-pt .as-ph:hover img{transform:scale(1.08)!important}
 .s2-tees{margin-top:clamp(40px,5vw,88px)}
 
 /* ---------- планшет ---------- */
@@ -419,25 +417,19 @@
 @keyframes s2-sweep{from{--gx:0}to{--gx:1}}
 /* монеты: переворачиваются ребром и встают на место */
 .s2-coins{perspective:900px}
-.s2-coins>div{opacity:0;transform:rotateY(90deg)}
-.as-vis.in .s2-coins>div{animation:s2-flip 1s cubic-bezier(.3,1.3,.5,1) both}
-.as-vis.in .s2-coins>div:nth-child(2){animation-delay:.1s}.as-vis.in .s2-coins>div:nth-child(3){animation-delay:.2s}
-.as-vis.in .s2-coins>div:nth-child(4){animation-delay:.3s}.as-vis.in .s2-coins>div:nth-child(5){animation-delay:.4s}.as-vis.in .s2-coins>div:nth-child(6){animation-delay:.5s}
+.s2-coins>figure{opacity:0;transform:rotateY(90deg)}
+.as-vis.in .s2-coins>figure{animation:s2-flip 1s cubic-bezier(.3,1.3,.5,1) both}
+.as-vis.in .s2-coins>figure:nth-child(2){animation-delay:.1s}.as-vis.in .s2-coins>figure:nth-child(3){animation-delay:.2s}
+.as-vis.in .s2-coins>figure:nth-child(4){animation-delay:.3s}.as-vis.in .s2-coins>figure:nth-child(5){animation-delay:.4s}.as-vis.in .s2-coins>figure:nth-child(6){animation-delay:.5s}
 @keyframes s2-flip{from{opacity:0;transform:rotateY(90deg)}to{opacity:1;transform:none}}
 /* узоры на одежде: каждый проявляется шторкой со своей стороны, рисунок разворачивается из глубины */
 .s2-pt .as-ph{clip-path:inset(0 100% 0 0)}
 .s2-pt .as-ph:nth-child(3n+2){clip-path:inset(100% 0 0 0)}
 .s2-pt .as-ph:nth-child(3n){clip-path:inset(0 0 0 100%)}
-.s2-pt .as-ph img{transform:scale(1.6) rotate(-8deg)!important;transition:transform 1.6s var(--ease)!important}
 .as-vis.in .s2-pt .as-ph{animation:s2-wipe 1s var(--ease) both}
-.as-vis.in .s2-pt .as-ph img{transform:none!important}
-.as-vis.in .s2-pt .as-ph:hover img{transform:scale(1.08)!important}
 .as-vis.in .s2-pt .as-ph:nth-child(2){animation-delay:.08s}.as-vis.in .s2-pt .as-ph:nth-child(3){animation-delay:.16s}
 .as-vis.in .s2-pt .as-ph:nth-child(4){animation-delay:.24s}.as-vis.in .s2-pt .as-ph:nth-child(5){animation-delay:.32s}.as-vis.in .s2-pt .as-ph:nth-child(6){animation-delay:.4s}
 .as-vis.in .s2-pt .as-ph:nth-child(7){animation-delay:.48s}.as-vis.in .s2-pt .as-ph:nth-child(8){animation-delay:.56s}.as-vis.in .s2-pt .as-ph:nth-child(9){animation-delay:.64s}
-.as-vis.in .s2-pt .as-ph:nth-child(2) img{transition-delay:.08s!important}.as-vis.in .s2-pt .as-ph:nth-child(3) img{transition-delay:.16s!important}
-.as-vis.in .s2-pt .as-ph:nth-child(4) img{transition-delay:.24s!important}.as-vis.in .s2-pt .as-ph:nth-child(5) img{transition-delay:.32s!important}.as-vis.in .s2-pt .as-ph:nth-child(6) img{transition-delay:.4s!important}
-.as-vis.in .s2-pt .as-ph:nth-child(7) img{transition-delay:.48s!important}.as-vis.in .s2-pt .as-ph:nth-child(8) img{transition-delay:.56s!important}.as-vis.in .s2-pt .as-ph:nth-child(9) img{transition-delay:.64s!important}
 @keyframes s2-wipe{to{clip-path:inset(0 0 0 0)}}
 /* правила стен: колонки появляются по очереди, шаги схемы зажигаются сверху вниз */
 .s2-panel:not([hidden]) .s2-howto>div{animation:s2-rise .7s var(--ease) both}
@@ -450,6 +442,35 @@
 .as-vis.in .s2-medal .as-ph{clip-path:inset(0 0 0 0)}
 
 @media (prefers-reduced-motion:reduce){
-  .s2-fontsw .pane .row,.s2-co .logos img,.s2 .as-pal div,.s2-aw,.s2-coins>div,.s2-pt .as-ph,.s2-pt .as-ph img,.s2-medal .as-ph,.s2-app .as-phone,.s2-app .as-bigicon,.s2-app .as-browser,
+  .s2-fontsw .pane .row,.s2-co .logos img,.s2 .as-pal div,.s2-aw,.s2-coins>figure,.s2-pt .as-ph,.s2-pt .as-ph img,.s2-medal .as-ph,.s2-app .as-phone,.s2-app .as-bigicon,.s2-app .as-browser,
   .as-vis :is(.s2-posters,.s2-g4,.s2-tees)>.as-ph,#form .as-grid>.as-ph{animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important}
 }
+
+/* ====== правки: монеты, стены, первый экран, узоры ====== */
+.s2-heroin{align-items:center}
+.s2-herotx{padding-bottom:0}
+/* монеты: подписаны номерами, при наведении растут целиком — без обрезки маской */
+.s2-coins figure{margin:0;text-align:center}
+.s2-coins figcaption b{font:500 clamp(28px,2.4vw,40px)/1 var(--font);letter-spacing:-.03em;color:var(--ink)}
+.s2-coins .as-ph{overflow:visible;transition:transform .6s var(--ease)}
+.s2-coins .as-ph img,.as-vis.in .s2-coins .as-ph.zoom:hover img{transform:none!important}
+.s2-coins .as-ph:hover{transform:scale(1.06)}
+/* стены: залы крупно, иллюстрации рядами одной высоты */
+.s2-walls{display:grid;gap:clamp(8px,1vw,16px)}
+/* узоры на одежде: появляются шторкой и потом медленно живут — лучи покачиваются, штрихи плывут */
+.s2-pt .as-ph img{transform-origin:50% 50%;will-change:transform}
+.s2-pt .as-ph.rad img{animation:s2-sway 16s ease-in-out infinite alternate}
+.s2-pt .as-ph.spin img{animation:s2-spin 90s linear infinite}
+.s2-pt .as-ph.drift img{animation:s2-drift 14s ease-in-out infinite alternate}
+.s2-pt .as-ph:nth-child(1) img{transform-origin:50% 100%}
+.s2-pt .as-ph:nth-child(5) img{transform-origin:50% 0}
+.s2-pt .as-ph:nth-child(8) img{transform-origin:0 100%}
+.s2-pt .as-ph:nth-child(2n) img{animation-delay:-5s}
+.s2-pt .as-ph:nth-child(3n) img{animation-delay:-9s}
+.s2-pt:not(.run) .as-ph img{animation-play-state:paused}
+@keyframes s2-sway{from{transform:scale(1.35) rotate(-7deg)}to{transform:scale(1.35) rotate(7deg)}}
+@keyframes s2-spin{from{transform:scale(1.25) rotate(0)}to{transform:scale(1.25) rotate(360deg)}}
+@keyframes s2-drift{from{transform:scale(1.22) translate(-6%,-5%)}to{transform:scale(1.22) translate(6%,5%)}}
+@media (max-width:640px){.s2-coins figcaption b{font-size:24px}}
+@media (prefers-reduced-motion:reduce){.s2-pt .as-ph img{animation:none!important;transform:none!important}}
+.s2-heromark .star{transform:translateY(-2.5%)}
