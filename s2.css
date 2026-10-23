@@ -5,22 +5,23 @@
 
 /* ---------- первый экран: звезда над названием ---------- */
 .s2-hero{justify-content:space-between;padding-bottom:clamp(32px,5vw,72px)}
-.s2-hero .s2-heromark{order:-1;padding-top:clamp(24px,5vh,72px)}
-.s2-heromark .star{width:clamp(150px,20vw,340px);aspect-ratio:455/323;overflow:hidden}
+.s2-hero .s2-heromark{padding-top:clamp(24px,5vh,72px)}
+.s2-herotx{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 48px}
+.s2-herotx .as-lead{max-width:24ch;margin:0;font-size:clamp(26px,3vw,48px);line-height:1.15}
+.s2-heromark .star{width:clamp(180px,30vw,520px);aspect-ratio:455/323;overflow:hidden}
 .s2-heromark .star img{width:100%;height:auto;display:block}
 .s2-heromark{opacity:0;transform:translateY(30px) rotate(-14deg) scale(.86);transform-origin:20% 60%;transition:opacity 1s var(--ease),transform 1.3s var(--ease)}
 .s2-heromark.in{opacity:1;transform:none}
-.s2-back{display:inline-flex;align-items:center;height:44px;padding:0 20px;margin-top:20px;border-radius:999px;background:var(--ink);color:#fff!important;font:500 16px/1 var(--font)}
+.s2-back{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:999px;background:var(--ink);color:#fff!important;font:500 16px/1 var(--font)}
 .s2-back:hover{background:#000}
 
 .s2-sub{padding-top:clamp(72px,8vw,136px)}
 
 /* ---------- три шрифта на одном экране ---------- */
-.s2-fonts{--h:clamp(20px,min(2.9vw,4.4vh),50px);display:grid;gap:clamp(20px,2.4vw,40px)}
-.s2-fonts .grp{display:grid;grid-template-columns:minmax(120px,1fr) auto;column-gap:clamp(16px,3vw,56px);row-gap:clamp(10px,1.2vw,18px);align-items:center}
-.s2-fonts .name{grid-column:1;grid-row:1;align-self:start;font:400 clamp(19px,1.35vw,22px)/1.3 var(--read);color:var(--mute);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:text-decoration-color .3s,color .3s}
-.s2-fonts .name:hover{color:var(--ink);text-decoration-color:currentColor}
-.s2-fonts .row{grid-column:2;display:grid;grid-template-columns:calc(var(--h) * 7.9) calc(var(--h) * 5.2) calc(var(--h) * 7.9);column-gap:calc(var(--h) * 1.2);align-items:center;transition:opacity .35s;outline:0;cursor:default}
+.s2-fonts{--h:clamp(20px,min(2.6vw,4vh),44px);display:grid;gap:clamp(32px,3.6vw,64px)}
+.s2-fonts .grp{display:grid;grid-template-columns:minmax(120px,1fr) auto;column-gap:clamp(16px,3vw,56px);row-gap:clamp(18px,2vw,30px);align-items:center}
+.s2-fonts .name{grid-column:1;grid-row:1;align-self:start;font:400 clamp(19px,1.35vw,22px)/1.3 var(--read);color:var(--mute)}
+.s2-fonts .row{grid-column:2;display:grid;grid-template-columns:calc(var(--h) * 7.9) calc(var(--h) * 5.2) calc(var(--h) * 7.9);column-gap:calc(var(--h) * 2);align-items:center;transition:opacity .35s;outline:0;cursor:default}
 .s2-fonts .row span{display:flex;align-items:center;min-width:0}
 .s2-fonts .row img{height:var(--h);width:auto;max-width:100%;object-fit:contain;object-position:left center}
 .s2-fonts .row .stacked img{height:calc(var(--h) * 1.32)}
@@ -28,6 +29,15 @@
 .s2-fonts.hov .row:not(.on){opacity:.2}
 .s2-fonts.hov .row.on{opacity:1}
 .s2-aside{margin-top:clamp(28px,3vw,48px);max-width:62ch;font:400 clamp(17px,1.15vw,19px)/1.45 var(--read);color:var(--mute);text-wrap:pretty}
+
+/* шрифты во вкладках: один шрифт крупно */
+.s2-fontsw .stage{position:relative}
+.s2-fontsw .pane{display:none}
+.s2-fontsw .pane.on{display:block;animation:s2-open .6s var(--ease)}
+.s2-fonts.one{--h:clamp(26px,min(3.4vw,5.2vh),60px);row-gap:clamp(36px,5vw,84px);padding:clamp(28px,4vw,64px) 0}
+.s2-fonts.one .row{grid-column:auto;column-gap:clamp(40px,6vw,120px);grid-template-columns:calc(var(--h) * 7.6) calc(var(--h) * 4.4) calc(var(--h) * 7.6);justify-content:start}
+.s2-fontsw .note{max-width:60ch;font:400 16px/1.45 var(--read);color:var(--mute);margin:0}
+.s2-fontsw .note a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- кобрендинг: три полосы ---------- */
 .s2-co{display:grid;gap:clamp(8px,1vw,16px)}
@@ -55,6 +65,35 @@
 .s2 .as-pal{height:clamp(220px,26vw,400px)}
 
 /* ---------- малые размеры ---------- */
+.s2-app{background:none}
+.s2-app .as-phonebox,.s2-app .as-tabbox{background:#fff}
+.s2-app .as-browser .tab .fav{border-radius:0;transform:none;object-fit:contain}
+.s2-site{margin-top:clamp(8px,1vw,16px)}
+.s2-site .as-ph{background:#0a0a0a}
+.s2-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1vw,16px);margin:clamp(40px,5vw,88px) 0}
+.s2-rules figure{margin:0}
+.s2-rules .box{position:relative;height:clamp(240px,24vw,380px);background:#fff;overflow:hidden}
+.s2-rules figcaption{max-width:40ch;margin-top:16px}
+/* линейка: знак уменьшается, меньше 0,5 см — одного цвета */
+.s2-ruler .lg{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);height:var(--lh,2cm);width:calc(var(--lh,2cm) * 6.54)}
+.s2-ruler .lg img{position:absolute;inset:0;width:100%;height:100%;transition:opacity .25s}
+.s2-ruler .lg .m{opacity:0}
+.s2-ruler.small .lg .c{opacity:0}.s2-ruler.small .lg .m{opacity:1}
+.s2-ruler .scale{position:absolute;left:clamp(16px,2vw,32px);right:clamp(16px,2vw,32px);bottom:clamp(16px,2vw,28px);height:28px;border-top:2px solid var(--ink);background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 0.5cm) top/100% 10px no-repeat}
+.s2-ruler .scale::before{content:"";position:absolute;left:0;top:-2px;width:.5cm;height:12px;background:#E71E26}
+.s2-ruler .scale span{position:absolute;left:0;top:12px;font:400 16px/1 var(--read);color:var(--mute)}
+.s2-ruler .cm{position:absolute;right:clamp(16px,2vw,32px);top:clamp(14px,1.6vw,24px);font:500 clamp(28px,3vw,48px)/1 var(--font);letter-spacing:-.03em;color:var(--ink)}
+.s2-ruler.small .cm{color:#E71E26}
+/* нанесение: печать и гравировка */
+.s2-engrave .box{display:grid;grid-template-columns:1fr 1fr}
+.s2-engrave .plate{position:relative;display:grid;place-items:center;padding:12%}
+.s2-engrave .plate img{width:100%;height:auto}
+.s2-engrave .plate span{position:absolute;left:16px;bottom:14px;font:400 16px/1.2 var(--read);color:var(--mute)}
+.s2-engrave .print{background:#fff}
+.s2-engrave .metal{background:linear-gradient(115deg,#9EA2A8,#E4E6E9 28%,#B7BBC1 46%,#F1F2F4 60%,#A4A8AE 82%,#D3D6DA);background-size:220% 100%;animation:s2-metal 7s ease-in-out infinite alternate}
+.s2-engrave .metal img{mix-blend-mode:multiply;opacity:.85;filter:drop-shadow(0 1.5px 0 rgba(255,255,255,.9)) drop-shadow(0 -1px 0 rgba(0,0,0,.25))}
+.s2-engrave .metal span{color:#4A4D52}
+@keyframes s2-metal{to{background-position:100% 0}}
 .s2-fit{display:flex;gap:clamp(8px,1vw,16px)}
 .s2-fit>div{min-width:0}
 .s2-smalls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,72px);margin:clamp(40px,5vw,88px) 0}
@@ -64,6 +103,7 @@
 .s2-smalls figcaption{max-width:36ch;margin-top:16px;color:var(--mute)}
 
 /* ---------- ролик со знаком в углу ---------- */
+.s2-filmbox{width:min(100%,calc((100svh - 150px) * 16 / 9));margin:0 auto}
 .s2-film{position:relative;aspect-ratio:16/9;background:#0b0b0d;overflow:hidden}
 .s2-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s2-film .corner{z-index:1}
@@ -80,7 +120,8 @@
 /* ---------- с фото и без ---------- */
 .s2-lbl{font:400 clamp(17px,1.15vw,19px)/1.3 var(--read);color:var(--mute);margin:0 0 12px}
 .as-grid+.s2-lbl{margin-top:clamp(28px,3vw,48px)}
-.s2-more{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(32px,4vw,64px)}
+.s2-more{display:flex;flex-wrap:wrap;gap:12px}
+.s2-walls{margin-top:clamp(28px,3vw,48px)}
 .s2-more .as-btn.on{background:#E71E26}
 .s2-panel{margin-top:clamp(28px,3vw,48px);padding-top:clamp(28px,3vw,48px);border-top:1px solid var(--line);animation:s2-open .6s var(--ease)}
 @keyframes s2-open{from{opacity:0;transform:translateY(16px)}}
@@ -101,20 +142,25 @@
 .s2-awards figcaption{display:flex;gap:12px;align-items:baseline;margin-top:12px;font:400 clamp(17px,1.15vw,19px)/1.35 var(--read);max-width:26ch}
 .s2-awards figcaption b{font:500 clamp(28px,2.4vw,40px)/1 var(--font);color:var(--ink);letter-spacing:-.03em}
 .s2-man{margin-top:clamp(24px,3vw,56px)}
-.s2-shine .as-ph{--gx:.5;--gy:.5}
+.s2-aw .flow{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;
+  background:linear-gradient(120deg,#D1B65F 0%,#EBD48E 9%,#93782F 21%,#DCCA75 21%,#FAEBC7 27%,#AA8920 27%,#896506 35%,#D1B65F 35%,#EBD48E 50%,#93782F 62%,#DCCA75 62%,#FAEBC7 68%,#AA8920 68%,#896506 76%,#D1B65F 76%,#EBD48E 88%,#D1B65F 100%);
+  background-size:300% 300%;background-position:calc(var(--gx) * 100%) calc(var(--gy) * 60% + 20%);transition:background-position .5s cubic-bezier(.2,.7,.2,1)}
+.s2-aw .flow::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent calc(var(--gx) * 140% - 40%),rgba(255,252,236,.75) calc(var(--gx) * 140% - 22%),transparent calc(var(--gx) * 140% - 6%));mix-blend-mode:screen}
 .s2-shine{--gx:.5;--gy:.5}
 .s2-shine .glint,.s2-shine .gloss{position:absolute;inset:0;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%}
 .s2-shine .glint{background:linear-gradient(105deg,rgba(255,250,225,0) calc(var(--gx) * 140% - 46%),rgba(255,248,215,.95) calc(var(--gx) * 140% - 20%),rgba(255,250,225,0) calc(var(--gx) * 140% + 6%));mix-blend-mode:screen}
 .s2-shine .gloss{background:linear-gradient(105deg,rgba(255,255,255,0) calc(var(--gx) * 140% - 40%),rgba(255,255,255,.16) calc(var(--gx) * 140% - 20%),rgba(255,255,255,0) calc(var(--gx) * 140%));mix-blend-mode:screen}
 
 /* ---------- монета в 3D на фоне слов ---------- */
-.s2-coin3d{position:relative;height:clamp(420px,46vw,760px);overflow:hidden;background:#fff}
+.s2-coin3d{position:relative;height:clamp(460px,52vw,860px);overflow:hidden;background:#fff;margin-left:calc(50% - 50vw);width:100vw}
 .s2-coin3d .words{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;pointer-events:none;user-select:none}
-.s2-coin3d .words b{display:block;font:500 clamp(84px,15vw,270px)/.86 var(--font);letter-spacing:-.05em;color:var(--ink);white-space:nowrap;animation:s2-drift 9s ease-in-out infinite alternate}
-.s2-coin3d .words b:nth-child(2){color:#E71E26;animation-delay:-3s;animation-direction:alternate-reverse}
-.s2-coin3d .words b:nth-child(3){color:#1B43B2;animation-delay:-6s}
-@keyframes s2-drift{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
-.s2-coin3d .cv{position:absolute;inset:0;touch-action:pan-y;cursor:grab}
+.s2-coin3d .words{justify-content:center;align-items:stretch}
+.s2-coin3d .words b{display:flex;width:max-content;font:500 clamp(84px,13vw,240px)/.9 var(--font);letter-spacing:-.05em;color:var(--ink);white-space:pre;animation:s2-run 40s linear infinite}
+.s2-coin3d .words b span{padding-right:.3em}
+.s2-coin3d .words b:nth-child(2){animation-direction:reverse;animation-duration:48s}
+.s2-coin3d .words b:nth-child(3){animation-duration:44s}
+@keyframes s2-run{to{transform:translateX(-50%)}}
+.s2-coin3d .cv{position:absolute;inset:0;z-index:1;touch-action:pan-y;cursor:grab}
 .s2-coin3d .cv:active{cursor:grabbing}
 .s2-coin3d .cv canvas{width:100%;height:100%;display:block}
 .s2-coin3d .hand{position:absolute;right:clamp(16px,3vw,40px);bottom:clamp(16px,3vw,40px);width:44px;height:44px;color:var(--ink);opacity:0;transition:opacity .4s;pointer-events:none}
@@ -124,7 +170,9 @@
 .s2-coins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2vw,40px);margin-top:clamp(24px,3vw,56px)}
 
 /* ---------- узоры и футболки ---------- */
-.s2-pt{display:grid;max-width:980px;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.s2-pt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.s2-pt .as-ph{aspect-ratio:16/9;background:#fff}
+.s2-pt .as-ph img{object-fit:cover;opacity:1}
 .s2-pt .as-ph img{transition:opacity .6s var(--ease),transform 1.2s var(--ease)!important}
 .s2-pt .as-ph:hover img{transform:scale(1.08)!important}
 .s2-tees{margin-top:clamp(40px,5vw,88px)}
@@ -137,11 +185,22 @@
   .s2-fonts .note{margin-top:8px}
   .s2-co .strip{grid-template-columns:1fr;gap:16px}
   .s2-awards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .s2-rules{grid-template-columns:1fr}
+  .s2-fonts.one{--h:clamp(18px,3.4vw,34px)}
+  .s2-fonts.one .row{column-gap:calc(var(--h) * 1.4);grid-template-columns:calc(var(--h) * 7.6) calc(var(--h) * 4.4) calc(var(--h) * 7.6)}
   .s2-panel .pr{grid-template-columns:1fr}
 }
 /* ---------- телефон ---------- */
 @media (max-width:640px){
   .s2-fonts{--h:4.3vw}
+  .s2-fonts.one{--h:4.5vw;row-gap:28px}
+  .s2-fonts.one .row{column-gap:calc(var(--h) * .9);grid-template-columns:calc(var(--h) * 7.2) calc(var(--h) * 4.4) calc(var(--h) * 7.2)}
+  .s2-pt{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .s2-pt .as-ph{aspect-ratio:1}
+  .s2-pt .as-ph:last-child{grid-column:span 2;aspect-ratio:2}
+  .s2-engrave .box{grid-template-columns:1fr;height:auto}
+  .s2-engrave .plate{min-height:170px}
+  .s2-filmbox{width:100%}
   .s2-fonts .row{column-gap:calc(var(--h) * .8);grid-template-columns:calc(var(--h) * 7.4) calc(var(--h) * 4.8) calc(var(--h) * 7.4)}
   .s2-co .logos{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:24px}
   .s2-co .logos img{height:64px}
@@ -161,3 +220,8 @@
 @media (prefers-reduced-motion:reduce){
   .s2-coin3d .words b{animation:none}
 }
+
+/* кнопки: общий сброс .as button в as.css сильнее .as-btn — возвращаем заливку и поля */
+.s2 .as-btn{padding:0 22px;background:var(--ink);color:#fff;font:500 16px/1 var(--font)}
+.s2 .as-btn:hover{background:#000}
+.s2 .s2-more .as-btn.on{background:#E71E26}

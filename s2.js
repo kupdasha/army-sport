@@ -13,7 +13,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок второго этапа (заполняет build.py)
-  var R = /*RATIOS*/{"a-cap":1.0,"a-icon":3.4549,"a-merch-43":2.0785,"a-merch-45":1.0,"a-pens":1.7804,"a-site":1.6,"a-small-1":6.5429,"a-small-2":6.5429,"aw-1-gold":0.7311,"aw-1":0.7317,"aw-2-gold":0.7311,"aw-2":0.7317,"aw-3-gold":0.7311,"aw-3":0.7317,"aw-4-gold":0.7311,"aw-4":0.7317,"aw-man-gold":1.7751,"aw-man":1.7769,"clip":1.7778,"coin-1-gold":1.0,"coin-1":1.0,"coin-2-gold":1.0,"coin-2":1.0,"coin-3-gold":1.0,"coin-3":1.0,"coin-4-gold":1.0,"coin-4":1.0,"coin-5-gold":1.0,"coin-5":1.0,"coin-6-gold":1.0,"coin-6":1.0,"f-chr-caps-center":7.6997,"f-chr-caps-horizontal":7.8607,"f-chr-caps-stacked":3.6432,"f-chr-lower-center":6.8399,"f-chr-lower-horizontal":7.0097,"f-chr-lower-stacked":3.3129,"f-chr-sentence-center":6.9087,"f-chr-sentence-horizontal":7.0788,"f-chr-sentence-stacked":3.0178,"f-eng-caps-center":7.5709,"f-eng-caps-horizontal":7.7446,"f-eng-caps-stacked":3.5171,"f-eng-lower-center":6.3618,"f-eng-lower-horizontal":6.5429,"f-eng-lower-stacked":3.1009,"f-eng-sentence-center":6.5246,"f-eng-sentence-horizontal":6.7063,"f-eng-sentence-stacked":2.807,"f-gol-caps-center":7.9002,"f-gol-caps-horizontal":8.1455,"f-gol-caps-stacked":3.661,"f-gol-lower-center":6.558,"f-gol-lower-horizontal":6.7897,"f-gol-lower-stacked":3.1909,"f-gol-sentence-center":6.6728,"f-gol-sentence-horizontal":6.9049,"f-gol-sentence-stacked":2.9066,"fm-1":1.0,"fm-2":1.0,"fm-3":1.0,"i-2":1.7768,"i-3":1.7768,"i-4":1.7768,"i-5":1.7787,"i-6":1.7768,"k-38":1.0,"k-46":1.0,"k-48":1.0,"k-55":1.0,"m-pattern":0.7461,"mk-chr-caps-center":7.6997,"mk-chr-caps-horizontal":7.8607,"mk-chr-caps-stacked":3.6432,"mk-chr-lower-center":6.8399,"mk-chr-lower-horizontal":7.0097,"mk-chr-lower-stacked":3.3129,"mk-chr-sentence-center":6.9087,"mk-chr-sentence-horizontal":7.0788,"mk-chr-sentence-stacked":3.0178,"mk-eng-caps-center":7.5709,"mk-eng-caps-horizontal":7.7446,"mk-eng-caps-stacked":3.5173,"mk-eng-lower-center":6.3618,"mk-eng-lower-horizontal":6.5429,"mk-eng-lower-stacked":3.1009,"mk-eng-sentence-center":6.5246,"mk-eng-sentence-horizontal":6.7063,"mk-eng-sentence-stacked":2.807,"mk-gol-caps-center":7.8977,"mk-gol-caps-horizontal":8.1434,"mk-gol-caps-stacked":3.6615,"mk-gol-lower-center":6.5574,"mk-gol-lower-horizontal":6.7893,"mk-gol-lower-stacked":3.1915,"mk-gol-sentence-center":6.6724,"mk-gol-sentence-horizontal":6.9043,"mk-gol-sentence-stacked":2.9063,"mw-chr-caps-center":7.6997,"mw-chr-caps-horizontal":7.8607,"mw-chr-caps-stacked":3.6432,"mw-chr-lower-center":6.8399,"mw-chr-lower-horizontal":7.0097,"mw-chr-lower-stacked":3.3129,"mw-chr-sentence-center":6.9087,"mw-chr-sentence-horizontal":7.0788,"mw-chr-sentence-stacked":3.0178,"mw-eng-caps-center":7.5709,"mw-eng-caps-horizontal":7.7446,"mw-eng-caps-stacked":3.5173,"mw-eng-lower-center":6.3618,"mw-eng-lower-horizontal":6.5429,"mw-eng-lower-stacked":3.1009,"mw-eng-sentence-center":6.5246,"mw-eng-sentence-horizontal":6.7063,"mw-eng-sentence-stacked":2.807,"mw-gol-caps-center":7.8977,"mw-gol-caps-horizontal":8.1434,"mw-gol-caps-stacked":3.6615,"mw-gol-lower-center":6.5574,"mw-gol-lower-horizontal":6.7893,"mw-gol-lower-stacked":3.1915,"mw-gol-sentence-center":6.6724,"mw-gol-sentence-horizontal":6.9043,"mw-gol-sentence-stacked":2.9063,"p-51":0.75,"p-52":0.75,"p-53":0.75,"pt-1":1.0,"pt-2":1.0,"pt-3":1.0,"pt-4":1.0,"pt-5":1.0,"pt-6":1.0,"pt-7":1.0,"pt-8":1.0,"pt-9":1.0,"tee-navy":1.0,"tee-red":1.0,"tee-stripe":1.0,"tee-white":1.0,"vc-chr-caps":0.7848,"vc-chr-lower":0.7715,"vc-chr-sentence":0.745,"vc-eng-caps":0.7664,"vc-eng-lower":0.7381,"vc-eng-sentence":0.7098,"vc-gol-caps":0.7872,"vc-gol-lower":0.7533,"vc-gol-sentence":0.7269,"vid-half":6.548,"vid-line":7.0089,"vid-solid":6.548,"vm-chr-caps":0.7848,"vm-chr-lower":0.7715,"vm-chr-sentence":0.745,"vm-eng-caps":0.7664,"vm-eng-lower":0.7381,"vm-eng-sentence":0.7098,"vm-gol-caps":0.7872,"vm-gol-lower":0.7533,"vm-gol-sentence":0.7269,"w-ball":1.7768,"w-fence":1.7787,"w-gym-a":1.7769,"w-gym-b":1.7769,"w-swim":1.7769,"w-win":1.7769}/*/RATIOS*/;
+  var R = /*RATIOS*/{"a-cap":1.0,"a-merch-43":2.0785,"a-merch-45":1.0,"a-pens":1.7804,"a-site":1.6,"a-small-1":6.5429,"a-small-2":6.5429,"aw-1-gold":0.7317,"aw-1":0.7317,"aw-2-gold":0.7317,"aw-2":0.7317,"aw-3-gold":0.7317,"aw-3":0.7317,"aw-4-gold":0.7317,"aw-4":0.7317,"aw-man":1.7769,"clip":1.7778,"coin-1-gold":1.0,"coin-1":1.0,"coin-2-gold":1.0,"coin-2":1.0,"coin-3-gold":1.0,"coin-3":1.0,"coin-4-gold":1.0,"coin-4":1.0,"coin-5-gold":1.0,"coin-5":1.0,"coin-6-gold":1.0,"coin-6":1.0,"f-chr-caps-center":7.6997,"f-chr-caps-horizontal":7.8607,"f-chr-caps-stacked":3.6432,"f-chr-lower-center":6.8399,"f-chr-lower-horizontal":7.0097,"f-chr-lower-stacked":3.3129,"f-chr-sentence-center":6.9087,"f-chr-sentence-horizontal":7.0788,"f-chr-sentence-stacked":3.0178,"f-eng-caps-center":7.5709,"f-eng-caps-horizontal":7.7446,"f-eng-caps-stacked":3.5171,"f-eng-lower-center":6.3618,"f-eng-lower-horizontal":6.5429,"f-eng-lower-stacked":3.1009,"f-eng-sentence-center":6.5246,"f-eng-sentence-horizontal":6.7063,"f-eng-sentence-stacked":2.807,"f-gol-caps-center":7.9002,"f-gol-caps-horizontal":8.1455,"f-gol-caps-stacked":3.661,"f-gol-lower-center":6.558,"f-gol-lower-horizontal":6.7897,"f-gol-lower-stacked":3.1909,"f-gol-sentence-center":6.6728,"f-gol-sentence-horizontal":6.9049,"f-gol-sentence-stacked":2.9066,"fav":1.1274,"fm-1":1.0,"fm-2":1.0,"fm-3":1.0,"i-2":1.7768,"i-3":1.7768,"i-4":1.7768,"i-5":1.7787,"i-6":1.7768,"icon":1.0,"k-38":1.0,"k-46":1.0,"k-48":1.0,"k-55":1.0,"m-pattern":0.7464,"mk-chr-caps-center":7.6997,"mk-chr-caps-horizontal":7.8607,"mk-chr-caps-stacked":3.6432,"mk-chr-lower-center":6.8399,"mk-chr-lower-horizontal":7.0097,"mk-chr-lower-stacked":3.3129,"mk-chr-sentence-center":6.9087,"mk-chr-sentence-horizontal":7.0788,"mk-chr-sentence-stacked":3.0178,"mk-eng-caps-center":7.5709,"mk-eng-caps-horizontal":7.7446,"mk-eng-caps-stacked":3.5173,"mk-eng-lower-center":6.3618,"mk-eng-lower-horizontal":6.5429,"mk-eng-lower-stacked":3.1009,"mk-eng-sentence-center":6.5246,"mk-eng-sentence-horizontal":6.7063,"mk-eng-sentence-stacked":2.807,"mk-gol-caps-center":7.8977,"mk-gol-caps-horizontal":8.1434,"mk-gol-caps-stacked":3.6615,"mk-gol-lower-center":6.5574,"mk-gol-lower-horizontal":6.7893,"mk-gol-lower-stacked":3.1915,"mk-gol-sentence-center":6.6724,"mk-gol-sentence-horizontal":6.9043,"mk-gol-sentence-stacked":2.9063,"mw-chr-caps-center":7.6997,"mw-chr-caps-horizontal":7.8607,"mw-chr-caps-stacked":3.6432,"mw-chr-lower-center":6.8399,"mw-chr-lower-horizontal":7.0097,"mw-chr-lower-stacked":3.3129,"mw-chr-sentence-center":6.9087,"mw-chr-sentence-horizontal":7.0788,"mw-chr-sentence-stacked":3.0178,"mw-eng-caps-center":7.5709,"mw-eng-caps-horizontal":7.7446,"mw-eng-caps-stacked":3.5173,"mw-eng-lower-center":6.3618,"mw-eng-lower-horizontal":6.5429,"mw-eng-lower-stacked":3.1009,"mw-eng-sentence-center":6.5246,"mw-eng-sentence-horizontal":6.7063,"mw-eng-sentence-stacked":2.807,"mw-gol-caps-center":7.8977,"mw-gol-caps-horizontal":8.1434,"mw-gol-caps-stacked":3.6615,"mw-gol-lower-center":6.5574,"mw-gol-lower-horizontal":6.7893,"mw-gol-lower-stacked":3.1915,"mw-gol-sentence-center":6.6724,"mw-gol-sentence-horizontal":6.9043,"mw-gol-sentence-stacked":2.9063,"p-51":0.75,"p-52":0.75,"p-53":0.75,"pt-1":1.0,"pt-2":1.0,"pt-3":1.0,"pt-4":1.0,"pt-5":1.0,"pt-6":1.0,"pt-7":1.0,"pt-8":1.0,"pt-9":1.0,"tee-navy":1.0,"tee-red":1.0,"tee-stripe":1.0,"tee-white":1.0,"vc-chr-caps":0.7848,"vc-chr-lower":0.7715,"vc-chr-sentence":0.745,"vc-eng-caps":0.7664,"vc-eng-lower":0.7381,"vc-eng-sentence":0.7098,"vc-gol-caps":0.7872,"vc-gol-lower":0.7533,"vc-gol-sentence":0.7269,"vid-half":6.548,"vid-line":7.0089,"vid-solid":6.548,"vm-chr-caps":0.7848,"vm-chr-lower":0.7715,"vm-chr-sentence":0.745,"vm-eng-caps":0.7664,"vm-eng-lower":0.7381,"vm-eng-sentence":0.7098,"vm-gol-caps":0.7872,"vm-gol-lower":0.7533,"vm-gol-sentence":0.7269,"w-ball":1.7768,"w-fence":1.7787,"w-gym-a":1.7769,"w-gym-b":1.7769,"w-swim":1.7769,"w-win":1.7769}/*/RATIOS*/;
   var STAGE1 = 'https://kupdasha.ru/armysport';
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
@@ -66,22 +66,35 @@
   var FONTS = [
     ['eng', 'Энджин', 'https://www.artlebedev.ru/type/engine/#drive'],
     ['chr', 'Хромиус', 'https://www.artlebedev.ru/type/chromius/#drive'],
-    ['gol', 'Golos Text', 'https://fonts.google.com/specimen/Golos+Text']
+    ['gol', 'Golos Text', 'https://fonts.google.com/specimen/Golos+Text', 'Шрифт заголовков этого сайта. Для знака не рекомендуется: у него бесплатная лицензия, и проекту он дает меньше уникальности, чем платный шрифт. Подойдет, например, для видеоматериалов.']
   ];
   var CASES = [['lower', 'строчные'], ['sentence', 'с заглавной'], ['caps', 'заглавные']];
   var LAYS = ['horizontal', 'stacked', 'center'];
   var PARTNERS = ['p-sa', 'p-cska-fight', null, 'p-cska', 'p-fsbr', 'p-dynamo'];
 
-  // все три шрифта на одном экране: строка — шрифт и регистр, столбцы — три компоновки
-  function fontTable(prefix, note) {
-    return '<div class="s2-fonts">' + FONTS.map(function (f) {
-      return '<div class="grp"><a class="name" href="' + f[2] + '" target="_blank" rel="noopener">' + esc(f[1]) + '</a>' +
-        CASES.map(function (c) {
-          return '<div class="row" tabindex="0" aria-label="' + esc(f[1] + ', ' + c[1]) + '">' + LAYS.map(function (l) {
-            return '<span class="' + l + '"><img src="' + svg(prefix + f[0] + '-' + c[0] + '-' + l) + '" alt="" loading="lazy"></span>';
-          }).join('') + '</div>';
-        }).join('') + (note && note[f[0]] ? '<p class="note">' + T(note[f[0]]) + '</p>' : '') + '</div>';
+  // строки одного шрифта: регистр × три компоновки
+  function fontRows(prefix, f) {
+    return CASES.map(function (c) {
+      return '<div class="row" tabindex="0" aria-label="' + esc(f[1] + ', ' + c[1]) + '">' + LAYS.map(function (l) {
+        return '<span class="' + l + '"><img src="' + svg(prefix + f[0] + '-' + c[0] + '-' + l) + '" alt="" loading="lazy"></span>';
+      }).join('') + '</div>';
+    }).join('');
+  }
+  // один шрифт крупно (вкладка)
+  function fontTable(prefix, f) { return '<div class="s2-fonts one">' + fontRows(prefix, f) + '</div>'; }
+  // все три шрифта разом (монохром)
+  function monoTable(prefix, cls) {
+    return '<div class="s2-fonts ' + cls + '">' + FONTS.map(function (f) {
+      return '<div class="grp"><span class="name">' + esc(f[1]) + '</span>' + fontRows(prefix, f) + '</div>';
     }).join('') + '</div>';
+  }
+  // телефон с иконкой среди привычных приложений
+  var APPS = [['tcatch', 'T Catch'], ['online', 'Онлайн'], ['mifit', 'Mi Fitness'], ['sportmaster', 'Спортмастер'], ['sportsru', 'Sports.ru'], ['max', 'Макс'], ['gosuslugi', 'Госуслуги'], ['shazam', 'Shazam']];
+  function phone() {
+    return '<div class="as-phone"><div class="as-screen"><div class="isl"></div><div class="time">21:58</div><div class="as-apps">' +
+      '<div class="as-a me on"><i><img src="' + IMG + 's2-icon.webp" alt="" loading="lazy"></i><span>Армия Спорта</span></div>' +
+      APPS.map(function (a) { return '<div class="as-a"><i style="background-image:url(' + IMG + 'app-' + a[0] + '.webp)"></i><span>' + a[1] + '</span></div>'; }).join('') +
+      '</div></div></div>';
   }
   function cobrand() {
     return '<div class="s2-co">' + FONTS.map(function (f) {
@@ -98,20 +111,18 @@
     '<a href="#mark">знак</a><a href="#mono">монохром</a><a href="#small">малые размеры</a><a href="#film">ролик</a><a href="#merch">мерч</a><a href="#walls">стены</a><a href="#award">награда</a><a href="#coins">монеты</a><a href="#wear">одежда</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
-  // ---------- первый экран ----------
-  h.push('<section class="as-hero s2-hero" id="top" data-slide><div class="as-wrap"><div class="row">' +
-    '<h1 class="as-disp">армия спорта</h1>' +
-    '<div><p class="as-lead">' + T('Второй этап: выбранная звезда в работе — шрифт, версии знака и носители.') + '</p>' +
-    '<a class="s2-back" href="' + STAGE1 + '">первый этап</a></div></div></div>' +
-    '<div class="as-wrap s2-heromark"><div class="star"><img src="' + svg('s2-vc-eng-lower') + '" alt=""></div></div></section>');
+  // ---------- первый экран: звезда и одна фраза ----------
+  h.push('<section class="as-hero s2-hero" id="top" data-slide>' +
+    '<div class="as-wrap s2-heromark"><div class="star"><img src="' + svg('s2-vc-eng-lower') + '" alt="армия спорта"></div></div>' +
+    '<div class="as-wrap"><div class="s2-herotx"><p class="as-lead">' + T('Второй этап: выбранная звезда в работе — шрифт, версии знака и носители.') + '</p>' +
+    '<a class="s2-back" href="' + STAGE1 + '">первый этап</a></div></div></section>');
 
-  // ---------- основная версия: цветная звезда, три шрифта ----------
+  // ---------- основная версия: цветная звезда, три шрифта во вкладках ----------
   h.push(sec('mark', 'цветная звезда — основная', [
-    'Основная версия знака — цветная звезда, к ней зафиксированы черно-белые версии. Версия с фавиконом в центре понравилась, но не как единственная.',
-    'Три шрифта на выбор — каждый в трех регистрах и трех компоновках. Наведите на строку, чтобы рассмотреть ее отдельно.'
-  ], fontTable('s2-f-', {
-    gol: 'Шрифт заголовков этого сайта. Для знака не рекомендуется: у него бесплатная лицензия, и проекту он дает меньше уникальности, чем платный шрифт. Подойдет, например, для видеоматериалов.'
-  }) + '<p class="s2-aside">' + T('Звезда между словами гармонична, только когда оба слова набраны строчными или оба — заглавными. Шрифт в логотипах подогнан под углы звезды, кое-где буквы подрезаны — в наборе текста этого не видно.') + '</p>'));
+    'Звезда между словами гармонична, только когда оба слова набраны строчными или оба — заглавными. Шрифт в логотипах подогнан под углы звезды, кое-где буквы подрезаны — в наборе текста этого не видно.'
+  ], '<div class="s2-fontsw">' + tabs(FONTS.map(function (f) { return f[1]; })) + '<div class="stage">' + FONTS.map(function (f, i) {
+    return '<div class="pane' + (i ? '' : ' on') + '">' + fontTable('s2-f-', f) + '<p class="note">' + (f[3] ? T(f[3]) + ' ' : '') + '<a href="' + f[2] + '" target="_blank" rel="noopener">' + T('шрифт ' + f[1]) + '</a></p></div>';
+  }).join('') + '</div></div>'));
 
   h.push('<div class="s2-sub" id="co">' + tx('в кобрендинге', ['Вертикальная версия рядом с партнерами — в каждом из трех шрифтов.']) +
     '<div class="as-wrap as-vis as-up">' + tabs(CASES.map(function (c) { return c[1]; })) + cobrand() + '</div></div>');
@@ -120,30 +131,37 @@
   h.push(sec('mono', 'монохромная звезда', [
     'Звезда всегда одноцветная: белая, черная или с вырубкой вместо синего. Фирменные красный и синий уходят с нее и появляются вокруг логотипа — в фоне, графике, паттерне, плашке.'
   ], '<div class="s2-mono">' + tabs(['на черном', 'на белом', 'на узоре']) +
-    '<div class="stage k" style="--pat:url(' + IMG + 's2-m-pattern.webp)">' + fontTable('s2-mw-').replace('s2-fonts', 's2-fonts w') + fontTable('s2-mk-').replace('s2-fonts', 's2-fonts k') + '</div></div>' +
+    '<div class="stage k" style="--pat:url(' + svg('s2-m-pattern') + ')">' + monoTable('s2-mw-', 'w') + monoTable('s2-mk-', 'k') + '</div></div>' +
     '<div class="s2-pal"><p class="as-p">' + T('Красный преобладает и по возможности стоит сверху. Основной фон — белый.') + '</p><div class="as-pal">' +
-    [['белый', '#FFFFFF', 3, 'light'], ['красный', '#E71E26', 3], ['синий', '#1B43B2', 1.5], ['черный', '#080000', 1.5]].map(function (c) {
+    [['белый', '#FFFFFF', 3, 'light'], ['красный', '#E71E26', 3], ['синий', '#002FFF', 1.5], ['черный', '#080000', 1.5]].map(function (c) {
       return '<div class="' + (c[3] || '') + '" style="--f:' + c[2] + ';background:' + c[1] + ';color:' + (c[3] ? '#121314' : '#fff') + '"><span>' + c[0] + '<br>' + c[1] + '</span></div>';
     }).join('') + '</div></div>'));
 
-  // ---------- малые размеры ----------
-  h.push(sec('small', 'малые размеры', ['Версии знака для иконки приложения, фавикона, сайта и мелких носителей.'],
-    fit([['a-icon'], ['a-site']]) +
-    '<div class="s2-smalls">' +
-    '<figure><div class="m"><img src="' + svg('s2-a-small-1') + '" alt=""></div><figcaption class="as-p">' + T('Меньше 0,5 см — логотип одного цвета.') + '</figcaption></figure>' +
-    '<figure><div class="m"><img src="' + svg('s2-a-small-2') + '" alt=""></div><figcaption class="as-p">' + T('Если лак, гравировка или другие технические особенности макета невозможны — вариант с обводкой.') + '</figcaption></figure></div>' +
+  // ---------- малые размеры: иконка, фавикон и сайт в макетах, правила — в картинках ----------
+  h.push(sec('small', 'малые размеры', ['Иконка приложения, фавикон и сайт — в макетах телефона и браузера. Ниже — как знак ведет себя в мелком размере и в техническом нанесении.'],
+    '<div class="as-app s2-app"><div class="as-phonebox">' + phone() + '</div>' +
+    '<div class="as-tabbox"><div class="as-bigicon"><img src="' + IMG + 's2-icon.webp" alt="иконка приложения" loading="lazy"></div>' +
+    '<div class="as-browser"><div class="tab"><img class="fav" src="' + svg('s2-fav') + '" alt="" loading="lazy"><span>Армия Спорта</span></div><div class="url">armiya-sporta.ru</div></div></div></div>' +
+    '<div class="as-site s2-site"><div class="chrome"><i></i><i></i><i></i><span><img class="fav" src="' + svg('s2-fav') + '" alt="">armiya-sporta.ru</span></div>' + ph('a-site', { zoom: false, sizes: '(max-width:640px) 100vw, 90vw' }) + '</div>' +
+    '<div class="s2-rules">' +
+    '<figure class="s2-ruler"><div class="box"><div class="lg"><img class="c" src="' + svg('s2-f-eng-lower-horizontal') + '" alt=""><img class="m" src="' + svg('s2-a-small-1') + '" alt=""></div>' +
+    '<div class="scale"><span>0,5 см</span><i></i></div><b class="cm">2 см</b></div>' +
+    '<figcaption class="as-p">' + T('Меньше 0,5 см — логотип одного цвета: два цвета звезды в мелком размере сливаются.') + '</figcaption></figure>' +
+    '<figure class="s2-engrave"><div class="box"><div class="plate print"><img src="' + svg('s2-f-eng-lower-horizontal') + '" alt=""><span>лак, печать</span></div>' +
+    '<div class="plate metal"><img src="' + svg('s2-a-small-2') + '" alt=""><span>гравировка, тиснение</span></div></div>' +
+    '<figcaption class="as-p">' + T('Если лак, гравировка или другие технические особенности макета невозможны — вариант с обводкой.') + '</figcaption></figure></div>' +
     '<div class="as-col">' +
     '<div class="s8">' + ph('a-pens') + '</div><div class="s4">' + ph('a-cap') + '</div>' +
     '<div class="s8">' + ph('a-merch-43') + '</div><div class="s4">' + ph('a-merch-45') + '</div></div>'));
 
-  // ---------- угол ролика ----------
+  // ---------- угол ролика: ролик целиком на экране ----------
   h.push(sec('film', 'в углу ролика', ['Версия для угла ролика: читается в маленьком размере в левом верхнем углу, на контрастном и меняющемся фоне.'],
-    tabs(['полупрозрачный знак', 'с обводкой', 'монолитный знак']) +
+    '<div class="s2-filmbox">' + tabs(['полупрозрачный знак', 'с обводкой', 'монолитный знак']) +
     '<div class="s2-film"><video muted loop playsinline preload="none" poster="' + IMG + 's2-clip.webp"><source src="' + IMG + 's2-clip.mp4" type="video/mp4"></video>' +
-    ['half', 'line', 'solid'].map(function (v, i) { return '<img class="corner' + (i ? '' : ' on') + '" src="' + svg('s2-vid-' + v) + '" alt="">'; }).join('') + '</div>'));
+    ['half', 'line', 'solid'].map(function (v, i) { return '<img class="corner' + (i ? '' : ' on') + '" src="' + svg('s2-vid-' + v) + '" alt="">'; }).join('') + '</div></div>'));
 
-  // ---------- мерч: знак без текста ----------
-  h.push(sec('merch', 'знак без текста', ['Для брелоков и мелкого мерча.'],
+  // ---------- брелоки и мелкий мерч ----------
+  h.push(sec('merch', 'брелоки и мелкий мерч', [],
     '<div class="as-grid s2-g4">' + ['k-46', 'k-55', 'k-48', 'k-38'].map(function (k) { return ph(k); }).join('') + '</div>'));
 
   // ---------- с графикой и фотографиями ----------
@@ -151,11 +169,6 @@
     'Логотип в паре с фирменной графикой, паттерном и реальными фотографиями схваток и борцов.',
     'Это не финальные макеты, а пример, чтобы посмотреть именно логотип.'
   ], '<div class="as-grid as-g3 s2-posters">' + ['p-51', 'p-52', 'p-53'].map(function (p) { return ph(p); }).join('') + '</div>'));
-
-  // ====================================================================================
-  //   НОСИТЕЛИ
-  // ====================================================================================
-  h.push('<section class="as-divide" id="carriers" data-slide><div class="as-wrap"><span>второй этап</span><h2 class="as-h1">носители</h2></div></section>');
 
   // ---------- стены и иллюстрации ----------
   var RULES = [
@@ -175,32 +188,34 @@
     'Colors are limited to saturated red, deep navy, bright cobalt blue and off-white, nothing beyond that: no green, no yellow, no gradients and no shading.',
     'The image is a wide horizontal panorama in 21:9, with the scene spread over the full width. Leave out any text, letters, numbers, logos, signatures or watermarks.'];
   h.push(sec('walls', 'стены и иллюстрации', [
-    'Масштабирование решают готовые библиотеки иллюстраций под разные виды спорта и коллажи из объектов без фона. Плюс — универсальные иллюстрации на спортивную тему без конкретного вида спорта.'
-  ], '<div class="as-col">' +
-    '<div class="s6">' + ph('w-gym-a') + '</div><div class="s6">' + ph('w-gym-b') + '</div>' +
-    '<div class="s4">' + ph('w-ball') + '</div><div class="s4">' + ph('w-fence') + '</div><div class="s4">' + ph('w-win') + '</div></div>'));
-  h.push(sub('с фото и без', ['Графика сочетается с фотографиями реальных спортсменов или работает сама, как иллюстрация.'],
-    '<p class="s2-lbl">с фотографией</p><div class="as-grid as-g2">' + ph('i-2') + ph('i-4') + '</div>' +
-    '<p class="s2-lbl">только иллюстрация</p><div class="as-grid as-g3">' + ph('i-5') + ph('i-3') + ph('i-6') + '</div>' +
-    '<div class="s2-more"><button type="button" class="as-btn" data-open="rules" aria-expanded="false">правила использования</button>' +
+    'Масштабирование решают готовые библиотеки иллюстраций под разные виды спорта и коллажи из объектов без фона. Плюс — универсальные иллюстрации на спортивную тему без конкретного вида спорта.',
+    'Графика сочетается с фотографиями реальных спортсменов или работает сама, как иллюстрация.'
+  ], '<p class="s2-lbl">с фотографией</p><div class="as-grid as-g2">' + ph('i-2') + ph('i-4') + '</div>' +
+    '<p class="s2-lbl">только иллюстрация</p><div class="as-grid as-g3">' + ph('i-5') + ph('i-3') + ph('i-6') + '</div>'));
+  h.push('<div class="s2-sub" id="walls-how">' + tx('пояснения к оформлению стен', ['Стены залов в комиксной стилистике. Правила и промт для генераций — по кнопкам.']) +
+    '<div class="as-wrap as-vis as-up"><div class="s2-more"><button type="button" class="as-btn" data-open="rules" aria-expanded="false">правила использования</button>' +
     '<button type="button" class="as-btn" data-open="prompt" aria-expanded="false">промт</button></div>' +
-    '<div class="s2-panel" id="s2-rules" hidden><h3 class="as-h2">правила комиксной стилистики</h3><div class="cols">' + RULES.map(function (r) {
+    '<div class="s2-panel" id="s2-rules" hidden><div class="cols">' + RULES.map(function (r) {
       return '<div><h4>' + T(r[0]) + '</h4><p class="as-p">' + T(r[1]) + '</p>' + (r[2] ? '<ul>' + r[2].map(function (li) { return '<li class="as-p">' + T(li) + '</li>'; }).join('') + '</ul>' : '') + '</div>';
     }).join('') + '</div></div>' +
-    '<div class="s2-panel" id="s2-prompt" hidden><h3 class="as-h2">универсальный промт</h3><div class="pr"><div class="code" lang="en">' + PROMPT.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
-    '<button type="button" class="as-btn copy">скопировать промт</button></div>' + ph('w-swim') + '</div></div>'));
+    '<div class="s2-panel" id="s2-prompt" hidden><div class="pr"><div class="code" lang="en">' + PROMPT.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
+    '<button type="button" class="as-btn copy">скопировать промт</button></div>' + ph('w-swim') + '</div></div>' +
+    '<div class="as-col s2-walls">' +
+    '<div class="s6">' + ph('w-gym-a') + '</div><div class="s6">' + ph('w-gym-b') + '</div>' +
+    '<div class="s4">' + ph('w-ball') + '</div><div class="s4">' + ph('w-fence') + '</div><div class="s4">' + ph('w-win') + '</div></div></div></div>');
 
   // ---------- награда ----------
   h.push(sec('award', 'награда', [
     'Награда «победитель в отражении» развивается дальше: зеркальная поверхность, вырубка логотипа, соразмерность атлету. Теперь на нее переносится вся информация с текущей стелы: логотип «Армии спорта», герб ЦСКА, знак вида спорта, «1 место», формулировка зачета, название чемпионата, год и строка «При поддержке ЦСКА Единоборства».',
     'Задача — проверить, выдержит ли форма такую нагрузку, и не перегрузить ее. Основание — фундаментальнее, но не тяжелее.'
   ], '<div class="s2-awards">' + [['aw-1', 'цветные логотипы на пьедестале'], ['aw-2', 'надписи сбоку'], ['aw-3', 'черные аккуратные логотипы'], ['aw-4', 'черная накладка сверху']].map(function (a, i) {
-    return '<figure class="s2-shine">' + ph(a[0], { cls: 'contain soft', gold: true, gloss: true }) + '<figcaption><b>' + (i + 1) + '</b>' + T(a[1]) + '</figcaption></figure>';
-  }).join('') + '</div><div class="s2-shine s2-man">' + ph('aw-man', { gold: true }) + '</div>'));
+    return '<figure class="s2-shine s2-aw">' + ph(a[0], { cls: 'contain soft' }).replace('</div>', '<i class="flow" style="-webkit-mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp);mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp)"></i></div>') +
+      '<figcaption><b>' + (i + 1) + '</b>' + T(a[1]) + '</figcaption></figure>';
+  }).join('') + '</div><div class="s2-man">' + ph('aw-man') + '</div>'));
 
   // ---------- монеты ----------
   h.push(sec('coins', 'монеты', ['Монета поворачивается в объеме — ее можно покрутить. Ниже — варианты лицевой стороны.'],
-    '<div class="s2-coin3d"><div class="words" aria-hidden="true"><b>спорт</b><b>победа</b><b>борьба</b></div><div class="cv"></div><div class="hand">' + ICON.hand + '</div></div>' +
+    '<div class="s2-coin3d"><div class="words" aria-hidden="true">' + ['спорт победа борьба', 'победа борьба спорт', 'борьба спорт победа'].map(function (r) { var t = (r + ' ').repeat(4); return '<b><span>' + t + '</span><span>' + t + '</span></b>'; }).join('') + '</div><div class="cv"></div><div class="hand">' + ICON.hand + '</div></div>' +
     '<div class="s2-coins">' + [1, 2, 3, 4, 5, 6].map(function (i) { return '<div class="s2-shine">' + ph('coin-' + i, { cls: 'contain soft', gold: true }) + '</div>'; }).join('') + '</div>'));
 
   // ---------- форма ----------
@@ -209,7 +224,7 @@
 
   // ---------- на одежде ----------
   h.push(sec('wear', 'на одежде', ['Варианты фирменной графики.'],
-    '<div class="s2-pt">' + [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (i) { return ph('pt-' + i); }).join('') + '</div>' +
+    '<div class="s2-pt">' + [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (i) { return '<div class="as-ph zoom" data-big="' + svg('s2-pt-' + i) + '"><img src="' + svg('s2-pt-' + i) + '" alt="" loading="lazy"></div>'; }).join('') + '</div>' +
     '<div class="as-grid as-g2 s2-tees">' + ['tee-red', 'tee-stripe', 'tee-navy', 'tee-white'].map(function (t) { return ph(t); }).join('') + '</div>'));
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
@@ -246,7 +261,7 @@
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
-  $$('.as-up,.as-divide,.s2-heromark').forEach(function (el) { io.observe(el); });
+  $$('.as-up,.s2-heromark').forEach(function (el) { io.observe(el); });
 
   // бесконечное — только пока видно
   function whileVisible(el, on, off) {
@@ -258,7 +273,7 @@
   }
 
   // шапка: текущий раздел, цвет под фон; кнопка наверх
-  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-divide,.as-thanks'), links = $$('.as-top nav a'),
+  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-thanks'), links = $$('.as-top nav a'),
     marks = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
   var navCur = -2;
   function onScroll() {
@@ -333,6 +348,9 @@
     if (!reduce) every(box, function () { if (!user) show((k + 1) % n); }, ms);
     show(0);
   }
+  // шрифты: вкладка на каждый
+  var fsw = $('.s2-fontsw');
+  switcher(fsw, 3, function (j) { $$('.pane', fsw).forEach(function (p, i) { p.classList.toggle('on', i === j); }); }, 5000);
   // кобрендинг: регистр вертикального знака
   var co = $('#co');
   switcher(co, 3, function (j) {
@@ -348,6 +366,25 @@
   (function () {
     var v = $('video', film);
     whileVisible(v, function () { if (v.preload === 'none') v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }, function () { v.pause(); });
+  })();
+
+  // ---------- линейка: знак уменьшается от 2 до 0,3 см и обратно ----------
+  (function () {
+    var f = $('.s2-ruler'), lg = $('.lg', f), cm = $('.cm', f), t0 = 0, raf = 0, on = false;
+    function set(h) {
+      lg.style.setProperty('--lh', h.toFixed(2) + 'cm');
+      cm.textContent = h.toFixed(1).replace('.', ',') + ' см';
+      f.classList.toggle('small', h < .5);
+    }
+    function loop(t) {
+      if (!t0) t0 = t;
+      var k = ((t - t0) / 9000) % 1, e = .5 - .5 * Math.cos(k * Math.PI * 2); // 0 → 1 → 0
+      var top = Math.min(2, f.clientWidth * .82 / 6.54 / 37.8); // знак не шире блока: 1 см ≈ 37,8 px
+      set(top - (top - .3) * e);
+      raf = on ? requestAnimationFrame(loop) : 0;
+    }
+    set(reduce ? .4 : Math.min(2, f.clientWidth * .82 / 6.54 / 37.8));
+    if (!reduce) whileVisible(f, function () { on = true; if (!raf) raf = requestAnimationFrame(loop); }, function () { on = false; });
   })();
 
   // ---------- правила и промт: раскрываются по кнопке ----------
@@ -407,12 +444,27 @@
       var THREE = window.THREE;
       var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-      renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.25;
+      renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
       renderer.physicallyCorrectLights = true;
       cv.appendChild(renderer.domElement);
       var scene = new THREE.Scene();
       var pmrem = new THREE.PMREMGenerator(renderer);
-      scene.environment = pmrem.fromScene(new THREE.RoomEnvironment(), .03).texture;
+      // окружение — те же слова, что на фоне: золото отражает типографику
+      var room = pmrem.fromScene(new THREE.RoomEnvironment(), .03).texture;
+      function wordsEnv() {
+        var c = document.createElement('canvas'); c.width = 2048; c.height = 1024;
+        var g = c.getContext('2d'), rows = ['спорт победа борьба', 'победа борьба спорт', 'борьба спорт победа'];
+        // светлая студия: блик сверху, серый фон, черные строки слов — их и отражает золото
+        var gr = g.createLinearGradient(0, 0, 0, 1024);
+        gr.addColorStop(0, '#ffffff'); gr.addColorStop(.28, '#d9d6cf'); gr.addColorStop(.5, '#a9a59d'); gr.addColorStop(.75, '#77736c'); gr.addColorStop(1, '#3a3834');
+        g.fillStyle = gr; g.fillRect(0, 0, 2048, 1024);
+        g.fillStyle = '#0d0d0e'; g.font = '500 74px "Golos Text", sans-serif'; g.textBaseline = 'middle';
+        for (var y = 0; y < 9; y++) { var t = rows[y % 3]; t = t + '  ' + t + '  ' + t + '  ' + t; g.fillText(t, -((y * 170) % 600), 300 + y * 64); }
+        var tex = new THREE.CanvasTexture(c); tex.mapping = THREE.EquirectangularReflectionMapping; tex.encoding = THREE.sRGBEncoding;
+        return pmrem.fromEquirectangular(tex).texture;
+      }
+      scene.environment = room;
+      (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function () { scene.environment = wordsEnv(); });
       var key = new THREE.DirectionalLight(0xfff1d8, 2.2); key.position.set(-3, 4, 5); scene.add(key);
       var rim = new THREE.DirectionalLight(0xffe2b0, 1.6); rim.position.set(4, 1, -3); scene.add(rim);
       var cam = new THREE.PerspectiveCamera(30, 1, .05, 100); cam.position.set(0, 0, 4.9);
@@ -426,8 +478,10 @@
         var m = g.scene;
         m.traverse(function (o) {
           if (!o.isMesh) return;
-          o.material.envMapIntensity = 2.2;
-          if (o.material.name === 'gold' && o.material.roughness < .3) o.material.roughness = .24;
+          o.material.envMapIntensity = 1.35;
+          // золото — глянцевое, как зеркало
+          if (o.material.name === 'gold') { o.material.roughness = .06; o.material.metalness = 1; }
+          if (o.material.name === 'gold_matte') o.material.roughness = .3;
           if (o.material.name === 'black_matte') { o.material.metalness = 0; o.material.roughness = .75; o.material.envMapIntensity = .25; o.material.color.setRGB(.008, .008, .009); }
           o.material.side = THREE.DoubleSide;
         });
