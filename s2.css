@@ -103,7 +103,7 @@
 .s2-smalls figcaption{max-width:36ch;margin-top:16px;color:var(--mute)}
 
 /* ---------- ролик со знаком в углу ---------- */
-.s2-filmbox{width:min(100%,calc((100svh - 150px) * 16 / 9));margin:0 auto}
+.s2-filmbox{width:min(100%,calc((100svh - 230px) * 16 / 9))}
 .s2-film{position:relative;aspect-ratio:16/9;background:#0b0b0d;overflow:hidden}
 .s2-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s2-film .corner{z-index:1}
@@ -206,6 +206,7 @@
   .s2-co .logos img{height:64px}
   .s2-mono .stage{padding:20px 12px}
   .s2-mono .s2-fonts{--h:3.75vw}
+  .s2-mono .s2-fonts.one{--h:4.2vw}
   .s2-smalls,.s2-panel .cols{grid-template-columns:1fr}
   .s2-fit{flex-direction:column}
   .s2-smalls .m img{width:min(100%,260px)}
@@ -225,3 +226,88 @@
 .s2 .as-btn{padding:0 22px;background:var(--ink);color:#fff;font:500 16px/1 var(--font)}
 .s2 .as-btn:hover{background:#000}
 .s2 .s2-more .as-btn.on{background:#E71E26}
+
+/* ====== правки 23.10 ====== */
+/* первый экран: звезда и подпись одной композицией — фраза и кнопка стоят у звезды, по ее нижнему краю */
+.s2-hero{justify-content:center;padding-bottom:clamp(48px,8vh,120px)}
+.s2-heroin{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;gap:clamp(28px,5vw,96px)}
+.s2-hero .s2-heromark{padding-top:0}
+.s2-heromark .star{width:clamp(200px,34vw,560px)}
+.s2-herotx{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(20px,2.4vw,36px);padding-bottom:clamp(8px,1.4vw,24px)}
+.s2-herotx .as-lead{max-width:22ch;font-size:clamp(26px,3.2vw,52px);line-height:1.12}
+
+/* шрифты: блок логотипов по центру */
+.s2-fontsw .as-sw-tabs{justify-content:center}
+.s2-fonts.one{justify-content:center;justify-items:center}
+.s2-fonts.one .row{justify-content:center}
+.s2-fonts.one .row span{justify-content:center}
+.s2-fonts.one .row img{object-position:center}
+.s2-fontsw .note{margin:0 auto;text-align:center;text-wrap:balance}
+
+/* монохром — та же верстка, что у цветной звезды; фоны — вторым рядом внутри поля */
+.s2-mono .bg .as-sw-tabs{justify-content:center;margin-bottom:clamp(12px,1.4vw,20px)}
+.s2-mono .bg .as-sw-tabs button{font-size:16px}
+.s2-mono .stage{padding:clamp(8px,1vw,16px) clamp(16px,3vw,48px)}
+.s2-pal .as-p+.as-p{margin-top:.6em;color:var(--mute)}
+
+/* малые размеры: светлый серо-голубой фон, чтобы макеты отделялись друг от друга */
+.s2-tint{background:#EBF0F6;padding-bottom:clamp(72px,8vw,136px);margin-top:clamp(112px,12vw,200px);padding-top:clamp(72px,8vw,136px)}
+.s2-tint + .as-sec{padding-top:clamp(112px,12vw,200px)}
+.s2-tint .as-ph{background:#DDE4EC}
+/* телефон уходит за край карточки: край отмечен полоской */
+.s2-app .as-phonebox{box-shadow:inset 0 -3px 0 #C3CEDB}
+.s2-app .as-phonebox::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18%;background:linear-gradient(transparent,rgba(255,255,255,.85));pointer-events:none}
+/* сайт поменьше, ролик под слоем страницы */
+.s2-site{width:min(100%,880px);margin:clamp(24px,3vw,48px) auto 0}
+.s2-site .scr{position:relative;aspect-ratio:1440/900;background:#0a0a0a;overflow:hidden}
+.s2-site .scr video{position:absolute;left:0;top:7.1%;width:100%;height:92.9%;object-fit:cover}
+.s2-site .scr .over{position:absolute;inset:0;width:100%;height:100%}
+/* правила: сначала текст, потом картинка; линейка крупнее и серая */
+.s2-rules figcaption{margin:0 0 16px}
+.s2-rules .box{background:#fff;height:clamp(280px,28vw,440px)}
+.s2-ruler .scale{height:44px;border-top:3px solid #9AA3AE;background:repeating-linear-gradient(90deg,#9AA3AE 0 2px,transparent 2px 0.5cm) top/100% 16px no-repeat}
+.s2-ruler .scale::before{top:-3px;height:18px}
+.s2-ruler .scale span{top:24px;font-size:18px}
+.s2-ruler .cm{color:#6E7178;font-size:clamp(34px,3.6vw,60px)}
+
+/* ролик: заголовок и ролик по одной левой линии, целиком в экран */
+.s2-filmbox .as-sw-tabs{margin-bottom:12px}
+
+/* картинка крупно — целиком в экране */
+.s2 .as-lb{padding:clamp(12px,3vw,40px)}
+.s2 .as-lb img{max-width:calc(100vw - 2 * clamp(12px,3vw,40px));max-height:calc(100svh - 2 * clamp(12px,3vw,40px));width:auto;height:auto;object-fit:contain}
+
+/* правила стен — иконками */
+.s2-howto{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,56px)}
+.s2-howto h4{margin:0 0 18px;font:500 clamp(20px,1.5vw,24px)/1.15 var(--font);letter-spacing:-.01em}
+.s2-howto .ics,.s2-howto .flow{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.s2-howto li{display:flex;align-items:center;gap:14px;font:400 17px/1.3 var(--read)}
+.s2-howto svg{flex:none;width:36px;height:36px;padding:7px;border-radius:50%;box-sizing:border-box}
+.s2-howto .yes svg{background:#E3EAFF;color:#002FFF}
+.s2-howto .no svg{background:#FDE3E4;color:#E71E26}
+.s2-howto .lib svg,.s2-howto .new svg{background:#EEF0F3;color:var(--ink)}
+.s2-howto .hint{margin:18px 0 0;font:400 16px/1.4 var(--read);color:var(--mute)}
+.s2-howto .pal{display:flex;align-items:center;gap:6px;margin:14px 0}
+.s2-howto .pal i{width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.s2-howto .pal span{margin-left:8px;font:400 17px/1.3 var(--read)}
+.s2-howto .flow li{position:relative}
+.s2-howto .flow li+li::before{content:"";position:absolute;left:17px;top:-14px;height:14px;border-left:2px dotted #B9BEC6}
+
+/* медаль после монет */
+.s2-medal{margin-top:clamp(48px,6vw,104px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,72px);align-items:end}
+.s2-medal .as-p{max-width:30ch}
+
+/* узоры с белым фоном — светлый контур */
+.s2-pt .as-ph.light::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px #DADDE2;pointer-events:none}
+
+@media (max-width:1000px){
+  .s2-howto{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .s2-medal{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .s2-heroin{grid-template-columns:1fr;gap:28px}
+  .s2-heromark .star{width:62vw}
+  .s2-howto{grid-template-columns:1fr}
+  .s2-filmbox{width:100%}
+  .s2-site{width:100%}
+}
