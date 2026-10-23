@@ -336,7 +336,7 @@
 .s2-howto .lib h4 svg,.s2-howto .new h4 svg{background:#E9ECF0;color:var(--ink)}
 .s2-howto .pts{margin:0;padding-left:1.1em;display:grid;gap:8px;font:400 17px/1.35 var(--read)}
 .s2-howto .hint{margin:16px 0 0;font:400 16px/1.4 var(--read);color:var(--mute)}
-.s2-howto .pal{display:flex;gap:6px;margin:12px 0 0 1.1em}
+.s2-howto .pal{display:flex;gap:6px;margin:10px 0 2px}
 .s2-howto .pal i{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
 .s2-howto .flow{list-style:none;margin:0;padding:0;display:grid;gap:18px}
 .s2-howto .flow li{position:relative;display:flex;align-items:flex-start;gap:14px;font:400 17px/1.3 var(--read)}
@@ -368,4 +368,88 @@
   .s2-mono .bgic{flex-direction:row}
   .s2-mono .row2{grid-template-columns:1fr}
   .s2-coin3d .sk{width:62vw}
+}
+
+/* ====== вкладки: все панели в одной клетке — логотипы грузятся заранее, смена — плавная ====== */
+.s2-fontsw .stage{display:grid}
+.s2-fontsw .pane,.s2-fontsw .pane.on{grid-area:1/1;display:block;animation:none}
+.s2-fontsw .pane{opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility 0s .5s}
+.s2-fontsw .pane.on{opacity:1;visibility:visible;transition:opacity .5s var(--ease),visibility 0s}
+
+/* ====== анимации ====== */
+@property --gx{syntax:'<number>';inherits:true;initial-value:.5}
+/* строки логотипов въезжают по очереди при смене вкладки */
+.s2-fontsw .pane .row{opacity:0;transform:translateY(18px)}
+.s2-fontsw .pane.on .row{animation:s2-rise .7s var(--ease) both}
+.s2-fontsw .pane.on .row:nth-child(2){animation-delay:.09s}
+.s2-fontsw .pane.on .row:nth-child(3){animation-delay:.18s}
+@keyframes s2-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* кобрендинг: логотипы выскакивают слева направо */
+.s2-co .logos img{opacity:0;transform:scale(.7)}
+.as-vis.in .s2-co .logos img{animation:s2-pop .7s cubic-bezier(.3,1.5,.5,1) both}
+.as-vis.in .s2-co .strip:nth-child(2) img{animation-delay:.15s}
+.as-vis.in .s2-co .strip:nth-child(3) img{animation-delay:.3s}
+.as-vis.in .s2-co .logos img:nth-child(2){animation-delay:calc(var(--sd,0s) + .06s)}
+@keyframes s2-pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+/* палитра: полосы вырастают снизу */
+.s2 .as-pal div{transform-origin:50% 100%;transform:scaleY(0)}
+.as-vis.in .s2-pal .as-pal div{animation:s2-grow .9s var(--ease) both}
+.as-vis.in .s2-pal .as-pal div:nth-child(2){animation-delay:.1s}
+.as-vis.in .s2-pal .as-pal div:nth-child(3){animation-delay:.2s}
+.as-vis.in .s2-pal .as-pal div:nth-child(4){animation-delay:.3s}
+@keyframes s2-grow{from{transform:scaleY(0)}to{transform:none}}
+/* малые размеры: телефон поднимается, иконка выскакивает, вкладка браузера выезжает */
+.s2-app .as-phone{transform:translateY(40%);transition:transform 1.2s var(--ease)}
+.as-vis.in .s2-app .as-phone{transform:none}
+.s2-app .as-bigicon{transform:scale(.4) rotate(-12deg);opacity:0;transition:transform .9s cubic-bezier(.3,1.5,.5,1) .35s,opacity .4s .35s}
+.as-vis.in .s2-app .as-bigicon{transform:none;opacity:1}
+.s2-app .as-browser{transform:translateX(30px);opacity:0;transition:transform .9s var(--ease) .6s,opacity .6s .6s}
+.as-vis.in .s2-app .as-browser{transform:none;opacity:1}
+/* плакаты, мерч, форма, футболки: шторка снизу вверх, по очереди */
+.as-vis .s2-posters>.as-ph,.as-vis .s2-g4>.as-ph,#form .as-grid>.as-ph,.as-vis .s2-tees>.as-ph{clip-path:inset(100% 0 0 0);transition:clip-path 1.1s var(--ease)!important;opacity:1!important;transform:none!important}
+.as-vis.in .s2-posters>.as-ph,.as-vis.in .s2-g4>.as-ph,#form .as-vis.in .as-grid>.as-ph,.as-vis.in .s2-tees>.as-ph{clip-path:inset(0 0 0 0)}
+.as-vis.in :is(.s2-posters,.s2-g4,.s2-tees)>.as-ph:nth-child(2),#form .as-vis.in .as-grid>.as-ph:nth-child(2){transition-delay:.12s!important}
+.as-vis.in :is(.s2-posters,.s2-g4,.s2-tees)>.as-ph:nth-child(3),#form .as-vis.in .as-grid>.as-ph:nth-child(3){transition-delay:.24s!important}
+.as-vis.in :is(.s2-g4,.s2-tees)>.as-ph:nth-child(4){transition-delay:.36s!important}
+/* награды: стелы встают по очереди, золото один раз проходит волной */
+.s2-aw{opacity:0;transform:translateY(40px)}
+.as-vis.in .s2-aw{animation:s2-rise .9s var(--ease) both}
+.as-vis.in .s2-aw:nth-child(2){animation-delay:.12s}.as-vis.in .s2-aw:nth-child(3){animation-delay:.24s}.as-vis.in .s2-aw:nth-child(4){animation-delay:.36s}
+.as-vis.in .s2-aw .flow{animation:s2-sweep 2.4s ease-in-out .6s both}
+@keyframes s2-sweep{from{--gx:0}to{--gx:1}}
+/* монеты: переворачиваются ребром и встают на место */
+.s2-coins{perspective:900px}
+.s2-coins>div{opacity:0;transform:rotateY(90deg)}
+.as-vis.in .s2-coins>div{animation:s2-flip 1s cubic-bezier(.3,1.3,.5,1) both}
+.as-vis.in .s2-coins>div:nth-child(2){animation-delay:.1s}.as-vis.in .s2-coins>div:nth-child(3){animation-delay:.2s}
+.as-vis.in .s2-coins>div:nth-child(4){animation-delay:.3s}.as-vis.in .s2-coins>div:nth-child(5){animation-delay:.4s}.as-vis.in .s2-coins>div:nth-child(6){animation-delay:.5s}
+@keyframes s2-flip{from{opacity:0;transform:rotateY(90deg)}to{opacity:1;transform:none}}
+/* узоры на одежде: каждый проявляется шторкой со своей стороны, рисунок разворачивается из глубины */
+.s2-pt .as-ph{clip-path:inset(0 100% 0 0)}
+.s2-pt .as-ph:nth-child(3n+2){clip-path:inset(100% 0 0 0)}
+.s2-pt .as-ph:nth-child(3n){clip-path:inset(0 0 0 100%)}
+.s2-pt .as-ph img{transform:scale(1.6) rotate(-8deg)!important;transition:transform 1.6s var(--ease)!important}
+.as-vis.in .s2-pt .as-ph{animation:s2-wipe 1s var(--ease) both}
+.as-vis.in .s2-pt .as-ph img{transform:none!important}
+.as-vis.in .s2-pt .as-ph:hover img{transform:scale(1.08)!important}
+.as-vis.in .s2-pt .as-ph:nth-child(2){animation-delay:.08s}.as-vis.in .s2-pt .as-ph:nth-child(3){animation-delay:.16s}
+.as-vis.in .s2-pt .as-ph:nth-child(4){animation-delay:.24s}.as-vis.in .s2-pt .as-ph:nth-child(5){animation-delay:.32s}.as-vis.in .s2-pt .as-ph:nth-child(6){animation-delay:.4s}
+.as-vis.in .s2-pt .as-ph:nth-child(7){animation-delay:.48s}.as-vis.in .s2-pt .as-ph:nth-child(8){animation-delay:.56s}.as-vis.in .s2-pt .as-ph:nth-child(9){animation-delay:.64s}
+.as-vis.in .s2-pt .as-ph:nth-child(2) img{transition-delay:.08s!important}.as-vis.in .s2-pt .as-ph:nth-child(3) img{transition-delay:.16s!important}
+.as-vis.in .s2-pt .as-ph:nth-child(4) img{transition-delay:.24s!important}.as-vis.in .s2-pt .as-ph:nth-child(5) img{transition-delay:.32s!important}.as-vis.in .s2-pt .as-ph:nth-child(6) img{transition-delay:.4s!important}
+.as-vis.in .s2-pt .as-ph:nth-child(7) img{transition-delay:.48s!important}.as-vis.in .s2-pt .as-ph:nth-child(8) img{transition-delay:.56s!important}.as-vis.in .s2-pt .as-ph:nth-child(9) img{transition-delay:.64s!important}
+@keyframes s2-wipe{to{clip-path:inset(0 0 0 0)}}
+/* правила стен: колонки появляются по очереди, шаги схемы зажигаются сверху вниз */
+.s2-panel:not([hidden]) .s2-howto>div{animation:s2-rise .7s var(--ease) both}
+.s2-panel:not([hidden]) .s2-howto>div:nth-child(2){animation-delay:.08s}.s2-panel:not([hidden]) .s2-howto>div:nth-child(3){animation-delay:.16s}.s2-panel:not([hidden]) .s2-howto>div:nth-child(4){animation-delay:.24s}
+.s2-panel:not([hidden]) .s2-howto .flow li{animation:s2-rise .6s var(--ease) both}
+.s2-panel:not([hidden]) .s2-howto .flow li:nth-child(2){animation-delay:.4s}.s2-panel:not([hidden]) .s2-howto .flow li:nth-child(3){animation-delay:.55s}
+.s2-panel:not([hidden]) .s2-howto .flow li:nth-child(4){animation-delay:.7s}.s2-panel:not([hidden]) .s2-howto .flow li:nth-child(5){animation-delay:.85s}
+/* медаль: проявляется с легким наездом */
+.s2-medal .as-ph{clip-path:inset(0 0 0 100%);transition:clip-path 1.2s var(--ease)}
+.as-vis.in .s2-medal .as-ph{clip-path:inset(0 0 0 0)}
+
+@media (prefers-reduced-motion:reduce){
+  .s2-fontsw .pane .row,.s2-co .logos img,.s2 .as-pal div,.s2-aw,.s2-coins>div,.s2-pt .as-ph,.s2-pt .as-ph img,.s2-medal .as-ph,.s2-app .as-phone,.s2-app .as-bigicon,.s2-app .as-browser,
+  .as-vis :is(.s2-posters,.s2-g4,.s2-tees)>.as-ph,#form .as-grid>.as-ph{animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important}
 }
