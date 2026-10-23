@@ -457,22 +457,9 @@
 .s2-coins .as-ph:hover{transform:scale(1.06)}
 /* стены: залы крупно, иллюстрации рядами одной высоты */
 .s2-walls{display:grid;gap:clamp(8px,1vw,16px)}
-/* узоры на одежде: появляются шторкой и потом медленно живут — лучи покачиваются, штрихи плывут */
-.s2-pt .as-ph img{transform-origin:50% 50%;will-change:transform}
-.s2-pt .as-ph.rad img{animation:s2-sway 16s ease-in-out infinite alternate}
-.s2-pt .as-ph.spin img{animation:s2-spin 90s linear infinite}
-.s2-pt .as-ph.drift img{animation:s2-drift 14s ease-in-out infinite alternate}
-.s2-pt .as-ph:nth-child(1) img{transform-origin:50% 100%}
-.s2-pt .as-ph:nth-child(5) img{transform-origin:50% 0}
-.s2-pt .as-ph:nth-child(8) img{transform-origin:0 100%}
-.s2-pt .as-ph:nth-child(2n) img{animation-delay:-5s}
-.s2-pt .as-ph:nth-child(3n) img{animation-delay:-9s}
-.s2-pt:not(.run) .as-ph img{animation-play-state:paused}
-@keyframes s2-sway{from{transform:scale(1.35) rotate(-7deg)}to{transform:scale(1.35) rotate(7deg)}}
-@keyframes s2-spin{from{transform:scale(1.25) rotate(0)}to{transform:scale(1.25) rotate(360deg)}}
-@keyframes s2-drift{from{transform:scale(1.22) translate(-6%,-5%)}to{transform:scale(1.22) translate(6%,5%)}}
+/* узоры на одежде: появляются шторкой; движение — внутри самих SVG (лучи качаются вокруг точки схода, плитки едут на шаг узора), картинка в рамке не двигается */
+.s2-pt .as-ph img{transform:none!important;animation:none!important}
 @media (max-width:640px){.s2-coins figcaption b{font-size:24px}}
-@media (prefers-reduced-motion:reduce){.s2-pt .as-ph img{animation:none!important;transform:none!important}}
 .s2-heromark .star{transform:translateY(-2.5%)}
 /* блок «меньше 0,5 см» целиком на белом — и текст, и линейка */
 .s2-rules .s2-ruler{background:#fff;padding:clamp(20px,2.4vw,40px)}

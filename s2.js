@@ -245,7 +245,7 @@
 
   // ---------- на одежде ----------
   h.push(sec('wear', 'на одежде', ['Варианты фирменной графики.'],
-    '<div class="s2-pt">' + [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (i) { return '<div class="as-ph zoom ' + ({ 1: 'rad', 2: 'spin', 4: 'spin', 5: 'rad', 8: 'rad' }[i] || 'drift') + (i === 7 || i === 9 ? ' light' : '') + '" data-big="' + svg('s2-pt-' + i) + '"><img src="' + svg('s2-pt-' + i) + '" alt="" loading="lazy"></div>'; }).join('') + '</div>' +
+    '<div class="s2-pt">' + [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (i) { return '<div class="as-ph zoom' + (i === 7 || i === 9 ? ' light' : '') + '" data-big="' + svg('s2-pt-' + i) + '"><img src="' + svg('s2-pt-' + i) + '" alt="" loading="lazy"></div>'; }).join('') + '</div>' +
     '<div class="as-grid as-g2 s2-tees">' + ['tee-red', 'tee-stripe', 'tee-navy', 'tee-white'].map(function (t) { return ph(t); }).join('') + '</div>'));
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
@@ -401,9 +401,6 @@
     var v = $('video', film);
     whileVisible(v, function () { if (v.preload === 'none') v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }, function () { v.pause(); });
   })();
-
-  // узоры на одежде двигаются, только пока видны
-  (function () { var pt = $('.s2-pt'); whileVisible(pt, function () { pt.classList.add('run'); }, function () { pt.classList.remove('run'); }); })();
 
   // ---------- линейка: знак уменьшается от 2 до 0,3 см и обратно ----------
   (function () {
