@@ -278,20 +278,6 @@
 .s2 .as-lb img{max-width:calc(100vw - 2 * clamp(12px,3vw,40px));max-height:calc(100svh - 2 * clamp(12px,3vw,40px));width:auto;height:auto;object-fit:contain}
 
 /* правила стен — иконками */
-.s2-howto{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,56px)}
-.s2-howto h4{margin:0 0 18px;font:500 clamp(20px,1.5vw,24px)/1.15 var(--font);letter-spacing:-.01em}
-.s2-howto .ics,.s2-howto .flow{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.s2-howto li{display:flex;align-items:center;gap:14px;font:400 17px/1.3 var(--read)}
-.s2-howto svg{flex:none;width:36px;height:36px;padding:7px;border-radius:50%;box-sizing:border-box}
-.s2-howto .yes svg{background:#E3EAFF;color:#002FFF}
-.s2-howto .no svg{background:#FDE3E4;color:#E71E26}
-.s2-howto .lib svg,.s2-howto .new svg{background:#EEF0F3;color:var(--ink)}
-.s2-howto .hint{margin:18px 0 0;font:400 16px/1.4 var(--read);color:var(--mute)}
-.s2-howto .pal{display:flex;align-items:center;gap:6px;margin:14px 0}
-.s2-howto .pal i{width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
-.s2-howto .pal span{margin-left:8px;font:400 17px/1.3 var(--read)}
-.s2-howto .flow li{position:relative}
-.s2-howto .flow li+li::before{content:"";position:absolute;left:17px;top:-14px;height:14px;border-left:2px dotted #B9BEC6}
 
 /* медаль после монет */
 .s2-medal{margin-top:clamp(48px,6vw,104px);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,72px);align-items:end}
@@ -301,13 +287,85 @@
 .s2-pt .as-ph.light::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px #DADDE2;pointer-events:none}
 
 @media (max-width:1000px){
-  .s2-howto{grid-template-columns:repeat(2,minmax(0,1fr))}
   .s2-medal{grid-template-columns:1fr}
 }
 @media (max-width:640px){
   .s2-heroin{grid-template-columns:1fr;gap:28px}
   .s2-heromark .star{width:62vw}
-  .s2-howto{grid-template-columns:1fr}
   .s2-filmbox{width:100%}
   .s2-site{width:100%}
+}
+
+/* ====== правки 23.10, вторые ====== */
+/* первый экран: заголовок «второй этап», блок по центру */
+.s2-heroin{grid-template-columns:auto auto;justify-content:center}
+.s2-herotx .as-h1{margin:0}
+.s2-herotx .as-lead{max-width:20ch}
+
+/* монохром: фоны — круглыми кнопками слева от поля */
+.s2-mono .row2{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(12px,1.6vw,24px);align-items:start}
+.s2-mono .bgic{display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.s2 .s2-mono .bgic button{width:48px;height:48px;padding:6px;border-radius:50%;background:transparent;box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .3s}
+.s2 .s2-mono .bgic button.on{box-shadow:inset 0 0 0 2px var(--ink)}
+.s2-mono .bgic i{display:block;width:100%;height:100%;border-radius:50%;background:#080000 center/cover}
+.s2-mono .bgic .w i{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.s2-mono .bgic .p i{background:repeating-conic-gradient(from 8deg,#E71E26 0 14deg,#002FFF 14deg 22deg)!important}
+
+/* палитра: две колонки, черным */
+.s2-pal .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,72px);max-width:1100px;margin-bottom:clamp(16px,2vw,28px)}
+.s2-pal .cols .as-p,.s2-pal .as-p+.as-p{color:var(--ink);margin:0;max-width:none}
+
+/* малые размеры: элементы прямо на сером фоне, без белых подложек */
+.s2-app .as-phonebox,.s2-app .as-tabbox{background:transparent}
+.s2-app .as-phonebox{box-shadow:inset 0 -2px 0 #B9C5D3}
+.s2-app .as-phonebox::after{background:linear-gradient(rgba(235,240,246,0),#EBF0F6)}
+.s2-rules .box{background:transparent}
+.s2-ruler .box{background:#fff}
+.s2-engrave .box{gap:clamp(8px,1vw,16px)}
+
+/* ролик — по центру, вкладки тоже */
+.s2-filmbox{margin:0 auto}
+.s2-filmbox .as-sw-tabs{justify-content:center}
+
+/* правила стен: иконка у заголовка, пункты — текстом */
+.s2-howto{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,3vw,56px)}
+.s2-howto h4{display:flex;align-items:center;gap:12px;margin:0 0 16px;font:500 clamp(20px,1.5vw,24px)/1.15 var(--font);letter-spacing:-.01em}
+.s2-howto h4 svg{flex:none;width:40px;height:40px;padding:9px;border-radius:12px;box-sizing:border-box}
+.s2-howto .yes h4 svg{background:#E3EAFF;color:#002FFF}
+.s2-howto .no h4 svg{background:#FDE3E4;color:#E71E26}
+.s2-howto .lib h4 svg,.s2-howto .new h4 svg{background:#E9ECF0;color:var(--ink)}
+.s2-howto .pts{margin:0;padding-left:1.1em;display:grid;gap:8px;font:400 17px/1.35 var(--read)}
+.s2-howto .hint{margin:16px 0 0;font:400 16px/1.4 var(--read);color:var(--mute)}
+.s2-howto .pal{display:flex;gap:6px;margin:12px 0 0 1.1em}
+.s2-howto .pal i{width:22px;height:22px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+.s2-howto .flow{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.s2-howto .flow li{position:relative;display:flex;align-items:flex-start;gap:14px;font:400 17px/1.3 var(--read)}
+.s2-howto .flow li span{padding-top:9px}
+.s2-howto .flow b{flex:none;width:40px;height:40px;border-radius:12px;border:1.5px solid var(--ink);display:grid;place-items:center;background:#fff}
+.s2-howto .flow b svg{width:22px;height:22px}
+.s2-howto .flow li+li::before{content:"";position:absolute;left:19.25px;top:-18px;height:18px;border-left:1.5px solid var(--ink)}
+
+/* награды: без увеличения при наведении, золото переливается плавно; верх — светлее, отдельной гранью */
+.s2-aw .as-ph img,.as-vis.in .s2-aw .as-ph.zoom:hover img{transform:none!important}
+.s2-aw .flow{transition:background-position 1.2s cubic-bezier(.2,.7,.2,1)}
+.s2-aw .flow.top{background:linear-gradient(100deg,#B8962F 0%,#FFF6D8 30%,#E2C77A 50%,#FFF3CC 70%,#B8962F 100%);background-size:300% 100%;background-position:calc(var(--gx) * 100%) 0}
+.s2-aw .flow.top::after{display:none}
+
+/* монета: скелет, пока грузится */
+.s2-coin3d .sk{position:absolute;left:50%;top:50%;width:min(48vh,42vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;z-index:1;
+  background:linear-gradient(110deg,#E9D9A8 30%,#F7EED3 50%,#E9D9A8 70%);background-size:240% 100%;animation:s2-sk 1.4s linear infinite;transition:opacity .6s}
+.s2-coin3d .sk::after{content:"";position:absolute;inset:22%;background:#fff;opacity:.55;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.s2-coin3d.ready .sk,.s2-coin3d.fail .sk{opacity:0;pointer-events:none}
+@keyframes s2-sk{from{background-position:120% 0}to{background-position:-120% 0}}
+
+@media (max-width:1000px){
+  .s2-howto{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .s2-heroin{grid-template-columns:1fr;justify-content:start}
+  .s2-howto{grid-template-columns:1fr}
+  .s2-pal .cols{grid-template-columns:1fr}
+  .s2-mono .bgic{flex-direction:row}
+  .s2-mono .row2{grid-template-columns:1fr}
+  .s2-coin3d .sk{width:62vw}
 }

@@ -13,7 +13,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок второго этапа (заполняет build.py)
-  var R = /*RATIOS*/{"a-cap":1.0,"a-merch-43":2.0785,"a-merch-45":1.0,"a-pens":1.7804,"a-site":1.6,"a-small-1":6.5429,"a-small-2":6.5429,"aw-1-full":0.7317,"aw-1-gold":0.7317,"aw-1":0.7317,"aw-2-full":0.7317,"aw-2-gold":0.7317,"aw-2":0.7317,"aw-3-full":0.7317,"aw-3-gold":0.7317,"aw-3":0.7317,"aw-4-full":0.7317,"aw-4-gold":0.7317,"aw-4":0.7317,"aw-man":1.7769,"clip":1.7778,"coin-1-gold":1.0,"coin-1":1.0,"coin-2-gold":1.0,"coin-2":1.0,"coin-3-gold":1.0,"coin-3":1.0,"coin-4-gold":1.0,"coin-4":1.0,"coin-5-gold":1.0,"coin-5":1.0,"coin-6-gold":1.0,"coin-6":1.0,"f-chr-caps-center":7.6997,"f-chr-caps-horizontal":7.8607,"f-chr-caps-stacked":3.6432,"f-chr-lower-center":6.8399,"f-chr-lower-horizontal":7.0097,"f-chr-lower-stacked":3.3129,"f-chr-sentence-center":6.9087,"f-chr-sentence-horizontal":7.0788,"f-chr-sentence-stacked":3.0178,"f-eng-caps-center":7.5709,"f-eng-caps-horizontal":7.7446,"f-eng-caps-stacked":3.5171,"f-eng-lower-center":6.3618,"f-eng-lower-horizontal":6.5429,"f-eng-lower-stacked":3.1009,"f-eng-sentence-center":6.5246,"f-eng-sentence-horizontal":6.7063,"f-eng-sentence-stacked":2.807,"f-gol-caps-center":7.9002,"f-gol-caps-horizontal":8.1455,"f-gol-caps-stacked":3.661,"f-gol-lower-center":6.558,"f-gol-lower-horizontal":6.7897,"f-gol-lower-stacked":3.1909,"f-gol-sentence-center":6.6728,"f-gol-sentence-horizontal":6.9049,"f-gol-sentence-stacked":2.9066,"fav":1.1274,"fm-1":1.0,"fm-2":1.0,"fm-3":1.0,"i-2":1.7768,"i-3":1.7768,"i-4":1.7768,"i-5":1.7787,"i-6":1.7768,"icon":1.0,"k-38":1.0,"k-46":1.0,"k-48":1.0,"k-55":1.0,"m-pattern":0.7464,"medal":1.7769,"mk-chr-caps-center":7.6997,"mk-chr-caps-horizontal":7.8607,"mk-chr-caps-stacked":3.6432,"mk-chr-lower-center":6.8399,"mk-chr-lower-horizontal":7.0097,"mk-chr-lower-stacked":3.3129,"mk-chr-sentence-center":6.9087,"mk-chr-sentence-horizontal":7.0788,"mk-chr-sentence-stacked":3.0178,"mk-eng-caps-center":7.5709,"mk-eng-caps-horizontal":7.7446,"mk-eng-caps-stacked":3.5173,"mk-eng-lower-center":6.3618,"mk-eng-lower-horizontal":6.5429,"mk-eng-lower-stacked":3.1009,"mk-eng-sentence-center":6.5246,"mk-eng-sentence-horizontal":6.7063,"mk-eng-sentence-stacked":2.807,"mk-gol-caps-center":7.8977,"mk-gol-caps-horizontal":8.1434,"mk-gol-caps-stacked":3.6615,"mk-gol-lower-center":6.5574,"mk-gol-lower-horizontal":6.7893,"mk-gol-lower-stacked":3.1915,"mk-gol-sentence-center":6.6724,"mk-gol-sentence-horizontal":6.9043,"mk-gol-sentence-stacked":2.9063,"mw-chr-caps-center":7.6997,"mw-chr-caps-horizontal":7.8607,"mw-chr-caps-stacked":3.6432,"mw-chr-lower-center":6.8399,"mw-chr-lower-horizontal":7.0097,"mw-chr-lower-stacked":3.3129,"mw-chr-sentence-center":6.9087,"mw-chr-sentence-horizontal":7.0788,"mw-chr-sentence-stacked":3.0178,"mw-eng-caps-center":7.5709,"mw-eng-caps-horizontal":7.7446,"mw-eng-caps-stacked":3.5173,"mw-eng-lower-center":6.3618,"mw-eng-lower-horizontal":6.5429,"mw-eng-lower-stacked":3.1009,"mw-eng-sentence-center":6.5246,"mw-eng-sentence-horizontal":6.7063,"mw-eng-sentence-stacked":2.807,"mw-gol-caps-center":7.8977,"mw-gol-caps-horizontal":8.1434,"mw-gol-caps-stacked":3.6615,"mw-gol-lower-center":6.5574,"mw-gol-lower-horizontal":6.7893,"mw-gol-lower-stacked":3.1915,"mw-gol-sentence-center":6.6724,"mw-gol-sentence-horizontal":6.9043,"mw-gol-sentence-stacked":2.9063,"p-51":0.75,"p-52":0.75,"p-53":0.75,"pt-1":1.0,"pt-2":1.0,"pt-3":1.0,"pt-4":1.0,"pt-5":1.0,"pt-6":1.0,"pt-7":1.0,"pt-8":1.0,"pt-9":1.0,"site-over":1.6,"tee-navy":1.0,"tee-red":1.0,"tee-stripe":1.0,"tee-white":1.0,"vc-chr-caps":0.7848,"vc-chr-lower":0.7715,"vc-chr-sentence":0.745,"vc-eng-caps":0.7664,"vc-eng-lower":0.7381,"vc-eng-sentence":0.7098,"vc-gol-caps":0.7872,"vc-gol-lower":0.7533,"vc-gol-sentence":0.7269,"vid-half":6.548,"vid-line":7.0089,"vid-solid":6.548,"vm-chr-caps":0.7848,"vm-chr-lower":0.7715,"vm-chr-sentence":0.745,"vm-eng-caps":0.7664,"vm-eng-lower":0.7381,"vm-eng-sentence":0.7098,"vm-gol-caps":0.7872,"vm-gol-lower":0.7533,"vm-gol-sentence":0.7269,"w-ball":1.7768,"w-fence":1.7787,"w-gym-a":1.7769,"w-gym-b":1.7769,"w-swim":1.7769,"w-win":1.7769}/*/RATIOS*/;
+  var R = /*RATIOS*/{"a-cap":1.0,"a-merch-43":2.0785,"a-merch-45":1.0,"a-pens":1.7804,"a-site":1.6,"a-small-1":6.5429,"a-small-2":6.5429,"aw-1-full":0.7317,"aw-1-gold":0.7317,"aw-1-top":0.7317,"aw-1":0.7317,"aw-2-full":0.7317,"aw-2-gold":0.7317,"aw-2-top":0.7317,"aw-2":0.7317,"aw-3-full":0.7317,"aw-3-gold":0.7317,"aw-3-top":0.7317,"aw-3":0.7317,"aw-4-full":0.7317,"aw-4-gold":0.7317,"aw-4":0.7317,"aw-man":1.7769,"clip":1.7778,"coin-1-gold":1.0,"coin-1":1.0,"coin-2-gold":1.0,"coin-2":1.0,"coin-3-gold":1.0,"coin-3":1.0,"coin-4-gold":1.0,"coin-4":1.0,"coin-5-gold":1.0,"coin-5":1.0,"coin-6-gold":1.0,"coin-6":1.0,"f-chr-caps-center":7.6997,"f-chr-caps-horizontal":7.8607,"f-chr-caps-stacked":3.6432,"f-chr-lower-center":6.8399,"f-chr-lower-horizontal":7.0097,"f-chr-lower-stacked":3.3129,"f-chr-sentence-center":6.9087,"f-chr-sentence-horizontal":7.0788,"f-chr-sentence-stacked":3.0178,"f-eng-caps-center":7.5709,"f-eng-caps-horizontal":7.7446,"f-eng-caps-stacked":3.5171,"f-eng-lower-center":6.3618,"f-eng-lower-horizontal":6.5429,"f-eng-lower-stacked":3.1009,"f-eng-sentence-center":6.5246,"f-eng-sentence-horizontal":6.7063,"f-eng-sentence-stacked":2.807,"f-gol-caps-center":7.9002,"f-gol-caps-horizontal":8.1455,"f-gol-caps-stacked":3.661,"f-gol-lower-center":6.558,"f-gol-lower-horizontal":6.7897,"f-gol-lower-stacked":3.1909,"f-gol-sentence-center":6.6728,"f-gol-sentence-horizontal":6.9049,"f-gol-sentence-stacked":2.9066,"fav":1.1274,"fm-1":1.0,"fm-2":1.0,"fm-3":1.0,"i-2":1.7768,"i-3":1.7768,"i-4":1.7768,"i-5":1.7787,"i-6":1.7768,"icon":1.0,"k-38":1.0,"k-46":1.0,"k-48":1.0,"k-55":1.0,"m-pattern":0.7464,"medal":1.7769,"mk-chr-caps-center":7.6997,"mk-chr-caps-horizontal":7.8607,"mk-chr-caps-stacked":3.6432,"mk-chr-lower-center":6.8399,"mk-chr-lower-horizontal":7.0097,"mk-chr-lower-stacked":3.3129,"mk-chr-sentence-center":6.9087,"mk-chr-sentence-horizontal":7.0788,"mk-chr-sentence-stacked":3.0178,"mk-eng-caps-center":7.5709,"mk-eng-caps-horizontal":7.7446,"mk-eng-caps-stacked":3.5173,"mk-eng-lower-center":6.3618,"mk-eng-lower-horizontal":6.5429,"mk-eng-lower-stacked":3.1009,"mk-eng-sentence-center":6.5246,"mk-eng-sentence-horizontal":6.7063,"mk-eng-sentence-stacked":2.807,"mk-gol-caps-center":7.8977,"mk-gol-caps-horizontal":8.1434,"mk-gol-caps-stacked":3.6615,"mk-gol-lower-center":6.5574,"mk-gol-lower-horizontal":6.7893,"mk-gol-lower-stacked":3.1915,"mk-gol-sentence-center":6.6724,"mk-gol-sentence-horizontal":6.9043,"mk-gol-sentence-stacked":2.9063,"mw-chr-caps-center":7.6997,"mw-chr-caps-horizontal":7.8607,"mw-chr-caps-stacked":3.6432,"mw-chr-lower-center":6.8399,"mw-chr-lower-horizontal":7.0097,"mw-chr-lower-stacked":3.3129,"mw-chr-sentence-center":6.9087,"mw-chr-sentence-horizontal":7.0788,"mw-chr-sentence-stacked":3.0178,"mw-eng-caps-center":7.5709,"mw-eng-caps-horizontal":7.7446,"mw-eng-caps-stacked":3.5173,"mw-eng-lower-center":6.3618,"mw-eng-lower-horizontal":6.5429,"mw-eng-lower-stacked":3.1009,"mw-eng-sentence-center":6.5246,"mw-eng-sentence-horizontal":6.7063,"mw-eng-sentence-stacked":2.807,"mw-gol-caps-center":7.8977,"mw-gol-caps-horizontal":8.1434,"mw-gol-caps-stacked":3.6615,"mw-gol-lower-center":6.5574,"mw-gol-lower-horizontal":6.7893,"mw-gol-lower-stacked":3.1915,"mw-gol-sentence-center":6.6724,"mw-gol-sentence-horizontal":6.9043,"mw-gol-sentence-stacked":2.9063,"p-51":0.75,"p-52":0.75,"p-53":0.75,"pt-1":1.0,"pt-2":1.0,"pt-3":1.0,"pt-4":1.0,"pt-5":1.0,"pt-6":1.0,"pt-7":1.0,"pt-8":1.0,"pt-9":1.0,"site-over":1.6,"tee-navy":1.0,"tee-red":1.0,"tee-stripe":1.0,"tee-white":1.0,"vc-chr-caps":0.7848,"vc-chr-lower":0.7715,"vc-chr-sentence":0.745,"vc-eng-caps":0.7664,"vc-eng-lower":0.7381,"vc-eng-sentence":0.7098,"vc-gol-caps":0.7872,"vc-gol-lower":0.7533,"vc-gol-sentence":0.7269,"vid-half":6.548,"vid-line":7.0089,"vid-solid":6.548,"vm-chr-caps":0.7848,"vm-chr-lower":0.7715,"vm-chr-sentence":0.745,"vm-eng-caps":0.7664,"vm-eng-lower":0.7381,"vm-eng-sentence":0.7098,"vm-gol-caps":0.7872,"vm-gol-lower":0.7533,"vm-gol-sentence":0.7269,"w-ball":1.7768,"w-fence":1.7787,"w-gym-a":1.7769,"w-gym-b":1.7769,"w-swim":1.7769,"w-win":1.7769}/*/RATIOS*/;
   var STAGE1 = 'https://kup-version.kupdaria26.workers.dev/armysport';
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
@@ -115,11 +115,11 @@
   // ---------- первый экран: звезда, рядом фраза и кнопка — одной композицией ----------
   h.push('<section class="as-hero s2-hero" id="top" data-slide><div class="as-wrap"><div class="s2-heroin">' +
     '<div class="s2-heromark"><div class="star"><img src="' + svg('s2-vc-eng-lower') + '" alt="армия спорта"></div></div>' +
-    '<div class="s2-herotx"><p class="as-lead">' + T('Второй этап: выбранная звезда в работе — шрифт, версии знака и носители.') + '</p>' +
+    '<div class="s2-herotx"><h1 class="as-h1">второй этап</h1><p class="as-lead">' + T('Выбранная звезда в работе — шрифт, версии знака и носители.') + '</p>' +
     '<a class="s2-back" href="' + STAGE1 + '">первый этап</a></div></div></div></section>');
 
   // ---------- основная версия: цветная звезда, три шрифта во вкладках ----------
-  h.push(sec('mark', 'цветная звезда — основная', [
+  h.push(sec('mark', 'основная версия', [
     'Звезда между словами гармонична, только когда оба слова набраны строчными или оба — заглавными. Шрифт в логотипах подогнан под углы звезды, кое-где буквы подрезаны — в наборе текста этого не видно.'
   ], '<div class="s2-fontsw">' + tabs(FONTS.map(function (f) { return f[1]; })) + '<div class="stage">' + FONTS.map(function (f, i) {
     return '<div class="pane' + (i ? '' : ' on') + '">' + fontTable('s2-f-', f) + '<p class="note">' + (f[3] ? T(f[3]) + ' ' : '') + '<a href="' + f[2] + '" target="_blank" rel="noopener">посмотреть шрифт целиком</a></p></div>';
@@ -132,11 +132,13 @@
   h.push(sec('mono', 'монохромная звезда', [
     'Звезда всегда одноцветная: белая, черная или с вырубкой вместо синего. Фирменные красный и синий уходят с нее и появляются вокруг логотипа — в фоне, графике, паттерне, плашке.'
   ], '<div class="s2-fontsw s2-mono">' + tabs(FONTS.map(function (f) { return f[1]; })) +
-    '<div class="bg">' + tabs(['на черном', 'на белом', 'на узоре']) + '</div>' +
+    '<div class="row2"><div class="bgic" role="group" aria-label="фон">' + [['k', 'на черном'], ['w', 'на белом'], ['p', 'на узоре']].map(function (b, i) {
+      return '<button type="button" class="' + b[0] + (i ? '' : ' on') + '" aria-label="' + b[1] + '" title="' + b[1] + '"><i' + (b[0] === 'p' ? ' style="background-image:url(' + svg('s2-m-pattern') + ')"' : '') + '></i></button>';
+    }).join('') + '</div>' +
     '<div class="stage k" style="--pat:url(' + svg('s2-m-pattern') + ')">' + FONTS.map(function (f, i) {
       return '<div class="pane' + (i ? '' : ' on') + '">' + fontTable('s2-mw-', f).replace('s2-fonts one', 's2-fonts one w') + fontTable('s2-mk-', f).replace('s2-fonts one', 's2-fonts one k') + '</div>';
-    }).join('') + '</div></div>' +
-    '<div class="s2-pal"><p class="as-p">' + T('Красный преобладает и по возможности стоит сверху. Основной фон — белый.') + '</p><p class="as-p">' + T('Синий в знаке сделан ярче, чтобы сочетаться с узорами и выглядеть цифровым и современным.') + '</p><div class="as-pal">' +
+    }).join('') + '</div></div></div>' +
+    '<div class="s2-pal"><div class="cols"><p class="as-p">' + T('Красный преобладает и по возможности стоит сверху. Основной фон — белый.') + '</p><p class="as-p">' + T('Синий в знаке сделан ярче, чтобы сочетаться с узорами и выглядеть цифровым и современным.') + '</p></div><div class="as-pal">' +
     [['белый', '#FFFFFF', 3, 'light'], ['красный', '#E71E26', 3], ['синий', '#002FFF', 1.5], ['черный', '#080000', 1.5]].map(function (c) {
       return '<div class="' + (c[3] || '') + '" style="--f:' + c[2] + ';background:' + c[1] + ';color:' + (c[3] ? '#121314' : '#fff') + '"><span>' + c[0] + '<br>' + c[1] + '</span></div>';
     }).join('') + '</div></div>'));
@@ -178,39 +180,29 @@
   ], '<div class="as-grid as-g3 s2-posters">' + ['p-51', 'p-52', 'p-53'].map(function (p) { return ph(p); }).join('') + '</div>'));
 
   // ---------- стены и иллюстрации ----------
-  // правила комиксной стилистики — иконками, коротко
+  // правила комиксной стилистики: иконка у заголовка, пункты — текстом; новый вид спорта — схемой
   var IC = {
-    poster: '<rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 8l3-2 3 2M9 16h6M9 13h6"/>',
-    promo: '<path d="M4 10v4h3l6 4V6L7 10H4z"/><path d="M17 9a4 4 0 0 1 0 6"/>',
-    web: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M6 6h.01M8 6h.01"/>',
-    tee: '<path d="M8 4l-5 3 2 4 2-1v10h10V10l2 1 2-4-5-3a4 4 0 0 1-8 0z"/>',
-    wall: '<path d="M3 20h18M5 20V6l7-3 7 3v14"/><path d="M9 20v-6h6v6"/>',
-    event: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
-    table: '<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M3 14h18M9 4v16"/>',
-    doc: '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>',
-    form: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/>',
-    person: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
-    tiny: '<rect x="9" y="9" width="6" height="6" rx="1"/><path d="M4 4l3 3M20 4l-3 3M4 20l3-3M20 20l-3-3"/>',
-    mix: '<rect x="3" y="7" width="11" height="11" rx="1"/><circle cx="15" cy="10" r="6"/>',
-    scene: '<rect x="2" y="6" width="13" height="8" rx="1"/><rect x="17" y="4" width="5" height="16" rx="1"/>',
-    parts: '<path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.3-5-2.6-5 2.6 1-5.3-4-3.9 5.5-.8z"/>',
-    pen: '<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/>',
-    prompt: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10l3 2-3 2M12 15h5"/>',
-    refs: '<rect x="3" y="6" width="9" height="9" rx="1"/><rect x="9" y="10" width="9" height="9" rx="1"/>',
-    book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
-    layout: '<rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 9v12"/>'
+    yes: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+    no: '<path d="M7 7l10 10M17 7L7 17"/>',
+    lib: '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+    plus: '<path d="M12 5v14M5 12h14"/>',
+    prompt: '<rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M7.5 10l2.5 2-2.5 2M12.5 14.5h4"/>',
+    refs: '<rect x="3.5" y="7.5" width="12" height="10" rx="2"/><path d="M8.5 4.5h10a2 2 0 0 1 2 2v8"/><path d="M5.5 15.5l3-3 2.5 2.5 1.5-1.5 2 2"/>',
+    trace: '<path d="M5 18C7 9 17 15 19 6"/><rect x="3" y="16" width="4" height="4" rx="1"/><rect x="17" y="4" width="4" height="4" rx="1"/>',
+    book: '<path d="M5 4.5h10.5a3 3 0 0 1 3 3v12H8a3 3 0 0 1-3-3z"/><path d="M5 16.5a3 3 0 0 1 3-3h10.5M9 8.5h6"/>',
+    layout: '<rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9h17M9.5 9v11.5"/>'
   };
-  function ic(n) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + IC[n] + '</svg>'; }
-  function items(list) { return '<ul class="ics">' + list.map(function (x) { return '<li>' + ic(x[0]) + '<span>' + T(x[1]) + '</span></li>'; }).join('') + '</ul>'; }
+  function ic(n) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + IC[n] + '</svg>'; }
+  function items(list) { return '<ul class="pts">' + list.map(function (x) { return '<li>' + T(x) + '</li>'; }).join('') + '</ul>'; }
+  function head(icon, t) { return '<h4>' + ic(icon) + '<span>' + T(t) + '</span></h4>'; }
   var RULES = '<div class="s2-howto">' +
-    '<div class="yes"><h4>где уместно</h4>' + items([['poster', 'афиши и обложки турниров'], ['promo', 'баннеры и промо'], ['web', 'первые экраны сайта'], ['tee', 'мерч'], ['wall', 'стены и навигация в залах'], ['event', 'анонсы крупных событий']]) +
+    '<div class="yes">' + head('yes', 'где уместно') + items(['афиши и обложки турниров', 'баннеры и промо', 'первые экраны сайта', 'мерч', 'стены и навигация в залах', 'анонсы крупных событий']) +
       '<p class="hint">' + T('Одна иллюстрация на носитель — акцент, а не фон') + '</p></div>' +
-    '<div class="no"><h4>где неуместно</h4>' + items([['table', 'расписания и таблицы'], ['doc', 'документы и договоры'], ['form', 'личный кабинет и формы'], ['person', 'карточки спортсменов — там фото'], ['tiny', 'иконки, аватарки, мелкие превью'], ['mix', 'рядом с другой графикой']]) + '</div>' +
-    '<div class="lib"><h4>библиотека вместо генераций</h4>' + items([['scene', 'сцены по видам спорта, широкие и вертикальные'], ['parts', 'элементы без фона: фигуры, предметы, вспышки, лучи']]) +
-      '<div class="pal"><i style="background:#E71E26"></i><i style="background:#0A1033"></i><i style="background:#002FFF"></i><i style="background:#F4F1EA"></i><span>' + T('четыре цвета и правила фона') + '</span></div>' +
-      items([['pen', 'все в векторе после трассировки']]) + '</div>' +
-    '<div class="new"><h4>новый вид спорта</h4><ol class="flow">' + [['prompt', 'промт стиля'], ['refs', '2–3 референса из библиотеки'], ['pen', 'трассировка'], ['book', 'в библиотеку'], ['layout', 'в макет']].map(function (x) {
-      return '<li>' + ic(x[0]) + '<span>' + T(x[1]) + '</span></li>';
+    '<div class="no">' + head('no', 'где неуместно') + items(['расписания и таблицы', 'документы и договоры', 'личный кабинет и формы', 'карточки спортсменов — там фото', 'иконки, аватарки, мелкие превью', 'рядом с другой графикой']) + '</div>' +
+    '<div class="lib">' + head('lib', 'библиотека вместо генераций') + items(['сцены по видам спорта, широкие и вертикальные', 'элементы без фона: фигуры, предметы, вспышки, лучи', 'четыре цвета и правила фона', 'все в векторе после трассировки']) +
+      '<div class="pal"><i style="background:#E71E26"></i><i style="background:#0A1033"></i><i style="background:#002FFF"></i><i style="background:#F4F1EA"></i></div></div>' +
+    '<div class="new">' + head('plus', 'новый вид спорта') + '<ol class="flow">' + [['prompt', 'промт стиля'], ['refs', '2–3 референса из библиотеки'], ['trace', 'трассировка'], ['book', 'в библиотеку'], ['layout', 'в макет']].map(function (x) {
+      return '<li><b>' + ic(x[0]) + '</b><span>' + T(x[1]) + '</span></li>';
     }).join('') + '</ol></div></div>';
   var PROMPT = ['[The swimmer is swimming in the pool] — описание сцены',
     'Look and feel: a sharp, flat vector piece in the spirit of a contemporary sports poster drawn in Illustrator. Everything is built from solid single-color shapes with razor-clean edges and smooth, assured curves. The moment of contact is marked with pointed geometric starbursts, there are broad rays opening out like a fan, and the motion is carried by solid vector speed lines and shapes. The camera angle is bold, with heavy foreshortening, so the main object (the glove, the ball, the blade, the plates) is blown up in scale and thrust toward the viewer. The figures are pared down and stylized, faces left blank, but their poses are full of energy and you can feel the speed and the force of the hit.',
@@ -237,13 +229,14 @@
     'Награда «победитель в отражении» развивается дальше: зеркальная поверхность, вырубка логотипа, соразмерность атлету. Теперь на нее переносится вся информация с текущей стелы: логотип «Армии спорта», герб ЦСКА, знак вида спорта, «1 место», формулировка зачета, название чемпионата, год и строка «При поддержке ЦСКА Единоборства».',
     'Задача — проверить, выдержит ли форма такую нагрузку, и не перегрузить ее. Основание — фундаментальнее, но не тяжелее.'
   ], '<div class="s2-awards">' + [['aw-1', 'цветные логотипы на пьедестале'], ['aw-2', 'надписи сбоку'], ['aw-3', 'черные аккуратные логотипы'], ['aw-4', 'черная накладка сверху']].map(function (a, i) {
-    return '<figure class="s2-shine s2-aw">' + ph(a[0], { cls: 'contain soft' }).replace(IMG + 's2-' + a[0] + '.webp"', IMG + 's2-' + a[0] + '-full.webp"').replace('</div>', '<i class="flow" style="-webkit-mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp);mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp)"></i></div>') +
+    return '<figure class="s2-shine s2-aw">' + ph(a[0], { cls: 'contain soft' }).replace(IMG + 's2-' + a[0] + '.webp"', IMG + 's2-' + a[0] + '-full.webp"').replace('</div>', '<i class="flow" style="-webkit-mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp);mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp)"></i>' +
+      (i < 3 ? '<i class="flow top" style="-webkit-mask-image:url(' + IMG + 's2-' + a[0] + '-top.webp);mask-image:url(' + IMG + 's2-' + a[0] + '-top.webp)"></i>' : '') + '</div>') +
       '<figcaption><b>' + (i + 1) + '</b>' + T(a[1]) + '</figcaption></figure>';
   }).join('') + '</div><div class="s2-man">' + ph('aw-man') + '</div>'));
 
   // ---------- монеты ----------
   h.push(sec('coins', 'монеты', ['Монета поворачивается в объеме — ее можно покрутить. Ниже — варианты лицевой стороны.'],
-    '<div class="s2-coin3d"><div class="words" aria-hidden="true">' + ['спорт победа борьба', 'победа борьба спорт', 'борьба спорт победа'].map(function (r) { var t = (r + ' ').repeat(4); return '<b><span>' + t + '</span><span>' + t + '</span></b>'; }).join('') + '</div><div class="cv"></div><div class="hand">' + ICON.hand + '</div></div>' +
+    '<div class="s2-coin3d"><div class="words" aria-hidden="true">' + ['спорт победа борьба', 'победа борьба спорт', 'борьба спорт победа'].map(function (r) { var t = (r + ' ').repeat(4); return '<b><span>' + t + '</span><span>' + t + '</span></b>'; }).join('') + '</div><div class="sk" aria-hidden="true"></div><div class="cv"></div><div class="hand">' + ICON.hand + '</div></div>' +
     '<div class="s2-coins">' + [1, 2, 3, 4, 5, 6].map(function (i) { return '<div class="s2-shine">' + ph('coin-' + i, { cls: 'contain soft', gold: true }) + '</div>'; }).join('') + '</div>' +
     '<div class="s2-medal"><p class="as-p">' + T('Этот же стиль продолжается на медалях — награды, монеты и медали выглядят одинаково, с одной сквозной идеей.') + '</p>' + ph('medal') + '</div>'));
 
@@ -388,7 +381,7 @@
   }, 3200);
   // монохром: фон
   var mono = $('.s2-mono'), stage = $('.stage', mono);
-  switcher(mono, 3, function (j) { stage.className = 'stage ' + ['k', 'w', 'p'][j]; }, 3200, $('.bg .as-sw-tabs', mono));
+  switcher(mono, 3, function (j) { stage.className = 'stage ' + ['k', 'w', 'p'][j]; }, 3200, $('.bgic', mono));
   // ролик: версия знака в углу
   var film = $('#film');
   switcher(film, 3, function (j) { $$('.corner', film).forEach(function (c, i) { c.classList.toggle('on', i === j); }); }, 4000);
@@ -473,7 +466,9 @@
         .then(function () { return Promise.all([load(T3 + 'examples/js/loaders/GLTFLoader.js'), load(T3 + 'examples/js/environments/RoomEnvironment.js')]); })
         .then(run).catch(function () { box.classList.add('fail'); });
     }
-    new IntersectionObserver(function (es) { if (es[0].isIntersecting) start(); }, { rootMargin: '800px 0px' }).observe(box);
+    new IntersectionObserver(function (es) { if (es[0].isIntersecting) start(); }, { rootMargin: '2000px 0px' }).observe(box);
+    // модель тяжелая — начинаем грузить сразу, как страница открылась, не дожидаясь прокрутки
+    if (document.readyState === 'complete') setTimeout(start, 1200); else addEventListener('load', function () { setTimeout(start, 1200); });
 
     function run() {
       var THREE = window.THREE;
