@@ -65,7 +65,7 @@
 
 /* ---------- ролик со знаком в углу ---------- */
 .s2-film{position:relative;aspect-ratio:16/9;background:#0b0b0d;overflow:hidden}
-.s2-film iframe{position:absolute;left:-12%;top:-12%;width:124%;height:124%;border:0;pointer-events:none}
+.s2-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s2-film .corner{z-index:1}
 .s2-film .corner{position:absolute;left:3.25%;top:4.16%;width:18%;height:auto;opacity:0;transition:opacity .5s var(--ease)}
 .s2-film .corner.on{opacity:1}
