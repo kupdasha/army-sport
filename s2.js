@@ -151,7 +151,9 @@
     // сайт: ролик под слоем страницы, как на живом сайте
     '<div class="as-site s2-site"><div class="chrome"><i></i><i></i><i></i><span><img class="fav" src="' + svg('s2-fav') + '" alt="">armiya-sporta.ru</span></div>' +
     '<div class="scr"><video muted loop playsinline preload="none" poster="' + IMG + 'promo.webp"></video>' +
-    '<img class="over" src="' + IMG + 's2-site-over-s.webp" srcset="' + IMG + 's2-site-over-s.webp 900w, ' + IMG + 's2-site-over.webp 1800w" sizes="(max-width:640px) 100vw, 70vw" alt="первый экран сайта" loading="lazy"></div></div>' +
+    '<img class="over" src="' + IMG + 's2-site-over-s.webp" srcset="' + IMG + 's2-site-over-s.webp 900w, ' + IMG + 's2-site-over.webp 1800w" sizes="(max-width:640px) 100vw, 70vw" alt="первый экран сайта" loading="lazy"></div></div>').replace('class="as-sec"', 'class="as-sec s2-tint"'));
+  // дальше — на белом: правила мелкого размера и носители
+  h.push('<div class="s2-after"><div class="as-wrap as-vis as-up">' +
     '<div class="s2-rules">' +
     '<figure class="s2-ruler"><figcaption class="as-p">' + T('Меньше 0,5 см — логотип одного цвета: два цвета звезды в мелком размере сливаются.') + '</figcaption>' +
     '<div class="box"><div class="lg"><img class="c" src="' + svg('s2-f-eng-lower-horizontal') + '" alt=""><img class="m" src="' + svg('s2-a-small-1') + '" alt=""></div>' +
@@ -161,7 +163,7 @@
     '<div class="plate metal"><img src="' + svg('s2-a-small-2') + '" alt=""><span>гравировка, тиснение</span></div></div></figure></div>' +
     '<div class="as-col">' +
     '<div class="s8">' + ph('a-pens') + '</div><div class="s4">' + ph('a-cap') + '</div>' +
-    '<div class="s8">' + ph('a-merch-43') + '</div><div class="s4">' + ph('a-merch-45') + '</div></div>').replace('class="as-sec"', 'class="as-sec s2-tint"'));
+    '<div class="s8">' + ph('a-merch-43') + '</div><div class="s4">' + ph('a-merch-45') + '</div></div></div></div>');
 
   // ---------- угол ролика: ролик целиком на экране ----------
   h.push(sec('film', 'в углу ролика', ['Версия для угла ролика: читается в маленьком размере в левом верхнем углу, на контрастном и меняющемся фоне.'],
@@ -219,7 +221,7 @@
     '<div class="as-wrap as-vis as-up"><div class="s2-more"><button type="button" class="as-btn" data-open="rules" aria-expanded="false">правила использования</button>' +
     '<button type="button" class="as-btn" data-open="prompt" aria-expanded="false">промт</button></div>' +
     '<div class="s2-panel" id="s2-rules" hidden>' + RULES + '</div>' +
-    '<div class="s2-panel" id="s2-prompt" hidden><div class="pr"><div class="code" lang="en">' + PROMPT.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
+    '<div class="s2-panel" id="s2-prompt" hidden><p class="s2-model">' + T('Модель генерации — GPT-2.') + '</p><div class="pr"><div class="code" lang="en">' + PROMPT.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
     '<button type="button" class="as-btn copy">скопировать промт</button></div>' + ph('w-swim') + '</div></div>' +
     '<div class="s2-walls">' + fit([['wl-hall-judo'], ['wl-hall-box']]) + fit([['wl-ski'], ['wl-gym'], ['wl-run']]) + fit([['wl-ball'], ['wl-box'], ['wl-judo']]) + '</div></div></div>');
 
