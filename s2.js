@@ -221,7 +221,7 @@
     '<div class="as-wrap as-vis as-up"><div class="s2-more"><button type="button" class="as-btn" data-open="rules" aria-expanded="false">правила использования</button>' +
     '<button type="button" class="as-btn" data-open="prompt" aria-expanded="false">промт</button></div>' +
     '<div class="s2-panel" id="s2-rules" hidden>' + RULES + '</div>' +
-    '<div class="s2-panel" id="s2-prompt" hidden><p class="s2-model">' + T('Модель генерации — GPT-2.') + '</p><div class="pr"><div class="code" lang="en">' + PROMPT.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
+    '<div class="s2-panel" id="s2-prompt" hidden><p class="s2-model">' + T('Модель генерации — GPT Image 2.') + '</p><div class="pr"><div class="code" lang="en">' + PROMPT.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
     '<button type="button" class="as-btn copy">скопировать промт</button></div>' + ph('w-swim') + '</div></div>' +
     '<div class="s2-walls">' + fit([['wl-hall-judo'], ['wl-hall-box']]) + fit([['wl-ski'], ['wl-gym'], ['wl-run']]) + fit([['wl-ball'], ['wl-box'], ['wl-judo']]) + '</div></div></div>');
 
