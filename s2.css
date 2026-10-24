@@ -503,3 +503,21 @@
   .s2-rules .s2-engrave .box{height:auto;grid-template-columns:1fr;gap:12px}
   .s2-engrave .plate{min-height:0;aspect-ratio:16/10;padding:10%}
 }
+/* рубрика «две версии знака»: две карточки рядом, на телефоне одна под другой */
+.s2-vers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.s2-vers a{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit}
+.s2-vers .pic{display:grid;place-items:center;aspect-ratio:16/9;transition:transform .6s var(--ease)}
+.s2-vers .v1 .pic{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.s2-vers .v2 .pic{background:#080000}
+.s2-vers .pic img{width:auto;height:46%;max-width:70%}
+.s2-vers a:hover .pic{transform:scale(.985)}
+.s2-vers .cap{display:flex;flex-direction:column;gap:6px;padding-top:16px;font:400 clamp(18px,1.3vw,21px)/1.35 var(--read)}
+.s2-vers .cap b{font:500 clamp(22px,1.8vw,30px)/1.1 var(--font);letter-spacing:-.02em;color:var(--ink)}
+/* пометка над заголовком блока: к какой версии он относится */
+.s2-kick{display:block;margin-bottom:.45em;font:500 clamp(16px,1.2vw,19px)/1.2 var(--font);letter-spacing:0;color:#E71E26}
+.s2-versions + .as-sec{padding-top:clamp(72px,8vw,136px)}
+@media (max-width:640px){
+  .s2-vers{grid-template-columns:1fr;gap:28px}
+  .s2-vers .pic{aspect-ratio:16/10}
+}
+.s2-vers .pic{position:relative}.s2-vers .pic img{position:absolute;inset:0;margin:auto;height:46%;width:auto;max-width:70%}

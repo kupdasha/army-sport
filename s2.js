@@ -45,8 +45,11 @@
     return '<div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">' + esc(nbh(title)) + '</h2><div>' +
       [].concat(ps || []).map(function (p) { return '<p class="as-p">' + T(p) + '</p>'; }).join('') + '</div></div></div>';
   }
+  var KICK = { mark: 'версия 1', mono: 'версия 2' };
   function sec(id, title, ps, vis) {
-    return '<section class="as-sec" id="' + id + '" data-slide>' + tx(title, ps) + (vis ? '<div class="as-wrap as-vis as-up">' + vis + '</div>' : '') + '</section>';
+    var head = tx(title, ps);
+    if (KICK[id]) head = head.replace('<h2 class="as-h2">', '<h2 class="as-h2"><span class="s2-kick">' + KICK[id] + '</span>');
+    return '<section class="as-sec" id="' + id + '" data-slide>' + head + (vis ? '<div class="as-wrap as-vis as-up">' + vis + '</div>' : '') + '</section>';
   }
   function sub(title, ps, vis) {
     return '<div class="s2-sub">' + tx(title, ps) + (vis ? '<div class="as-wrap as-vis as-up">' + vis + '</div>' : '') + '</div>';
@@ -109,7 +112,7 @@
   var h = [];
 
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, доработка первого этапа</a><nav>' +
-    '<a href="#mark">знак</a><a href="#mono">монохром</a><a href="#small">малые размеры</a><a href="#film">ролик</a><a href="#merch">мерч</a><a href="#walls">стены</a><a href="#award">награда</a><a href="#coins">монеты</a><a href="#wear">одежда</a></nav></div></header>');
+    '<a href="#versions">знак</a><a href="#mono">монохром</a><a href="#small">малые размеры</a><a href="#film">ролик</a><a href="#merch">мерч</a><a href="#walls">стены</a><a href="#award">награда</a><a href="#coins">монеты</a><a href="#wear">одежда</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: звезда, рядом фраза и кнопка — одной композицией ----------
@@ -119,6 +122,13 @@
     '<a class="s2-back" href="' + STAGE1 + '">стартовая презентация</a></div></div></div></section>');
 
   // ---------- основная версия: цветная звезда, три шрифта во вкладках ----------
+  // ---------- рубрика: у знака две версии ----------
+  h.push('<section class="as-sec s2-versions" id="versions" data-slide>' + tx('две версии знака', ['Основная — цветная звезда. Дополнительная — полностью монохромная звезда.']) +
+    '<div class="as-wrap as-vis as-up"><div class="s2-vers">' +
+    '<a class="v1" href="#mark"><span class="pic"><img src="' + svg('s2-vc-eng-lower') + '" alt="цветная звезда"></span><span class="cap"><b>версия 1</b>' + T('основная — цветная звезда') + '</span></a>' +
+    '<a class="v2" href="#mono"><span class="pic"><img src="' + svg('s2-vm-eng-lower') + '" alt="монохромная звезда"></span><span class="cap"><b>версия 2</b>' + T('полностью монохромная звезда') + '</span></a>' +
+    '</div></div></section>');
+
   h.push(sec('mark', 'основная версия', [
     'Звезда между словами гармонична, только когда оба слова набраны строчными или оба — заглавными. Шрифт в логотипах подогнан под углы звезды, кое-где буквы подрезаны — в наборе текста этого не видно.'
   ], '<div class="s2-fontsw">' + tabs(FONTS.map(function (f) { return f[1]; })) + '<div class="stage">' + FONTS.map(function (f, i) {
