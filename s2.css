@@ -486,3 +486,10 @@
 .s2-aw .as-ph img{position:relative;z-index:1}
 .s2-aw .flow{z-index:0}
 .s2-aw .as-ph:not(.ok) .flow{opacity:0}
+/* телефон: логотипы во вкладках шрифтов и монохрома — столбиком и крупнее, чтобы читались */
+@media (max-width:640px){
+  .s2-fonts.one,.s2-mono .s2-fonts.one{--h:6.6vw;row-gap:36px;padding:24px 0}
+  .s2-fonts.one .row{grid-template-columns:1fr;row-gap:16px;justify-items:center;column-gap:0}
+  .s2-fonts.one .row span{justify-content:center}
+  .s2-mono .stage{padding:8px 16px}
+}
