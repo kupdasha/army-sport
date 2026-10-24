@@ -13,7 +13,7 @@
   root.setAttribute('lang', 'ru');
 
   // пропорции картинок второго этапа (заполняет build.py)
-  var R = /*RATIOS*/{"a-cap":1.0,"a-merch-43":2.0785,"a-merch-45":1.0,"a-pens":1.7804,"a-site":1.6,"a-small-1":6.5429,"a-small-2":6.5429,"aw-1-full":0.7317,"aw-1-gold":0.7317,"aw-1-top":0.7317,"aw-1":0.7317,"aw-2-full":0.7317,"aw-2-gold":0.7317,"aw-2-top":0.7317,"aw-2":0.7317,"aw-3-full":0.7317,"aw-3-gold":0.7317,"aw-3-top":0.7317,"aw-3":0.7317,"aw-4-full":0.7317,"aw-4-gold":0.7317,"aw-4":0.7317,"aw-man":1.7769,"clip":1.7778,"coin-1-gold":1.0,"coin-1":1.0,"coin-2-gold":1.0,"coin-2":1.0,"coin-3-gold":1.0,"coin-3":1.0,"coin-4-gold":1.0,"coin-4":1.0,"coin-5-gold":1.0,"coin-5":1.0,"coin-6-gold":1.0,"coin-6":1.0,"f-chr-caps-center":7.6997,"f-chr-caps-horizontal":7.8607,"f-chr-caps-stacked":3.6432,"f-chr-lower-center":6.8399,"f-chr-lower-horizontal":7.0097,"f-chr-lower-stacked":3.3129,"f-chr-sentence-center":6.9087,"f-chr-sentence-horizontal":7.0788,"f-chr-sentence-stacked":3.0178,"f-eng-caps-center":7.5709,"f-eng-caps-horizontal":7.7446,"f-eng-caps-stacked":3.5171,"f-eng-lower-center":6.3618,"f-eng-lower-horizontal":6.5429,"f-eng-lower-stacked":3.1009,"f-eng-sentence-center":6.5246,"f-eng-sentence-horizontal":6.7063,"f-eng-sentence-stacked":2.807,"f-gol-caps-center":7.9002,"f-gol-caps-horizontal":8.1455,"f-gol-caps-stacked":3.661,"f-gol-lower-center":6.558,"f-gol-lower-horizontal":6.7897,"f-gol-lower-stacked":3.1909,"f-gol-sentence-center":6.6728,"f-gol-sentence-horizontal":6.9049,"f-gol-sentence-stacked":2.9066,"fav":1.1276,"fm-1":1.0,"fm-2":1.0,"fm-3":1.0,"i-2":1.7768,"i-3":1.7768,"i-4":1.7768,"i-5":1.7787,"i-6":1.7768,"icon":1.0,"k-38":1.0,"k-46":1.0,"k-48":1.0,"k-55":1.0,"m-pattern":0.7464,"medal":1.7769,"mk-chr-caps-center":7.6997,"mk-chr-caps-horizontal":7.8607,"mk-chr-caps-stacked":3.6432,"mk-chr-lower-center":6.8399,"mk-chr-lower-horizontal":7.0097,"mk-chr-lower-stacked":3.3129,"mk-chr-sentence-center":6.9087,"mk-chr-sentence-horizontal":7.0788,"mk-chr-sentence-stacked":3.0178,"mk-eng-caps-center":7.5709,"mk-eng-caps-horizontal":7.7446,"mk-eng-caps-stacked":3.5173,"mk-eng-lower-center":6.3618,"mk-eng-lower-horizontal":6.5429,"mk-eng-lower-stacked":3.1009,"mk-eng-sentence-center":6.5246,"mk-eng-sentence-horizontal":6.7063,"mk-eng-sentence-stacked":2.807,"mk-gol-caps-center":7.8977,"mk-gol-caps-horizontal":8.1434,"mk-gol-caps-stacked":3.6615,"mk-gol-lower-center":6.5574,"mk-gol-lower-horizontal":6.7893,"mk-gol-lower-stacked":3.1915,"mk-gol-sentence-center":6.6724,"mk-gol-sentence-horizontal":6.9043,"mk-gol-sentence-stacked":2.9063,"mw-chr-caps-center":7.6997,"mw-chr-caps-horizontal":7.8607,"mw-chr-caps-stacked":3.6432,"mw-chr-lower-center":6.8399,"mw-chr-lower-horizontal":7.0097,"mw-chr-lower-stacked":3.3129,"mw-chr-sentence-center":6.9087,"mw-chr-sentence-horizontal":7.0788,"mw-chr-sentence-stacked":3.0178,"mw-eng-caps-center":7.5709,"mw-eng-caps-horizontal":7.7446,"mw-eng-caps-stacked":3.5173,"mw-eng-lower-center":6.3618,"mw-eng-lower-horizontal":6.5429,"mw-eng-lower-stacked":3.1009,"mw-eng-sentence-center":6.5246,"mw-eng-sentence-horizontal":6.7063,"mw-eng-sentence-stacked":2.807,"mw-gol-caps-center":7.8977,"mw-gol-caps-horizontal":8.1434,"mw-gol-caps-stacked":3.6615,"mw-gol-lower-center":6.5574,"mw-gol-lower-horizontal":6.7893,"mw-gol-lower-stacked":3.1915,"mw-gol-sentence-center":6.6724,"mw-gol-sentence-horizontal":6.9043,"mw-gol-sentence-stacked":2.9063,"p-51":0.75,"p-52":0.75,"p-53":0.75,"pt-1":1.0,"pt-2":1.0,"pt-3":1.0,"pt-4":1.0,"pt-5":1.0,"pt-6":1.0,"pt-7":1.0,"pt-8":1.0,"pt-9":1.0,"site-over":1.6,"tee-navy":1.0,"tee-red":1.0,"tee-stripe":1.0,"tee-white":1.0,"vc-chr-caps":0.7848,"vc-chr-lower":0.7715,"vc-chr-sentence":0.745,"vc-eng-caps":0.7664,"vc-eng-lower":0.7381,"vc-eng-sentence":0.7098,"vc-gol-caps":0.7872,"vc-gol-lower":0.7533,"vc-gol-sentence":0.7269,"vid-half":6.5397,"vid-line":6.5397,"vid-solid":6.5397,"vm-chr-caps":0.7848,"vm-chr-lower":0.7715,"vm-chr-sentence":0.745,"vm-eng-caps":0.7664,"vm-eng-lower":0.7381,"vm-eng-sentence":0.7098,"vm-gol-caps":0.7872,"vm-gol-lower":0.7533,"vm-gol-sentence":0.7269,"w-ball":1.7768,"w-fence":1.7787,"w-gym-a":1.7769,"w-gym-b":1.7769,"w-swim":1.7769,"w-win":1.7769,"wl-ball":1.7804,"wl-box":1.7804,"wl-gym":1.7804,"wl-hall-box":1.7769,"wl-hall-judo":1.7769,"wl-judo":2.3529,"wl-run":1.7804,"wl-ski":1.7804}/*/RATIOS*/;
+  var R = /*RATIOS*/{"a-cap":1.0,"a-merch-43":2.0785,"a-merch-45":1.0,"a-pens":1.7804,"a-site":1.6,"a-small-1":6.5429,"a-small-2":6.5429,"aw-1-full":0.7317,"aw-1-gold":0.7317,"aw-1-top":0.7317,"aw-1":0.7317,"aw-2-full":0.7317,"aw-2-gold":0.7317,"aw-2-top":0.7317,"aw-2":0.7317,"aw-3-full":0.7317,"aw-3-gold":0.7317,"aw-3-top":0.7317,"aw-3":0.7317,"aw-4-full":0.7317,"aw-4-gold":0.7317,"aw-4":0.7317,"aw-man":1.7769,"clip":1.7778,"coin-1-gold":1.0,"coin-1":1.0,"coin-2-gold":1.0,"coin-2":1.0,"coin-3-gold":1.0,"coin-3":1.0,"coin-4-gold":1.0,"coin-4":1.0,"coin-5-gold":1.0,"coin-5":1.0,"coin-6-gold":1.0,"coin-6":1.0,"f-chr-caps-center":7.6997,"f-chr-caps-horizontal":7.8607,"f-chr-caps-stacked":3.6432,"f-chr-lower-center":6.8399,"f-chr-lower-horizontal":7.0097,"f-chr-lower-stacked":3.3129,"f-chr-sentence-center":6.9087,"f-chr-sentence-horizontal":7.0788,"f-chr-sentence-stacked":3.0178,"f-eng-caps-center":7.5709,"f-eng-caps-horizontal":7.7446,"f-eng-caps-stacked":3.5171,"f-eng-lower-center":6.3618,"f-eng-lower-horizontal":6.5429,"f-eng-lower-stacked":3.1009,"f-eng-sentence-center":6.5246,"f-eng-sentence-horizontal":6.7063,"f-eng-sentence-stacked":2.807,"f-gol-caps-center":7.9002,"f-gol-caps-horizontal":8.1455,"f-gol-caps-stacked":3.661,"f-gol-lower-center":6.558,"f-gol-lower-horizontal":6.7897,"f-gol-lower-stacked":3.1909,"f-gol-sentence-center":6.6728,"f-gol-sentence-horizontal":6.9049,"f-gol-sentence-stacked":2.9066,"fav":1.1276,"fm-1":1.0,"fm-2":1.0,"fm-3":1.0,"i-2":1.7768,"i-3":1.7768,"i-4":1.7768,"i-5":1.7787,"i-6":1.7768,"icon":1.0,"k-38":1.0,"k-46":1.0,"k-48":1.0,"k-55":1.0,"m-pattern":0.7464,"medal":1.7769,"mk-chr-caps-center":7.6997,"mk-chr-caps-horizontal":7.8607,"mk-chr-caps-stacked":3.6432,"mk-chr-lower-center":6.8399,"mk-chr-lower-horizontal":7.0097,"mk-chr-lower-stacked":3.3129,"mk-chr-sentence-center":6.9087,"mk-chr-sentence-horizontal":7.0788,"mk-chr-sentence-stacked":3.0178,"mk-eng-caps-center":7.5709,"mk-eng-caps-horizontal":7.7446,"mk-eng-caps-stacked":3.5173,"mk-eng-lower-center":6.3618,"mk-eng-lower-horizontal":6.5429,"mk-eng-lower-stacked":3.1009,"mk-eng-sentence-center":6.5246,"mk-eng-sentence-horizontal":6.7063,"mk-eng-sentence-stacked":2.807,"mk-gol-caps-center":7.8977,"mk-gol-caps-horizontal":8.1434,"mk-gol-caps-stacked":3.6615,"mk-gol-lower-center":6.5574,"mk-gol-lower-horizontal":6.7893,"mk-gol-lower-stacked":3.1915,"mk-gol-sentence-center":6.6724,"mk-gol-sentence-horizontal":6.9043,"mk-gol-sentence-stacked":2.9063,"mw-chr-caps-center":7.6997,"mw-chr-caps-horizontal":7.8607,"mw-chr-caps-stacked":3.6432,"mw-chr-lower-center":6.8399,"mw-chr-lower-horizontal":7.0097,"mw-chr-lower-stacked":3.3129,"mw-chr-sentence-center":6.9087,"mw-chr-sentence-horizontal":7.0788,"mw-chr-sentence-stacked":3.0178,"mw-eng-caps-center":7.5709,"mw-eng-caps-horizontal":7.7446,"mw-eng-caps-stacked":3.5173,"mw-eng-lower-center":6.3618,"mw-eng-lower-horizontal":6.5429,"mw-eng-lower-stacked":3.1009,"mw-eng-sentence-center":6.5246,"mw-eng-sentence-horizontal":6.7063,"mw-eng-sentence-stacked":2.807,"mw-gol-caps-center":7.8977,"mw-gol-caps-horizontal":8.1434,"mw-gol-caps-stacked":3.6615,"mw-gol-lower-center":6.5574,"mw-gol-lower-horizontal":6.7893,"mw-gol-lower-stacked":3.1915,"mw-gol-sentence-center":6.6724,"mw-gol-sentence-horizontal":6.9043,"mw-gol-sentence-stacked":2.9063,"p-51":0.75,"p-52":0.75,"p-53":0.75,"pt-1":1.0,"pt-2":1.0,"pt-3":1.0,"pt-4":1.0,"pt-5":1.0,"pt-6":1.0,"pt-7":1.0,"pt-8":1.0,"pt-9":1.0,"site-over":1.6,"tee-navy":1.0,"tee-red":1.0,"tee-stripe":1.0,"tee-white":1.0,"vc-chr-caps":0.7848,"vc-chr-lower":0.7715,"vc-chr-sentence":0.745,"vc-eng-caps":0.7664,"vc-eng-lower":0.7381,"vc-eng-sentence":0.7098,"vc-gol-caps":0.7872,"vc-gol-lower":0.7533,"vc-gol-sentence":0.7269,"vid-half":6.5397,"vid-line":6.5397,"vid-solid":6.5397,"vk-chr-caps":0.7848,"vk-chr-lower":0.7715,"vk-chr-sentence":0.745,"vk-eng-caps":0.7664,"vk-eng-lower":0.7381,"vk-eng-sentence":0.7098,"vk-gol-caps":0.7872,"vk-gol-lower":0.7533,"vk-gol-sentence":0.7269,"vm-chr-caps":0.7848,"vm-chr-lower":0.7715,"vm-chr-sentence":0.745,"vm-eng-caps":0.7664,"vm-eng-lower":0.7381,"vm-eng-sentence":0.7098,"vm-gol-caps":0.7872,"vm-gol-lower":0.7533,"vm-gol-sentence":0.7269,"w-ball":1.7768,"w-fence":1.7787,"w-gym-a":1.7769,"w-gym-b":1.7769,"w-swim":1.7769,"w-win":1.7769,"wl-ball":1.7804,"wl-box":1.7804,"wl-gym":1.7804,"wl-hall-box":1.7769,"wl-hall-judo":1.7769,"wl-judo":2.3529,"wl-run":1.7804,"wl-ski":1.7804}/*/RATIOS*/;
   var STAGE1 = 'https://kup-version.kupdaria26.workers.dev/armysport';
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
@@ -100,10 +100,11 @@
       APPS.map(function (a) { return '<div class="as-a"><i style="background-image:url(' + IMG + 'app-' + a[0] + '.webp)"></i><span>' + a[1] + '</span></div>'; }).join('') +
       '</div></div></div>';
   }
-  function cobrand() {
+  function cobrand(set) {
+    set = set || 'vc';
     return '<div class="s2-co">' + FONTS.map(function (f) {
       return '<div class="strip"><span class="name">' + esc(f[1]) + '</span><div class="logos">' + PARTNERS.map(function (p) {
-        return p ? '<img src="' + svg(p) + '" alt="" fetchpriority="low" decoding="async">' : '<img class="own" data-font="' + f[0] + '" src="' + svg('s2-vc-' + f[0] + '-lower') + '" alt="армия спорта" fetchpriority="low" decoding="async">';
+        return p ? '<img src="' + svg(p) + '" alt="" fetchpriority="low" decoding="async">' : '<img class="own" data-font="' + f[0] + '" src="' + svg('s2-' + set + '-' + f[0] + '-lower') + '" alt="армия спорта" fetchpriority="low" decoding="async">';
       }).join('') + '</div></div>';
     }).join('') + '</div>';
   }
@@ -142,16 +143,23 @@
   h.push(sec('mono', 'монохромная звезда', [
     'Звезда всегда одноцветная: белая, черная или с вырубкой вместо синего. Фирменные красный и синий уходят с нее и появляются вокруг логотипа — в фоне, графике, паттерне, плашке.'
   ], '<div class="s2-fontsw s2-mono">' + tabs(FONTS.map(function (f) { return f[1]; })) +
-    '<div class="row2"><div class="bgic" role="group" aria-label="фон">' + [['k', 'на черном'], ['w', 'на белом'], ['p', 'на узоре']].map(function (b, i) {
+    '<div class="row2"><div class="bgic" role="group" aria-label="фон">' + [['w', 'на белом'], ['k', 'на черном'], ['p', 'на узоре']].map(function (b, i) {
       return '<button type="button" class="' + b[0] + (i ? '' : ' on') + '" aria-label="' + b[1] + '" title="' + b[1] + '"><i' + (b[0] === 'p' ? ' style="background-image:url(' + svg('s2-m-pattern') + ')"' : '') + '></i></button>';
     }).join('') + '</div>' +
-    '<div class="stage k" style="--pat:url(' + svg('s2-m-pattern') + ')">' + FONTS.map(function (f, i) {
+    '<div class="stage w" style="--pat:url(' + svg('s2-m-pattern') + ')">' + FONTS.map(function (f, i) {
       return '<div class="pane' + (i ? '' : ' on') + '">' + fontTable('s2-mw-', f).replace('s2-fonts one', 's2-fonts one w') + fontTable('s2-mk-', f).replace('s2-fonts one', 's2-fonts one k') + '</div>';
-    }).join('') + '</div></div></div>' +
-    '<div class="s2-pal"><div class="cols"><p class="as-p">' + T('Красный преобладает и по возможности стоит сверху. Основной фон — белый.') + '</p><p class="as-p">' + T('Синий в знаке сделан ярче, чтобы сочетаться с узорами и выглядеть цифровым и современным.') + '</p></div><div class="as-pal">' +
+    }).join('') + '</div></div></div>'));
+
+
+  h.push('<div class="s2-sub" id="co2">' + tx('в кобрендинге', ['Монохромная вертикальная версия рядом с партнерами — в каждом из трех шрифтов.']) +
+    '<div class="as-wrap as-vis as-up">' + tabs(CASES.map(function (c) { return c[1]; })) + cobrand('vk') + '</div></div>');
+  // перебивка: дальше — основная версия на носителях
+  h.push('<section class="as-divide s2-divide" id="carriers" data-slide><div class="as-wrap"><h2 class="as-h1">' + T('основная версия на носителях') + '</h2></div></section>');
+  h.push('<div class="as-sec" id="pal">' + tx('палитра') + '<div class="as-wrap as-vis as-up">' +
+'<div class="s2-pal"><div class="cols"><p class="as-p">' + T('Красный преобладает и по возможности стоит сверху. Основной фон — белый.') + '</p><p class="as-p">' + T('Синий в знаке сделан ярче, чтобы сочетаться с узорами и выглядеть цифровым и современным.') + '</p></div><div class="as-pal">' +
     [['белый', '#FFFFFF', 3, 'light'], ['красный', '#E71E26', 3], ['синий', '#002FFF', 1.5], ['черный', '#080000', 1.5]].map(function (c) {
       return '<div class="' + (c[3] || '') + '" style="--f:' + c[2] + ';background:' + c[1] + ';color:' + (c[3] ? '#121314' : '#fff') + '"><span>' + c[0] + '<br>' + c[1] + '</span></div>';
-    }).join('') + '</div></div>'));
+    }).join('') + '</div></div>' + '</div></div>');
 
   // ---------- малые размеры: иконка, фавикон и сайт в макетах, правила — в картинках ----------
   h.push(sec('small', 'малые размеры', ['Иконка приложения, фавикон и сайт — в макетах телефона и браузера. Ниже — как знак ведет себя в мелком размере и в техническом нанесении.'],
@@ -298,7 +306,7 @@
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
-  $$('.as-up,.s2-heromark').forEach(function (el) { io.observe(el); });
+  $$('.as-up,.as-divide,.s2-heromark').forEach(function (el) { io.observe(el); });
 
   // бесконечное — только пока видно
   function whileVisible(el, on, off) {
@@ -310,7 +318,7 @@
   }
 
   // шапка: текущий раздел, цвет под фон; кнопка наверх
-  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-thanks'), links = $$('.as-top nav a'),
+  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-divide,.as-thanks'), links = $$('.as-top nav a'),
     marks = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
   var navCur = -2;
   function onScroll() {
@@ -396,9 +404,14 @@
   switcher(co, 3, function (j) {
     $$('.own', co).forEach(function (img) { img.src = svg('s2-vc-' + img.dataset.font + '-' + CASES[j][0]); });
   }, 3200);
+  var co2 = $('#co2');
+  FONTS.forEach(function (f) { CASES.forEach(function (c) { new Image().src = svg('s2-vk-' + f[0] + '-' + c[0]); }); });
+  switcher(co2, 3, function (j) {
+    $$('.own', co2).forEach(function (img) { img.src = svg('s2-vk-' + img.dataset.font + '-' + CASES[j][0]); });
+  }, 3200);
   // монохром: фон
   var mono = $('.s2-mono'), stage = $('.stage', mono);
-  switcher(mono, 3, function (j) { stage.className = 'stage ' + ['k', 'w', 'p'][j]; }, 3200, $('.bgic', mono));
+  switcher(mono, 3, function (j) { stage.className = 'stage ' + ['w', 'k', 'p'][j]; }, 3200, $('.bgic', mono));
   // ролик: версия знака в углу
   var film = $('#film');
   switcher(film, 3, function (j) { $$('.corner', film).forEach(function (c, i) { c.classList.toggle('on', i === j); }); }, 4000);

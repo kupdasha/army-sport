@@ -521,3 +521,16 @@
   .s2-vers .pic{aspect-ratio:16/10}
 }
 .s2-vers .pic{position:relative}.s2-vers .pic img{position:absolute;inset:0;margin:auto;height:46%;width:auto;max-width:70%}
+/* телефон: две версии знака — в две колонки */
+@media (max-width:640px){
+  .s2-vers{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .s2-vers .pic{aspect-ratio:1}
+  .s2-vers .pic img{height:52%;max-width:78%}
+  .s2-vers .cap{padding-top:12px;font-size:16px}
+  .s2-vers .cap b{font-size:20px}
+}
+/* перебивка «основная версия на носителях» и палитра сразу после нее */
+.s2-divide{margin-top:clamp(72px,8vw,136px);min-height:60svh}
+.s2-divide .as-h1{color:#fff;max-width:14ch}
+#pal{padding-top:clamp(72px,8vw,136px)}
+#pal .s2-pal{margin-top:0}
