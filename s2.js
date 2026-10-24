@@ -108,7 +108,7 @@
   // ====================================================================================
   var h = [];
 
-  h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, второй этап</a><nav>' +
+  h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, доработка первого этапа</a><nav>' +
     '<a href="#mark">знак</a><a href="#mono">монохром</a><a href="#small">малые размеры</a><a href="#film">ролик</a><a href="#merch">мерч</a><a href="#walls">стены</a><a href="#award">награда</a><a href="#coins">монеты</a><a href="#wear">одежда</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
