@@ -545,3 +545,9 @@
   /* перебивка ниже */
   .s2-divide{min-height:0;padding:96px 0 40px}
 }
+/* заглушки, пока грузятся логотипы */
+.ldg{position:relative}
+.ldg::after{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(100deg,rgba(128,128,128,.08) 30%,rgba(128,128,128,.2) 50%,rgba(128,128,128,.08) 70%);background-size:220% 100%;animation:as-shine 1.3s linear infinite;pointer-events:none}
+.s2-fonts .row span.ldg{min-width:calc(var(--h) * 5);min-height:var(--h)}
+img.ldg{background:linear-gradient(100deg,#F2F2F3 30%,#FAFAFA 50%,#F2F2F3 70%);background-size:220% 100%;animation:as-shine 1.3s linear infinite;border-radius:6px}
+.as-ph.contain:not(.ok),.as-ph.soft:not(.ok){background:var(--soft)}

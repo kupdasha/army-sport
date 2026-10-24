@@ -287,6 +287,14 @@
     if (img.complete && img.naturalWidth) ok(); else { img.addEventListener('load', ok); img.addEventListener('error', ok); }
   }
   $$('.as-ph img').forEach(watchImg);
+  // заглушки на месте логотипов, пока они грузятся
+  $$('.s2-fonts img,.s2-co img,.s2-vers img').forEach(function (img) {
+    if (img.complete && img.naturalWidth) return;
+    var box = img.tagName === 'IMG' && img.closest('.s2-co') ? img : (img.closest('span,.pic') || img);
+    box.classList.add('ldg');
+    function ok() { box.classList.remove('ldg'); }
+    img.addEventListener('load', ok); img.addEventListener('error', ok);
+  });
   // свой запас для ленивых картинок: за полтора экрана до показа грузим сами, не полагаясь на браузер
   var ioImg = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.loading = 'eager'; ioImg.unobserve(e.target); } });
@@ -298,8 +306,11 @@
     var sk = document.getElementById('as-skel'); if (!sk) return;
     var done = false;
     function off() { if (done) return; done = true; sk.classList.add('off'); setTimeout(function () { sk.remove(); }, 600); }
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(off);
-    setTimeout(off, 1800);
+    // ждем шрифты и звезду первого экрана — тогда страница сразу выглядит готовой; дольше 6 с не держим
+    var star = $('.s2-heromark img');
+    var starReady = new Promise(function (ok) { if (!star || (star.complete && star.naturalWidth)) ok(); else { star.addEventListener('load', ok); star.addEventListener('error', ok); } });
+    Promise.all([document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(), starReady]).then(off);
+    setTimeout(off, 6000);
   })();
 
   // появление
