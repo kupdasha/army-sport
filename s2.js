@@ -250,7 +250,7 @@
     '<div class="as-grid as-g2 s2-tees">' + ['tee-red', 'tee-stripe', 'tee-navy', 'tee-white'].map(function (t) { return ph(t); }).join('') + '</div>'));
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
-  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, второй этап. <a href="' + STAGE1 + '">Первый этап</a></span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
+  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, доработка первого этапа. <a href="' + STAGE1 + '">Стартовая презентация</a></span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
   h.push('<div class="as-lb" role="dialog" aria-label="картинка крупно"><img alt=""></div>');
 
   root.innerHTML = h.join('');

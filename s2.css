@@ -493,3 +493,13 @@
   .s2-fonts.one .row span{justify-content:center}
   .s2-mono .stage{padding:8px 16px}
 }
+/* телефон: больше воздуха между знаками и явный отступ между строчными, с заглавной и капсом */
+@media (max-width:640px){
+  .s2-fonts.one,.s2-mono .s2-fonts.one{row-gap:0;padding:8px 0}
+  .s2-fonts.one .row{row-gap:28px;padding:36px 0}
+  .s2-fonts.one .row+.row{border-top:1px solid var(--line)}
+  .s2-mono .stage:not(.w) .s2-fonts.one .row+.row{border-top-color:rgba(255,255,255,.22)}
+  /* малые размеры: таблички печати и гравировки целиком, одна под другой */
+  .s2-rules .s2-engrave .box{height:auto;grid-template-columns:1fr;gap:12px}
+  .s2-engrave .plate{min-height:0;aspect-ratio:16/10;padding:10%}
+}
