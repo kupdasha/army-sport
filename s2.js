@@ -231,7 +231,7 @@
   ], '<div class="s2-awards">' + [['aw-1', 'цветные логотипы на пьедестале'], ['aw-2', 'надписи сбоку'], ['aw-3', 'черные аккуратные логотипы'], ['aw-4', 'черная накладка сверху']].map(function (a, i) {
     return '<figure class="s2-shine s2-aw">' + ph(a[0], { cls: 'contain soft' }).replace(IMG + 's2-' + a[0] + '.webp"', IMG + 's2-' + a[0] + '-full.webp"').replace('</div>', '<i class="flow" style="-webkit-mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp);mask-image:url(' + IMG + 's2-' + a[0] + '-gold.webp)"></i>' +
       (i < 3 ? '<i class="flow top" style="-webkit-mask-image:url(' + IMG + 's2-' + a[0] + '-top.webp);mask-image:url(' + IMG + 's2-' + a[0] + '-top.webp)"></i>' : '') + '</div>') +
-      '<figcaption><b>' + (i + 1) + '</b></figcaption></figure>';
+      '<figcaption><b>' + (i + 1) + '</b><span>' + T(a[1]) + '</span></figcaption></figure>';
   }).join('') + '</div><div class="s2-man">' + ph('aw-man') + '</div>'));
 
   // ---------- монеты ----------
