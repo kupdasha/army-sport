@@ -534,3 +534,14 @@
 .s2-divide .as-h1{color:#fff;max-width:14ch}
 #pal{padding-top:clamp(72px,8vw,136px)}
 #pal .s2-pal{margin-top:0}
+/* кобрендинг: переключатели регистров по центру, как в остальных блоках с вкладками */
+#co .as-sw-tabs,#co2 .as-sw-tabs{justify-content:center}
+@media (max-width:640px){
+  /* первый экран: звезда, заголовок, текст и кнопка — по центру */
+  .s2-heroin{justify-items:center;text-align:center}
+  .s2-herotx{align-items:center}
+  .s2-herotx .as-lead{margin-left:auto;margin-right:auto}
+  .s2-heromark{display:flex;justify-content:center}
+  /* перебивка ниже */
+  .s2-divide{min-height:0;padding:96px 0 40px}
+}
