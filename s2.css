@@ -479,3 +479,4 @@
 .s2-film .corner{width:18%;height:auto}
 .s2-film .corner.on{opacity:.3}
 @media (max-width:640px){.s2-film .corner{width:26%;height:auto}}
+.s2-awards figcaption{justify-content:center;max-width:none}
