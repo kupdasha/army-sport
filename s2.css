@@ -551,3 +551,13 @@
 .s2-fonts .row span.ldg{min-width:calc(var(--h) * 5);min-height:var(--h)}
 img.ldg{background:linear-gradient(100deg,#F2F2F3 30%,#FAFAFA 50%,#F2F2F3 70%);background-size:220% 100%;animation:as-shine 1.3s linear infinite;border-radius:6px}
 .as-ph.contain:not(.ok),.as-ph.soft:not(.ok){background:var(--soft)}
+/* подсказка у строк знаков: курсор (на телефоне — палец) сам проходит по строкам */
+.s2-fonts{position:relative}
+.s2-hint{position:absolute;left:0;top:0;width:26px;height:26px;pointer-events:none;z-index:3;opacity:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M3 2l17 11-7.5 1.6L9 22z' fill='%23111' stroke='%23fff' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E") 0 0/100% no-repeat;
+  transition:transform .6s var(--ease),opacity .35s}
+.s2-hint.tap{width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:rgba(120,120,128,.38);box-shadow:0 0 0 2px rgba(255,255,255,.7)}
+.s2-hint::after{content:"";position:absolute;inset:0;border-radius:50%;opacity:0}
+.s2-hint.press{scale:.86;transition:transform .6s var(--ease),opacity .35s,scale .15s}
+.s2-hint.tap.press::after{animation:s2-tapring .6s ease-out;background:rgba(120,120,128,.35)}
+@keyframes s2-tapring{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(2.2)}}

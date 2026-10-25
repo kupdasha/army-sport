@@ -377,18 +377,71 @@
   });
 
   // ---------- шрифты: наведенная строка ярче, остальные полупрозрачные ----------
+  // пока посетитель ничего не трогал, подсказка сама показывает прием: курсор (на телефоне — палец)
+  // проходит по строкам видимой таблицы, наведенная остается яркой
+  var hintUser = false, hintBusy = false;
+  function hintStop() { hintUser = true; }
   $$('.s2-fonts').forEach(function (t) {
-    var rows = $$('.row', t);
+    var rows = $$('.row', t), ptr = 'mouse';
+    t._runs = 0; t._last = 0;
     function pick(r) { t.classList.toggle('hov', !!r); rows.forEach(function (x) { x.classList.toggle('on', x === r); }); }
+    t._pick = pick;
     rows.forEach(function (r) {
-      r.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') pick(r); });
-      r.addEventListener('focus', function () { pick(r); });
-      // на телефоне — нажатием, второе нажатие снимает выделение
-      r.addEventListener('click', function () { if (touch) pick(r.classList.contains('on') ? null : r); });
+      r.addEventListener('pointerdown', function (e) { ptr = e.pointerType; });
+      r.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hintStop(); pick(r); } });
+      r.addEventListener('focus', function () { if (!t._demo) pick(r); });
+      // на телефоне и планшете — нажатием, второе нажатие снимает выделение
+      r.addEventListener('click', function () { if (ptr !== 'mouse' || touch) { hintStop(); pick(r.classList.contains('on') ? null : r); } });
     });
     t.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') pick(null); });
     t.addEventListener('focusout', function (e) { if (!t.contains(e.relatedTarget)) pick(null); });
   });
+  // нажатие мимо строк снимает выделение
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('.s2-fonts .row')) return;
+    $$('.s2-fonts.hov').forEach(function (t) { if (!t._demo) t._pick(null); });
+  });
+  function shown(t) {
+    if (!t.offsetParent) return false;
+    for (var el = t; el && el !== document.body; el = el.parentElement) {
+      var cs = getComputedStyle(el); if (cs.visibility === 'hidden' || +cs.opacity < .5) return false;
+    }
+    var r = t.getBoundingClientRect(); return r.top > -20 && r.bottom < innerHeight + 20 && r.height > 0 || (r.top < innerHeight * .25 && r.bottom > innerHeight * .75);
+  }
+  function hintRun(t) {
+    var rows = $$('.row', t).filter(function (r) { return r.offsetHeight; });
+    if (!rows.length) return;
+    hintBusy = true; t._demo = true; t._runs++;
+    var c = document.createElement('i'); c.className = 's2-hint' + (touch ? ' tap' : ''); c.setAttribute('aria-hidden', 'true');
+    t.appendChild(c);
+    function at(r) {
+      var tb = t.getBoundingClientRect(), rb = r.getBoundingClientRect(), sp = $('span', r).getBoundingClientRect();
+      c.style.transform = 'translate(' + (sp.left + sp.width * .7 - tb.left) + 'px,' + (rb.top + rb.height * .55 - tb.top) + 'px)';
+    }
+    var steps = [], k = 0;
+    at(rows[0]); c.style.opacity = 0;
+    steps.push(function () { c.style.opacity = 1; });
+    rows.forEach(function (r) {
+      steps.push(function () { at(r); });
+      steps.push(function () { c.classList.add('press'); t._pick(r); });
+      steps.push(function () { c.classList.remove('press'); });
+    });
+    steps.push(function () { t._pick(null); c.style.opacity = 0; });
+    // waits[i] — пауза перед шагом i; первый шаг — появление, затем на каждую строку подлет, нажатие, пауза
+    var waits = [80].concat([].concat.apply([], rows.map(function () { return [600, 450, 1000]; }))).concat([400]);
+    function next() {
+      if (hintUser) { t._pick(null); end(); return; }
+      if (k >= steps.length) { end(); return; }
+      steps[k++](); setTimeout(next, waits[k] || 500);
+    }
+    function end() { c.style.opacity = 0; setTimeout(function () { c.remove(); }, 400); t._demo = false; t._last = Date.now(); hintBusy = false; }
+    setTimeout(next, waits[0]);
+  }
+  if (!reduce) setInterval(function () {
+    if (hintUser || hintBusy || document.hidden) return;
+    var t = $$('.s2-fonts').filter(function (x) { return x._runs < 2 && Date.now() - x._last > 5000 && shown(x); })[0];
+    if (t) hintRun(t);
+  }, 700);
 
   // ---------- переключатели: идут сами, пока не тронули ----------
   function switcher(box, n, apply, ms, row) {
