@@ -95,11 +95,6 @@
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда без надписи ----------
-  function starOnly(st, ink) {
-    var p = L.star, body = st === 'tone' ? '<path fill="' + ink + '" fill-opacity=".62" d="' + p.piece + '"/><path fill="' + ink + '" d="' + p.main + '"/>'
-      : st === 'solid' ? '<path fill="' + ink + '" d="' + p.solid + '"/>' : '<path fill="' + BLUE + '" d="' + p.piece + '"/><path fill="' + RED + '" d="' + p.main + '"/>';
-    return '<svg viewBox="0 0 ' + L.sw + ' 100" aria-hidden="true">' + body + '</svg>';
-  }
   var STAR = '<svg class="s3-star" viewBox="0 0 ' + L.sw + ' 100" role="img" aria-label="звезда армии спорта"><path fill="' + BLUE + '" d="' + L.star.piece + '"/><path fill="' + RED + '" d="' + L.star.main + '"/></svg>';
   h.push('<section class="as-hero s3-hero" id="top" data-slide><div class="as-wrap s3-heroin">' +
     '<div class="s3-herotx"><h1 class="s3-h1">' + esc(nbh('третья доработка первого этапа')) + '</h1><p>' + T('Новые шрифты знака, защитное поле, кобрендинг, цвет надписи и правило монохромной звезды.') + '</p>' +
@@ -167,8 +162,8 @@
     '<div class="mocks">' +
     '<div class="m-row"><div class="poster" style="flex:3 1 0"><div class="in">' + logo('bnd-fit-lower-horizontal', wh('pl')) +
     '<h3>' + T('турнир по самбо среди юношей') + '</h3><p>' + T('Открытое первенство клуба. Вход свободный, регистрация участников до начала взвешивания.') + '</p></div></div>' +
-    // сообщество ВКонтакте: шапка — иллюстрация без знака, знак — звездой на аватарке
-    '<div class="vk" style="flex:7.11 1 0"><div class="cover"></div><div class="bar"><span class="ava">' + starOnly('tone', '#fff') + '</span>' +
+    // сообщество ВКонтакте: в шапке иллюстрация и полный знак на белом, аватарка — сама иконка приложения (s2-icon)
+    '<div class="vk" style="flex:7.11 1 0"><div class="cover"><div class="ill"></div><div class="lgo">' + logo('bnd-fit-lower-horizontal') + '</div></div><div class="bar"><span class="ava"><img src="' + IMG + 's2-icon.webp" alt="" loading="lazy" decoding="async"></span>' +
     '<div class="nm"><b>Армия спорта</b><span>' + T('спортивные клубы, секции и турниры') + '</span></div><span class="sub">подписаться</span></div>' +
     '<div class="tabs"><span class="on">записи</span><span>фото</span><span>видео</span><span>турниры</span></div></div></div>' +
     '<div class="m-row"><div class="story" style="flex:9 1 0"><div class="in">' + logo('bnd-fit-lower-horizontal', wh('pl')) +
