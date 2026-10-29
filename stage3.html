@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Армия спорта — третья доработка первого этапа</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="fonts/GolosText-500-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="as.css">
+<link rel="stylesheet" href="s2.css">
+<link rel="stylesheet" href="s3.css">
+<link rel="preload" href="fonts/Bounded-var.woff2" as="font" type="font/woff2" crossorigin>
+<style>html,body{margin:0;background:#fff}</style>
+</head>
+<body>
+<!-- скелет загрузки: виден сразу, пока грузятся стили и код; build.py берет этот кусок в блок Тильды -->
+<!-- скелет -->
+<div id="as-skel" class="as-skel" aria-hidden="true" style="position:fixed;inset:0;z-index:100;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .45s,visibility .45s">
+<style>#as-skel i{display:block;border-radius:6px;background:linear-gradient(100deg,#F2F2F3 30%,#FAFAFA 50%,#F2F2F3 70%);background-size:220% 100%;animation:as-sk 1.3s linear infinite}@keyframes as-sk{from{background-position:120% 0}to{background-position:-120% 0}}#as-skel.off{opacity:0;visibility:hidden}#as-skel .in{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:clamp(28px,5vw,96px);width:min(100% - 32px,1100px)}#as-skel .star{width:clamp(200px,34vw,560px);aspect-ratio:355/315;clip-path:polygon(58% 0,66% 40%,100% 40%,70% 59%,78% 97%,60% 85%,7% 100%,28% 59%,0 39%,38% 39%);border-radius:0}#as-skel .tx{display:flex;flex-direction:column;gap:14px}#as-skel .h{height:clamp(40px,5vw,84px);width:85%}#as-skel .l{height:clamp(22px,2.4vw,34px)}#as-skel .b{height:48px;width:220px;border-radius:999px;margin-top:14px}@media(max-width:640px){#as-skel .in{grid-template-columns:1fr;justify-items:center}#as-skel .star{width:62vw}#as-skel .tx{align-items:center;width:100%}#as-skel .h{width:90%}}</style>
+<div class="in"><i class="star"></i><div class="tx"><i class="h"></i><i class="h" style="width:70%"></i><i class="l" style="width:62%"></i><i class="l" style="width:55%"></i><i class="l" style="width:48%"></i><i class="b"></i></div></div>
+</div>
+<!-- /скелет -->
+<div id="as"></div>
+<script>window.AS_BASE=''</script>
+<script src="s3.js" defer></script>
+</body>
+</html>
