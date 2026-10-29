@@ -112,7 +112,7 @@
 .s3-type .poster p{margin:0;font:400 16px/1.4 var(--font);color:rgba(255,255,255,.82)}
 /* титры */
 .s3-type .titles{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111}
-.s3-type .titles .frame{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.72)),url(img/s2-w-gym-b-s.webp) center/cover}
+.s3-type .titles .frame{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,0) 32%,rgba(0,0,0,0) 52%,rgba(0,0,0,.72)),url(img/s2-i-2-s.webp) center 30%/cover}
 .s3-type .titles .corner{position:absolute;left:clamp(14px,2vw,28px);top:clamp(14px,2vw,28px);width:30%;height:auto;opacity:.92}
 .s3-type .titles .lower{position:absolute;left:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,28px);display:flex;flex-direction:column;gap:6px;color:#fff}
 .s3-type .titles .lower b{font:600 clamp(20px,2.2vw,36px)/1.05 var(--bnd)}
