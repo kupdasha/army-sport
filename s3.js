@@ -63,7 +63,7 @@
   var ICON = { up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>' };
 
   // ---------- данные ----------
-  // шрифты знака: у кого есть вариант без подгонки (raw); у Энджина и Хромиуса пока нет — нужны файлы шрифтов
+  // шрифты знака: у кого есть вариант без подгонки (raw); Энджин и Хромиус — только подогнанные, как во втором этапе
   var FONTS = [
     { k: 'cnt', n: 'Conthrax', live: true, raw: true },
     { k: 'bnd', n: 'Bounded', live: true, raw: true },
@@ -110,7 +110,7 @@
     '<div class="stage">' + FONTS.map(function (f, i) {
       var body = f.raw ? '<div class="dual"><div class="fit">' + rows(f, 'fit') + '</div><div class="raw">' + rows(f, 'raw') + '</div></div>' : rows(f, 'fit');
       return '<div class="pane' + (i ? '' : ' on') + '"' + (f.raw ? ' data-raw' : '') + '>' + body + ROWHINT +
-        (f.raw ? '' : '<p class="note">' + T('Вариант без подгонки появится, когда будут файлы шрифта.') + '</p>') + '</div>';
+        '</div>';
     }).join('') + '</div></div>'));
 
   // ---------- защитное поле: размер звезды ----------
