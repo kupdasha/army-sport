@@ -1,0 +1,26 @@
+/* «Армия спорта», четвертая доработка первого этапа. Поверх as.css, s2.css и s3.css. */
+.s4 svg.lg{width:auto;max-width:100%}
+
+/* ---------- знак: все компоновки в ряд, звезда одной высоты ---------- */
+.s4-mark .as-sw-tabs{justify-content:center}
+.s4-set{--u:clamp(30px,5vw,64px);display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:clamp(28px,4vw,64px) clamp(32px,4vw,64px);padding:clamp(28px,3.4vw,56px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s4-set figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;min-width:0;max-width:100%}
+.s4-set .pic{display:flex;align-items:flex-end;justify-content:center;max-width:100%}
+.s4-set figcaption,.s4-two figcaption{font:400 16px/1.4 var(--read);color:var(--mute);text-align:center;text-wrap:balance}
+
+/* ---------- в две строки: было и три решения ---------- */
+.s4-two{--u:clamp(64px,9vw,128px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.s4-two figure{margin:0;display:flex;flex-direction:column;gap:16px;min-width:0}
+.s4-two .pic{display:flex;align-items:center;justify-content:center;background:var(--soft);padding:clamp(28px,4vw,64px) clamp(16px,3vw,48px)}
+.s4-two figcaption{text-align:left}
+.s4-two figcaption b{display:block;font:500 20px/1.2 var(--font);color:var(--ink);margin-bottom:6px}
+.s4-two .t-st-old .pic{opacity:.92}
+.s4 .gd path{fill:none;stroke:var(--blue);stroke-width:1.2px;stroke-dasharray:6 5;vector-effect:non-scaling-stroke;opacity:.8}
+
+@media (max-width:760px){
+  .s4-two{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .s4-set{--u:min(9vw,40px);flex-direction:column;align-items:center}
+  .s4-two{--u:21vw}
+}
