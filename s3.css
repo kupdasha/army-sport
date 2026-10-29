@@ -181,13 +181,16 @@
 @media (prefers-reduced-motion:reduce){.s3-type .big .aa{animation:none}}
 
 /* ---------- согласованное во втором этапе: строка раскрывает превью ---------- */
-.s3-okrow{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(20px,2.4vw,32px) 0;cursor:pointer;color:var(--ink);text-align:left;font:500 clamp(26px,2.6vw,44px)/1 var(--font);letter-spacing:-.02em}
-.s3-okrow span{color:var(--mute);transition:color .3s}
-.s3-okrow:hover span,.s3-okrow.on span{color:var(--ink)}
-.s3-okrow i{position:relative;flex:none;width:28px;height:28px}
-.s3-okrow i::before,.s3-okrow i::after{content:"";position:absolute;left:2px;top:13px;width:24px;height:2px;background:currentColor;transition:transform .35s var(--ease)}
+.s3 .s3-okrow{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;border:0;cursor:pointer;text-align:left;background:var(--blue);color:#fff;padding:clamp(28px,4vw,64px) clamp(20px,4vw,64px);transition:background .3s}
+.s3 .s3-okrow:hover{background:#0028DB}
+.s3-okrow .t{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px);min-width:0}
+.s3-okrow b{font:500 clamp(34px,5vw,84px)/.95 var(--font);letter-spacing:-.03em}
+.s3-okrow .sub{font:400 clamp(16px,1.35vw,21px)/1.35 var(--read);color:rgba(255,255,255,.82);text-wrap:balance}
+.s3-okrow i{position:relative;flex:none;width:clamp(52px,5vw,80px);height:clamp(52px,5vw,80px);border-radius:50%;background:#fff;color:var(--blue);transition:transform .35s var(--ease)}
+.s3-okrow i::before,.s3-okrow i::after{content:"";position:absolute;left:50%;top:50%;width:38%;height:2px;margin:-1px 0 0 -19%;background:currentColor;transition:transform .35s var(--ease)}
 .s3-okrow i::after{transform:rotate(90deg)}
 .s3-okrow.on i::after{transform:rotate(0)}
+.s3-okrow:hover i{transform:scale(1.06)}
 .s3-okp{width:100%;margin-top:clamp(24px,3vw,40px);animation:s3-fade .5s var(--ease) both}
 .s3-okp .note{margin-top:0}
 .s3-okp .grp{margin-top:clamp(32px,4vw,56px)}
@@ -199,3 +202,8 @@
 .s3-okp .tiles.one{grid-template-columns:minmax(0,180px)}
 .s3-okp .tiles.one a{aspect-ratio:1;border-radius:22%}
 @media (max-width:640px){.s3-okp .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  .s3 .s3-okrow{align-items:flex-start;gap:16px}
+  .s3-okrow b{font-size:8.5vw}
+  .s3-okrow i{width:48px;height:48px}
+}

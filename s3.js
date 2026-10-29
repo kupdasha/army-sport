@@ -67,8 +67,8 @@
   var FONTS = [
     { k: 'cnt', n: 'Conthrax', live: true, raw: true },
     { k: 'bnd', n: 'Bounded', live: true, raw: true },
-    { k: 'eng', n: 'Энджин' },
-    { k: 'chr', n: 'Хромиус', raw: 's3-f-chr-raw' },   // без подгонки — обведено с присланных картинок (исходники-s3/trace.py, place.py)
+    { k: 'eng', n: 'Энджин', raw: 's3-f-eng-raw' },
+    { k: 'chr', n: 'Хромиус', raw: 's3-f-chr-raw' },   // Энджин и Хромиус без подгонки — обведены с присланных картинок (исходники-s3/trace.py, place.py)
     { k: 'gol', n: 'Golos Text', raw: 's3-f-gol-raw' }
   ];
   var CASES = [['lower', 'строчные'], ['sentence', 'с заглавной'], ['caps', 'заглавные']];
@@ -202,7 +202,7 @@
     ['оформление стен', ['i-2', 'i-4', 'i-5', 'i-3', 'i-6', 'wl-hall-judo', 'wl-hall-box', 'wl-ski', 'wl-gym', 'wl-run', 'wl-ball', 'wl-box', 'wl-judo']]
   ];
   h.push('<section class="as-sec s3-ok" id="ok" data-slide><div class="as-wrap">' +
-    '<button type="button" class="s3-okrow" aria-expanded="false" aria-controls="s3-okp"><span>согласованное</span><i aria-hidden="true"></i></button>' +
+    '<button type="button" class="s3-okrow" aria-expanded="false" aria-controls="s3-okp"><span class="t"><b>согласованное</b><span class="sub">' + T('иконка, брелоки и мерч, графика с фото, оформление стен') + '</span></span><i aria-hidden="true"></i></button>' +
     '<div class="s3-okp" id="s3-okp" hidden><p class="note">' + T('Из доработки первого этапа согласованы иконка, брелоки, мерч, графика с фото и оформление стен. Награда, медали и форма — в работе.') + '</p>' +
     OK.map(function (g) {
       return '<div class="grp"><p class="lbl">' + T(g[0]) + '</p><div class="tiles' + (g[0] === 'иконка' ? ' one' : '') + '">' + g[1].map(function (n) {
