@@ -49,6 +49,16 @@
       '<g transform="translate(' + g.s[0] + ' ' + g.s[1] + ')">' + star + '</g>' +
       '<path fill="' + wc[0] + '" d="' + g.d[0] + '"/><path fill="' + wc[1] + '" d="' + g.d[1] + '"/>' + guides + '</svg>';   // направляющие поверх: видно, как линия идет сквозь слово
   }
+  // охранное поле в размер звезды: по бокам — ее ширина, сверху и снизу — высота; в поле — бледные звезды-мерки
+  function guard(key) {
+    var g = L.logos[key]; if (!g) return '';
+    var s = L.star, mx = L.sw, my = 100, W = g.w + 2 * mx, H = g.h + 2 * my;
+    function ghost(x, y) { return '<path transform="translate(' + x.toFixed(2) + ' ' + y.toFixed(2) + ')" d="' + s.main + s.piece + '"/>'; }
+    var gs = ghost(0, my + g.s[1]) + ghost(mx + g.w, my + g.s[1]) + ghost(mx + g.s[0], 0) + ghost(mx + g.s[0], my + g.h);
+    return '<svg class="lg gf" viewBox="-2 -2 ' + (W + 4) + ' ' + (H + 4) + '" width="' + W + '" height="' + H + '" style="height:calc(var(--u) * ' + (H / 100).toFixed(3) + ')" role="img" aria-label="армия спорта с охранным полем">' +
+      '<rect class="fd" width="' + W + '" height="' + H + '"/><g class="gh">' + gs + '</g><rect class="bx" x="' + mx + '" y="' + my + '" width="' + g.w + '" height="' + g.h + '"/>' +
+      '<g transform="translate(' + mx + ' ' + my + ')">' + logo(key, { free: 1 }).replace(/^<svg[^>]*>|<\/svg>$/g, '') + '</g></svg>';
+  }
   function tx(title, ps) {
     return '<div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">' + esc(nbh(title)) + '</h2><div>' +
       [].concat(ps || []).map(function (p) { return '<p class="as-p">' + T(p) + '</p>'; }).join('') + '</div></div></div>';
@@ -63,7 +73,12 @@
 
   // ---------- данные ----------
   var CUTS = [['raw', 'без срезов'], ['rleg', 'срез только у ног «Р»']];
-  var SET = [['horizontal', 'в строку'], ['st-ray', 'в две строки'], ['center', 'между словами'], ['vertical', 'вертикально']];
+  var SET = [['horizontal', 'в строку'], ['center', 'между словами'], ['st-ray', 'в две строки'], ['vertical', 'вертикально']];
+  // две длинные компоновки — столбиком слева, две компактные — рядом справа: ряд читается как одна таблица
+  function fig(x) { return '<figure class="c-' + x[0] + '"><div class="pic" data-k="' + x[0] + '"></div><figcaption>' + esc(x[1]) + '</figcaption></figure>'; }
+  function grp(list) {
+    return '<div class="wide">' + list.slice(0, 2).map(fig).join('') + '</div><div class="comp">' + list.slice(2).map(fig).join('') + '</div>';
+  }
   var TWO = [
     ['st-old', 'было', 'Надпись от линии лучей до нижнего левого луча — он ниже правого, и надпись будто падает, а сверху остается пустота.', function () { return [L.arm, 100]; }],
     ['st-center', 'по центру звезды', 'Тот же размер надписи, середина блока — на оптическом центре звезды. Пустоты сверху нет.', function () { return [L.cy]; }],
@@ -75,7 +90,7 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, четвертая доработка первого этапа</a><nav>' +
-    '<a href="#mark">знак</a><a href="#two">в две строки</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
+    '<a href="#mark">знак</a><a href="#two">в две строки</a><a href="#guard">охранное поле</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда ----------
@@ -90,9 +105,7 @@
     'Conthrax, только заглавные. «Армия» — красным, «спорта» — синим, как цвета звезды: красный сверху, синий снизу.',
     'Срезы — без срезов или только у ног «Р». В ряду теперь и вертикальная версия из кобрендинга.'
   ], '<div class="s4-mark">' + tabs(CUTS.map(function (c) { return c[1]; })) +
-    '<div class="s4-set">' + SET.map(function (x) {
-      return '<figure class="c-' + x[0] + '"><div class="pic" data-k="' + x[0] + '"></div><figcaption>' + esc(x[1]) + '</figcaption></figure>';
-    }).join('') + '</div>' +
+    '<div class="s4-set">' + grp(SET) + '</div>' +
     '<p class="note">' + T('Шрифты заголовков и текста — Bounded и Golos Text, без изменений. Монохромная звезда — как в третьей доработке.') + '</p></div>'));
 
   // ---------- в две строки: было и три решения, с направляющими ----------
@@ -102,6 +115,12 @@
     return '<figure class="t-' + x[0] + '"><div class="pic" data-k="' + x[0] + '"></div><figcaption><b>' + esc(x[1]) + '</b>' + T(x[2]) + '</figcaption></figure>';
   }).join('') + '</div>' +
     '<p class="note">' + T('Срезы — как выбраны выше.') + '</p>'));
+
+  // ---------- охранное поле: сеткой 2 × 2 — длинные слева, компактные справа ----------
+  h.push(sec('guard', 'охранное поле', [
+    'Вокруг знака — свободное поле в размер звезды: по бокам — ее ширина, сверху и снизу — высота. Внутрь не заходят текст, другие знаки и край носителя.',
+    'Знак меньше — поле меньше вместе с ним: мерка всегда звезда того же знака.'
+  ], '<div class="s4-set s4-guard">' + [SET[0], SET[2], SET[1], SET[3]].map(fig).join('') + '</div>'));
 
   // ---------- шрифты носителей ----------
   // знак в макетах — метка, draw() рисует его в выбранном срезе: data-w — белый на цвете, data-c — класс
@@ -164,7 +183,7 @@
   // знаки в выбранном срезе
   var cut = 'raw';
   function draw() {
-    $$('.s4-set .pic').forEach(function (p) { p.innerHTML = logo(cut + '-' + p.dataset.k); });
+    $$('.s4-set .pic').forEach(function (p) { p.innerHTML = p.closest('.s4-guard') ? guard(cut + '-' + p.dataset.k) : logo(cut + '-' + p.dataset.k); });
     $$('.s4-two .pic').forEach(function (p, i) { p.innerHTML = logo(cut + '-' + p.dataset.k, { lines: TWO[i][3]() }); });
     $$('.ml').forEach(function (m) { m.outerHTML = logo(cut + '-horizontal', { free: 1, white: !!m.dataset.w, cls: m.dataset.c + ' ml-' + (m.dataset.w ? 'w' : 'c') }); });
     $$('svg.ml-w,svg.ml-c').forEach(function (v) { v.outerHTML = logo(cut + '-horizontal', { free: 1, white: v.classList.contains('ml-w'), cls: [].slice.call(v.classList).filter(function (c) { return c !== 'lg'; }).join(' ') }); });
