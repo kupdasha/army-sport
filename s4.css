@@ -11,7 +11,7 @@
 .s4-set figcaption,.s4-two figcaption{font:400 16px/1.4 var(--read);color:var(--mute);text-align:center;text-wrap:balance}
 
 /* ---------- охранное поле: поле в размер звезды, мерки — бледные звезды ---------- */
-.s4-guard{--u:clamp(26px,5vw,72px);align-items:end;justify-items:center;border:0;padding:0}
+.s4-guard{--u:clamp(26px,4.8vw,72px);align-items:end;justify-items:center;border:0;padding:0}
 .s4 .gf .fd{fill:var(--blue);fill-opacity:.05;stroke:var(--blue);stroke-width:1px;stroke-dasharray:6 5;vector-effect:non-scaling-stroke;stroke-opacity:.7}
 .s4 .gf .bx{fill:#fff;stroke:var(--blue);stroke-width:1px;stroke-dasharray:3 4;vector-effect:non-scaling-stroke;stroke-opacity:.45}
 .s4 .gf .gh path{fill:var(--blue);fill-opacity:.13}
@@ -27,14 +27,14 @@
 
 @media (max-width:1000px){
   .s4-set{grid-template-columns:1fr;justify-items:center}
-  .s4-set{--u:min(8vw,72px)}
-  .s4-guard{--u:min(6.4vw,64px)}
+  .s4-set{--u:min(10vw,80px)}
+  .s4-guard{--u:min(8vw,64px)}
 }
 @media (max-width:760px){
   .s4-two{grid-template-columns:1fr}
 }
 @media (max-width:640px){
-  .s4-set{--u:min(9.6vw,60px)}
-  .s4-guard{--u:min(8.6vw,60px)}
+  .s4-set{--u:min(11.5vw,72px)}
+  .s4-guard{--u:min(11vw,60px)}
   .s4-two{--u:21vw}
 }

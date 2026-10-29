@@ -42,7 +42,7 @@
     var s = L.star, guides = '', wc = o.white ? ['#fff', '#fff'] : [RED, BLUE];
     if (o.lines) guides = '<g class="gd">' + o.lines.map(function (y) { var yy = (y + g.s[1]).toFixed(2); return '<path d="M-12 ' + yy + 'H' + (g.w + 12) + '"/>'; }).join('') + '</g>';
     // высота от единицы --u (высота звезды): звезда одного размера во всех компоновках
-    var hs = o.free ? '' : ' style="height:calc(var(--u) * ' + (g.h / 100).toFixed(3) + ')"';
+    var hs = o.free ? '' : ' style="height:calc(var(--u) * ' + (g.h / 100 * (o.k || 1)).toFixed(3) + ')"';
     var star = o.white ? '<path fill="#fff" fill-opacity=".62" d="' + s.piece + '"/><path fill="#fff" d="' + s.main + '"/>'   // на цвете — тональный уголок
       : '<path fill="' + BLUE + '" d="' + s.piece + '"/><path fill="' + RED + '" d="' + s.main + '"/>';
     return '<svg class="lg' + (o.cls ? ' ' + o.cls : '') + '" viewBox="0 0 ' + g.w + ' ' + g.h + '" width="' + g.w + '" height="' + g.h + '"' + hs + ' role="img" aria-label="армия спорта">' +
@@ -50,12 +50,12 @@
       '<path fill="' + wc[0] + '" d="' + g.d[0] + '"/><path fill="' + wc[1] + '" d="' + g.d[1] + '"/>' + guides + '</svg>';   // направляющие поверх: видно, как линия идет сквозь слово
   }
   // охранное поле в размер звезды: по бокам — ее ширина, сверху и снизу — высота; в поле — бледные звезды-мерки
-  function guard(key) {
+  function guard(key, k) {
     var g = L.logos[key]; if (!g) return '';
     var s = L.star, mx = L.sw, my = 100, W = g.w + 2 * mx, H = g.h + 2 * my;
     function ghost(x, y) { return '<path transform="translate(' + x.toFixed(2) + ' ' + y.toFixed(2) + ')" d="' + s.main + s.piece + '"/>'; }
     var gs = ghost(0, my + g.s[1]) + ghost(mx + g.w, my + g.s[1]) + ghost(mx + g.s[0], 0) + ghost(mx + g.s[0], my + g.h);
-    return '<svg class="lg gf" viewBox="-2 -2 ' + (W + 4) + ' ' + (H + 4) + '" width="' + W + '" height="' + H + '" style="height:calc(var(--u) * ' + (H / 100).toFixed(3) + ')" role="img" aria-label="армия спорта с охранным полем">' +
+    return '<svg class="lg gf" viewBox="-2 -2 ' + (W + 4) + ' ' + (H + 4) + '" width="' + W + '" height="' + H + '" style="height:calc(var(--u) * ' + (H / 100 * (k || 1)).toFixed(3) + ')" role="img" aria-label="армия спорта с охранным полем">' +
       '<rect class="fd" width="' + W + '" height="' + H + '"/><g class="gh">' + gs + '</g><rect class="bx" x="' + mx + '" y="' + my + '" width="' + g.w + '" height="' + g.h + '"/>' +
       '<g transform="translate(' + mx + ' ' + my + ')">' + logo(key, { free: 1 }).replace(/^<svg[^>]*>|<\/svg>$/g, '') + '</g></svg>';
   }
@@ -74,6 +74,10 @@
   // ---------- данные ----------
   var CUTS = [['raw', 'без срезов'], ['rleg', 'срез только у ног «Р»']];
   var SET = [['horizontal', 'в строку'], ['center', 'между словами'], ['st-ray', 'в две строки'], ['vertical', 'вертикально']];
+  // в ряду знаки одного зрительного размера, а не одной высоты звезды: длинные мельче, компактные крупнее
+  // (почти равная площадь: множитель ~ 1 / корень из площади, смягченный, чтобы звезды не разошлись слишком сильно)
+  var K = {};
+  SET.forEach(function (x) { var g = L.logos['raw-' + x[0]]; K[x[0]] = Math.pow(220 / Math.sqrt(g.w * g.h), .85); });
   // две длинные компоновки — столбиком слева, две компактные — рядом справа: ряд читается как одна таблица
   function fig(x) { return '<figure class="c-' + x[0] + '"><div class="pic" data-k="' + x[0] + '"></div><figcaption>' + esc(x[1]) + '</figcaption></figure>'; }
   function grp(list) {
@@ -183,7 +187,7 @@
   // знаки в выбранном срезе
   var cut = 'raw';
   function draw() {
-    $$('.s4-set .pic').forEach(function (p) { p.innerHTML = p.closest('.s4-guard') ? guard(cut + '-' + p.dataset.k) : logo(cut + '-' + p.dataset.k); });
+    $$('.s4-set .pic').forEach(function (p) { p.innerHTML = p.closest('.s4-guard') ? guard(cut + '-' + p.dataset.k, K[p.dataset.k]) : logo(cut + '-' + p.dataset.k, { k: K[p.dataset.k] }); });
     $$('.s4-two .pic').forEach(function (p, i) { p.innerHTML = logo(cut + '-' + p.dataset.k, { lines: TWO[i][3]() }); });
     $$('.ml').forEach(function (m) { m.outerHTML = logo(cut + '-horizontal', { free: 1, white: !!m.dataset.w, cls: m.dataset.c + ' ml-' + (m.dataset.w ? 'w' : 'c') }); });
     $$('svg.ml-w,svg.ml-c').forEach(function (v) { v.outerHTML = logo(cut + '-horizontal', { free: 1, white: v.classList.contains('ml-w'), cls: [].slice.call(v.classList).filter(function (c) { return c !== 'lg'; }).join(' ') }); });
