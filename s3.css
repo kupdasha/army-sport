@@ -110,13 +110,18 @@
 .s3-type .poster svg.lg,.s3-type .story svg.lg{width:72%;height:auto;margin-bottom:auto}
 .s3-type .poster h3{font-size:clamp(22px,2.2vw,38px);line-height:1.05}
 .s3-type .poster p{margin:0;font:400 16px/1.4 var(--font);color:rgba(255,255,255,.82)}
-/* титры */
-.s3-type .titles{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111}
-.s3-type .titles .frame{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,0) 32%,rgba(0,0,0,0) 52%,rgba(0,0,0,.72)),url(img/s2-i-2-s.webp) center 30%/cover}
-.s3-type .titles .corner{position:absolute;left:clamp(14px,2vw,28px);top:clamp(14px,2vw,28px);width:30%;height:auto;opacity:.92}
-.s3-type .titles .lower{position:absolute;left:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,28px);display:flex;flex-direction:column;gap:6px;color:#fff}
-.s3-type .titles .lower b{font:600 clamp(20px,2.2vw,36px)/1.05 var(--bnd)}
-.s3-type .titles .lower span{font:400 16px/1.3 var(--font);color:rgba(255,255,255,.8)}
+/* сообщество ВКонтакте: шапка, аватарка со звездой, название */
+.s3-type .vk{display:flex;flex-direction:column;aspect-ratio:16/9;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.s3-type .vk .cover{flex:1 1 auto;min-height:120px;background:url(img/s2-i-5-s.webp) center 30%/cover}
+.s3-type .vk .bar{display:flex;align-items:flex-start;gap:clamp(12px,1.4vw,20px);padding:clamp(10px,1vw,14px) clamp(16px,2vw,28px) 0}
+.s3-type .vk .ava{flex:none;width:clamp(76px,8vw,120px);aspect-ratio:1;margin-top:calc(clamp(76px,8vw,120px) * -.5);border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px #fff;display:grid;place-items:center}
+.s3-type .vk .ava svg{width:60%;height:auto;display:block;margin:4% 0 0 -4%}
+.s3-type .vk .nm{display:flex;flex-direction:column;gap:4px;min-width:0}
+.s3-type .vk .nm b{font:600 clamp(20px,1.8vw,28px)/1.1 var(--font);color:var(--ink)}
+.s3-type .vk .nm span{font:400 16px/1.3 var(--font);color:#6E7178}
+.s3-type .vk .sub{margin-left:auto;flex:none;padding:11px 18px;border-radius:999px;background:var(--ink);color:#fff;font:500 16px/1 var(--font)}
+.s3-type .vk .tabs{display:flex;gap:clamp(14px,2vw,28px);padding:clamp(12px,1.4vw,18px) clamp(16px,2vw,28px) clamp(12px,1.4vw,16px);font:400 16px/1.2 var(--font);color:#6E7178;overflow:hidden}
+.s3-type .vk .tabs .on{color:var(--ink);box-shadow:0 2px 0 var(--ink)}
 /* анонс турнира — история */
 .s3-type .story{background:var(--red);color:#fff;aspect-ratio:9/16;display:flex}
 .s3-type .story .kick{font:400 16px/1.2 var(--font);color:rgba(255,255,255,.8)}
@@ -166,7 +171,7 @@
   .s3-type .m-row{display:contents}
   .s3-type .poster{order:1;aspect-ratio:auto;min-height:clamp(380px,62vw,560px)}
   .s3-type .story{order:2;aspect-ratio:auto;min-height:clamp(380px,62vw,560px)}
-  .s3-type .titles{order:3;grid-column:1/-1}
+  .s3-type .vk{order:3;grid-column:1/-1}
   .s3-type .sched{order:4;grid-column:1/-1}
 }
 @media (max-width:560px){
@@ -206,4 +211,11 @@
   .s3 .s3-okrow{align-items:flex-start;gap:16px}
   .s3-okrow b{font-size:8.5vw}
   .s3-okrow i{width:48px;height:48px}
+}
+@media (max-width:640px){
+  .s3-type .vk{aspect-ratio:auto}
+  .s3-type .vk .cover{flex:none;aspect-ratio:5/2;min-height:0}
+  .s3-type .vk .bar{flex-wrap:wrap}
+  .s3-type .vk .nm{flex:1 1 150px}
+  .s3-type .vk .sub{margin-left:0}
 }
