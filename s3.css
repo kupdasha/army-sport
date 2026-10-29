@@ -110,23 +110,27 @@
 .s3-type .poster svg.lg,.s3-type .story svg.lg{width:72%;height:auto;margin-bottom:auto}
 .s3-type .poster h3{font-size:clamp(22px,2.2vw,38px);line-height:1.05}
 .s3-type .poster p{margin:0;font:400 16px/1.4 var(--font);color:rgba(255,255,255,.82)}
-/* сообщество ВКонтакте: шапка, аватарка со звездой, название */
-.s3-type .vk{display:flex;flex-direction:column;aspect-ratio:16/9;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
-.s3-type .vk .cover{position:relative;flex:1 1 auto;min-height:120px;background:#fff;box-shadow:inset 0 -1px 0 var(--line)}
+/* сообщество ВКонтакте — как в самом ВКонтакте: серая подложка, белая карточка, шапка, аватарка в белом кольце */
+.s3-type .vk{background:#EBEDF0;padding:clamp(10px,1.4vw,20px);display:flex}
+.s3-type .vk .card{flex:1;display:flex;flex-direction:column;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.05)}
+.s3-type .vk .cover{position:relative;flex:1 1 auto;min-height:150px;background:#fff}
 /* иллюстрация слева, срез параллелен длинному ребру звезды; знак — справа на белом */
 .s3-type .vk .ill{position:absolute;inset:0 42% 0 0;background:url(img/s2-i-5.webp) center 30%/cover;clip-path:polygon(0 0,100% 0,78% 100%,0 100%)}
 .s3-type .vk .lgo{position:absolute;inset:0 0 0 54%;display:flex;align-items:center;justify-content:center;padding:0 6% 0 2%}
 .s3-type .vk .lgo svg.lg{width:100%;height:auto}
-.s3-type .vk .bar{display:flex;align-items:flex-start;gap:clamp(12px,1.4vw,20px);padding:clamp(10px,1vw,14px) clamp(16px,2vw,28px) 0}
-.s3-type .vk .ava{flex:none;width:clamp(76px,8vw,120px);aspect-ratio:1;margin-top:calc(clamp(76px,8vw,120px) * -.5);border-radius:50%;background:#fff;box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line);display:grid;place-items:center;position:relative;z-index:1}
-.s3-type .vk .ava{overflow:hidden}
+.s3-type .vk .bar{position:relative;display:flex;align-items:center;gap:clamp(12px,1.4vw,20px);margin-top:-12px;padding:clamp(14px,1.4vw,20px) clamp(14px,1.6vw,24px) clamp(12px,1.2vw,18px);background:#fff;border-radius:12px 12px 0 0}
+.s3-type .vk .ava{flex:none;align-self:flex-start;width:clamp(72px,7.4vw,112px);aspect-ratio:1;margin-top:calc(clamp(72px,7.4vw,112px) * -.5);border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 0 0 4px #fff,0 0 0 5px #E7E8EC;position:relative;z-index:1}
 .s3-type .vk .ava img{width:100%;height:100%;object-fit:cover;display:block}
-.s3-type .vk .nm{display:flex;flex-direction:column;gap:4px;min-width:0}
-.s3-type .vk .nm b{font:600 clamp(20px,1.8vw,28px)/1.1 var(--font);color:var(--ink)}
-.s3-type .vk .nm span{font:400 16px/1.3 var(--font);color:#6E7178}
-.s3-type .vk .sub{margin-left:auto;flex:none;padding:11px 18px;border-radius:999px;background:var(--ink);color:#fff;font:500 16px/1 var(--font)}
-.s3-type .vk .tabs{display:flex;gap:clamp(14px,2vw,28px);padding:clamp(12px,1.4vw,18px) clamp(16px,2vw,28px) clamp(12px,1.4vw,16px);font:400 16px/1.2 var(--font);color:#6E7178;overflow:hidden}
-.s3-type .vk .tabs .on{color:var(--ink);box-shadow:0 2px 0 var(--ink)}
+.s3-type .vk .nm{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 auto}
+.s3-type .vk .nm b{font:600 clamp(20px,1.8vw,28px)/1.15 var(--font);color:#000}
+.s3-type .vk .nm span{font:400 16px/1.3 var(--font);color:#818C99}
+.s3-type .vk .acts{display:flex;align-items:center;gap:8px;flex:none}
+.s3-type .vk .acts>span{display:inline-flex;align-items:center;justify-content:center;height:clamp(36px,3vw,44px);border-radius:10px;font:500 16px/1 var(--font)}
+.s3-type .vk .sub{padding:0 clamp(14px,1.4vw,22px);background:#447BBA;color:#fff}
+.s3-type .vk .msg{width:clamp(36px,3vw,44px);background:#F0F2F5;color:#447BBA}
+.s3-type .vk .msg svg{width:52%;height:52%}
+.s3-type .vk .more{gap:4px;padding:0 12px;background:#F0F2F5;color:#447BBA}
+.s3-type .vk .more svg{width:18px;height:18px}
 /* анонс турнира — история */
 .s3-type .story{background:var(--red);color:#fff;aspect-ratio:9/16;display:flex}
 .s3-type .story .kick{font:400 16px/1.2 var(--font);color:rgba(255,255,255,.8)}
@@ -217,10 +221,11 @@
   .s3-okrow b{font-size:8.5vw}
   .s3-okrow i{width:48px;height:48px}
 }
+@media (max-width:1100px){.s3-type .vk .cover{flex:none;aspect-ratio:3/1;min-height:0}}
 @media (max-width:640px){
-  .s3-type .vk{aspect-ratio:auto}
-  .s3-type .vk .cover{flex:none;aspect-ratio:5/2;min-height:0}
-  .s3-type .vk .bar{flex-wrap:wrap}
+  .s3-type .vk .cover{aspect-ratio:5/2}
+  .s3-type .vk .bar{flex-wrap:wrap;align-items:flex-start}
   .s3-type .vk .nm{flex:1 1 150px}
-  .s3-type .vk .sub{margin-left:0}
+  .s3-type .vk .acts{width:100%}
+  .s3-type .vk .sub{flex:1}
 }

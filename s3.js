@@ -163,9 +163,11 @@
     '<div class="m-row"><div class="poster" style="flex:3 1 0"><div class="in">' + logo('bnd-fit-lower-horizontal', wh('pl')) +
     '<h3>' + T('турнир по самбо среди юношей') + '</h3><p>' + T('Открытое первенство клуба. Вход свободный, регистрация участников до начала взвешивания.') + '</p></div></div>' +
     // сообщество ВКонтакте: в шапке иллюстрация и полный знак на белом, аватарка — сама иконка приложения (s2-icon)
-    '<div class="vk" style="flex:7.11 1 0"><div class="cover"><div class="ill"></div><div class="lgo">' + logo('bnd-fit-lower-horizontal') + '</div></div><div class="bar"><span class="ava"><img src="' + IMG + 's2-icon.webp" alt="" loading="lazy" decoding="async"></span>' +
-    '<div class="nm"><b>Армия спорта</b><span>' + T('спортивные клубы, секции и турниры') + '</span></div><span class="sub">подписаться</span></div>' +
-    '<div class="tabs"><span class="on">записи</span><span>фото</span><span>видео</span><span>турниры</span></div></div></div>' +
+    '<div class="vk" style="flex:7.11 1 0"><div class="card"><div class="cover"><div class="ill"></div><div class="lgo">' + logo('bnd-fit-lower-horizontal') + '</div></div>' +
+    '<div class="bar"><span class="ava"><img src="' + IMG + 's2-icon.webp" alt="" loading="lazy" decoding="async"></span>' +
+    '<div class="nm"><b>Армия спорта</b><span>' + T('спортивные клубы, секции и турниры') + '</span></div>' +
+    '<div class="acts"><span class="sub">Подписаться</span><span class="msg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 4c4.7 0 8 3 8 7s-3.3 7-8 7c-1 0-2-.1-2.9-.4L5 19l1-3.4C4.8 14.4 4 12.8 4 11c0-4 3.3-7 8-7z"/></svg></span>' +
+    '<span class="more">Ещё<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></span></div></div></div></div></div>' +
     '<div class="m-row"><div class="story" style="flex:9 1 0"><div class="in">' + logo('bnd-fit-lower-horizontal', wh('pl')) +
     '<span class="kick">анонс</span><h3>' + T('кубок клуба по дзюдо') + '</h3><p class="when">' + T('суббота, 11:00') + '<br>' + T('большой зал') + '</p><span class="go">регистрация</span></div></div>' +
     '<div class="sched" style="flex:22 1 0"><div class="hd"><h3>' + T('расписание тренировок') + '</h3>' + logo('bnd-fit-lower-horizontal', { cls: 'sm' }) + '</div>' +
