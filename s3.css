@@ -214,7 +214,8 @@
 .s3-okp .tiles img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease)}
 .s3-okp .tiles a:hover img{transform:scale(1.03)}
 .s3-okp .tiles.one{grid-template-columns:minmax(0,180px)}
-.s3-okp .tiles.one a{aspect-ratio:1;border-radius:22%}
+.s3-okp .tiles.one a{aspect-ratio:1;border-radius:22%;background:#fff;border:1.5px solid #D9DBDF}
+
 @media (max-width:640px){.s3-okp .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){
   .s3 .s3-okrow{align-items:flex-start;gap:16px}

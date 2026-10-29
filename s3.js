@@ -164,9 +164,9 @@
     '<div class="mocks">' +
     '<div class="m-row"><div class="poster" style="flex:3 1 0"><div class="in">' + logo('bnd-fit-lower-horizontal', wh('pl')) +
     '<h3>' + T('турнир по самбо среди юношей') + '</h3><p>' + T('Открытое первенство клуба. Вход свободный, регистрация участников до начала взвешивания.') + '</p></div></div>' +
-    // сообщество ВКонтакте: в шапке иллюстрация и полный знак на белом, аватарка — сама иконка приложения (s2-icon)
+    // сообщество ВКонтакте: в шапке иллюстрация и полный знак на белом, аватарка — иконка приложения (s3-icon: звезда по оптическому центру)
     '<div class="vk" style="flex:7.11 1 0"><div class="card"><div class="cover"><div class="ill"></div><div class="lgo">' + logo('bnd-fit-lower-horizontal') + '</div></div>' +
-    '<div class="bar"><span class="ava"><img src="' + IMG + 's2-icon.webp" alt="" loading="lazy" decoding="async"></span>' +
+    '<div class="bar"><span class="ava"><img src="' + IMG + 's3-icon.webp" alt="" loading="lazy" decoding="async"></span>' +
     '<div class="nm"><b>Армия спорта</b><span>' + T('спортивные клубы, секции и турниры') + '</span></div>' +
     '<div class="acts"><span class="sub">Подписаться</span><span class="msg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 4c4.7 0 8 3 8 7s-3.3 7-8 7c-1 0-2-.1-2.9-.4L5 19l1-3.4C4.8 14.4 4 12.8 4 11c0-4 3.3-7 8-7z"/></svg></span>' +
     '<span class="more">Ещё<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></span></div></div></div></div></div>' +
@@ -203,7 +203,7 @@
   // ---------- согласованное во втором этапе: превью, раскрывается по строке ----------
   var OK = [
     ['иконка', ['icon']],
-    ['брелоки и мелкий мерч', ['k-46', 'k-55', 'k-48', 'k-38', 'a-pens', 'a-cap', 'a-merch-43', 'a-merch-45']],
+    ['брелоки и мелкий мерч', ['k-46', 'k-55', 'k-48', 'k-38', 'a-pens', 'a-cap', 'a-merch-45']],
     ['графика и фото', ['p-51', 'p-52', 'p-53']],
     ['оформление стен', ['i-2', 'i-4', 'i-5', 'i-3', 'i-6', 'wl-hall-judo', 'wl-hall-box', 'wl-ski', 'wl-gym', 'wl-run', 'wl-ball', 'wl-box', 'wl-judo']]
   ];
@@ -212,7 +212,7 @@
     '<div class="s3-okp" id="s3-okp" hidden><p class="note">' + T('Из доработки первого этапа согласованы иконка, брелоки, мерч, графика с фото и оформление стен. Награда, медали и форма — в работе.') + '</p>' +
     OK.map(function (g) {
       return '<div class="grp"><p class="lbl">' + T(g[0]) + '</p><div class="tiles' + (g[0] === 'иконка' ? ' one' : '') + '">' + g[1].map(function (n) {
-        var big = IMG + 's2-' + n + '.webp', sm = n === 'icon' ? big : IMG + 's2-' + n + '-s.webp';
+        var big = n === 'icon' ? IMG + 's3-icon.webp' : IMG + 's2-' + n + '.webp', sm = n === 'icon' ? big : IMG + 's2-' + n + '-s.webp';   // иконка — чистая копия со звездой по оптическому центру
         return '<a href="' + big + '" target="_blank" rel="noopener"><img src="' + sm + '" alt="" loading="lazy" decoding="async"></a>';
       }).join('') + '</div></div>';
     }).join('') + '</div></div></section>');
