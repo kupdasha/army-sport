@@ -94,11 +94,12 @@
     '<a href="#font">шрифт знака</a><a href="#field">поле</a><a href="#co">кобрендинг</a><a href="#color">цвет</a><a href="#type">шрифты</a><a href="#mono">монохром</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
-  // ---------- первый экран: знак крупно в центре, внизу строкой — название, фраза и кнопки к прошлым этапам ----------
+  // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда без надписи ----------
+  var STAR = '<svg class="s3-star" viewBox="0 0 ' + L.sw + ' 100" role="img" aria-label="звезда армии спорта"><path fill="' + BLUE + '" d="' + L.star.piece + '"/><path fill="' + RED + '" d="' + L.star.main + '"/></svg>';
   h.push('<section class="as-hero s3-hero" id="top" data-slide><div class="as-wrap s3-heroin">' +
-    '<div class="s3-heromark">' + logo('bnd-fit-lower-horizontal') + '</div>' +
-    '<div class="s3-herobot"><div class="t"><h1 class="s3-h1">третья доработка первого этапа</h1><p>' + T('Новые шрифты знака, защитное поле, кобрендинг, цвет надписи и правило монохромной звезды.') + '</p></div>' +
+    '<div class="s3-herotx"><h1 class="s3-h1">' + esc(nbh('третья доработка первого этапа')) + '</h1><p>' + T('Новые шрифты знака, защитное поле, кобрендинг, цвет надписи и правило монохромной звезды.') + '</p>' +
     '<div class="s3-backs"><a class="s2-back" href="' + STAGE1 + '">стартовая презентация</a><a class="s2-back" href="' + STAGE2 + '">доработка первого этапа</a></div></div>' +
+    '<div class="s3-heromark">' + STAR + '</div>' +
     '</div></section>');
 
   // ---------- шрифт знака ----------
@@ -177,7 +178,10 @@
     ['solid', 'монолит', 'Мелкие размеры, когда полутон уже не читается.'],
     ['cut', 'с вырубкой', 'Технические задачи без полутона: гравировка, тиснение и конгрев, трафарет, лазерная резка, шелкография в один цвет.']
   ];
-  var SOLID = ['фавикон и вкладка браузера', 'уголок видео', 'значки и пины', 'вышивка на форме и шевроны', 'бирки и ярлыки на одежде', 'ручки, брелоки и мелкий мерч', 'билеты, бейджи и браслеты участников'];
+  var USE = [
+    ['tone', 'тональный уголок', 'Главная одноцветная: крупно и на цвете', ['афиши, баннеры и обложки на цвете', 'посты и истории в соцсетях', 'мерч на цветной ткани', 'стены и навигация в залах', 'фото и видео — заставки и титры', 'сайт и приложение на темном фоне']],
+    ['solid', 'монолит', 'Когда знак маленький и полутон уголка сливается со звездой', ['уголок видео', 'фавикон и вкладка браузера', 'значки и пины', 'вышивка на форме и шевроны', 'бирки и ярлыки на одежде', 'ручки, брелоки и мелкий мерч', 'билеты, бейджи и браслеты участников']]
+  ];
   h.push(sec('mono', 'монохромная звезда', [
     'Четыре версии и у каждой своя задача. Цветная — для белых фонов. Главная одноцветная — с тональным уголком: она держится на большинстве фонов. Монолит — для мелких размеров, вырубка — для технических задач.'
   ], '<div class="s3-vers">' + VERS.map(function (v) {
@@ -185,14 +189,12 @@
     return '<figure class="v-' + v[0] + '"><div class="pic">' + logo('bnd-fit-lower-stacked', { star: v[0], ink: dark ? '#fff' : INK, words: dark ? ['#fff', '#fff'] : [INK, INK] }) + '</div>' +
       '<figcaption><b>' + esc(v[1]) + '</b>' + T(v[2]) + '</figcaption></figure>';
   }).join('') + '</div>' +
-    '<div class="s3-small"><div class="sz">' + [560, 360, 220, 130].map(function (px, i, a) {
-      var last = i === a.length - 1;
-      return '<figure style="width:min(100%,' + px + 'px)"><i>' + logo('bnd-fit-lower-horizontal', { star: last ? 'solid' : 'tone', ink: '#fff', words: ['#fff', '#fff'] }) + '</i><figcaption>' + (last ? 'монолит' : 'тональный уголок') + '</figcaption></figure>';
-    }).join('') + '</div>' +
-    '<div class="lst"><p class="as-p">' + T('Чем меньше знак, тем сильнее полутон уголка сливается со звездой. В самом мелком размере звезда — монолит:') + '</p><ul>' +
-    SOLID.map(function (s) { return '<li>' + T(s) + '</li>'; }).join('') + '</ul></div></div>'));
+    '<div class="s3-use">' + USE.map(function (u) {
+      return '<div class="part p-' + u[0] + '"><div class="pic">' + logo('bnd-fit-lower-horizontal', { star: u[0], ink: '#fff', words: ['#fff', '#fff'] }) + '</div>' +
+        '<div class="lst"><b>' + esc(u[1]) + '</b><p>' + T(u[2]) + '</p><ul>' + u[3].map(function (x) { return '<li>' + T(x) + '</li>'; }).join('') + '</ul></div></div>';
+    }).join('') + '</div>'));
 
-  // ---------- согласованное во втором этапе: превью, раскрывается по кнопке ----------
+  // ---------- согласованное во втором этапе: превью, раскрывается по строке ----------
   var OK = [
     ['иконка', ['icon']],
     ['брелоки и мелкий мерч', ['k-46', 'k-55', 'k-48', 'k-38', 'a-pens', 'a-cap', 'a-merch-43', 'a-merch-45']],
@@ -200,7 +202,7 @@
     ['оформление стен', ['i-2', 'i-4', 'i-5', 'i-3', 'i-6', 'wl-hall-judo', 'wl-hall-box', 'wl-ski', 'wl-gym', 'wl-run', 'wl-ball', 'wl-box', 'wl-judo']]
   ];
   h.push('<section class="as-sec s3-ok" id="ok" data-slide><div class="as-wrap">' +
-    '<button type="button" class="as-btn s3-okbtn" aria-expanded="false" aria-controls="s3-okp">согласованное<i aria-hidden="true"></i></button>' +
+    '<button type="button" class="s3-okrow" aria-expanded="false" aria-controls="s3-okp"><span>согласованное</span><i aria-hidden="true"></i></button>' +
     '<div class="s3-okp" id="s3-okp" hidden><p class="note">' + T('Из доработки первого этапа согласованы иконка, брелоки, мерч, графика с фото и оформление стен. Награда, медали и форма — в работе.') + '</p>' +
     OK.map(function (g) {
       return '<div class="grp"><p class="lbl">' + T(g[0]) + '</p><div class="tiles' + (g[0] === 'иконка' ? ' one' : '') + '">' + g[1].map(function (n) {
@@ -235,7 +237,7 @@
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
-  $$('.as-up,.s3-heromark').forEach(function (el) { io.observe(el); });
+  $$('.as-up,.s3-heromark,.s3-herotx').forEach(function (el) { io.observe(el); });
 
   function whileVisible(el, on, off) {
     new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) on(); else off(); }); }, { rootMargin: '100px 0px' }).observe(el);
@@ -342,7 +344,7 @@
 
   // согласованное: раскрывается по кнопке
   (function () {
-    var b = $('.s3-okbtn'), p = $('#s3-okp');
+    var b = $('.s3-okrow'), p = $('#s3-okp');
     b.addEventListener('click', function () { var open = p.hidden; p.hidden = !open; b.setAttribute('aria-expanded', open); b.classList.toggle('on', open); });
   })();
 

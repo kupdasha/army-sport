@@ -4,28 +4,28 @@
 .s3 svg.lg{display:block;width:auto;max-width:100%;overflow:visible}
 @keyframes s3-fade{from{opacity:0}to{opacity:1}}
 
-/* ---------- первый экран: знак крупно по центру, внизу строкой — название, фраза и кнопки ---------- */
-.s3-hero{padding-top:64px;justify-content:stretch}
-.s3-heroin{display:grid;grid-template-rows:minmax(0,1fr) auto;min-height:calc(100svh - 64px)}
-.s3-heromark{display:flex;align-items:center;justify-content:center;padding:clamp(32px,6vh,80px) 0}
-.s3-heromark svg.lg{width:min(84%,1040px);height:auto}
-.s3-heromark{opacity:0;transition:opacity 1s var(--ease)}
-.s3-heromark.in{opacity:1}
-.s3-heromark .st{transform-box:fill-box;transform-origin:30% 70%}
-.s3-heromark.in .st{animation:s3-starin 1.3s var(--ease) both}
-.s3-heromark .w{opacity:0}
-.s3-heromark.in .w{animation:s3-fade .9s var(--ease) .35s both}
-.s3-heromark.in .w+.w{animation-delay:.5s}
-@keyframes s3-starin{from{transform:rotate(-16deg) scale(.82);opacity:0}to{transform:none;opacity:1}}
-.s3-herobot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 48px;flex-wrap:wrap;border-top:1px solid var(--line);padding:clamp(20px,2.4vw,32px) 0 clamp(28px,4vh,48px)}
-.s3-herobot .t{display:flex;flex-direction:column;gap:10px;max-width:46ch}
-.s3 .s3-h1{margin:0;font:500 clamp(26px,2.6vw,44px)/1.05 var(--font);letter-spacing:-.02em;color:var(--mute)}
-.s3-herobot p{margin:0;font:400 clamp(18px,1.35vw,21px)/1.4 var(--read);color:var(--ink);text-wrap:pretty}
-.s3-backs{display:flex;flex-wrap:wrap;gap:12px}
-@media (max-width:640px){
-  .s3-heromark svg.lg{width:100%}
-  .s3-herobot{flex-direction:column;align-items:center;text-align:center}
-  .s3-herobot .t{align-items:center}
+/* ---------- первый экран: слева текст и кнопки, справа звезда без надписи ---------- */
+.s3-hero{padding-top:64px;justify-content:center}
+.s3-heroin{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:clamp(32px,5vw,96px);min-height:calc(100svh - 64px);padding-bottom:clamp(32px,6vh,72px)}
+.s3-herotx{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(18px,2vw,28px)}
+.s3 .s3-h1{margin:0;font:500 clamp(34px,4vw,68px)/1 var(--font);letter-spacing:-.03em;color:var(--mute);max-width:12ch}
+.s3-herotx p{margin:0;max-width:34ch;font:400 clamp(19px,1.5vw,24px)/1.4 var(--read);color:var(--ink);text-wrap:pretty}
+.s3-backs{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.s3-heromark{display:flex;justify-content:center}
+.s3-star{display:block;width:100%;max-width:640px;height:auto;overflow:visible}
+.s3-herotx,.s3-heromark{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.s3-herotx.in,.s3-heromark.in{opacity:1;transform:none}
+.s3-star path{transform-box:fill-box;transform-origin:20% 90%}
+.s3-heromark.in .s3-star path:last-child{animation:s3-starin 1.4s var(--ease) both}
+.s3-heromark.in .s3-star path:first-child{animation:s3-piece 1.4s var(--ease) .25s both}
+@keyframes s3-starin{from{transform:rotate(-14deg) scale(.86);opacity:0}to{transform:none;opacity:1}}
+@keyframes s3-piece{from{transform:translate(-8%,6%);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:900px){
+  .s3-heroin{grid-template-columns:1fr;gap:clamp(28px,5vh,48px);align-content:center}
+  .s3-heromark{order:-1}
+  .s3-star{width:min(64vw,440px)}
+  .s3 .s3-h1{max-width:none}
+  .s3-herotx{align-items:center;text-align:center}
   .s3-backs{justify-content:center}
 }
 
@@ -144,41 +144,50 @@
 .s3-vers .v-cut .pic{background:linear-gradient(135deg,#A9ADB4,#5E6269);box-shadow:none}
 .s3-vers figcaption{font:400 16px/1.45 var(--read);color:var(--mute);text-wrap:pretty}
 .s3-vers figcaption b{display:block;font:500 20px/1.2 var(--font);color:var(--ink);margin-bottom:6px}
-/* тональный уголок и монолит одной лентой: последний, самый мелкий — монолит */
-.s3-small{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(24px,4vw,64px);margin-top:clamp(56px,7vw,112px);align-items:start}
-.s3-small .sz{background:var(--blue);padding:clamp(20px,3vw,48px);display:flex;flex-direction:column;align-items:flex-start;gap:clamp(18px,2vw,28px)}
-.s3-small figure{margin:0;display:flex;flex-direction:column;gap:8px;max-width:100%}
-.s3-small figure i{display:block}
-.s3-small figure svg.lg{width:100%;height:auto}
-.s3-small figcaption{font:400 16px/1.2 var(--read);color:rgba(255,255,255,.8)}
-.s3-small figure:last-child figcaption{color:#fff}
-.s3-small .lst .as-p{margin:0 0 16px}
-.s3-small ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
-.s3-small li{font:400 clamp(18px,1.3vw,21px)/1.35 var(--read);padding:12px 0;border-top:1px solid var(--line)}
+/* тональный уголок и маленький монолит: у каждого свои носители */
+.s3-use{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,40px);margin-top:clamp(56px,7vw,112px)}
+.s3-use .part{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(18px,2vw,28px);align-content:start}
+.s3-use .pic{background:var(--blue);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.s3-use .p-tone .pic svg.lg{width:72%;height:auto}
+.s3-use .p-solid .pic svg.lg{width:24%;height:auto}
+.s3-use .lst b{display:block;font:500 22px/1.2 var(--font);color:var(--ink)}
+.s3-use .lst p{margin:6px 0 14px;font:400 16px/1.45 var(--read);color:var(--mute)}
+.s3-use ul{margin:0;padding:0;list-style:none}
+.s3-use li{font:400 clamp(18px,1.3vw,21px)/1.35 var(--read);padding:11px 0;border-top:1px solid var(--line)}
 
 /* ---------- планшет и телефон ---------- */
 @media (max-width:1100px){
   .s3-vers{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .s3-small{grid-template-columns:1fr}
+  .s3-use{grid-template-columns:1fr}
 }
-@media (max-width:760px){
-  .s3-type .m-row{flex-direction:column}
-  .s3-type .m-row>*{flex:none!important;width:100%}
-  .s3-type .story{aspect-ratio:4/5}
-  .s3-type .poster{aspect-ratio:4/5}
+/* планшет: афиша рядом с анонсом, титры и расписание — на всю ширину */
+@media (max-width:1100px){
+  .s3-type .mocks{display:grid;grid-template-columns:1fr 1fr}
+  .s3-type .m-row{display:contents}
+  .s3-type .poster{order:1;aspect-ratio:auto;min-height:clamp(380px,62vw,560px)}
+  .s3-type .story{order:2;aspect-ratio:auto;min-height:clamp(380px,62vw,560px)}
+  .s3-type .titles{order:3;grid-column:1/-1}
+  .s3-type .sched{order:4;grid-column:1/-1}
+}
+@media (max-width:560px){
+  .s3-type .mocks{grid-template-columns:1fr}
+  .s3-type .poster,.s3-type .story{min-height:440px}
 }
 @media (max-width:640px){
+  .s3-use .p-solid .pic svg.lg{width:34%}
   .s3-type .spec{grid-template-columns:1fr}
   .s3-type .sched .hd{flex-direction:column}
 }
 @media (prefers-reduced-motion:reduce){.s3-type .big .aa{animation:none}}
 
-/* ---------- согласованное во втором этапе ---------- */
-.s3-ok .as-wrap{display:flex;flex-direction:column;align-items:center}
-.s3-okbtn i{position:relative;width:12px;height:12px}
-.s3-okbtn i::before,.s3-okbtn i::after{content:"";position:absolute;left:0;top:5px;width:12px;height:2px;background:currentColor;transition:transform .3s var(--ease)}
-.s3-okbtn i::after{transform:rotate(90deg)}
-.s3-okbtn.on i::after{transform:rotate(0)}
+/* ---------- согласованное во втором этапе: строка раскрывает превью ---------- */
+.s3-okrow{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(20px,2.4vw,32px) 0;cursor:pointer;color:var(--ink);text-align:left;font:500 clamp(26px,2.6vw,44px)/1 var(--font);letter-spacing:-.02em}
+.s3-okrow span{color:var(--mute);transition:color .3s}
+.s3-okrow:hover span,.s3-okrow.on span{color:var(--ink)}
+.s3-okrow i{position:relative;flex:none;width:28px;height:28px}
+.s3-okrow i::before,.s3-okrow i::after{content:"";position:absolute;left:2px;top:13px;width:24px;height:2px;background:currentColor;transition:transform .35s var(--ease)}
+.s3-okrow i::after{transform:rotate(90deg)}
+.s3-okrow.on i::after{transform:rotate(0)}
 .s3-okp{width:100%;margin-top:clamp(24px,3vw,40px);animation:s3-fade .5s var(--ease) both}
 .s3-okp .note{margin-top:0}
 .s3-okp .grp{margin-top:clamp(32px,4vw,56px)}
