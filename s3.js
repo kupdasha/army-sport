@@ -63,12 +63,12 @@
   var ICON = { up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>' };
 
   // ---------- данные ----------
-  // шрифты знака: у кого есть вариант без подгонки (raw); Энджин и Хромиус — только подогнанные, как во втором этапе
+  // шрифты знака: у кого есть вариант без подгонки (raw)
   var FONTS = [
     { k: 'cnt', n: 'Conthrax', live: true, raw: true },
     { k: 'bnd', n: 'Bounded', live: true, raw: true },
     { k: 'eng', n: 'Энджин' },
-    { k: 'chr', n: 'Хромиус' },
+    { k: 'chr', n: 'Хромиус', raw: 's3-f-chr-raw' },   // без подгонки — обведено с присланных картинок (исходники-s3/trace.py, place.py)
     { k: 'gol', n: 'Golos Text', raw: 's3-f-gol-raw' }
   ];
   var CASES = [['lower', 'строчные'], ['sentence', 'с заглавной'], ['caps', 'заглавные']];
