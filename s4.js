@@ -141,13 +141,13 @@
   function ml(cls, white) { return '<span class="ml" data-c="' + cls + '"' + (white ? ' data-w="1"' : '') + '></span>'; }
   var SCHED = [['пн', '18:00', 'самбо, дети'], ['пн', '19:30', 'бокс'], ['вт', '18:00', 'дзюдо'], ['ср', '17:00', 'плавание'], ['чт', '19:30', 'самбо, взрослые'], ['сб', '11:00', 'открытая тренировка']];
   h.push(sec('type', 'шрифты носителей', [
-    'Bounded — титры и заголовки. Основной текст — Golos Text или Энджин: узкий и спокойный, он не спорит с широкими заголовками.'
+    'Bounded — титры и заголовки. Основной текст — Golos Text: узкий и спокойный, он не спорит с широкими заголовками.'
   ], '<div class="s3-type">' +
     '<div class="spec"><div class="big"><b class="aa">Аа</b><span class="nm">Bounded</span><span class="rl">титры и заголовки</span>' +
     '<p><a href="https://disk.yandex.ru/d/uHA-Ko4FzQG2uQ" target="_blank" rel="noopener">скачать Bounded</a> ' + T('— бесплатно, лицензия OFL') + '</p></div>' +
     '<div class="body"><b class="aa">Аа</b><span class="nm">Golos Text</span><span class="rl">основной текст</span>' +
     '<p><a href="https://fonts.google.com/specimen/Golos+Text" target="_blank" rel="noopener">скачать Golos Text</a> ' + T('— бесплатно, лицензия OFL') + '</p>' +
-    '<p>' + T('Энджин — платная замена Golos Text, дает проекту больше своего характера.') + ' <a href="https://www.artlebedev.ru/type/engine/" target="_blank" rel="noopener">купить Энджин</a></p></div></div>' +
+    '</div></div>' +
     '<div class="mocks">' +
     '<div class="m-row"><div class="poster" style="flex:3 1 0"><div class="in">' + ml('pl', 1) +
     '<h3>' + T('турнир по самбо среди юношей') + '</h3><p>' + T('Открытое первенство клуба. Вход свободный, регистрация участников до начала взвешивания.') + '</p></div></div>' +
