@@ -19,6 +19,13 @@
 /* ---------- носители: заголовки в макетах — капсом, как в знаке ---------- */
 .s4 .s3-type .mocks h3{text-transform:uppercase}
 
+/* ---------- дополнительный вариант: строчные, в строку и в две строки ---------- */
+.s4-low{--u:clamp(26px,4.2vw,64px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.s4-low figure{margin:0;display:flex;flex-direction:column;gap:16px;min-width:0}
+.s4-low .pic{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(24px,3vw,44px);background:var(--soft);padding:clamp(28px,3.4vw,56px) clamp(12px,2vw,32px)}
+.s4-low figcaption{font:400 16px/1.4 var(--read);color:var(--mute)}
+.s4-low figcaption b{display:block;font:500 20px/1.2 var(--font);color:var(--ink);margin-bottom:4px}
+
 /* ---------- в две строки: было и три решения ---------- */
 .s4-two{--u:clamp(64px,9vw,128px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
 .s4-two figure{margin:0;display:flex;flex-direction:column;gap:16px;min-width:0}
@@ -44,6 +51,7 @@
   .s4-guard{--u:min(11vw,60px);grid-template-columns:1fr}
   .s4 .as-top nav{justify-content:flex-start;padding-right:55vw}
   .s4-two{--u:21vw}
+  .s4-low{--u:min(9.4vw,56px);grid-template-columns:1fr}
   .s4 .as-pal div{min-width:64px}   /* узкие полосы палитры не обрезают подпись */
 }
 
