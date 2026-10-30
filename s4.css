@@ -20,7 +20,7 @@
 .s4 .s3-type .mocks h3{text-transform:uppercase}
 
 /* ---------- дополнительный вариант: строчные, как экран знака, два переключателя рядом ---------- */
-.s4-low .sw{display:flex;flex-wrap:wrap;justify-content:center;gap:12px clamp(32px,5vw,72px)}
+.s4-mark .sw,.s4-low .sw{display:flex;flex-wrap:wrap;justify-content:center;gap:12px clamp(32px,5vw,72px)}
 
 /* ---------- в две строки: было и три решения ---------- */
 .s4-two{--u:clamp(64px,9vw,128px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}

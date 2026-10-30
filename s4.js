@@ -77,6 +77,7 @@
 
   // ---------- данные ----------
   var CUTS = [['raw', 'без срезов'], ['rleg', 'срез только у ног «Р»']];
+  var TCOLS = [['цветной текст', [RED, BLUE]], ['черный текст', ['#080000', '#080000']]];   // тумблер цвета надписи: звезда остается цветной
   var SET = [['horizontal', 'в строку'], ['center', 'между словами'], ['st-ray', 'в две строки'], ['vertical', 'вертикально']];
   // в ряду знаки одного зрительного размера, а не одной высоты звезды: длинные мельче, компактные крупнее
   // (почти равная площадь: множитель ~ 1 / корень из площади, смягченный, чтобы звезды не разошлись слишком сильно)
@@ -98,7 +99,7 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, 30 октября</a><nav>' +
-    '<a href="#mark">знак</a><a href="#co">кобрендинг</a><a href="#two">две строки</a><a href="#guard">поле</a><a href="#mono">монохром</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
+    '<a href="#mark">заглавное</a><a href="#co">кобрендинг</a><a href="#two">две строки</a><a href="#guard">поле</a><a href="#mono">монохром</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда ----------
@@ -109,21 +110,20 @@
     '</div></section>');
 
   // ---------- знак: все компоновки в ряд, срезы переключаются ----------
-  h.push(sec('mark', 'знак', [
-    'Conthrax, только заглавные. «Армия» — красным, «спорта» — синим, как цвета звезды: красный сверху, синий снизу.',
-    'Срезы — без срезов или только у ног «Р». В ряду теперь и вертикальная версия из кобрендинга.'
-  ], '<div class="s4-mark">' + tabs(CUTS.map(function (c) { return c[1]; })) +
+  h.push(sec('mark', 'заглавное', [
+    'Срезы — без срезов или только у ног «Р».'
+  ], '<div class="s4-mark"><div class="sw">' + tabs(CUTS.map(function (c) { return c[1]; })) + tabs(TCOLS.map(function (c) { return c[0]; })) + '</div>' +
     '<div class="s4-set">' + grp(SET) + '</div>' +
     '</div>'));
 
   // ---------- дополнительный вариант: все строчные, как экран знака: те же компоновки, срезы и цвет текста. Остальной сайт — на заглавных ----------
-  var LCUTS = [['lraw', 'без срезов'], ['lrleg', 'срез только у ног «р»']], LCOLS = [['цветной текст', [RED, BLUE]], ['черный текст', ['#080000', '#080000']]];
+  var LCUTS = [['lraw', 'без срезов'], ['lrleg', 'срез только у ног «р»']];
   var LK = {};   // зрительный размер — как в ряду заглавных
   SET.forEach(function (x) { var g = L.logos['lraw-' + lowKey(x[0])]; LK[x[0]] = Math.pow(220 / Math.sqrt(g.w * g.h), .85); });
   function lowKey(k) { return k === 'st-ray' ? 'st' : k; }
   h.push(sec('low', 'строчные', [
-    'Дополнительный вариант: все буквы строчные. В две строки низ «армия» стоит на верхней границе лучей, ножка «р» в «спорта» — на нижнем правом синем луче. В строку верх букв идет по границе лучей, ножка «р» — по синему лучу.'
-  ], '<div class="s4-low"><div class="sw">' + tabs(LCUTS.map(function (c) { return c[1]; })) + tabs(LCOLS.map(function (c) { return c[0]; })) + '</div>' +
+    'Дополнительный вариант'
+  ], '<div class="s4-low"><div class="sw">' + tabs(LCUTS.map(function (c) { return c[1]; })) + tabs(TCOLS.map(function (c) { return c[0]; })) + '</div>' +
     '<div class="s4-set s4-lowset">' + grp(SET) + '</div></div>'));
 
   // ---------- кобрендинг: вертикальная версия рядом с партнерами, знак меняется вместе со срезами ----------
@@ -239,9 +239,9 @@
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // знаки в выбранном срезе
-  var cut = 'raw';
+  var cut = 'raw', tone = 0;   // срез на всю страницу, tone — цвет надписи в верхнем ряду знаков
   function draw() {
-    $$('.s4-set:not(.s4-lowset) .pic').forEach(function (p) { p.innerHTML = p.closest('.s4-guard') ? guard(cut + '-' + p.dataset.k, K[p.dataset.k]) : logo(cut + '-' + p.dataset.k, { k: K[p.dataset.k] }); });
+    $$('.s4-set:not(.s4-lowset) .pic').forEach(function (p) { p.innerHTML = p.closest('.s4-guard') ? guard(cut + '-' + p.dataset.k, K[p.dataset.k]) : logo(cut + '-' + p.dataset.k, { k: K[p.dataset.k], words: TCOLS[tone][1] }); });
     $$('.s4-two .pic').forEach(function (p, i) { p.innerHTML = logo(cut + '-' + p.dataset.k, { lines: TWO[i][3]() }); });
     $$('[data-mk]').forEach(function (p) { p.innerHTML = logo(cut + '-' + p.dataset.mk, { free: 1, star: p.dataset.st }); });
     $$('.ml').forEach(function (m) { m.outerHTML = logo(cut + '-horizontal', { free: 1, white: !!m.dataset.w, cls: m.dataset.c + ' ml-' + (m.dataset.w ? 'w' : 'c') }); });
@@ -267,35 +267,27 @@
   function whileVisible(el, on, off) {
     new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) on(); else off(); }); }, { rootMargin: '100px 0px' }).observe(el);
   }
-  // переключатель срезов: идет сам, пока не тронули
-  (function () {
-    var box = $('.s4-mark'), btns = $$('.as-sw-tabs button', box), k = 0, user = false, t = null;
-    function show(j) {
-      k = j; cut = CUTS[j][0];
-      btns.forEach(function (b, i) { b.classList.toggle('on', i === j); b.classList.remove('run'); });
-      if (!user && !reduce) { void btns[j].offsetWidth; btns[j].classList.add('run'); }
-      draw();
-    }
-    btns.forEach(function (b, i) { b.addEventListener('click', function () { user = true; show(i); }); });
-    btns.forEach(function (b) { b.querySelector('i').style.setProperty('--d', '4200ms'); });
-    if (!reduce) whileVisible(box, function () { if (!t) t = setInterval(function () { if (!user) show((k + 1) % CUTS.length); }, 4200); }, function () { clearInterval(t); t = null; });
-    show(0);
-  })();
-
-  // строчные: срезы и цвет текста; идут сами по кругу, пока не тронули
-  (function () {
-    var box = $('.s4-low'), groups = $$('.as-sw-tabs', box), cb = $$('button', groups[0]), lb = $$('button', groups[1]), c = 0, l = 0, user = false, t = null;
-    function paint() {
-      $$('.pic', box).forEach(function (p) { p.innerHTML = logo(LCUTS[c][0] + '-' + lowKey(p.dataset.k), { k: LK[p.dataset.k], words: LCOLS[l][1] }); });
+  // два переключателя блока — срезы и цвет текста: идут сами по кругу, пока не тронули
+  function cycler(box, paint) {
+    var g = $$('.as-sw-tabs', box), cb = $$('button', g[0]), lb = $$('button', g[1]), c = 0, l = 0, user = false, t = null;
+    function go() {
       cb.forEach(function (b, i) { b.classList.toggle('on', i === c); b.classList.remove('run'); });
       lb.forEach(function (b, i) { b.classList.toggle('on', i === l); });
       if (!user && !reduce) { void cb[c].offsetWidth; cb[c].classList.add('run'); }
+      paint(c, l);
     }
-    function pick(fn) { return function () { user = true; fn(); paint(); }; }
+    function pick(fn) { return function () { user = true; fn(); go(); }; }
     cb.forEach(function (b, i) { b.addEventListener('click', pick(function () { c = i; })); b.querySelector('i').style.setProperty('--d', '4200ms'); });
     lb.forEach(function (b, i) { b.addEventListener('click', pick(function () { l = i; })); });
-    if (!reduce) whileVisible(box, function () { if (!t) t = setInterval(function () { if (user) return; c = (c + 1) % LCUTS.length; if (!c) l = (l + 1) % LCOLS.length; paint(); }, 4200); }, function () { clearInterval(t); t = null; });
-    paint();
+    if (!reduce) whileVisible(box, function () { if (!t) t = setInterval(function () { if (user) return; c = (c + 1) % cb.length; if (!c) l = (l + 1) % lb.length; go(); }, 4200); }, function () { clearInterval(t); t = null; });
+    go();
+  }
+  cycler($('.s4-mark'), function (c, l) { cut = CUTS[c][0]; tone = l; draw(); });
+  (function () {
+    var box = $('.s4-low');
+    cycler(box, function (c, l) {
+      $$('.pic', box).forEach(function (p) { p.innerHTML = logo(LCUTS[c][0] + '-' + lowKey(p.dataset.k), { k: LK[p.dataset.k], words: TCOLS[l][1] }); });
+    });
   })();
 
   // согласованное: раскрывается по строке
