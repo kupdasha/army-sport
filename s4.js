@@ -98,7 +98,7 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, 30 октября</a><nav>' +
-    '<a href="#mark">знак</a><a href="#two">в две строки</a><a href="#guard">охранное поле</a><a href="#mono">монохром</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
+    '<a href="#mark">знак</a><a href="#co">кобрендинг</a><a href="#two">две строки</a><a href="#guard">поле</a><a href="#mono">монохром</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда ----------
@@ -115,6 +115,15 @@
   ], '<div class="s4-mark">' + tabs(CUTS.map(function (c) { return c[1]; })) +
     '<div class="s4-set">' + grp(SET) + '</div>' +
     '</div>'));
+
+  // ---------- кобрендинг: вертикальная версия рядом с партнерами, знак меняется вместе со срезами ----------
+  var PARTNERS = ['p-sa', 'p-cska-fight', null, 'p-cska', 'p-fsbr', 'p-dynamo'];
+  h.push(sec('co', 'в кобрендинге', [
+    'Вертикальная версия рядом с партнерами.'
+  ], '<div class="s3-co"><div class="logos">' + PARTNERS.map(function (p) {
+    if (p) return '<img src="' + IMG + p + '.svg" alt="" loading="lazy" decoding="async">';
+    return '<div class="own" role="img" aria-label="армия спорта"><div class="ly on" data-mk="vertical" data-st="color"></div></div>';
+  }).join('') + '</div></div>'));
 
   // ---------- в две строки: было и три решения, с направляющими ----------
   h.push(sec('two', 'в две строки', [
