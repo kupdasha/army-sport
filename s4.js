@@ -39,13 +39,16 @@
   function logo(key, o) {
     o = o || {};
     var g = L.logos[key]; if (!g) return '';
-    var s = L.star, guides = '', wc = o.white ? ['#fff', '#fff'] : [RED, BLUE];
+    // star: color — цветная, tone — тональный уголок, solid — монолит, cut — с вырубкой (как в третьей доработке); white — тональный белый на цвете
+    var s = L.star, guides = '', st = o.star || (o.white ? 'tone' : 'color'), ink = o.ink || '#fff', wc = st === 'color' ? [RED, BLUE] : [ink, ink];
     // линия лучей идет от правого луча: граница лучей чуть наклонена, и надпись выровнена по правому лучу
     if (o.lines) guides = '<g class="gd">' + o.lines.map(function (y) { var yy = (y + g.s[1]).toFixed(2), x0 = y === L.arm ? g.s[0] + L.rx : -12; return '<path d="M' + x0.toFixed(2) + ' ' + yy + 'H' + (g.w + 12) + '"/>'; }).join('') + '</g>';
     // высота от единицы --u (высота звезды): звезда одного размера во всех компоновках
     var hs = o.free ? '' : ' style="height:calc(var(--u) * ' + (g.h / 100 * (o.k || 1)).toFixed(3) + ')"';
-    var star = o.white ? '<path fill="#fff" fill-opacity=".62" d="' + s.piece + '"/><path fill="#fff" d="' + s.main + '"/>'   // на цвете — тональный уголок
-      : '<path fill="' + BLUE + '" d="' + s.piece + '"/><path fill="' + RED + '" d="' + s.main + '"/>';
+    var star = st === 'color' ? '<path fill="' + BLUE + '" d="' + s.piece + '"/><path fill="' + RED + '" d="' + s.main + '"/>'
+      : st === 'tone' ? '<path fill="' + ink + '" fill-opacity=".62" d="' + s.piece + '"/><path fill="' + ink + '" d="' + s.main + '"/>'   // на цвете — тональный уголок
+      : st === 'cut' ? '<path fill="' + ink + '" fill-rule="evenodd" d="' + s.piece + s.hole + '"/><path fill="' + ink + '" d="' + s.main + '"/>'
+      : '<path fill="' + ink + '" d="' + s.solid + '"/>';
     return '<svg class="lg' + (o.cls ? ' ' + o.cls : '') + '" viewBox="0 0 ' + g.w + ' ' + g.h + '" width="' + g.w + '" height="' + g.h + '"' + hs + ' role="img" aria-label="армия спорта">' +
       '<g transform="translate(' + g.s[0] + ' ' + g.s[1] + ')">' + star + '</g>' +
       '<path fill="' + wc[0] + '" d="' + g.d[0] + '"/><path fill="' + wc[1] + '" d="' + g.d[1] + '"/>' + guides + '</svg>';   // направляющие поверх: видно, как линия идет сквозь слово
@@ -95,7 +98,7 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, 30 октября</a><nav>' +
-    '<a href="#mark">знак</a><a href="#two">в две строки</a><a href="#guard">охранное поле</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
+    '<a href="#mark">знак</a><a href="#two">в две строки</a><a href="#guard">охранное поле</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#mono">монохром</a><a href="#ok">согласованное</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда ----------
@@ -111,7 +114,7 @@
     'Срезы — без срезов или только у ног «Р». В ряду теперь и вертикальная версия из кобрендинга.'
   ], '<div class="s4-mark">' + tabs(CUTS.map(function (c) { return c[1]; })) +
     '<div class="s4-set">' + grp(SET) + '</div>' +
-    '<p class="note">' + T('Шрифты заголовков и текста — Bounded и Golos Text, без изменений. Монохромная звезда — как в третьей доработке.') + '</p></div>'));
+    '</div>'));
 
   // ---------- в две строки: было и три решения, с направляющими ----------
   h.push(sec('two', 'в две строки', [
@@ -164,6 +167,28 @@
     '<p>' + T('Первое занятие бесплатно — достаточно записаться у администратора.') + '</p></div></div>' +
     '</div></div>'));
 
+  // ---------- монохромная звезда: правила третьей доработки на новом знаке ----------
+  var VERS = [
+    ['color', 'цветная', 'Основная. На белом и светлых фонах.'],
+    ['tone', 'тональный уголок', 'Главная одноцветная. На цвете, фото, градиентах и темных фонах — уголок идет полутоном.'],
+    ['solid', 'монолит', 'Мелкие размеры, когда полутон уже не читается.'],
+    ['cut', 'с вырубкой', 'Технические задачи без полутона: гравировка, тиснение и конгрев, трафарет, лазерная резка, шелкография в один цвет.']
+  ];
+  var USE = [
+    ['tone', 'тональный уголок', 'Главная одноцветная: крупно и на цвете', ['афиши, баннеры и обложки на цвете', 'посты и истории в соцсетях', 'мерч на цветной ткани', 'стены и навигация в залах', 'фото и видео — заставки и титры', 'сайт и приложение на темном фоне']],
+    ['solid', 'монолит', 'Когда знак маленький и полутон уголка сливается со звездой', ['уголок видео', 'фавикон и вкладка браузера', 'значки и пины', 'вышивка на форме и шевроны', 'бирки и ярлыки на одежде', 'ручки, брелоки и мелкий мерч', 'билеты, бейджи и браслеты участников']]
+  ];
+  // знаки здесь — метки, draw() рисует их в выбранном срезе
+  h.push(sec('mono', 'монохромная звезда', [
+    'Четыре версии и у каждой своя задача. Цветная — для белых фонов. Главная одноцветная — с тональным уголком: она держится на большинстве фонов. Монолит — для мелких размеров, вырубка — для технических задач.'
+  ], '<div class="s3-vers">' + VERS.map(function (v) {
+    return '<figure class="v-' + v[0] + '"><div class="pic" data-mk="st-ray" data-st="' + v[0] + '"></div><figcaption><b>' + esc(v[1]) + '</b>' + T(v[2]) + '</figcaption></figure>';
+  }).join('') + '</div>' +
+    '<div class="s3-use">' + USE.map(function (u) {
+      return '<div class="part p-' + u[0] + '"><div class="pic" data-mk="horizontal" data-st="' + u[0] + '"></div>' +
+        '<div class="lst"><b>' + esc(u[1]) + '</b><p>' + T(u[2]) + '</p><ul>' + u[3].map(function (x) { return '<li>' + T(x) + '</li>'; }).join('') + '</ul></div></div>';
+    }).join('') + '</div>'));
+
   // ---------- согласованное во втором этапе: превью, раскрывается по строке ----------
   var OK = [
     ['иконка', ['icon']],
@@ -199,6 +224,7 @@
   function draw() {
     $$('.s4-set .pic').forEach(function (p) { p.innerHTML = p.closest('.s4-guard') ? guard(cut + '-' + p.dataset.k, K[p.dataset.k]) : logo(cut + '-' + p.dataset.k, { k: K[p.dataset.k] }); });
     $$('.s4-two .pic').forEach(function (p, i) { p.innerHTML = logo(cut + '-' + p.dataset.k, { lines: TWO[i][3]() }); });
+    $$('[data-mk]').forEach(function (p) { p.innerHTML = logo(cut + '-' + p.dataset.mk, { free: 1, star: p.dataset.st }); });
     $$('.ml').forEach(function (m) { m.outerHTML = logo(cut + '-horizontal', { free: 1, white: !!m.dataset.w, cls: m.dataset.c + ' ml-' + (m.dataset.w ? 'w' : 'c') }); });
     $$('svg.ml-w,svg.ml-c').forEach(function (v) { v.outerHTML = logo(cut + '-horizontal', { free: 1, white: v.classList.contains('ml-w'), cls: [].slice.call(v.classList).filter(function (c) { return c !== 'lg'; }).join(' ') }); });
   }
