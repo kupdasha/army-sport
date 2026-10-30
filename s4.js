@@ -100,7 +100,7 @@
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда ----------
   h.push('<section class="as-hero s3-hero" id="top" data-slide><div class="as-wrap s3-heroin">' +
-    '<div class="s3-herotx"><h1 class="s3-h1">' + esc(nbh('30 октября')) + '</h1><p>' + T('Знак на Conthrax заглавными, надпись в красно-синем решении, срезы и решения для двух строк.') + '</p>' +
+    '<div class="s3-herotx"><div class="s4-title"><h1 class="s3-h1">' + esc(nbh('доработка первого этапа')) + '</h1><p class="s4-date">30 октября</p></div><p>' + T('Знак на Conthrax заглавными, надпись в красно-синем решении, срезы и решения для двух строк.') + '</p>' +
     '<div class="s3-backs">' + STAGES.map(function (s) { return '<a class="s2-back" href="' + s[1] + '">' + esc(s[0]) + '</a>'; }).join('') + '</div></div>' +
     '<div class="s3-heromark">' + STAR + '</div>' +
     '</div></section>');
@@ -182,7 +182,7 @@
     }).join('') + '</div></div></section>');
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
-  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, 30 октября. ' +
+  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, доработка первого этапа, 30 октября. ' +
     STAGES.map(function (s, i) { return '<a href="' + s[1] + '">' + esc(i ? s[0] : 'Старт 19.10') + '</a>'; }).join(', ') + '</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
 
   root.innerHTML = h.join('');

@@ -47,7 +47,12 @@
   .s4 .as-pal div{min-width:64px}   /* узкие полосы палитры не обрезают подпись */
 }
 
+/* ---------- первый экран: заголовок, под ним дата-дескриптор ---------- */
+.s4-title{display:flex;flex-direction:column;gap:clamp(8px,1vw,14px)}
+.s4 .s4-date{margin:0;font:500 clamp(20px,1.8vw,28px)/1.1 var(--font);letter-spacing:-.01em;color:var(--ink)}
+@media (max-width:900px){ .s4-title{align-items:center} }
+
 /* ---------- первый экран: три кнопки к прошлым правкам — в одну строку ---------- */
 .s4 .s3-backs{gap:10px}
-.s4 .s2-back{padding:0 18px}
+.s4 .s2-back{padding:0 18px;white-space:nowrap;flex:none}
 @media (min-width:1001px){ .s4 .s3-backs{flex-wrap:nowrap} }
