@@ -46,3 +46,8 @@
   .s4-two{--u:21vw}
   .s4 .as-pal div{min-width:64px}   /* узкие полосы палитры не обрезают подпись */
 }
+
+/* ---------- первый экран: три кнопки к прошлым правкам — в одну строку ---------- */
+.s4 .s3-backs{gap:10px}
+.s4 .s2-back{padding:0 18px}
+@media (min-width:1001px){ .s4 .s3-backs{flex-wrap:nowrap} }

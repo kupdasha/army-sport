@@ -17,7 +17,7 @@
   var ON_WORKER = /workers\.dev$/.test(location.hostname);
   var W = 'https://kup-version.kupdaria26.workers.dev/';
   function stage(path, file) { return ON_WORKER ? W + path : new URL(file, location.href).href; }
-  var STAGES = [['стартовая презентация', stage('armysport', 'index.html')], ['доработка первого этапа', stage('armysport2', 'stage2.html')], ['третья доработка', stage('armysport3', 'stage3.html')]];
+  var STAGES = [['старт 19.10', stage('armysport', 'index.html')], ['правки 26.10', stage('armysport2', 'stage2.html')], ['правки 29.10', stage('armysport3', 'stage3.html')]];
   var RED = '#E71E26', BLUE = '#002FFF';
 
   // ---------- типограф: короткие слова держатся за следующим, тире — за предыдущим ----------
@@ -94,13 +94,13 @@
 
   // ====================================================================================
   var h = [];
-  h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, четвертая доработка</a><nav>' +
+  h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, 30 октября</a><nav>' +
     '<a href="#mark">знак</a><a href="#two">в две строки</a><a href="#guard">охранное поле</a><a href="#pal">палитра</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- первый экран: слева название, фраза и кнопки к прошлым этапам, справа — звезда ----------
   h.push('<section class="as-hero s3-hero" id="top" data-slide><div class="as-wrap s3-heroin">' +
-    '<div class="s3-herotx"><h1 class="s3-h1">' + esc(nbh('четвертая доработка первого этапа')) + '</h1><p>' + T('Знак на Conthrax заглавными, надпись в красно-синем решении, срезы и решения для двух строк.') + '</p>' +
+    '<div class="s3-herotx"><h1 class="s3-h1">' + esc(nbh('30 октября')) + '</h1><p>' + T('Знак на Conthrax заглавными, надпись в красно-синем решении, срезы и решения для двух строк.') + '</p>' +
     '<div class="s3-backs">' + STAGES.map(function (s) { return '<a class="s2-back" href="' + s[1] + '">' + esc(s[0]) + '</a>'; }).join('') + '</div></div>' +
     '<div class="s3-heromark">' + STAR + '</div>' +
     '</div></section>');
@@ -182,8 +182,8 @@
     }).join('') + '</div></div></section>');
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
-  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, четвертая доработка первого этапа. ' +
-    STAGES.map(function (s, i) { return '<a href="' + s[1] + '">' + esc(i ? s[0] : 'Стартовая презентация') + '</a>'; }).join(', ') + '</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
+  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, 30 октября. ' +
+    STAGES.map(function (s, i) { return '<a href="' + s[1] + '">' + esc(i ? s[0] : 'Старт 19.10') + '</a>'; }).join(', ') + '</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
 
   root.innerHTML = h.join('');
 
