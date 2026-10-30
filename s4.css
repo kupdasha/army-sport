@@ -56,3 +56,15 @@
 .s4 .s3-backs{gap:10px}
 .s4 .s2-back{padding:0 18px;white-space:nowrap;flex:none}
 @media (min-width:1001px){ .s4 .s3-backs{flex-wrap:nowrap} }
+
+/* ---------- монохром: на планшете «где что применять» — двумя колонками, а не огромными синими полосами ---------- */
+@media (min-width:641px) and (max-width:1100px){
+  .s4 .s3-use{grid-template-columns:1fr 1fr}
+  .s4 .s3-use .p-solid .pic svg.lg{width:30%}
+}
+/* телефон: версии по одной, картинка пониже — подписи не сжимаются в столбик */
+@media (max-width:480px){
+  .s4 .s3-vers{grid-template-columns:1fr;gap:28px}
+  .s4 .s3-vers .pic{aspect-ratio:16/9}
+  .s4 .s3-vers .pic svg.lg{width:52%}
+}
