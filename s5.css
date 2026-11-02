@@ -70,11 +70,15 @@
 .s5 .s3-okp .grp:first-child .tiles a:nth-child(5){grid-column:span 2;aspect-ratio:auto;position:relative}
 .s5 .s3-okp .grp:first-child .tiles a:nth-child(5) img{position:absolute;inset:0}
 
+@media (max-width:1100px) and (orientation:portrait){
+  .s5-start{min-height:0}   /* вертикальный планшет: без пустоты под двумя знаками */
+}
 @media (min-width:641px) and (max-width:1100px){
   .s5 .s3-use{grid-template-columns:1fr 1fr}
   .s5 .s3-use .p-solid .pic svg.lg{width:30%}
 }
 @media (max-width:640px){
+  .s5 .s3-okp .grp:first-child .tiles a:nth-child(5){aspect-ratio:2/1}   /* здесь карандаши в ряду одни: высоту задает сама плитка */
   .s5-start{min-height:0}
   .s5 .s5-start .as-wasnow{max-width:none}
 }
