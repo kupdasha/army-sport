@@ -11,15 +11,15 @@
 .s5-set svg path{transition:fill .5s var(--ease)}
 
 /* ---------- блоки проявляются по очереди, как шаги рассказа ---------- */
-.as-vis.as-up .s5-set figure,.as-vis.as-up .s4-guard figure,.as-vis.as-up .s3-vers figure,.as-vis.as-up .s3-use .part,.as-vis.as-up .s3-co .logos>*,.as-vis.as-up .s5-rules figure,.as-vis.as-up .s5-wear>*,.as-vis.as-up .s3-okp .grp{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform 1s var(--ease)}
-.as-vis.as-up.in .s5-set figure,.as-vis.as-up.in .s4-guard figure,.as-vis.as-up.in .s3-vers figure,.as-vis.as-up.in .s3-use .part,.as-vis.as-up.in .s3-co .logos>*,.as-vis.as-up.in .s5-rules figure,.as-vis.as-up.in .s5-wear>*,.as-vis.as-up.in .s3-okp .grp{opacity:1;transform:none}
-.as-vis.as-up.in .s5-set .wide figure:nth-child(2),.as-vis.as-up.in .s4-guard figure:nth-child(2),.as-vis.as-up.in .s3-vers figure:nth-child(2),.as-vis.as-up.in .s3-use .part:nth-child(2),.as-vis.as-up.in .s3-co .logos>:nth-child(2),.as-vis.as-up.in .s5-rules figure:nth-child(2),.as-vis.as-up.in .s5-wear>:nth-child(2){transition-delay:.12s}
-.as-vis.as-up.in .s5-set .comp figure:nth-child(1),.as-vis.as-up.in .s4-guard figure:nth-child(3),.as-vis.as-up.in .s3-vers figure:nth-child(3),.as-vis.as-up.in .s3-co .logos>:nth-child(3),.as-vis.as-up.in .s5-wear>:nth-child(3){transition-delay:.24s}
-.as-vis.as-up.in .s5-set .comp figure:nth-child(2),.as-vis.as-up.in .s4-guard figure:nth-child(4),.as-vis.as-up.in .s3-vers figure:nth-child(4),.as-vis.as-up.in .s3-co .logos>:nth-child(4),.as-vis.as-up.in .s5-wear>:nth-child(4){transition-delay:.36s}
-.as-vis.as-up.in .s3-co .logos>:nth-child(5),.as-vis.as-up.in .s5-wear>:nth-child(5){transition-delay:.48s}
+.as-vis.as-up .s5-set figure,.as-vis.as-up .s4-guard figure,.as-vis.as-up .s3-vers figure,.as-vis.as-up .s3-use .part,.as-vis.as-up .s3-co .logos>*,.as-vis.as-up .s5-rules figure,.as-vis.as-up .s3-okp .grp{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform 1s var(--ease)}
+.as-vis.as-up.in .s5-set figure,.as-vis.as-up.in .s4-guard figure,.as-vis.as-up.in .s3-vers figure,.as-vis.as-up.in .s3-use .part,.as-vis.as-up.in .s3-co .logos>*,.as-vis.as-up.in .s5-rules figure,.as-vis.as-up.in .s3-okp .grp{opacity:1;transform:none}
+.as-vis.as-up.in .s5-set .wide figure:nth-child(2),.as-vis.as-up.in .s4-guard figure:nth-child(2),.as-vis.as-up.in .s3-vers figure:nth-child(2),.as-vis.as-up.in .s3-use .part:nth-child(2),.as-vis.as-up.in .s3-co .logos>:nth-child(2),.as-vis.as-up.in .s5-rules figure:nth-child(2){transition-delay:.12s}
+.as-vis.as-up.in .s5-set .comp figure:nth-child(1),.as-vis.as-up.in .s4-guard figure:nth-child(3),.as-vis.as-up.in .s3-vers figure:nth-child(3),.as-vis.as-up.in .s3-co .logos>:nth-child(3){transition-delay:.24s}
+.as-vis.as-up.in .s5-set .comp figure:nth-child(2),.as-vis.as-up.in .s4-guard figure:nth-child(4),.as-vis.as-up.in .s3-vers figure:nth-child(4),.as-vis.as-up.in .s3-co .logos>:nth-child(4){transition-delay:.36s}
+.as-vis.as-up.in .s3-co .logos>:nth-child(5){transition-delay:.48s}
 .as-vis.as-up.in .s3-co .logos>:nth-child(6){transition-delay:.6s}
 @media (prefers-reduced-motion:reduce){
-  .as-vis.as-up .s5-set figure,.as-vis.as-up .s4-guard figure,.as-vis.as-up .s3-vers figure,.as-vis.as-up .s3-use .part,.as-vis.as-up .s3-co .logos>*,.as-vis.as-up .s5-rules figure,.as-vis.as-up .s5-wear>*,.as-vis.as-up .s3-okp .grp{opacity:1!important;transform:none!important}
+  .as-vis.as-up .s5-set figure,.as-vis.as-up .s4-guard figure,.as-vis.as-up .s3-vers figure,.as-vis.as-up .s3-use .part,.as-vis.as-up .s3-co .logos>*,.as-vis.as-up .s5-rules figure,.as-vis.as-up .s3-okp .grp{opacity:1!important;transform:none!important}
 }
 
 /* ---------- малые размеры: пропорции нового знака ---------- */
@@ -28,10 +28,12 @@
 .s5 .s5-rules .s2-engrave .plate{padding:8%}
 .s5 .s5-rules .s2-engrave .print{box-shadow:inset 0 0 0 1px var(--line)}
 
-/* ---------- форма: две крупно, три поменьше, без пустых мест ---------- */
-.s5-wear{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
-.s5-wear>*{grid-column:span 2}
-.s5-wear>:nth-child(1),.s5-wear>:nth-child(2){grid-column:span 3}
+/* ---------- фирменная графика: паттерны в кадре медленно плывут. Не transform: его s2.css держит через !important ---------- */
+.s5 .s2-pt .as-ph img{animation:s5-drift 14s ease-in-out infinite alternate!important;scale:1.18}
+.s5 .s2-pt .as-ph:nth-child(2n) img{animation-direction:alternate-reverse!important;animation-duration:18s!important}
+.s5 .s2-pt .as-ph:nth-child(3n) img{animation-duration:22s!important}
+@keyframes s5-drift{from{translate:-6% -5%}to{translate:6% 5%}}
+@media (prefers-reduced-motion:reduce){.s5 .s2-pt .as-ph img{animation:none!important;scale:1}}
 
 /* ---------- угол ролика: монолит непрозрачный, иначе теряется на меняющемся фоне ---------- */
 .s5 .s2-film .corner.on{opacity:1}
@@ -47,15 +49,18 @@
 /* ---------- согласованное открыто сразу ---------- */
 .s5 .s3-okp{margin-top:0;animation:none}
 .s5 .s3-okp .grp:first-child{margin-top:0}
+/* стенды вертикальные: показаны целиком, по три в ряд на любом экране */
+.s5 .s3-okp .grp:nth-child(3) .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+.s5 .s3-okp .grp:nth-child(3) .tiles a{aspect-ratio:3/4}
+/* стены: тринадцать плиток, три шире — ряды закрываются без пустоты */
+.s5 .s3-okp .grp:nth-child(4) .tiles{grid-auto-flow:dense}
+.s5 .s3-okp .grp:nth-child(4) .tiles a:is(:nth-child(2),:nth-child(6),:nth-child(7)){grid-column:span 2;aspect-ratio:auto}
+/* карандаши широкие: на две ячейки, ряд закрывается без пустоты */
+.s5 .s3-okp .grp:nth-child(2) .tiles a:nth-child(5){grid-column:span 2;aspect-ratio:auto}
 
 @media (min-width:641px) and (max-width:1100px){
   .s5 .s3-use{grid-template-columns:1fr 1fr}
   .s5 .s3-use .p-solid .pic svg.lg{width:30%}
-}
-@media (max-width:760px){
-  .s5-wear{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .s5-wear>*,.s5-wear>:nth-child(1),.s5-wear>:nth-child(2){grid-column:span 1}
-  .s5-wear>:nth-child(1){grid-column:span 2}
 }
 @media (max-width:640px){
   .s5 .s5-solid .part{grid-template-columns:1fr}

@@ -57,10 +57,9 @@
       '<rect class="fd" width="' + W + '" height="' + H + '"/><g class="gh">' + gs + '</g><rect class="bx" x="' + mx + '" y="' + my + '" width="' + g.w + '" height="' + g.h + '"/>' +
       '<g transform="translate(' + mx + ' ' + my + ')">' + logo(key, { free: 1 }).replace(/^<svg[^>]*>|<\/svg>$/g, '') + '</g></svg>';
   }
-  function ph(name, o) {
-    o = o || {};
-    var big = IMG + 's2-' + name + '.webp', small = IMG + 's2-' + name + '-s.webp';
-    return '<div class="as-ph zoom" style="aspect-ratio:' + (o.ratio || 1) + '" data-big="' + big + '"><img src="' + small + '" srcset="' + small + ' 820w, ' + big + ' 1800w" sizes="(max-width:640px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></div>';
+  function ph(name, r) {
+    var big = IMG + 's5-' + name + '.webp', small = IMG + 's5-' + name + '-s.webp';
+    return '<div class="as-ph zoom" style="aspect-ratio:' + (r || 1) + '" data-big="' + big + '"><img src="' + small + '" srcset="' + small + ' 820w, ' + big + ' 2000w" sizes="(max-width:640px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></div>';
   }
   function tx(title, ps) {
     return '<div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">' + esc(nbh(title)) + '</h2><div>' +
@@ -178,21 +177,25 @@
     '<p>' + T('Первое занятие бесплатно — достаточно записаться у администратора.') + '</p></div></div>' +
     '</div></div>'));
 
+  // ---------- фирменная графика: паттерны живые, рядом футболки ----------
+  h.push(sec('graphic', 'фирменная графика', ['Паттерны и футболки с новым знаком.'],
+    '<div class="s2-pt">' + [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (i) { var u = IMG + 's2-pt-' + i + '.svg'; return '<div class="as-ph zoom' + (i === 7 || i === 9 ? ' light' : '') + '" data-big="' + u + '"><img src="' + u + '" alt="" loading="lazy"></div>'; }).join('') + '</div>' +
+    '<div class="as-grid as-g2 s2-tees">' + ['tee-white', 'tee-navy', 'tee-stripe', 'tee-red'].map(function (n) { return ph(n); }).join('') + '</div>'));
+
   // ---------- форма ----------
-  h.push(sec('wear', 'форма', ['Фирменная графика на одежде и экипировке.'],
-    '<div class="s5-wear">' + ['tee-red', 'tee-stripe', 'fm-2', 'tee-navy', 'tee-white'].map(function (n) { return ph(n); }).join('') + '</div>'));
+  h.push(sec('form', 'форма', [], '<div class="as-grid as-g2">' + ph('fm-woman') + ph('fm-wrestler') + '</div>'));
 
   // ---------- согласованное: открыто сразу ----------
   var OK = [
     ['иконка', ['icon']],
-    ['брелоки и мелкий мерч', ['k-46', 'k-55', 'k-48', 'k-38', 'a-pens', 'a-cap', 'a-merch-45']],
-    ['графика и фото', ['p-51', 'p-52', 'p-53']],
+    ['другие носители', ['k-46', 's5-socks', 's5-cap', 's5-pants', 's5-pencils', 's5-helmet', 's5-slides']],
+    ['примеры носителей', ['s5-stand-1', 's5-stand-2', 's5-stand-3']],
     ['оформление стен', ['i-2', 'i-4', 'i-5', 'i-3', 'i-6', 'wl-hall-judo', 'wl-hall-box', 'wl-ski', 'wl-gym', 'wl-run', 'wl-ball', 'wl-box', 'wl-judo']]
   ];
   h.push(sec('ok', 'согласованное', ['Из доработки первого этапа согласованы иконка, брелоки, мерч, графика с фото и оформление стен. Награда, медали и форма — в работе.'], '<div class="s3-okp">' +
     OK.map(function (g) {
       return '<div class="grp"><p class="lbl">' + T(g[0]) + '</p><div class="tiles' + (g[0] === 'иконка' ? ' one' : '') + '">' + g[1].map(function (n) {
-        var big = n === 'icon' ? IMG + 's3-icon.webp' : IMG + 's2-' + n + '.webp', sm = n === 'icon' ? big : IMG + 's2-' + n + '-s.webp';
+        var f = n.indexOf('s5-') ? 's2-' + n : n, big = n === 'icon' ? IMG + 's3-icon.webp' : IMG + f + '.webp', sm = n === 'icon' ? big : IMG + f + '-s.webp';
         return '<a href="' + big + '" target="_blank" rel="noopener"><img src="' + sm + '" alt="" loading="lazy" decoding="async"></a>';
       }).join('') + '</div></div>';
     }).join('') + '</div>'));
