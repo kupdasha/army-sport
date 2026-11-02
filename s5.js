@@ -223,20 +223,19 @@
 
   // ---------- носители: открыты сразу ----------
   var OK = [
-    ['другие носители', ['k-46', 's5-socks', 's5-cap', 's5-pants', 's5-pencils', 's5-helmet', 's5-slides']],
-    ['пример графики', ['s5-stand-1', 's5-stand-2', 's5-stand-3', 'i-2', 'i-4']]
+    ['другие носители', ['s5-keychain', 's5-socks', 's5-cap', 's5-pants', 's5-pencils', 's5-helmet', 's5-slides']],
+    ['пример графики', ['s5-stand-1', 's5-stand-2', 's5-stand-3']]
   ];
   h.push(sec('ok', 'носители', [], '<div class="s3-okp">' +
     OK.map(function (g) {
       return '<div class="grp"><p class="lbl">' + T(g[0]) + '</p><div class="tiles">' + g[1].map(function (n) {
-        var f = n.indexOf('s5-') ? 's2-' + n : n;
-        return '<a href="' + IMG + f + '.webp" target="_blank" rel="noopener"><img src="' + IMG + f + '-s.webp" alt="" loading="lazy" decoding="async"></a>';
+        return '<a class="zoom" href="' + IMG + n + '.webp" data-big="' + IMG + n + '.webp"><img src="' + IMG + n + '-s.webp" alt="" loading="lazy" decoding="async"></a>';
       }).join('') + '</div></div>';
     }).join('') + '</div>'));
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
   h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, новый знак</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
-  h.push('<div class="as-lb" role="dialog" aria-label="картинка крупно"><img alt=""></div>');
+  h.push('<div class="as-lb" role="dialog" aria-label="картинка крупно"><img alt=""><button type="button" class="s5-close" aria-label="закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>');
 
   root.innerHTML = h.join('');
 
@@ -356,8 +355,14 @@
   // крупно по нажатию
   var lb = $('.as-lb'), lbImg = $('img', lb);
   function closeLb() { lb.classList.remove('on'); lbImg.removeAttribute('src'); document.documentElement.style.overflow = ''; }
-  $$('.zoom').forEach(function (z) { z.addEventListener('click', function () { lbImg.src = z.dataset.big; lb.classList.add('on'); document.documentElement.style.overflow = 'hidden'; }); });
-  lb.addEventListener('click', closeLb);
+  $$('.zoom').forEach(function (z) {
+    z.addEventListener('click', function (e) {
+      e.preventDefault();
+      lbImg.src = z.dataset.big; lb.classList.add('on'); document.documentElement.style.overflow = 'hidden';
+      $('.s5-close', lb).focus();
+    });
+  });
+  lb.addEventListener('click', closeLb);   // закрывается кнопкой, нажатием на картинку и фон, клавишей Esc
 
   // шапка: текущий раздел; кнопка наверх
   var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-divide,.as-thanks'), links = $$('.as-top nav a'),

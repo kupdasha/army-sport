@@ -53,13 +53,19 @@
 .s5 .s5-br .url{padding:8px 10px;border:0;font-family:var(--sys)!important;color:#202124}
 .s5 .s5-br .url span{display:block;padding:7px 16px;background:#F1F3F4;border-radius:999px}
 
+/* ---------- крупно по нажатию: на этой же странице, с кнопкой закрыть ---------- */
+.s5 .s3-okp .tiles a{cursor:zoom-in}
+.s5 .s5-close{position:absolute;top:clamp(12px,2vw,24px);right:clamp(12px,2vw,24px);width:48px;height:48px;padding:0;display:grid;place-items:center;border:0;border-radius:50%;background:#fff;color:var(--ink);cursor:pointer}
+.s5 .s5-close svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+
 /* ---------- носители открыты сразу ---------- */
 .s5 .s3-okp{margin-top:0;animation:none}
 .s5 .s3-okp .grp:first-child{margin-top:0}
-/* пример графики: стенды вертикальные, показаны целиком, по три в ряд на любом экране; под ними два широких кадра */
-.s5 .s3-okp .grp:nth-child(2) .tiles{grid-template-columns:repeat(6,minmax(0,1fr))}
-.s5 .s3-okp .grp:nth-child(2) .tiles a{grid-column:span 2;aspect-ratio:3/4}
-.s5 .s3-okp .grp:nth-child(2) .tiles a:nth-child(n+4){grid-column:span 3;aspect-ratio:16/9}
+/* пример графики: стенды вертикальные, показаны целиком, по три в ряд на любом экране */
+.s5 .s3-okp .grp:nth-child(2) .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+.s5 .s3-okp .grp:nth-child(2) .tiles a{aspect-ratio:3/4}
+/* шлепанцы: кадр от верха, чтобы звезда не обрезалась */
+.s5 .s3-okp .grp:first-child .tiles a:nth-child(7) img{object-position:50% 0}
 /* карандаши широкие: на две ячейки, ряд закрывается без пустоты */
 .s5 .s3-okp .grp:first-child .tiles a:nth-child(5){grid-column:span 2;aspect-ratio:auto;position:relative}
 .s5 .s3-okp .grp:first-child .tiles a:nth-child(5) img{position:absolute;inset:0}
