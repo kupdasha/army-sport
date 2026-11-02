@@ -35,35 +35,40 @@
 @keyframes s5-drift{from{translate:-6% -5%}to{translate:6% 5%}}
 @media (prefers-reduced-motion:reduce){.s5 .s2-pt .as-ph img{animation:none!important;scale:1}}
 
-/* ---------- угол ролика: монолит непрозрачный, иначе теряется на меняющемся фоне ---------- */
-.s5 .s2-film .corner.on{opacity:1}
-
-/* ---------- знак для малых размеров: картинка и список рядом ---------- */
-.s5 .s3-use.s5-solid{grid-template-columns:1fr;margin-top:0}
-.s5 .s5-solid .part{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,48px);align-items:start}
-.s5 .s5-solid .pic svg.lg{width:34%}
-
 /* ---------- носители: заголовки строчными, как знак ---------- */
 .s4.s5 .s3-type .mocks h3{text-transform:none}
 
-/* ---------- согласованное открыто сразу ---------- */
+/* ---------- вкладка браузера: как в настоящем браузере, системный шрифт, крестик и новая вкладка ---------- */
+.s5 .s5-br{--sys:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-family:var(--sys)}
+.s5 .s5-br .bar{display:flex;align-items:flex-end;gap:6px;padding:8px 10px 0;background:#DEE1E6}
+.s5 .s5-br .tab{flex:0 1 240px;min-width:0;margin:0;padding:9px 10px 9px 12px;background:#fff;border-radius:10px 10px 0 0;font-family:var(--sys)!important;color:#202124}
+.s5 .s5-br .tab span{flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.s5 .s5-br .tab .fav{width:18px;height:18px;border-radius:0}
+.s5 .s5-br svg{flex:none;width:18px;height:18px;fill:none;stroke:#5F6368;stroke-width:1.5;stroke-linecap:round}
+.s5 .s5-br .add{margin-bottom:9px}
+.s5 .s5-br .url{padding:8px 10px;border:0;font-family:var(--sys)!important;color:#202124}
+.s5 .s5-br .url span{display:block;padding:7px 16px;background:#F1F3F4;border-radius:999px}
+
+/* ---------- стены: подписи групп ---------- */
+.s5 #walls .s2-lbl{margin:clamp(28px,3vw,44px) 0 14px}
+.s5 #walls .s2-lbl:first-child{margin-top:0}
+.s5 #walls .s2-walls{margin-top:0}
+
+/* ---------- носители открыты сразу ---------- */
 .s5 .s3-okp{margin-top:0;animation:none}
 .s5 .s3-okp .grp:first-child{margin-top:0}
-/* стенды вертикальные: показаны целиком, по три в ряд на любом экране */
-.s5 .s3-okp .grp:nth-child(3) .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
-.s5 .s3-okp .grp:nth-child(3) .tiles a{aspect-ratio:3/4}
-/* стены: тринадцать плиток, три шире — ряды закрываются без пустоты */
-.s5 .s3-okp .grp:nth-child(4) .tiles{grid-auto-flow:dense}
-.s5 .s3-okp .grp:nth-child(4) .tiles a:is(:nth-child(2),:nth-child(6),:nth-child(7)){grid-column:span 2;aspect-ratio:auto}
+/* пример графики: стенды вертикальные, показаны целиком, по три в ряд на любом экране */
+.s5 .s3-okp .grp:nth-child(2) .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+.s5 .s3-okp .grp:nth-child(2) .tiles a{aspect-ratio:3/4}
 /* карандаши широкие: на две ячейки, ряд закрывается без пустоты */
-.s5 .s3-okp .grp:nth-child(2) .tiles a:nth-child(5){grid-column:span 2;aspect-ratio:auto}
+.s5 .s3-okp .grp:first-child .tiles a:nth-child(5){grid-column:span 2;aspect-ratio:auto;position:relative}
+.s5 .s3-okp .grp:first-child .tiles a:nth-child(5) img{position:absolute;inset:0}
 
 @media (min-width:641px) and (max-width:1100px){
   .s5 .s3-use{grid-template-columns:1fr 1fr}
   .s5 .s3-use .p-solid .pic svg.lg{width:30%}
 }
 @media (max-width:640px){
-  .s5 .s5-solid .part{grid-template-columns:1fr}
   .s5-start{min-height:0}
   .s5 .s5-start .as-wasnow{max-width:none}
 }
