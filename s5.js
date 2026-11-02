@@ -69,9 +69,6 @@
   function sec(id, title, ps, vis) {
     return '<section class="as-sec" id="' + id + '" data-slide>' + tx(title, ps) + (vis ? '<div class="as-wrap as-vis as-up">' + vis + '</div>' : '') + '</section>';
   }
-  function tabs(labels) {
-    return '<div class="as-sw-tabs">' + labels.map(function (l, i) { return '<button type="button"' + (i ? '' : ' class="on"') + '>' + T(l) + '<i></i></button>'; }).join('') + '</div>';
-  }
   var ICON = { up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>' };
 
   // ---------- данные ----------
@@ -98,7 +95,7 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, новый знак</a><nav>' +
-    '<a href="#top">старт</a><a href="#mark">знак</a><a href="#rules">правила</a><a href="#small">малые размеры</a><a href="#carriers">носители</a><a href="#ok">согласованное</a></nav></div></header>');
+    '<a href="#top">старт</a><a href="#mark">знак</a><a href="#rules">правила</a><a href="#small">малые размеры</a><a href="#type">носители</a><a href="#ok">согласованное</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- старт: знак сейчас и новый знак. Звезда вылетает из старого знака и становится новым ----------
@@ -111,7 +108,15 @@
     'Цветная звезда и черное написание строчными. Четыре компоновки — под разные носители.'
   ], '<div class="s4-set s5-set">' + grp(SET) + '</div><div class="s5-more"><button type="button" class="as-btn" aria-pressed="false">показать цветное написание</button></div>'));
 
-  // ---------- как устроен: поле, цвет, монохром ----------
+  // ---------- рядом с партнерами: сразу под знаком ----------
+  h.push(sec('co', 'рядом с партнерами', [
+    'Вертикальная версия среди знаков партнеров.'
+  ], '<div class="s3-co"><div class="logos">' + PARTNERS.map(function (p) {
+    if (p) return '<img src="' + IMG + p + '.svg" alt="" loading="lazy" decoding="async">';
+    return '<div class="own" role="img" aria-label="армия спорта"><div class="ly on">' + logo('vertical', { free: 1 }) + '</div></div>';
+  }).join('') + '</div></div>'));
+
+  // ---------- как устроен: поле и цвет ----------
   h.push(act('как устроен знак'));
   h.push(sec('rules', 'охранное поле', [
     'Вокруг знака — свободное поле в размер звезды: по бокам — ее ширина, сверху и снизу — высота. Внутрь не заходят текст, другие знаки и край носителя.'
@@ -122,25 +127,6 @@
     [['белый', '#FFFFFF', 3, 'light'], ['красный', '#E71E26', 3], ['синий', '#002FFF', 1.5], ['черный', '#080000', 1.5]].map(function (c) {
       return '<div class="' + (c[3] || '') + '" style="--f:' + c[2] + ';background:' + c[1] + ';color:' + (c[3] ? '#121314' : '#fff') + '"><span>' + c[0] + '<br>' + c[1] + '</span></div>';
     }).join('') + '</div></div>'));
-  var VERS = [
-    ['color', 'цветная', 'Основная. На белом и светлых фонах.'],
-    ['tone', 'тональный уголок', 'Главная одноцветная. На цвете, фото, градиентах и темных фонах — уголок идет полутоном.'],
-    ['solid', 'монолит', 'Мелкие размеры, когда полутон уже не читается.'],
-    ['cut', 'с вырубкой', 'Технические задачи без полутона: гравировка, тиснение и конгрев, трафарет, лазерная резка, шелкография в один цвет.']
-  ];
-  var USE = [
-    ['tone', 'тональный уголок', 'Главная одноцветная: крупно и на цвете', ['афиши, баннеры и обложки на цвете', 'посты и истории в соцсетях', 'мерч на цветной ткани', 'стены и навигация в залах', 'фото и видео — заставки и титры', 'сайт и приложение на темном фоне']],
-    ['solid', 'монолит', 'Когда знак маленький и полутон уголка сливается со звездой', ['уголок видео', 'фавикон и вкладка браузера', 'значки и пины', 'вышивка на форме и шевроны', 'бирки и ярлыки на одежде', 'ручки, брелоки и мелкий мерч', 'билеты, бейджи и браслеты участников']]
-  ];
-  h.push(sec('mono', 'монохромная звезда', [
-    'Четыре версии и у каждой своя задача. Цветная — для белых фонов. Главная одноцветная — с тональным уголком: она держится на большинстве фонов. Монолит — для мелких размеров, вырубка — для технических задач.'
-  ], '<div class="s3-vers">' + VERS.map(function (v) {
-    return '<figure class="v-' + v[0] + '"><div class="pic">' + logo('st', { free: 1, star: v[0] }) + '</div><figcaption><b>' + esc(v[1]) + '</b>' + T(v[2]) + '</figcaption></figure>';
-  }).join('') + '</div>' +
-    '<div class="s3-use">' + USE.map(function (u) {
-      return '<div class="part p-' + u[0] + '"><div class="pic">' + logo('horizontal', { free: 1, star: u[0] }) + '</div>' +
-        '<div class="lst"><b>' + esc(u[1]) + '</b><p>' + T(u[2]) + '</p><ul>' + u[3].map(function (x) { return '<li>' + T(x) + '</li>'; }).join('') + '</ul></div></div>';
-    }).join('') + '</div>'));
 
   // ---------- в мелком и на экране ----------
   h.push(act('в мелком размере и на экране'));
@@ -156,19 +142,15 @@
     '<div class="as-tabbox"><div class="as-bigicon"><img src="' + IMG + 's3-icon.webp" alt="иконка приложения" loading="lazy"></div>' +
     '<div class="as-browser"><div class="tab"><img class="fav" src="' + IMG + 's2-fav.svg" alt="" loading="lazy"><span>Армия Спорта</span></div><div class="url">armiya-sporta.ru</div></div></div></div>').replace('class="as-sec"', 'class="as-sec s2-tint"'));
   h.push(sec('film', 'в углу ролика', ['Версия для угла ролика: читается в маленьком размере в левом верхнем углу, на контрастном и меняющемся фоне.'],
-    '<div class="s2-filmbox">' + tabs(['полупрозрачный знак', 'с вырубкой', 'монолитный знак']) +
-    '<div class="s2-film"><video muted loop playsinline preload="none" poster="' + IMG + 's2-clip.webp"><source src="' + IMG + 's2-clip.mp4" type="video/mp4"></video>' +
-    ['tone', 'cut', 'solid'].map(function (v, i) { return '<img class="corner' + (i ? '' : ' on') + '" src="' + uri('horizontal', { star: v }) + '" alt="">'; }).join('') + '</div></div>'));
+    '<div class="s2-filmbox"><div class="s2-film"><video muted loop playsinline preload="none" poster="' + IMG + 's2-clip.webp"><source src="' + IMG + 's2-clip.mp4" type="video/mp4"></video>' +
+    '<img class="corner on" src="' + uri('horizontal', { star: 'solid' }) + '" alt=""></div></div>'));
+  // знак для малых размеров: монолит и где он нужен
+  var SMALL = ['уголок видео', 'фавикон и вкладка браузера', 'значки и пины', 'вышивка на форме и шевроны', 'бирки и ярлыки на одежде', 'ручки, брелоки и мелкий мерч', 'билеты, бейджи и браслеты участников'];
+  h.push(sec('solid', 'знак для малых размеров', [], '<div class="s3-use s5-solid"><div class="part p-solid"><div class="pic">' + logo('horizontal', { free: 1, star: 'solid' }) + '</div>' +
+    '<div class="lst"><b>монолит</b><p>' + T('Когда знак маленький, два цвета звезды сливаются') + '</p><ul>' + SMALL.map(function (x) { return '<li>' + T(x) + '</li>'; }).join('') + '</ul></div></div></div>'));
 
-  // ---------- среди партнеров и на носителях ----------
-  h.push(act('рядом с партнерами и на носителях'));
-  h.push(sec('carriers', 'рядом с партнерами', [
-    'Вертикальная версия среди знаков партнеров.'
-  ], '<div class="s3-co"><div class="logos">' + PARTNERS.map(function (p) {
-    if (p) return '<img src="' + IMG + p + '.svg" alt="" loading="lazy" decoding="async">';
-    return '<div class="own" role="img" aria-label="армия спорта"><div class="ly on">' + logo('vertical', { free: 1 }) + '</div></div>';
-  }).join('') + '</div></div>'));
-
+  // ---------- на носителях ----------
+  h.push(act('логотип в носителях'));
   // ---------- шрифты носителей ----------
   function ml(cls, white) { return logo('horizontal', { free: 1, star: white ? 'tone' : 'color', cls: cls }); }
   var SCHED = [['пн', '18:00', 'самбо, дети'], ['пн', '19:30', 'бокс'], ['вт', '18:00', 'дзюдо'], ['ср', '17:00', 'плавание'], ['чт', '19:30', 'самбо, взрослые'], ['сб', '11:00', 'открытая тренировка']];
@@ -321,22 +303,10 @@
     if (!reduce) whileVisible(f, function () { on = true; if (!raf) raf = requestAnimationFrame(loop); }, function () { on = false; });
   })();
 
-  // ролик: версия знака в углу, идет сама, пока не тронули; играет, только пока виден
+  // ролик играет, только пока виден
   (function () {
-    var film = $('#film'), btns = $$('.as-sw-tabs button', film), corners = $$('.corner', film), v = $('video', film), k = 0, user = false, t = null;
-    function show(j) {
-      k = j;
-      btns.forEach(function (b, i) { b.classList.toggle('on', i === j); b.classList.remove('run'); });
-      corners.forEach(function (c, i) { c.classList.toggle('on', i === j); });
-      if (!user && !reduce) { void btns[j].offsetWidth; btns[j].classList.add('run'); }
-    }
-    btns.forEach(function (b, i) { b.addEventListener('click', function () { user = true; show(i); }); b.querySelector('i').style.setProperty('--d', '4000ms'); });
-    whileVisible(v, function () {
-      if (v.preload === 'none') v.preload = 'auto';
-      var p = v.play(); if (p && p.catch) p.catch(function () {});
-      if (!reduce && !t) t = setInterval(function () { if (!user) show((k + 1) % btns.length); }, 4000);
-    }, function () { v.pause(); clearInterval(t); t = null; });
-    show(0);
+    var v = $('#film video');
+    whileVisible(v, function () { if (v.preload === 'none') v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }, function () { v.pause(); });
   })();
 
   // картинка проявляется, когда загрузилась; пока — скелет
