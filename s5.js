@@ -59,7 +59,7 @@
   }
   function ph(name, r) {
     var big = IMG + 's5-' + name + '.webp', small = IMG + 's5-' + name + '-s.webp';
-    return '<div class="as-ph zoom" style="aspect-ratio:' + (r || 1) + '" data-big="' + big + '"><img src="' + small + '" srcset="' + small + ' 820w, ' + big + ' 2000w" sizes="(max-width:640px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></div>';
+    return '<div class="as-ph zoom" style="aspect-ratio:' + (r || 1) + '" data-big="' + big + '"><img src="' + small + '" srcset="' + small + ' 820w, ' + big + ' 1400w" sizes="(max-width:640px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></div>';
   }
   function tx(title, ps) {
     return '<div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">' + esc(nbh(title)) + '</h2><div>' +
