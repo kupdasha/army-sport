@@ -197,7 +197,7 @@
     }).join('') + '</div>'));
 
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
-  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, новый знак</span><span>Даша Купцова, <a href="https://kupdasha.ru/full">kupdasha.ru</a></span></div></div></footer>');
+  h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, новый знак</span></div></div></footer>');
   h.push('<div class="as-lb" role="dialog" aria-label="картинка крупно"><img alt=""><button type="button" class="s5-close" aria-label="закрыть"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>');
 
   root.innerHTML = h.join('');
