@@ -1,0 +1,57 @@
+/* «Армия спорта», пятая страница: рассказ для руководства. Поверх as.css, s2.css, s3.css и s4.css. */
+
+/* ---------- старт: заголовок и два знака на первом экране ---------- */
+.s5-start{margin-top:0;padding-top:clamp(96px,11vh,136px);min-height:100svh;box-sizing:border-box}
+.s5 .s5-start .as-vis{margin-top:clamp(20px,2.4vw,40px)}
+.s5 .s5-start .as-wasnow{max-width:calc((100svh - 300px) * 2.5 + 16px);margin:0 auto}
+
+/* ---------- новый знак: цветное написание — по нажатию ---------- */
+.s5-more{display:flex;justify-content:center;margin-top:clamp(24px,3vw,40px)}
+.s5-more .as-btn{border:0;cursor:pointer}
+.s5-set svg path{transition:fill .5s var(--ease)}
+
+/* ---------- блоки проявляются по очереди, как шаги рассказа ---------- */
+.as-vis.as-up .s5-set figure,.as-vis.as-up .s4-guard figure,.as-vis.as-up .s3-vers figure,.as-vis.as-up .s3-use .part,.as-vis.as-up .s3-co .logos>*,.as-vis.as-up .s5-rules figure,.as-vis.as-up .s5-wear>*,.as-vis.as-up .s3-okp .grp{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform 1s var(--ease)}
+.as-vis.as-up.in .s5-set figure,.as-vis.as-up.in .s4-guard figure,.as-vis.as-up.in .s3-vers figure,.as-vis.as-up.in .s3-use .part,.as-vis.as-up.in .s3-co .logos>*,.as-vis.as-up.in .s5-rules figure,.as-vis.as-up.in .s5-wear>*,.as-vis.as-up.in .s3-okp .grp{opacity:1;transform:none}
+.as-vis.as-up.in .s5-set .wide figure:nth-child(2),.as-vis.as-up.in .s4-guard figure:nth-child(2),.as-vis.as-up.in .s3-vers figure:nth-child(2),.as-vis.as-up.in .s3-use .part:nth-child(2),.as-vis.as-up.in .s3-co .logos>:nth-child(2),.as-vis.as-up.in .s5-rules figure:nth-child(2),.as-vis.as-up.in .s5-wear>:nth-child(2){transition-delay:.12s}
+.as-vis.as-up.in .s5-set .comp figure:nth-child(1),.as-vis.as-up.in .s4-guard figure:nth-child(3),.as-vis.as-up.in .s3-vers figure:nth-child(3),.as-vis.as-up.in .s3-co .logos>:nth-child(3),.as-vis.as-up.in .s5-wear>:nth-child(3){transition-delay:.24s}
+.as-vis.as-up.in .s5-set .comp figure:nth-child(2),.as-vis.as-up.in .s4-guard figure:nth-child(4),.as-vis.as-up.in .s3-vers figure:nth-child(4),.as-vis.as-up.in .s3-co .logos>:nth-child(4),.as-vis.as-up.in .s5-wear>:nth-child(4){transition-delay:.36s}
+.as-vis.as-up.in .s3-co .logos>:nth-child(5),.as-vis.as-up.in .s5-wear>:nth-child(5){transition-delay:.48s}
+.as-vis.as-up.in .s3-co .logos>:nth-child(6){transition-delay:.6s}
+@media (prefers-reduced-motion:reduce){
+  .as-vis.as-up .s5-set figure,.as-vis.as-up .s4-guard figure,.as-vis.as-up .s3-vers figure,.as-vis.as-up .s3-use .part,.as-vis.as-up .s3-co .logos>*,.as-vis.as-up .s5-rules figure,.as-vis.as-up .s5-wear>*,.as-vis.as-up .s3-okp .grp{opacity:1!important;transform:none!important}
+}
+
+/* ---------- малые размеры: пропорции нового знака ---------- */
+.s5 .s2-ruler .lg{width:calc(var(--lh,2cm) * var(--ar,8.4))}
+.s5 .s5-rules .s2-ruler{padding:0;background:none}
+.s5 .s5-rules .s2-engrave .plate{padding:8%}
+.s5 .s5-rules .s2-engrave .print{box-shadow:inset 0 0 0 1px var(--line)}
+
+/* ---------- форма: две крупно, три поменьше, без пустых мест ---------- */
+.s5-wear{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.s5-wear>*{grid-column:span 2}
+.s5-wear>:nth-child(1),.s5-wear>:nth-child(2){grid-column:span 3}
+
+/* ---------- согласованное открыто сразу ---------- */
+.s5 .s3-okp{margin-top:0;animation:none}
+.s5 .s3-okp .grp:first-child{margin-top:0}
+
+@media (min-width:641px) and (max-width:1100px){
+  .s5 .s3-use{grid-template-columns:1fr 1fr}
+  .s5 .s3-use .p-solid .pic svg.lg{width:30%}
+}
+@media (max-width:760px){
+  .s5-wear{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .s5-wear>*,.s5-wear>:nth-child(1),.s5-wear>:nth-child(2){grid-column:span 1}
+  .s5-wear>:nth-child(1){grid-column:span 2}
+}
+@media (max-width:640px){
+  .s5-start{min-height:0}
+  .s5 .s5-start .as-wasnow{max-width:none}
+}
+@media (max-width:480px){
+  .s5 .s3-vers{grid-template-columns:1fr;gap:28px}
+  .s5 .s3-vers .pic{aspect-ratio:16/9}
+  .s5 .s3-vers .pic svg.lg{width:52%}
+}
