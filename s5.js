@@ -48,31 +48,6 @@
   }
   // тот же знак картинкой: для блоков, где разметка прошлых этапов ждет img
   function uri(key, o) { o = o || {}; o.free = 1; return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(logo(key, o)); }
-  // охранное поле. В одну строку — целая звезда: по бокам ее ширина, сверху и снизу высота, мерки — целые бледные звезды.
-  // В две строки и вертикально — модуль в половину высоты звезды со всех сторон: мерки — половинки звезды и квадраты в углах, пунктир показывает середину звезды знака
-  var HALF = { st: 1, vertical: 1 };
-  function guard(key, k) {
-    var g = L.logos[key]; if (!g) return '';
-    var s = L.star, half = HALF[key], mx = half ? 50 : L.sw, my = half ? 50 : 100, W = g.w + 2 * mx, H = g.h + 2 * my, gs = '', mid = '', defs = '';
-    var d = s.main + s.piece, sx = mx + g.s[0], sy = my + g.s[1];
-    function ghost(x, y) { return '<path transform="translate(' + x.toFixed(2) + ' ' + y.toFixed(2) + ')" d="' + d + '"/>'; }
-    if (half) {
-      // половинки: верх звезды — над знаком и сбоку, низ — под знаком; в поле вмещаются ровно по высоте модуля
-      var id = 'gh-' + key;
-      defs = '<defs><clipPath id="' + id + '-t"><rect x="-5" y="-5" width="125" height="55"/></clipPath><clipPath id="' + id + '-b"><rect x="-5" y="50" width="125" height="55"/></clipPath></defs>';
-      function cut(tr, part) { return '<g transform="' + tr + '"><path clip-path="url(#' + id + '-' + part + ')" d="' + d + '"/></g>'; }
-      var cy = sy + 50, cx = L.sw / 2;
-      gs = cut('translate(' + sx + ' 0)', 't') + cut('translate(' + sx + ' ' + (H - 100) + ')', 'b') +
-        cut('translate(0 ' + (cy + cx) + ') rotate(-90)', 't') + cut('translate(' + W + ' ' + (cy - cx) + ') rotate(90)', 't');
-      mid = '<path class="md" d="M0 ' + cy + 'H' + (sx + L.sw) + '"/>' +
-        [[0, 0], [W - 50, 0], [0, H - 50], [W - 50, H - 50]].map(function (p) { return '<rect class="mq" x="' + p[0] + '" y="' + p[1] + '" width="50" height="50"/>'; }).join('');   // квадраты-мерки: сторона — половина высоты звезды
-    } else {
-      gs = ghost(0, sy) + ghost(mx + g.w, sy) + ghost(sx, 0) + ghost(sx, my + g.h);
-    }
-    return '<svg class="lg gf" viewBox="-2 -2 ' + (W + 4) + ' ' + (H + 4) + '" width="' + W + '" height="' + H + '" style="height:calc(var(--u) * ' + (H / 100 * (k || 1)).toFixed(3) + ')" role="img" aria-label="армия спорта с охранным полем">' + defs +
-      '<rect class="fd" width="' + W + '" height="' + H + '"/><g class="gh">' + gs + '</g><rect class="bx" x="' + mx + '" y="' + my + '" width="' + g.w + '" height="' + g.h + '"/>' +
-      '<g transform="translate(' + mx + ' ' + my + ')">' + logo(key, { free: 1 }).replace(/^<svg[^>]*>|<\/svg>$/g, '') + '</g>' + mid + '</svg>';
-  }
   // имя с s5: — новое фото (s5-wall), по умолчанию s5-tee… для имен ниже; остальные — картинки второго этапа
   var NEW = /^(tee-|fm-)/;
   function ph(name, r) {
@@ -90,13 +65,8 @@
 
   // ---------- данные ----------
   var SET = [['horizontal', 'в строку'], ['center', 'между словами'], ['st', 'в две строки'], ['vertical', 'вертикально']];
-  // в ряду знаки одного зрительного размера: длинные мельче, компактные крупнее
-  var K = {};
-  SET.forEach(function (x) { var g = L.logos[x[0]]; K[x[0]] = Math.pow(220 / Math.sqrt(g.w * g.h), .85); });
-  function fig(x) { return '<figure class="c-' + x[0] + '"><div class="pic" data-k="' + x[0] + '" aria-label="' + esc(x[1]) + '"></div></figure>'; }
-  function grp(list) {
-    return '<div class="wide">' + list.slice(0, 2).map(fig).join('') + '</div><div class="comp">' + list.slice(2).map(fig).join('') + '</div>';
-  }
+  // в блоке написание одного размера во всех компоновках: масштаб считается от высоты строчных, поэтому звезда у компактных знаков крупнее
+  var XH = { horizontal: 40.65, center: 40.65, st: 29.19, vertical: 19 };
   function act(title) {   // смена главы рассказа
     return '<section class="as-divide s2-divide" data-slide><div class="as-wrap"><h2 class="as-h1">' + T(title) + '</h2></div></section>';
   }
@@ -112,7 +82,7 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, новый знак</a><nav>' +
-    '<a href="#top">старт</a><a href="#mark">знак</a><a href="#rules">правила</a><a href="#small">малые размеры</a><a href="#type">шрифты</a><a href="#graphic">графика</a><a href="#walls">стены</a><a href="#ok">носители</a></nav></div></header>');
+    '<a href="#top">старт</a><a href="#mark">знак</a><a href="#pal">цвет</a><a href="#small">малые размеры</a><a href="#type">шрифты</a><a href="#graphic">графика</a><a href="#walls">стены</a><a href="#ok">носители</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
   // ---------- старт: знак сейчас и новый знак. Звезда вылетает из старого знака и становится новым ----------
@@ -123,7 +93,7 @@
   // ---------- новый знак: черное написание основным, цветное — по нажатию ----------
   h.push(sec('mark', 'новый знак', [
     'Цветная звезда и черное написание строчными. Четыре компоновки — под разные носители.'
-  ], '<div class="s4-set s5-set">' + grp(SET) + '</div><div class="s5-more"><button type="button" class="as-btn" aria-pressed="false">показать цветное написание</button></div>'));
+  ], '<div class="s5-set">' + SET.map(function (x) { return '<figure><div class="pic" data-k="' + x[0] + '" aria-label="' + esc(x[1]) + '"></div></figure>'; }).join('') + '</div><div class="s5-more"><button type="button" class="as-btn" aria-pressed="false">показать цветное написание</button></div>'));
 
   // ---------- рядом с партнерами: сразу под знаком ----------
   h.push(sec('co', 'рядом с партнерами', [
@@ -133,14 +103,7 @@
     return '<div class="own" role="img" aria-label="армия спорта"><div class="ly on">' + logo('vertical', { free: 1 }) + '</div></div>';
   }).join('') + '</div></div>'));
 
-  // ---------- как устроен: поле и цвет ----------
-  h.push(act('как устроен знак'));
-  h.push(sec('rules', 'охранное поле', [
-    'В одну строку поле — целая звезда: по бокам ее ширина, сверху и снизу высота. В две строки и вертикально — половина высоты звезды со всех сторон.',
-    'Внутрь не заходят текст, другие знаки и край носителя.'
-  ], '<div class="s4-set s4-guard">' + [[SET[0][0], 'поле — целая звезда'], [SET[2][0], 'поле — половина высоты звезды'], [SET[1][0], 'поле — целая звезда'], [SET[3][0], 'поле — половина высоты звезды']].map(function (x) {
-    return '<figure><div class="pic" data-k="' + x[0] + '"></div><figcaption>' + esc(x[1]) + '</figcaption></figure>';
-  }).join('') + '</div>'));
+  // ---------- цвет ----------
   h.push(sec('pal', 'белый и красный', [
     'Основа — белый фон, красный по возможности стоит сверху. Синий и черный — акценты.'
   ], '<div class="s2-pal"><div class="as-pal">' +
@@ -249,10 +212,9 @@
   // знаки: черное написание основным, цветное — по нажатию
   var colored = false;
   function draw() {
-    $$('.s5-set .pic').forEach(function (p) { p.innerHTML = logo(p.dataset.k, { k: K[p.dataset.k], words: colored ? [RED, BLUE] : null }); });
+    $$('.s5-set .pic').forEach(function (p) { p.innerHTML = logo(p.dataset.k, { k: 100 / XH[p.dataset.k], words: colored ? [RED, BLUE] : null }); });
   }
   draw();
-  $$('.s4-guard .pic').forEach(function (p) { p.innerHTML = guard(p.dataset.k, K[p.dataset.k]); });
   (function () {
     var b = $('.s5-more button');
     b.addEventListener('click', function () {
