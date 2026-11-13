@@ -39,15 +39,17 @@
     { t: 'только буква', p: ['Уходим от звезды и сосредотачиваемся на букве. Из прежнего знака сохраняем разделение на две части и угол.'], set: [['v3-h', 'wide'], ['v3-st'], ['v3-v']] },
     { t: 'звезда', p: ['Черно-белая — как преемственность стилистики Nike. В цвете звезда в таком виде слишком напоминала бы Спортмастер.', 'За счет динамичной формы знак хорошо передает движение.'],
       set: [['v4-h', 'wide'], ['v4-st'], ['v4-v'], ['v4-color', 'ref', 'в цвете'], ['v4-sm', 'ref sm', 'знак Спортмастера, для сравнения']] },
-    { t: 'звезда-флаг', p: ['Синий сверху, красный снизу — отсылка к флагу России. Знак лучше ставить на белый фон.', 'Надпись взята из готового шрифта, но буквы адаптированы под наклоны звезды.'],
+    { t: 'звезда-флаг', p: ['Синий сверху, красный снизу — отсылка к флагу России. Знак лучше ставить на белый фон.'],
       set: [['v5-h', 'wide'], ['v5-st'], ['v5-v']], flag: 1 },
-    { t: 'шрифт ЦСКА', p: ['Дополнительный вариант для кобрендинга: тот же шрифт, что у ЦСКА, и цвета ЦСКА, звезды нет. «Армия» синяя, чтобы не было отсылки к Красной армии. В вертикальной версии при таком соотношении появляется ощущение триколора.', 'Со звездой и цветным текстом знак похож на заставку супергеройского фильма — если сохранять звезду, текст лучше делать черным.'],
+    { t: 'шрифт ЦСКА', p: ['Дополнительный вариант для кобрендинга: тот же шрифт, что у ЦСКА, и цвета ЦСКА, звезды нет. «Армия» синяя, чтобы не было отсылки к Красной армии. В вертикальной версии при таком соотношении появляется ощущение триколора.'],
       set: [['v6-h', 'wide', 'без звезды'], ['v6-hs', 'wide', 'со звездой'], ['v6-st', '', 'без звезды'], ['v6-sts', '', 'со звездой']] }
   ];
 
   var h = [];
+  var ICON_UP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, новые подходы</a><nav>' +
-    '<a href="#top">сейчас</a>' + V.map(function (v, i) { return '<a href="#v' + (i + 1) + '">' + (i + 1) + '</a>'; }).join('') + '</nav></div></header>');
+    '<a href="#top">сейчас</a>' + V.map(function (v, i) { return '<a href="#v' + (i + 1) + '" aria-label="вариант ' + (i + 1) + ': ' + esc(v.t) + '">' + (i + 1) + '</a>'; }).join('') + '<a href="#sum">все</a></nav></div></header>');
+  h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON_UP + '</button>');
 
   // знак сейчас — от него отталкиваются все варианты
   h.push('<section class="as-sec s6-old" id="top" data-slide><div class="as-wrap"><div class="as-tx as-up"><h1 class="as-h2">новые подходы к&nbsp;знаку</h1>' +
@@ -63,6 +65,13 @@
       '<div class="s6-set as-up">' + v.set.map(function (s) { return pic(s[0], s[1], s[2]); }).join('') + '</div></div></section>');
   });
 
+  // итог: все варианты рядом, с номерами; нажатие — к варианту
+  var SUM = ['v1-st', 'v2-st', 'v3-st', 'v4-st', 'v5-st', 'v6-st'];
+  h.push('<section class="as-sec s6-sum" id="sum" data-slide><div class="as-wrap"><div class="as-tx as-up"><h2 class="as-h2">все варианты</h2></div>' +
+    '<div class="s6-grid as-up">' + V.map(function (v, i) {
+      return '<a href="#v' + (i + 1) + '" aria-label="вариант ' + (i + 1) + ': ' + esc(v.t) + '"><span class="pic"><img src="' + IMG + 's6/' + SUM[i] + '.svg" alt="" style="--w:' + W[SUM[i]] + '" loading="lazy" decoding="async"></span>' +
+        '<span class="cap"><b>' + (i + 1) + '</b></span></a>';
+    }).join('') + '</div></div></section>');
   h.push('<section class="as-thanks" data-slide><div class="as-wrap"><h2>спасибо<br>за просмотр</h2></div></section>');
   h.push('<footer class="as-foot"><div class="as-wrap"><div class="in"><span>армия спорта, новые подходы к знаку</span></div></div></footer>');
   root.innerHTML = h.join('');
@@ -96,7 +105,12 @@
     var light = false;
     darks.forEach(function (d) { var r = d.getBoundingClientRect(); if (r.top <= 32 && r.bottom > 32) light = true; });
     top.classList.toggle('light', light);
+    var ft = root.querySelector('.as-foot').getBoundingClientRect();
+    upBtn.classList.toggle('on', scrollY > innerHeight && ft.top > innerHeight);
+    upBtn.classList.toggle('light', light);
   }
+  var upBtn = root.querySelector('.as-up-btn');
+  upBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
   addEventListener('scroll', onScroll, { passive: true });
   function go(id) { var el = document.getElementById(id); if (!el) return; window.scrollTo({ top: el.getBoundingClientRect().top + scrollY, behavior: reduce ? 'auto' : 'smooth' }); }
   root.addEventListener('click', function (e) {
