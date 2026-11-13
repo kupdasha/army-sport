@@ -1,0 +1,46 @@
+/* «Армия спорта», шестая страница: новые подходы к знаку. Поверх as.css. */
+.s6{--gap:clamp(112px,12vw,200px);--near:clamp(28px,3.2vw,56px);
+  /* общий масштаб знаков: 1 единица Фигмы = --k; на узком экране — по ширине */
+  --k:min(.3px,calc((100vw - 64px) / 2500))}
+.s6 .as-sec{padding-top:var(--gap)}
+
+/* знак сейчас */
+.s6-now{margin-top:var(--near)}
+.s6-now figure{margin:0;position:relative;display:grid;place-items:center;height:clamp(300px,calc(100svh - 340px),620px);box-shadow:inset 0 0 0 1px var(--line)}
+.s6-now img{position:absolute;inset:0;margin:auto;width:auto;height:62%;max-width:80%;object-fit:contain}
+.s6 figcaption{position:absolute;left:0;right:0;bottom:clamp(14px,1.8vw,24px);text-align:center;font:400 16px/1.3 var(--read);color:var(--mute);text-wrap:balance;padding:0 12px}
+
+/* номер варианта рядом с заголовком */
+.s6-var .as-h2{display:flex;align-items:baseline;gap:.4em}
+.s6-var .as-h2 .n{flex:none;color:var(--ink)}
+.s6-flag{margin:20px 0 0}
+.s6-flag img{display:block;width:72px;height:auto;box-shadow:0 0 0 1px var(--line)}
+
+/* компоновки: в строку — на всю ширину, остальные парами */
+.s6-set{margin-top:var(--near);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.s6-set figure{margin:0;position:relative;display:grid;place-items:center;min-height:clamp(220px,24vw,400px);padding:clamp(40px,4.4vw,72px) 16px clamp(56px,5vw,80px);box-sizing:border-box;box-shadow:inset 0 0 0 1px var(--line)}
+.s6-set figure.wide{grid-column:1 / -1;min-height:clamp(160px,16vw,280px)}
+.s6-set img{display:block;width:calc(var(--w) * var(--k));max-width:100%;height:auto}
+.s6-set .sm img{width:calc(var(--w) * var(--k) * 1.1)}
+
+/* появление */
+.s6 .as-up .s6-now figure,.s6 .s6-set.as-up figure{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform 1s var(--ease)}
+.s6 .s6-now.in figure,.s6 .s6-set.as-up.in figure{opacity:1;transform:none}
+.s6 .s6-set.in figure:nth-child(2){transition-delay:.12s}
+.s6 .s6-set.in figure:nth-child(3){transition-delay:.24s}
+.s6 .s6-set.in figure:nth-child(4){transition-delay:.36s}
+.s6 .s6-set.in figure:nth-child(5){transition-delay:.48s}
+@media (prefers-reduced-motion:reduce){.s6 .s6-now figure,.s6 .s6-set figure{opacity:1!important;transform:none!important}}
+
+@media (max-width:900px){
+  .s6{--k:calc((100vw - 64px) / 2500)}
+  .s6-set{grid-template-columns:minmax(0,1fr)}
+  .s6-set figure{min-height:0}
+  .s6-set img{width:calc(var(--w) * var(--k) * 1.15)}
+  .s6-now figure{height:auto;aspect-ratio:1.2}
+}
+@media (max-width:640px){
+  .s6{--gap:112px}
+  .s6 .as-top .home{display:none}
+  .s6 .as-top nav{width:100%;justify-content:space-between}
+}
