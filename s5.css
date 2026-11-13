@@ -1,10 +1,5 @@
 /* «Армия спорта», пятая страница: рассказ для руководства. Поверх as.css, s2.css, s3.css и s4.css. */
 
-/* ---------- старт: заголовок и два знака на первом экране ---------- */
-.s5-start{margin-top:0;padding-top:clamp(96px,11vh,136px);min-height:100svh;box-sizing:border-box}
-.s5 .s5-start .as-vis{margin-top:clamp(20px,2.4vw,40px)}
-.s5 .s5-start .as-wasnow{max-width:calc((100svh - 300px) * 2.5 + 16px);margin:0 auto}
-
 /* ---------- новый знак: каждая компоновка в своей клетке, написание одного размера ---------- */
 .s5-set{--u:clamp(14px,1.85vw,30px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .s5-set figure{margin:0;display:flex;align-items:center;justify-content:center;min-width:0;padding:clamp(40px,5.4vw,96px) 16px}
@@ -72,9 +67,6 @@
 .s5 .s3-okp .grp:first-child .tiles a:nth-child(5){grid-column:span 2;aspect-ratio:auto;position:relative}
 .s5 .s3-okp .grp:first-child .tiles a:nth-child(5) img{position:absolute;inset:0}
 
-@media (max-width:1100px) and (orientation:portrait){
-  .s5-start{min-height:0}   /* вертикальный планшет: без пустоты под двумя знаками */
-}
 @media (min-width:641px) and (max-width:1100px){
   .s5 .s3-use{grid-template-columns:1fr 1fr}
   .s5 .s3-use .p-solid .pic svg.lg{width:30%}
@@ -84,11 +76,195 @@
   .s5-set figure:nth-child(odd){border-right:0}
   .s5-set figure:nth-child(-n+3){border-bottom:1px solid var(--line)}
   .s5 .s3-okp .grp:first-child .tiles a:nth-child(5){aspect-ratio:2/1}   /* здесь карандаши в ряду одни: высоту задает сама плитка */
-  .s5-start{min-height:0}
-  .s5 .s5-start .as-wasnow{max-width:none}
 }
 @media (max-width:480px){
   .s5 .s3-vers{grid-template-columns:1fr;gap:28px}
   .s5 .s3-vers .pic{aspect-ratio:16/9}
   .s5 .s3-vers .pic svg.lg{width:52%}
 }
+
+/* =====================================================================
+   главы 1–4: смысловая часть на темном фоне, с главы 5 — белый
+   ===================================================================== */
+.s5-dark{--line:rgba(255,255,255,.16);background:#080000;color:#fff;padding-bottom:clamp(112px,12vw,200px)}
+.s5 .s5-dark .as-h2{color:rgba(255,255,255,.55)}
+.s5 .s5-dark .as-p{color:#fff}
+
+/* экран 2: старый знак */
+.s5-two{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);column-gap:clamp(32px,6vw,120px);row-gap:40px;align-items:center}
+.s5-two .as-h2{margin-bottom:clamp(20px,2.4vw,36px)}
+.s5-two .pic img{display:block;width:100%;max-width:420px;height:auto;margin:0 auto}
+
+/* экран 3: звезда вылетает из старого знака */
+.s5 .s5-start .as-wasnow{max-width:calc((100svh - 260px) * 2.5 + 16px);margin:0 auto}
+.s5 .s5-dark .as-wasnow>div{background:none}
+.s5 .s5-dark .as-wasnow b{left:0;right:0;text-align:center;color:rgba(255,255,255,.6)}
+.s5-cap{margin:clamp(24px,3vw,48px) 0 0;text-align:center;font:500 clamp(28px,3.4vw,56px)/1 var(--font);letter-spacing:-.03em;text-wrap:balance}
+
+/* экран 4: задачи */
+.s5-tasks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(24px,2.6vw,48px)}
+.s5-tasks p{max-width:24ch}
+.s5-tasks>div{padding-top:20px;border-top:1px solid var(--line)}
+.s5-tasks .ic{width:40px;height:40px;color:#fff;margin-bottom:clamp(20px,2.4vw,40px)}
+.s5-tasks p{margin:0;font:400 clamp(19px,1.35vw,22px)/1.4 var(--read);text-wrap:pretty}
+
+/* экран 5: формула по центру */
+.s5-formula{text-align:center}
+.s5-formula .as-wrap{width:100%}
+.s5 .s5-formula .as-h1{color:#fff;font-size:clamp(46px,8.4vw,160px)}
+.s5-formula p{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px clamp(16px,2vw,32px);margin:clamp(28px,3vw,48px) 0 0;font:400 clamp(22px,2vw,31px)/1.2 var(--read);color:rgba(255,255,255,.75)}
+.s5-formula p span{display:inline-flex;align-items:center;gap:12px}
+.s5-formula p i{font-style:normal;color:rgba(255,255,255,.4)}
+.s5-formula .s5-star{width:1.6em;height:auto}
+.s5-formula .ic{width:1.3em;height:1.3em;color:#fff}
+.s5-formula .ic.go{transform:rotate(49deg)}   /* как синяя стрелка знака: вверх-вправо, около 41° к горизонту */
+.s5-formula .cska{display:flex;flex-direction:column;align-items:center;gap:clamp(16px,2vw,28px);margin-bottom:clamp(48px,6vw,96px)}
+.s5-formula .cska img{display:block;width:min(100%,680px);height:auto}   /* исходники гербов мелкие: не крупнее, чтобы не было видно мыла */
+
+/* экран 6: выноски */
+.s5-anat{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr) minmax(0,1fr);gap:clamp(32px,4vw,72px);align-items:center}
+.s5-anat .fig{display:flex;justify-content:center}
+.s5-anat .s5-star{width:100%;height:auto;max-height:64svh;overflow:visible}
+.s5-anat .col{display:flex;flex-direction:column;gap:clamp(56px,8vw,140px)}
+.s5-anat .col.r{justify-content:space-between}
+.s5-anat .co{cursor:default;opacity:.45;transition:opacity .5s var(--ease)}
+.s5-anat .co.on{opacity:1}
+.s5-anat .co b{display:block;font:500 clamp(22px,1.8vw,30px)/1.1 var(--font);letter-spacing:-.02em;margin-bottom:10px}
+.s5-anat .co p{margin:0;font:400 clamp(17px,1.2vw,20px)/1.4 var(--read);text-wrap:pretty}
+.s5-anat .lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.s5-anat .lines g{opacity:.25;transition:opacity .5s var(--ease)}
+.s5-anat .lines g.on{opacity:1}
+.s5-anat .lines polyline{fill:none;stroke:#fff;stroke-width:1.5}
+.s5-anat .lines circle{fill:#fff}
+.s5-star path{transition:opacity .6s var(--ease)}
+.s5-star .ry{opacity:0}
+/* приглушенные части — плотным темным цветом, не прозрачностью: синяя видна только там, где она есть в знаке */
+.s5-star .mn,.s5-star .pc{transition:fill .6s var(--ease)}
+.s5-anat[data-f=star] .pc,.s5-anat[data-f=ray] .pc{fill:#060933}
+.s5-anat[data-f=piece] .mn,.s5-anat[data-f=ray] .mn{fill:#350608}
+.s5-anat[data-f=ray] .ry{opacity:1}
+.s5-star .tr{stroke:#fff;stroke-width:.6;stroke-dasharray:2 2;opacity:0;transition:opacity .6s var(--ease)}
+.s5-anat[data-f=ray] .tr{opacity:.8}
+/* прежний знак у выноски луча: тот же наклон полосы */
+.s5-anat .co .was{position:relative;width:min(160px,60%);margin-top:16px;opacity:0;transition:opacity .6s var(--ease)}
+.s5-anat .co.on .was{opacity:1}
+.s5-anat .co .was img{display:block;width:100%;height:auto}
+.s5-anat .co .was svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.s5-anat .co .was line{stroke:#fff;stroke-width:5;stroke-dasharray:14 12}
+
+/* экран 7: строчные */
+.s5-word{display:flex;justify-content:center;padding:clamp(24px,4vw,72px) 0}
+.s5-word svg{width:min(100%,1100px);height:auto}
+
+/* экран 8: цвет и монохром */
+.s5-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1vw,16px)}
+.s5-pair figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,36px);padding:clamp(16px,2vw,32px) 0 0}
+.s5-pair svg{width:52%;height:auto}
+.s5-pair figcaption{font:400 clamp(18px,1.4vw,22px)/1.2 var(--read);color:rgba(255,255,255,.6);text-align:center}
+.s5-three figcaption{position:absolute;left:clamp(16px,2vw,28px);bottom:clamp(14px,1.8vw,24px);font:400 clamp(18px,1.4vw,22px)/1.2 var(--read);color:rgba(255,255,255,.6)}
+
+/* глава 5: адаптивность */
+.s5-chap{padding-top:clamp(112px,12vw,200px)}
+.s5 .s5-chap .as-h1{color:var(--ink);font-size:clamp(46px,8.4vw,160px)}
+.s5-desc{display:grid;gap:clamp(8px,1vw,16px)}
+.s5-desc .row{--h:clamp(36px,4.4vw,76px);display:flex;align-items:center;justify-content:center;gap:calc(var(--h) * .45);padding:clamp(28px,3.6vw,56px) clamp(20px,4vw,72px);box-shadow:inset 0 0 0 1px var(--line)}
+.s5-desc svg{height:var(--h);width:auto;flex:none}
+.s5-desc i{flex:none;width:1px;height:calc(var(--h) * .7);background:var(--ink);opacity:.35;translate:0 calc(var(--h) * .1)}
+.s5-desc span{font:500 max(16px,calc(var(--h) * .4))/1 var(--font);letter-spacing:-.01em;color:var(--ink);translate:0 calc(var(--h) * .1);min-width:calc(var(--h) * 1.3)}   /* ширина одна у всех подписей — знаки стоят ровно друг под другом; по середине строчных букв знака, а не всей высоты со звездой */
+.s5-event .card{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(24px,3vw,48px);padding:clamp(40px,5vw,96px) clamp(24px,5vw,96px);box-shadow:inset 0 0 0 1px var(--line)}
+.s5-event svg{height:clamp(64px,8vw,140px);width:auto;max-width:100%}
+.s5-event p{margin:0;display:flex;flex-direction:column;gap:8px}
+.s5-event b{font:500 clamp(28px,3.4vw,56px)/1 var(--font);letter-spacing:-.03em}
+.s5-event p span{font:400 clamp(22px,2vw,31px)/1.2 var(--read);color:var(--mute)}
+.s5-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1vw,16px)}
+.s5-three figure{margin:0;position:relative;aspect-ratio:1.25;display:grid;place-items:center}
+.s5-three .w{background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.s5-three .b{background:#002FFF}
+.s5-three .s{background:var(--soft)}
+.s5-three .pic{width:70%;display:flex;justify-content:center}
+.s5-three .pic svg{width:100%;height:auto}
+.s5-three .s .pic svg{width:auto;height:18px}
+.s5-three figcaption{color:var(--mute)}
+.s5-three .b figcaption{color:rgba(255,255,255,.75)}
+
+/* появление по шагам */
+.as-vis.as-up .s5-tasks>div,.as-vis.as-up .s5-anat .col,.as-vis.as-up .s5-pair figure,.as-vis.as-up .s5-desc .row,.as-vis.as-up .s5-three figure{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform 1s var(--ease)}
+.as-vis.as-up.in .s5-tasks>div,.as-vis.as-up.in .s5-pair figure,.as-vis.as-up.in .s5-desc .row,.as-vis.as-up.in .s5-three figure{opacity:1;transform:none}
+.as-vis.as-up.in .s5-anat .col{opacity:1;transform:none}
+.as-vis.as-up.in .s5-tasks>:nth-child(2),.as-vis.as-up.in .s5-pair>:nth-child(2),.as-vis.as-up.in .s5-desc>:nth-child(2),.as-vis.as-up.in .s5-three>:nth-child(2),.as-vis.as-up.in .s5-anat .col.r{transition-delay:.12s}
+.as-vis.as-up.in .s5-tasks>:nth-child(3),.as-vis.as-up.in .s5-desc>:nth-child(3),.as-vis.as-up.in .s5-three>:nth-child(3){transition-delay:.24s}
+.as-vis.as-up.in .s5-tasks>:nth-child(4){transition-delay:.36s}
+.s5-cap{opacity:0;transition:opacity 1s var(--ease) 2.2s}
+.as-up.in .s5-cap{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .s5-cap,.as-vis.as-up .s5-tasks>div,.as-vis.as-up .s5-anat .col,.as-vis.as-up .s5-pair figure,.as-vis.as-up .s5-desc .row,.as-vis.as-up .s5-three figure{opacity:1!important;transform:none!important}
+}
+
+@media (max-width:860px){.s5-tasks{grid-template-columns:1fr 1fr}}
+@media (max-width:1100px){
+  .s5-anat{grid-template-columns:minmax(0,1fr);gap:40px}
+  .s5-anat .fig{order:-1}
+  .s5-anat .s5-star{width:min(70%,480px)}
+  .s5-anat .lines{display:none}
+  .s5-anat .col{display:contents}
+  .s5-anat{grid-template-columns:1fr 1fr;column-gap:clamp(24px,4vw,48px);row-gap:32px}
+  .s5-anat .fig{grid-column:1 / -1}
+  .s5-anat{align-items:start}
+  .s5-three{grid-template-columns:1fr}
+  .s5-three figure{aspect-ratio:2.2}
+  .s5-three .pic{width:56%}
+}
+@media (max-width:640px){
+  .s5-two{grid-template-columns:minmax(0,1fr)}
+  .s5-two .pic img{max-width:300px}
+  .s5-tasks{grid-template-columns:minmax(0,1fr)}
+  .s5-tasks .ic{margin-bottom:16px}
+  .s5-anat{grid-template-columns:minmax(0,1fr)}
+  .s5-pair{grid-template-columns:minmax(0,1fr)}
+  .s5-desc .row{flex-direction:column;align-items:center;gap:14px;padding:24px 20px}
+  .s5-desc span{translate:none;min-width:0}
+  .s5-desc svg{width:100%;height:auto}
+  .s5-desc i{display:none}
+  .s5-desc span{font-size:22px}
+  .s5-three figure{aspect-ratio:1.6}
+  .s5-three .pic{width:76%}
+}
+
+/* =====================================================================
+   ритм рассказа: между блоками один большой отступ, заголовок всегда ближе к своему блоку, чем к чужому
+   ===================================================================== */
+.s5{--gap:clamp(112px,12vw,200px);--near:clamp(28px,3.2vw,56px)}
+.s5 .as-sec{padding-top:var(--gap)}
+.s5 .as-sec .as-vis{margin-top:var(--near)}
+.s5 #pal{padding-top:var(--gap)}
+.s5 .s5-rules,.s5 #solid .s3-use,.s5 #pal .s2-pal{margin-top:0;margin-bottom:0}
+/* глава «адаптивность»: название главы стоит вплотную к первому блоку главы */
+.s5 .s5-chap + .as-sec{padding-top:clamp(40px,4.4vw,72px)}
+/* блок на подложке: свой отступ внутри, снаружи — общий */
+.s5 .s2-tint{margin-top:var(--gap);padding-top:clamp(72px,8vw,136px)}
+.s5 .s2-tint + .as-sec{padding-top:var(--gap)}
+
+/* смысл: заголовок, звезда и все выноски на одном экране */
+.s5 #meaning{min-height:100svh;box-sizing:border-box;padding-top:clamp(88px,11svh,120px);padding-bottom:clamp(16px,3svh,40px);display:flex;flex-direction:column}
+.s5 #meaning .as-tx{row-gap:12px}
+.s5 #meaning .as-vis{margin-top:clamp(16px,3svh,40px)}
+.s5 #meaning + .as-sec{padding-top:var(--gap)}
+.s5-anat .s5-star{max-height:calc(100svh - 250px);width:auto;max-width:100%}
+.s5-anat .col{gap:clamp(32px,8svh,96px)}
+.s5-anat .co .was{width:min(120px,50%);margin-top:12px}
+@media (max-width:1100px){
+  /* узкий экран: звезда меньше, у неактивных выносок только название, описание — у той, что подсвечена */
+  .s5-anat{row-gap:clamp(12px,2svh,24px)}
+  .s5-anat .s5-star{width:auto;height:min(26svh,50vw);max-height:none}
+  /* все пункты видны сразу: серые, подсвеченный — белый */
+  .s5-anat .co .was{display:none}
+  .s5-anat .co b{margin-bottom:4px}
+  .s5-anat .co p{font-size:16px;line-height:1.35}
+}
+@media (max-width:640px){
+  .s5 #meaning .as-h2{font-size:30px}
+  .s5-anat{row-gap:12px}
+  .s5-anat .s5-star{height:min(22svh,46vw)}
+  .s5-anat .co b{font-size:19px}
+}
+@media (max-width:640px){.s5-formula p{flex-direction:column;gap:8px}}

@@ -82,20 +82,92 @@
   // ====================================================================================
   var h = [];
   h.push('<header class="as-top"><div class="as-wrap"><a class="home" href="#top">армия спорта, новый знак</a><nav>' +
-    '<a href="#top">старт</a><a href="#mark">знак</a><a href="#pal">цвет</a><a href="#small">малые размеры</a><a href="#type">шрифты</a><a href="#graphic">графика</a><a href="#walls">стены</a><a href="#ok">носители</a></nav></div></header>');
+    '<a href="#top">старт</a><a href="#tasks">задачи</a><a href="#meaning">смысл</a><a href="#adapt">адаптивность</a><a href="#pal">цвет</a><a href="#small">малые размеры</a><a href="#type">шрифты</a><a href="#graphic">графика</a><a href="#walls">стены</a><a href="#ok">носители</a></nav></div></header>');
   h.push('<button type="button" class="as-up-btn" aria-label="наверх">' + ICON.up + '</button>');
 
-  // ---------- старт: знак сейчас и новый знак. Звезда вылетает из старого знака и становится новым ----------
-  h.push('<section class="as-sec s5-start" id="top" data-slide>' + tx('знак сейчас и новый знак', ['Звезда остается, лишние детали уходят.']) +
-    '<div class="as-wrap as-vis as-up"><div class="as-wasnow fly"><div><img class="old" src="' + IMG + 'old-logo.webp" alt="Знак сейчас"><b>сейчас</b></div>' +
-    '<div><img class="word" src="' + uri('vertical', { only: 'words' }) + '" alt="Новый знак"><img class="star" src="' + uri('vertical', { only: 'star' }) + '" alt=""><b>новый</b></div></div></div></section>');
+  // ====== главы 1–4: смысловая часть на темном фоне ======
+  // отдельная звезда; ry — длинный нижний луч отдельным слоем (для выносок)
+  var RAY = '-10,77.9 120,18.9 120,110 -10,110';   // все, что ниже линии от внутреннего угла левого луча к правому
+  function bigStar(cls) {
+    var s = L.star, id = 's5-ray-' + cls;
+    return '<svg class="s5-star ' + cls + '" viewBox="-2 -2 116.75 104" role="img" aria-label="звезда">' +
+      '<defs><clipPath id="' + id + '"><polygon points="' + RAY + '"/></clipPath></defs>' +
+      '<path class="pc" fill="' + BLUE + '" d="' + s.piece + '"/><path class="mn" fill="' + RED + '" d="' + s.main + '"/>' +
+      '<path class="ry" fill="' + RED + '" clip-path="url(#' + id + ')" d="' + s.main + '"/>' +
+      '<line class="tr" x1="-6" y1="107.4" x2="118" y2="36.7"/></svg>';
+  }
+  function dark(key, o) { o = o || {}; o.words = o.words || ['#fff', '#fff']; return logo(key, o); }
+  var I = {   // линейные значки задач
+    star: '<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/>',
+    screen: '<rect x="3" y="4" width="18" height="12" rx="2"/><rect x="6.5" y="7" width="5" height="5" rx="1.2"/><path d="M8 20h8"/>',
+    tag: '<path d="M4 7h10M4 12h16M4 17h7"/>',
+    pair: '<path d="M4 5h6v7c0 3-3 5-3 5s-3-2-3-5z"/><path d="M14 5h6v7c0 3-3 5-3 5s-3-2-3-5z"/>',
+    up: '<path d="M12 20V5M6 11l6-6 6 6"/>'
+  };
+  function ic(k) { return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + I[k] + '</svg>'; }
 
-  // ---------- новый знак: черное написание основным, цветное — по нажатию ----------
-  h.push(sec('mark', 'новый знак', [
+  h.push('<div class="s5-dark">');
+  // экран 2: старый знак
+  h.push('<section class="as-sec s5-old" id="top" data-slide><div class="as-wrap s5-two as-up"><div class="tx"><h2 class="as-h2">' + esc(nbh('откуда мы идем')) + '</h2>' +
+    '<p class="as-p">' + T('Платформа выросла из одного клуба в пространство, которое объединяет спорт по всей России.') + '</p>' +
+    '<p class="as-p">' + T('Ради уклона в современный минимализм и адаптируемости под диджитал-платформы сохраняем только один символ — звезду, как наследие ЦСКА и знак Победы.') + '</p></div>' +
+    '<div class="pic"><img src="' + IMG + 'old-logo.webp" alt="знак сейчас: буква А со звездой" loading="lazy"></div></div></section>');
+  // экран 3: звезда вылетает из старого знака и становится новым
+  h.push('<section class="as-sec s5-start" id="fly" data-slide><div class="as-wrap as-vis as-up"><div class="as-wasnow fly"><div><img class="old" src="' + IMG + 'old-logo.webp" alt="знак сейчас"><b>сейчас</b></div>' +
+    '<div><img class="word" src="' + uri('vertical', { only: 'words', words: ['#fff', '#fff'] }) + '" alt="новый знак"><img class="star" src="' + uri('vertical', { only: 'star' }) + '" alt=""><b>новый</b></div></div>' +
+    '<p class="s5-cap">' + T('сохраняем сердце знака, убирая декорации') + '</p></div></section>');
+  // экран 4: задачи знака
+  var TASKS = [
+    ['star', 'Сохранить связь со старым знаком и наследием ЦСКА.'],
+    ['screen', 'Жить в цифре: угол ролика, иконка приложения, фавикон, аватарка.'],
+    ['tag', 'Не привязываться к одной дисциплине: сегодня единоборства, завтра весь спорт. Дисциплину несет дескриптор, а не знак.'],
+    ['pair', 'Стоять рядом с ЦСКА и ФСБР на равных и не спорить с их гербами.']
+  ];
+  h.push('<section class="as-sec" id="tasks" data-slide>' + tx('задачи знака', []) + '<div class="as-wrap as-vis as-up"><div class="s5-tasks">' +
+    TASKS.map(function (t) { return '<div>' + ic(t[0]) + '<p>' + T(t[1]) + '</p></div>'; }).join('') + '</div></div></section>');
+  // экран 5: формула
+  h.push('<section class="as-sec s5-formula" id="formula" data-slide><div class="as-wrap as-up">' +
+    '<div class="cska"><img src="' + IMG + 's5-cska-1.webp" alt="гербы ЦСКА разных лет" loading="lazy"><img src="' + IMG + 's5-cska-2.webp" alt="гербы команд ЦСКА" loading="lazy"></div>' +
+    '<h2 class="as-h1">' + T('наследие в движении') + '</h2>' +
+    '<p><span>' + bigStar('mini') + T('звезда ЦСКА') + '</span><i>+</i><span>' + ic('up').replace('class="ic"', 'class="ic go"') + T('движение вверх') + '</span></p></div></section>');
+  // экран 6: знак с выносками; части подсвечиваются по очереди, наведение — к своей
+  var PARTS = [
+    ['star', 'звезда', 'Наследие ЦСКА и знак победы.', [3, 40], 'l'],
+    ['ray', 'длинный нижний луч', 'Наследие прежнего знака: луч взял наклон его полосы. Это разгон и траектория — звезда не стоит на месте, она набирает ход.', [22, 86], 'l'],
+    ['color', 'красный сверху, синий снизу', 'Красный — победа, синий — опора и движение, которое к ней ведет.', [62, 66], 'r'],
+    ['piece', 'синяя часть', 'Стрелка вверх: рост спортсмена, путь от первой тренировки к пьедесталу.', [81, 84], 'r']
+  ];
+  function co(p) {
+    var was = p[0] === 'ray' ? '<div class="was"><img src="' + IMG + 'old-logo-s.webp" alt="прежний знак" loading="lazy"><svg viewBox="0 0 600 582" aria-hidden="true"><line x1="10" y1="570" x2="600" y2="290"/></svg></div>' : '';
+    return '<div class="co" data-p="' + p[0] + '" data-x="' + p[3][0] + '" data-y="' + p[3][1] + '"><b>' + esc(nbh(p[1])) + '</b><p>' + T(p[2]) + '</p>' + was + '</div>';
+  }
+  h.push('<section class="as-sec" id="meaning" data-slide>' + tx('что значит каждый элемент', []) + '<div class="as-wrap as-vis as-up"><div class="s5-anat">' +
+    '<div class="col l">' + PARTS.filter(function (p) { return p[4] === 'l'; }).map(co).join('') + '</div>' +
+    '<div class="fig">' + bigStar('anat') + '</div>' +
+    '<div class="col r">' + PARTS.filter(function (p) { return p[4] === 'r'; }).map(co).join('') + '</div>' +
+    '<svg class="lines" aria-hidden="true"></svg></div></div></section>');
+  // экран 7: строчные
+  h.push(sec('lower', 'написание строчными', [
+    '«Армия» здесь значит сообщество, а не строй.',
+    'Строчные звучат как приглашение, а не как команда — в команду можно прийти в любом возрасте и с любым уровнем.'
+  ], '<div class="s5-word">' + dark('horizontal', { free: 1 }) + '</div>'));
+  // экран 8: в цвете и в монохроме
+  h.push(sec('mono', 'в цвете и в монохроме', [], '<div class="s5-pair"><figure>' + dark('vertical', { free: 1 }) + '<figcaption>в цвете</figcaption></figure>' +
+    '<figure>' + logo('vertical', { free: 1, star: 'tone', ink: '#fff' }) + '<figcaption>в монохроме</figcaption></figure></div>'));
+  h.push('</div>');
+
+  // ====== глава 5: адаптивность, на белом ======
+  h.push('<section class="as-sec s5-chap" id="adapt" data-slide><div class="as-wrap as-up"><h2 class="as-h1">адаптивность</h2></div></section>');
+  // четыре компоновки: черное написание основным, цветное — по нажатию
+  h.push(sec('mark', 'четыре компоновки', [
     'Цветная звезда и черное написание строчными. Четыре компоновки — под разные носители.'
   ], '<div class="s5-set">' + SET.map(function (x) { return '<figure><div class="pic" data-k="' + x[0] + '" aria-label="' + esc(x[1]) + '"></div></figure>'; }).join('') + '</div><div class="s5-more"><button type="button" class="as-btn" aria-pressed="false">показать цветное написание</button></div>'));
-
-  // ---------- рядом с партнерами: сразу под знаком ----------
+  // экран 9: знак с дескриптором дисциплины
+  h.push(sec('desc', 'знак и дисциплина', ['Знак один, дисциплину называет дескриптор рядом.'],
+    '<div class="s5-desc">' + ['самбо', 'бокс', 'дзюдо'].map(function (d) {
+      return '<div class="row">' + logo('horizontal', { free: 1 }) + '<i></i><span>' + d + '</span></div>';
+    }).join('') + '</div>'));
+  // экран 12: рядом с партнерами
   h.push(sec('co', 'рядом с партнерами', [
     'Вертикальная версия среди знаков партнеров.'
   ], '<div class="s3-co"><div class="logos">' + PARTNERS.map(function (p) {
@@ -281,6 +353,40 @@
     }, { threshold: .35 }).observe(w);
   })();
 
+  // смысл: выноски к частям звезды; части подсвечиваются по очереди, наведение или нажатие — к своей
+  (function () {
+    var box = $('.s5-anat'), fig = $('.s5-star.anat', box), svg = $('.lines', box), cos = $$('.co', box), i = 0, t = 0, hold = false;
+    function lines() {
+      if (getComputedStyle(svg).display === 'none') { show(); return; }
+      var b = box.getBoundingClientRect(), f = fig.getBoundingClientRect(), k = f.width / 116.75;
+      svg.setAttribute('viewBox', '0 0 ' + b.width + ' ' + b.height);
+      svg.innerHTML = cos.map(function (c) {
+        var r = c.getBoundingClientRect(), left = c.closest('.l'), q = $('b', c).getBoundingClientRect();
+        var x1 = (left ? r.right + 16 : r.left - 16) - b.left, y1 = q.top + q.height / 2 - b.top;
+        var x2 = f.left - b.left + (+c.dataset.x + 2) * k, y2 = f.top - b.top + (+c.dataset.y + 2) * k;
+        var xm = left ? Math.min(x2 - 24, f.left - b.left) : Math.max(x2 + 24, f.right - b.left);
+        return '<g data-p="' + c.dataset.p + '"><polyline points="' + x1 + ',' + y1 + ' ' + xm + ',' + y1 + ' ' + x2 + ',' + y2 + '"/><circle cx="' + x2 + '" cy="' + y2 + '" r="5"/></g>';
+      }).join('');
+      show();
+    }
+    function show() {
+      var p = cos[i].dataset.p;
+      box.dataset.f = p;
+      cos.forEach(function (c, j) { c.classList.toggle('on', j === i); });
+      $$('g', svg).forEach(function (g) { g.classList.toggle('on', g.dataset.p === p); });
+    }
+    function next() { if (!hold) { i = (i + 1) % cos.length; show(); } }
+    cos.forEach(function (c, j) {
+      c.addEventListener('mouseenter', function () { hold = true; i = j; show(); });
+      c.addEventListener('mouseleave', function () { hold = false; });
+      c.addEventListener('click', function () { i = j; show(); });
+    });
+    lines();
+    addEventListener('resize', lines);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(lines);
+    whileVisible(box, function () { lines(); if (!t && !reduce) t = setInterval(next, 3200); }, function () { clearInterval(t); t = 0; });
+  })();
+
   // линейка: знак уменьшается от 2 до 0,3 см и обратно
   (function () {
     var f = $('.s2-ruler'), lg = $('.lg', f), cm = $('.cm', f), t0 = 0, raf = 0, on = false, ratio = L.logos.horizontal.w / L.logos.horizontal.h;
@@ -327,7 +433,7 @@
   lb.addEventListener('click', closeLb);   // закрывается кнопкой, нажатием на картинку и фон, клавишей Esc
 
   // шапка: текущий раздел; кнопка наверх
-  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-divide,.as-thanks'), links = $$('.as-top nav a'),
+  var top = $('.as-top'), upBtn = $('.as-up-btn'), darks = $$('.as-divide,.as-thanks,.s5-dark'), links = $$('.as-top nav a'),
     marks = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
   function onScroll() {
     var cur = -1;
