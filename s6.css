@@ -46,10 +46,12 @@
 }
 
 /* итог: все варианты рядом, с номерами */
-.s6-grid{margin-top:var(--near);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,4vw,64px) clamp(16px,2vw,32px)}
+.s6-grid{margin-top:clamp(64px,7vw,120px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(32px,4vw,64px) clamp(16px,2vw,32px)}
 .s6-grid a{display:flex;flex-direction:column;gap:10px;color:var(--ink);text-decoration:none}
-.s6-grid .pic{flex:1;display:flex;align-items:flex-end;justify-content:center;transition:transform .4s var(--ease)}
-.s6-grid a:hover .pic{transform:translateY(-4px)}
+.s6-grid .pic{flex:1;display:flex;align-items:flex-end;justify-content:center;transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
+.s6-grid a:hover .pic{transform:translateY(-6px) scale(1.04)}
+.s6-grid .cap{transition:color .8s ease}
+.s6-grid a:hover .cap{color:var(--ink)}
 .s6-grid img{width:calc(var(--w) * var(--k) * .48 * var(--s,1));max-width:70%;height:auto}
 .s6-grid .cap{display:flex;justify-content:center;color:var(--mute);font:500 clamp(19px,1.5vw,24px)/1.2 var(--font);letter-spacing:-.02em}
 .s6-grid .cap b{font-weight:500}
@@ -61,3 +63,12 @@
 
 /* шестой вариант набран капсом крупнее остальных: тот же масштаб выглядел гигантским */
 #v6 .s6-set img,.s6-grid a[href="#v6"] img{--s:.6}
+
+/* седьмой вариант: надписи в Фигме крупнее — общий масштаб; стеклянная иконка рядом с вертикальной версией */
+#v7 .s6-set img{--s:.87}
+.s6-grid a[href="#v7"] img{--s:.68}
+.s6-glass{padding:0!important}
+.s6-glass canvas{display:block;width:min(100%,440px);aspect-ratio:1;height:auto;border-radius:24px}
+.s6 .as-p a{color:inherit;text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
+.s6-grid a[href="#v7"]{grid-column:2}   /* седьмой — один в последнем ряду: по центру страницы */
+@media (max-width:900px){.s6-grid a[href="#v7"]{grid-column:1 / -1;justify-self:center;width:calc(50% - clamp(16px,2vw,32px) / 2)}}
